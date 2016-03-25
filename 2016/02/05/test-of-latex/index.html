@@ -79,7 +79,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/img/yuan.jpg" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">GCUSKY</a></h1>
@@ -211,7 +211,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/img/yuan.jpg" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">GCUSKY</a></h1>
@@ -354,7 +354,7 @@
 </tr>
 <tr>
 <td style="text-align:center"><strong>Cost Function:</strong></td>
-<td style="text-align:center">$$J(θ_0,θ<em>1)=\frac{1}{2m}\sum\limits^m</em>{i=1}(h_θ(x^{(i)})-y^{(i)})^2$$</td>
+<td style="text-align:center">$$J(θ_0,θ_1)=\frac{1}{2m}\sum\limits^m_{i=1}(h_θ(x^{(i)})-y^{(i)})^2$$</td>
 </tr>
 <tr>
 <td style="text-align:center">Goal:</td>
@@ -363,7 +363,7 @@
 </tbody>
 </table>
 <p><img src="http://cloud.gcusky.com/MLMOOC/ML1_10.png?imageView/2/w/450" alt=""></p>
-<p>　　我们现在要做的便是为我们的模型选择合适的参数（parameters）$θ_0$和 $θ_1$，在房价问题这个例子中便是直线的斜率和在 $y$ 轴上的截距。<br>　　我们选择的参数决定了我们得到的直线相对于我们的训练集的准确程度，模型所预测的值与训练集中实际值之间的差距就是<strong>建模误差（modeling error）</strong>。<br>　　我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。<br>　　即使得代价函数$J(θ_0,θ<em>1)=\frac{1}{2m}\sum^m</em>{i=1}(h_θ(x^{(i)})-y^{(i)})^2$最小。接下来我们绘制一个等高线图， $(x,y,z)$ 三个坐标分别为 $θ_0$ 和 $θ_1$和 $J(θ_0,θ_1)$：</p>
+<p>　　我们现在要做的便是为我们的模型选择合适的参数（parameters）$θ_0$和 $θ_1$，在房价问题这个例子中便是直线的斜率和在 $y$ 轴上的截距。<br>　　我们选择的参数决定了我们得到的直线相对于我们的训练集的准确程度，模型所预测的值与训练集中实际值之间的差距就是<strong>建模误差（modeling error）</strong>。<br>　　我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。<br>　　即使得代价函数$J(θ_0,θ_1)=\frac{1}{2m}\sum^m_{i=1}(h_θ(x^{(i)})-y^{(i)})^2$最小。接下来我们绘制一个等高线图， $(x,y,z)$ 三个坐标分别为 $θ_0$ 和 $θ_1$和 $J(θ_0,θ_1)$：</p>
 <p><img src="http://cloud.gcusky.com/MLMOOC/ML1_11.png?imageView/2/w/500" alt=""></p>
 <p>　　则可以看出在三维空间中存在一个使得 $J(θ_0,θ_1)$ 最小的点。</p>
 <p><img src="http://cloud.gcusky.com/MLMOOC/ML1_12.png?imageView/2/w/700" alt="其中一种拟合情况"></p>
@@ -377,7 +377,7 @@
 <h3 id="梯度下降的线性回归"><a href="#梯度下降的线性回归" class="headerlink" title="梯度下降的线性回归"></a>梯度下降的线性回归</h3><p>　　梯度下降算法和线性回归算法比较如图：</p>
 <p><img src="http://cloud.gcusky.com/MLMOOC/ML1_16.png?imageView/2/w/600" alt=""></p>
 <p>　　对我们之前的线性回归问题运用梯度下降法，关键在于求出代价函数的导数，即：</p>
-<p>$\frac{\partial}{\partialθ_j}J(θ_0,θ_1)=\frac{\partial}{\partialθ<em>j}\frac{1}{2m}\sum\limits^m</em>{i=1}(h_θ(x^{(i)})-y^{(i)})^2$<br>　　$j=0$ 时：$\frac{\partial}{\partialθ_0}J(θ_0,θ<em>1)=\frac{1}{m}\sum\limits^m</em>{i=1}(h_θ(x^{(i)})-y^{(i)})$<br>　　$j=1$ 时：$\frac{\partial}{\partialθ_1}J(θ_0,θ<em>1)=\frac{1}{m}\sum\limits^m</em>{i=1}(h_θ(x^{(i)})-y^{(i)})·x^{(i)}$</p>
+<p>$\frac{\partial}{\partialθ_j}J(θ_0,θ_1)=\frac{\partial}{\partialθ_j}\frac{1}{2m}\sum\limits^m_{i=1}(h_θ(x^{(i)})-y^{(i)})^2$<br>　　$j=0$ 时：$\frac{\partial}{\partialθ_0}J(θ_0,θ_1)=\frac{1}{m}\sum\limits^m_{i=1}(h_θ(x^{(i)})-y^{(i)})$<br>　　$j=1$ 时：$\frac{\partial}{\partialθ_1}J(θ_0,θ_1)=\frac{1}{m}\sum\limits^m_{i=1}(h_θ(x^{(i)})-y^{(i)})·x^{(i)}$</p>
 <p>　　则算法改写成：</p>
 <p><img src="http://cloud.gcusky.com/MLMOOC/ML1_17.png?imageView/2/w/600" alt=""></p>
 <p>　　拟合情况：</p>
@@ -544,9 +544,12 @@
         <div id="footer-info">
             <div class="footer-left">
                 &copy; 2016 GCUSKY
+                
+                    <a href="http://www.miibeian.gov.cn/">粤ICP备15063973号-2</a>
+                
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题">Yelee</a> by MOxFIVE
+                Theme of <a href="https://github.com/gcusky/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> , Improved by <a href="/">gcusky</a>
             </div>
         </div>
         

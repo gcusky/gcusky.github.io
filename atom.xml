@@ -607,9 +607,9 @@
     
       <category term="语言入门" scheme="http://gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="数学" scheme="http://gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+    
+      <category term="数学" scheme="http://gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -623,7 +623,7 @@
     <content type="html">&lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在$n×n$方阵里填入$1,2,…,n×n$,要求填成蛇形。例如$n=4$时方阵为：&lt;/p&gt;
-&lt;p&gt;$$&lt;br&gt;\begin{matrix}&lt;br&gt;10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \&lt;br&gt;9 &amp;amp; 16 &amp;amp; 13 &amp;amp; 2 \&lt;br&gt;8 &amp;amp; 15 &amp;amp; 14 &amp;amp; 3 \&lt;br&gt;7 &amp;amp; 6 &amp;amp; 5 &amp;amp; 4 \&lt;br&gt;\end{matrix}&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;\begin{matrix}&lt;br&gt;10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \\&lt;br&gt;9 &amp;amp; 16 &amp;amp; 13 &amp;amp; 2 \\&lt;br&gt;8 &amp;amp; 15 &amp;amp; 14 &amp;amp; 3 \\&lt;br&gt;7 &amp;amp; 6 &amp;amp; 5 &amp;amp; 4 \\&lt;br&gt;\end{matrix}&lt;br&gt;$$&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;输入&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;直接输入方阵的维数，即n的值。(n&amp;lt;=100)&lt;/p&gt;
@@ -648,7 +648,7 @@
       &lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在$n×n$方阵里填入$1,2,…,n×n$,要求填成蛇形。例如$n=4$时方阵为：&lt;/p&gt;
-&lt;p&gt;$$&lt;br&gt;\begin{matrix}&lt;br&gt;10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \&lt;br&gt;9 &amp;amp; 16 &amp;amp; 13 &amp;amp; 2 \&lt;br&gt;8 &amp;amp; 15 &amp;amp; 14 &amp;amp; 3 \&lt;br&gt;7 &amp;amp; 6 &amp;amp; 5 &amp;amp; 4 \&lt;br&gt;\end{matrix}&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;\begin{matrix}&lt;br&gt;10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \\&lt;br&gt;9 &amp;amp; 16 &amp;amp; 13 &amp;amp; 2 \\&lt;br&gt;8 &amp;amp; 15 &amp;amp; 14 &amp;amp; 3 \\&lt;br&gt;7 &amp;amp; 6 &amp;amp; 5 &amp;amp; 4 \\&lt;br&gt;\end{matrix}&lt;br&gt;$$&lt;/p&gt;
     
     </summary>
     
@@ -766,9 +766,9 @@
     
       <category term="语言入门" scheme="http://gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
-    
       <category term="STL练习" scheme="http://gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
+    
+      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
     
   </entry>
   
@@ -888,7 +888,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;&lt;strong&gt;Cost Function:&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;$$J(θ_0,θ&lt;em&gt;1)=\frac{1}{2m}\sum\limits^m&lt;/em&gt;{i=1}(h_θ(x^{(i)})-y^{(i)})^2$$&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;$$J(θ_0,θ_1)=\frac{1}{2m}\sum\limits^m_{i=1}(h_θ(x^{(i)})-y^{(i)})^2$$&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;Goal:&lt;/td&gt;
@@ -897,7 +897,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/MLMOOC/ML1_10.png?imageView/2/w/450&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;　　我们现在要做的便是为我们的模型选择合适的参数（parameters）$θ_0$和 $θ_1$，在房价问题这个例子中便是直线的斜率和在 $y$ 轴上的截距。&lt;br&gt;　　我们选择的参数决定了我们得到的直线相对于我们的训练集的准确程度，模型所预测的值与训练集中实际值之间的差距就是&lt;strong&gt;建模误差（modeling error）&lt;/strong&gt;。&lt;br&gt;　　我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。&lt;br&gt;　　即使得代价函数$J(θ_0,θ&lt;em&gt;1)=\frac{1}{2m}\sum^m&lt;/em&gt;{i=1}(h_θ(x^{(i)})-y^{(i)})^2$最小。接下来我们绘制一个等高线图， $(x,y,z)$ 三个坐标分别为 $θ_0$ 和 $θ_1$和 $J(θ_0,θ_1)$：&lt;/p&gt;
+&lt;p&gt;　　我们现在要做的便是为我们的模型选择合适的参数（parameters）$θ_0$和 $θ_1$，在房价问题这个例子中便是直线的斜率和在 $y$ 轴上的截距。&lt;br&gt;　　我们选择的参数决定了我们得到的直线相对于我们的训练集的准确程度，模型所预测的值与训练集中实际值之间的差距就是&lt;strong&gt;建模误差（modeling error）&lt;/strong&gt;。&lt;br&gt;　　我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。&lt;br&gt;　　即使得代价函数$J(θ_0,θ_1)=\frac{1}{2m}\sum^m_{i=1}(h_θ(x^{(i)})-y^{(i)})^2$最小。接下来我们绘制一个等高线图， $(x,y,z)$ 三个坐标分别为 $θ_0$ 和 $θ_1$和 $J(θ_0,θ_1)$：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/MLMOOC/ML1_11.png?imageView/2/w/500&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;　　则可以看出在三维空间中存在一个使得 $J(θ_0,θ_1)$ 最小的点。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/MLMOOC/ML1_12.png?imageView/2/w/700&quot; alt=&quot;其中一种拟合情况&quot;&gt;&lt;/p&gt;
@@ -911,7 +911,7 @@
 &lt;h3 id=&quot;梯度下降的线性回归&quot;&gt;&lt;a href=&quot;#梯度下降的线性回归&quot; class=&quot;headerlink&quot; title=&quot;梯度下降的线性回归&quot;&gt;&lt;/a&gt;梯度下降的线性回归&lt;/h3&gt;&lt;p&gt;　　梯度下降算法和线性回归算法比较如图：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/MLMOOC/ML1_16.png?imageView/2/w/600&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;　　对我们之前的线性回归问题运用梯度下降法，关键在于求出代价函数的导数，即：&lt;/p&gt;
-&lt;p&gt;$\frac{\partial}{\partialθ_j}J(θ_0,θ_1)=\frac{\partial}{\partialθ&lt;em&gt;j}\frac{1}{2m}\sum\limits^m&lt;/em&gt;{i=1}(h_θ(x^{(i)})-y^{(i)})^2$&lt;br&gt;　　$j=0$ 时：$\frac{\partial}{\partialθ_0}J(θ_0,θ&lt;em&gt;1)=\frac{1}{m}\sum\limits^m&lt;/em&gt;{i=1}(h_θ(x^{(i)})-y^{(i)})$&lt;br&gt;　　$j=1$ 时：$\frac{\partial}{\partialθ_1}J(θ_0,θ&lt;em&gt;1)=\frac{1}{m}\sum\limits^m&lt;/em&gt;{i=1}(h_θ(x^{(i)})-y^{(i)})·x^{(i)}$&lt;/p&gt;
+&lt;p&gt;$\frac{\partial}{\partialθ_j}J(θ_0,θ_1)=\frac{\partial}{\partialθ_j}\frac{1}{2m}\sum\limits^m_{i=1}(h_θ(x^{(i)})-y^{(i)})^2$&lt;br&gt;　　$j=0$ 时：$\frac{\partial}{\partialθ_0}J(θ_0,θ_1)=\frac{1}{m}\sum\limits^m_{i=1}(h_θ(x^{(i)})-y^{(i)})$&lt;br&gt;　　$j=1$ 时：$\frac{\partial}{\partialθ_1}J(θ_0,θ_1)=\frac{1}{m}\sum\limits^m_{i=1}(h_θ(x^{(i)})-y^{(i)})·x^{(i)}$&lt;/p&gt;
 &lt;p&gt;　　则算法改写成：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/MLMOOC/ML1_17.png?imageView/2/w/600&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;　　拟合情况：&lt;/p&gt;
