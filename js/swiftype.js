@@ -1,8 +1,10 @@
-
-  (function(w1,d1,t1,u1,n1,s1,e1){w1['SwiftypeObject']=n1;w1[n1]=w1[n1]||function(){
-  (w1[n1].q=w1[n1].q||[]).push(arguments);};s1=d1.createElement(t1);
-  e1=d1.getElementsByTagName(t1)[0];s1.async=1;s1.src=u1;e1.parentNode.insertBefore(s1,e1);
+$(function () {
+    define(function (require) {
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
   
   _st('install','axWK1cZd2PS-RxPwhKf5','2.0.0');
-
+    });
+});
