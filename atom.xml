@@ -4,9 +4,9 @@
   <subtitle>GCUSKY的空间</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://gcusky.com/"/>
+  <link href="http://www.gcusky.com/"/>
   <updated>2016-02-02T14:19:35.706Z</updated>
-  <id>http://gcusky.com/</id>
+  <id>http://www.gcusky.com/</id>
   
   <author>
     <name>GCUSKY</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://gcusky.com/2016/03/25/hello-world/"/>
-    <id>http://gcusky.com/2016/03/25/hello-world/</id>
+    <link href="http://www.gcusky.com/2016/03/25/hello-world/"/>
+    <id>http://www.gcusky.com/2016/03/25/hello-world/</id>
     <published>2016-03-25T03:55:02.149Z</published>
     <updated>2016-02-02T14:19:35.706Z</updated>
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>第2回　かきくけこ</title>
-    <link href="http://gcusky.com/2016/03/22/jp-2/"/>
-    <id>http://gcusky.com/2016/03/22/jp-2/</id>
+    <link href="http://www.gcusky.com/2016/03/22/jp-2/"/>
+    <id>http://www.gcusky.com/2016/03/22/jp-2/</id>
     <published>2016-03-22T14:01:23.000Z</published>
     <updated>2016-03-22T14:22:09.634Z</updated>
     
@@ -81,19 +81,19 @@
     
     </summary>
     
-      <category term="日语五十音" scheme="http://gcusky.com/categories/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
+      <category term="日语五十音" scheme="http://www.gcusky.com/categories/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
     
     
-      <category term="日语" scheme="http://gcusky.com/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://www.gcusky.com/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="五十音" scheme="http://gcusky.com/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
+      <category term="五十音" scheme="http://www.gcusky.com/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
     
   </entry>
   
   <entry>
     <title>第1回　あいうえお</title>
-    <link href="http://gcusky.com/2016/03/22/jp-1/"/>
-    <id>http://gcusky.com/2016/03/22/jp-1/</id>
+    <link href="http://www.gcusky.com/2016/03/22/jp-1/"/>
+    <id>http://www.gcusky.com/2016/03/22/jp-1/</id>
     <published>2016-03-22T12:48:08.000Z</published>
     <updated>2016-03-22T14:25:51.178Z</updated>
     
@@ -113,19 +113,19 @@
     
     </summary>
     
-      <category term="日语五十音" scheme="http://gcusky.com/categories/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
+      <category term="日语五十音" scheme="http://www.gcusky.com/categories/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
     
     
-      <category term="日语" scheme="http://gcusky.com/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://www.gcusky.com/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="五十音" scheme="http://gcusky.com/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
+      <category term="五十音" scheme="http://www.gcusky.com/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
     
   </entry>
   
   <entry>
     <title>【五十音】导学课</title>
-    <link href="http://gcusky.com/2016/03/22/jp/"/>
-    <id>http://gcusky.com/2016/03/22/jp/</id>
+    <link href="http://www.gcusky.com/2016/03/22/jp/"/>
+    <id>http://www.gcusky.com/2016/03/22/jp/</id>
     <published>2016-03-22T12:42:27.000Z</published>
     <updated>2016-03-22T13:42:52.865Z</updated>
     
@@ -201,19 +201,19 @@
     
     </summary>
     
-      <category term="日语五十音" scheme="http://gcusky.com/categories/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
+      <category term="日语五十音" scheme="http://www.gcusky.com/categories/%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
     
     
-      <category term="日语" scheme="http://gcusky.com/tags/%E6%97%A5%E8%AF%AD/"/>
+      <category term="日语" scheme="http://www.gcusky.com/tags/%E6%97%A5%E8%AF%AD/"/>
     
-      <category term="五十音" scheme="http://gcusky.com/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
+      <category term="五十音" scheme="http://www.gcusky.com/tags/%E4%BA%94%E5%8D%81%E9%9F%B3/"/>
     
   </entry>
   
   <entry>
     <title>MySQL数据库索引问题</title>
-    <link href="http://gcusky.com/2016/03/20/mysql-index/"/>
-    <id>http://gcusky.com/2016/03/20/mysql-index/</id>
+    <link href="http://www.gcusky.com/2016/03/20/mysql-index/"/>
+    <id>http://www.gcusky.com/2016/03/20/mysql-index/</id>
     <published>2016-03-20T13:36:40.000Z</published>
     <updated>2016-03-20T13:50:33.410Z</updated>
     
@@ -262,14 +262,14 @@
     </summary>
     
     
-      <category term="mysql" scheme="http://gcusky.com/tags/mysql/"/>
+      <category term="mysql" scheme="http://www.gcusky.com/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>【C++】 素数环</title>
-    <link href="http://gcusky.com/2016/03/18/acm-9/"/>
-    <id>http://gcusky.com/2016/03/18/acm-9/</id>
+    <link href="http://www.gcusky.com/2016/03/18/acm-9/"/>
+    <id>http://www.gcusky.com/2016/03/18/acm-9/</id>
     <published>2016-03-18T08:20:36.000Z</published>
     <updated>2016-03-18T08:29:57.632Z</updated>
     
@@ -327,21 +327,21 @@
     
     </summary>
     
-      <category term="ACM" scheme="http://gcusky.com/categories/ACM/"/>
+      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
-      <category term="搜索" scheme="http://gcusky.com/tags/%E6%90%9C%E7%B4%A2/"/>
+      <category term="搜索" scheme="http://www.gcusky.com/tags/%E6%90%9C%E7%B4%A2/"/>
     
-      <category term="回溯法" scheme="http://gcusky.com/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/"/>
+      <category term="回溯法" scheme="http://www.gcusky.com/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>【C++】 背包问题</title>
-    <link href="http://gcusky.com/2016/03/16/acm-8/"/>
-    <id>http://gcusky.com/2016/03/16/acm-8/</id>
+    <link href="http://www.gcusky.com/2016/03/16/acm-8/"/>
+    <id>http://www.gcusky.com/2016/03/16/acm-8/</id>
     <published>2016-03-16T08:14:40.000Z</published>
     <updated>2016-03-18T04:05:46.725Z</updated>
     
@@ -366,7 +366,7 @@
 &lt;h3 id=&quot;程序实现&quot;&gt;&lt;a href=&quot;#程序实现&quot; class=&quot;headerlink&quot; title=&quot;程序实现&quot;&gt;&lt;/a&gt;程序实现&lt;/h3&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;meta-string&quot;&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//结构体加上sort的cmp条件,实现了对单位价值排序时,也同时排好对应的重量。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; P&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; v;&lt;span class=&quot;comment&quot;&gt;//单位重量的价值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; w;&lt;span class=&quot;comment&quot;&gt;//重量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;*a;&lt;span class=&quot;comment&quot;&gt;//需要多少再申请多少&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;cmp&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(P x, P y)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x.v&amp;gt;y.v;&lt;span class=&quot;comment&quot;&gt;//按照价值降序排列&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i,n,s,m,sum=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;cin&lt;/span&gt;&amp;gt;&amp;gt;n;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(n--)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;cin&lt;/span&gt;&amp;gt;&amp;gt;s&amp;gt;&amp;gt;m;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		a = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; P[s];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;s; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;built_in&quot;&gt;cin&lt;/span&gt;&amp;gt;&amp;gt;a[i].v&amp;gt;&amp;gt;a[i].w;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		sort(a,a+s,cmp); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;s; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(a[i].w&amp;lt;=m)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				sum = sum + a[i].v*a[i].w;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				m = m - a[i].w;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				sum= sum + m*a[i].v;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//提前结束循环&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;sum&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt; a;sum = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//释放空间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;收获&quot;&gt;&lt;a href=&quot;#收获&quot; class=&quot;headerlink&quot; title=&quot;收获&quot;&gt;&lt;/a&gt;收获&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;这是个经典的背包问题，用贪心法就可以了。&lt;/li&gt;
-&lt;li&gt;也学会了用结构体加上sort的cmp条件，实现了对一组数据排序时，顺便把对应的另一组数据也排了。之前&lt;a href=&quot;http://gcusky.com/2016/03/16/acm-7/&quot; title=&quot;会场安排问题&quot;&gt;会场安排问题&lt;/a&gt;还是用两组数组分别来排的Orz。&lt;/li&gt;
+&lt;li&gt;也学会了用结构体加上sort的cmp条件，实现了对一组数据排序时，顺便把对应的另一组数据也排了。之前&lt;a href=&quot;http://gcusky.com/2016/03/16/acm-7/&quot; title=&quot;会场安排问题&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;会场安排问题&lt;/a&gt;还是用两组数组分别来排的Orz。&lt;/li&gt;
 &lt;/ol&gt;
 </content>
     
@@ -378,19 +378,19 @@
     
     </summary>
     
-      <category term="ACM" scheme="http://gcusky.com/categories/ACM/"/>
+      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
-      <category term="贪心算法" scheme="http://gcusky.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+      <category term="贪心算法" scheme="http://www.gcusky.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>【C++】 会场安排问题</title>
-    <link href="http://gcusky.com/2016/03/16/acm-7/"/>
-    <id>http://gcusky.com/2016/03/16/acm-7/</id>
+    <link href="http://www.gcusky.com/2016/03/16/acm-7/"/>
+    <id>http://www.gcusky.com/2016/03/16/acm-7/</id>
     <published>2016-03-16T08:13:37.000Z</published>
     <updated>2016-03-18T04:05:56.340Z</updated>
     
@@ -425,9 +425,9 @@
 &lt;li&gt;主要是排序问题，一开始冒泡排序直接爆时间TimeLimitExceeded，并且上面的排序还可以再优化。&lt;/li&gt;
 &lt;li&gt;本来打算用STL的multimap，毕竟键值对应，但不熟练语言特性算了Orz。&lt;/li&gt;
 &lt;li&gt;后来想用类来实现，不过要对类内数据关联排序，后面有时间再实践这里总结出的问题吧。&lt;/li&gt;
-&lt;li&gt;【2016-3-16更新】&lt;a href=&quot;http://gcusky.com/2016/03/16/acm-7/&quot; title=&quot;背包问题&quot;&gt;背包问题&lt;/a&gt;里利用了结构体加上sort的cmp条件实现关联排序了。&lt;/li&gt;
+&lt;li&gt;【2016-3-16更新】&lt;a href=&quot;http://gcusky.com/2016/03/16/acm-7/&quot; title=&quot;背包问题&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;背包问题&lt;/a&gt;里利用了结构体加上sort的cmp条件实现关联排序了。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_59fabe0301010732.html&quot; title=&quot;map、multimaps函数&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;map、multimaps函数 – Canny&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000000602053&quot; title=&quot;初探STL之关联容器&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;初探STL之关联容器&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.dewen.net.cn/q/10725&quot; title=&quot;STL中的sort&amp;#40;&amp;#41;函数对一个数组排序要求保持对应关系&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;STL中的sort()函数对一个数组排序要求保持对应关系&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://gcusky.com/2016/03/16/acm-7/&quot; title=&quot;背包问题&quot;&gt;算法设计与分析（第2版）&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_59fabe0301010732.html&quot; title=&quot;map、multimaps函数&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;map、multimaps函数 – Canny&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000000602053&quot; title=&quot;初探STL之关联容器&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;初探STL之关联容器&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.dewen.net.cn/q/10725&quot; title=&quot;STL中的sort&amp;#40;&amp;#41;函数对一个数组排序要求保持对应关系&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;STL中的sort()函数对一个数组排序要求保持对应关系&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://gcusky.com/2016/03/16/acm-7/&quot; title=&quot;背包问题&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;算法设计与分析（第2版）&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -438,19 +438,19 @@
     
     </summary>
     
-      <category term="ACM" scheme="http://gcusky.com/categories/ACM/"/>
+      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
-      <category term="贪心算法" scheme="http://gcusky.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+      <category term="贪心算法" scheme="http://www.gcusky.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>【C++】 阶乘之和</title>
-    <link href="http://gcusky.com/2016/03/16/acm-6/"/>
-    <id>http://gcusky.com/2016/03/16/acm-6/</id>
+    <link href="http://www.gcusky.com/2016/03/16/acm-6/"/>
+    <id>http://www.gcusky.com/2016/03/16/acm-6/</id>
     <published>2016-03-16T03:15:30.000Z</published>
     <updated>2016-03-18T04:04:42.278Z</updated>
     
@@ -487,19 +487,19 @@
     
     </summary>
     
-      <category term="ACM" scheme="http://gcusky.com/categories/ACM/"/>
+      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
-      <category term="贪心算法" scheme="http://gcusky.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+      <category term="贪心算法" scheme="http://www.gcusky.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>【C++】 过河问题</title>
-    <link href="http://gcusky.com/2016/03/15/acm-5/"/>
-    <id>http://gcusky.com/2016/03/15/acm-5/</id>
+    <link href="http://www.gcusky.com/2016/03/15/acm-5/"/>
+    <id>http://www.gcusky.com/2016/03/15/acm-5/</id>
     <published>2016-03-15T12:26:19.000Z</published>
     <updated>2016-03-18T04:04:05.113Z</updated>
     
@@ -552,19 +552,19 @@
     
     </summary>
     
-      <category term="ACM" scheme="http://gcusky.com/categories/ACM/"/>
+      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
-      <category term="贪心算法" scheme="http://gcusky.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+      <category term="贪心算法" scheme="http://www.gcusky.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>【C++】 素数求和问题</title>
-    <link href="http://gcusky.com/2016/03/15/acm-3/"/>
-    <id>http://gcusky.com/2016/03/15/acm-3/</id>
+    <link href="http://www.gcusky.com/2016/03/15/acm-3/"/>
+    <id>http://www.gcusky.com/2016/03/15/acm-3/</id>
     <published>2016-03-15T09:52:16.000Z</published>
     <updated>2016-03-18T04:03:39.242Z</updated>
     
@@ -602,21 +602,21 @@
     
     </summary>
     
-      <category term="ACM" scheme="http://gcusky.com/categories/ACM/"/>
+      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
-      <category term="数学" scheme="http://gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>【C++】 蛇形填数</title>
-    <link href="http://gcusky.com/2016/03/15/acm-4/"/>
-    <id>http://gcusky.com/2016/03/15/acm-4/</id>
+    <link href="http://www.gcusky.com/2016/03/15/acm-4/"/>
+    <id>http://www.gcusky.com/2016/03/15/acm-4/</id>
     <published>2016-03-15T08:38:03.000Z</published>
     <updated>2016-03-18T03:09:42.031Z</updated>
     
@@ -652,21 +652,21 @@
     
     </summary>
     
-      <category term="ACM" scheme="http://gcusky.com/categories/ACM/"/>
+      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
-      <category term="分治法" scheme="http://gcusky.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+      <category term="分治法" scheme="http://www.gcusky.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>【C++】 奇偶数分离</title>
-    <link href="http://gcusky.com/2016/03/15/acm-2/"/>
-    <id>http://gcusky.com/2016/03/15/acm-2/</id>
+    <link href="http://www.gcusky.com/2016/03/15/acm-2/"/>
+    <id>http://www.gcusky.com/2016/03/15/acm-2/</id>
     <published>2016-03-15T08:29:58.000Z</published>
     <updated>2016-03-18T03:07:22.865Z</updated>
     
@@ -707,19 +707,19 @@
     
     </summary>
     
-      <category term="ACM" scheme="http://gcusky.com/categories/ACM/"/>
+      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>【C++】 ASCII码排序</title>
-    <link href="http://gcusky.com/2016/03/15/acm-1/"/>
-    <id>http://gcusky.com/2016/03/15/acm-1/</id>
+    <link href="http://www.gcusky.com/2016/03/15/acm-1/"/>
+    <id>http://www.gcusky.com/2016/03/15/acm-1/</id>
     <published>2016-03-15T08:20:48.000Z</published>
     <updated>2016-03-18T03:05:17.880Z</updated>
     
@@ -761,21 +761,21 @@
     
     </summary>
     
-      <category term="ACM" scheme="http://gcusky.com/categories/ACM/"/>
+      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="STL练习" scheme="http://gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
+      <category term="STL练习" scheme="http://www.gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>【C++】 Fibonacci数</title>
-    <link href="http://gcusky.com/2016/03/14/acm/"/>
-    <id>http://gcusky.com/2016/03/14/acm/</id>
+    <link href="http://www.gcusky.com/2016/03/14/acm/"/>
+    <id>http://www.gcusky.com/2016/03/14/acm/</id>
     <published>2016-03-14T08:14:32.000Z</published>
     <updated>2016-03-18T04:08:55.535Z</updated>
     
@@ -813,19 +813,19 @@
     
     </summary>
     
-      <category term="ACM" scheme="http://gcusky.com/categories/ACM/"/>
+      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="C++" scheme="http://gcusky.com/tags/C/"/>
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>test-of-latex【机器学习week1-2】</title>
-    <link href="http://gcusky.com/2016/02/05/test-of-latex/"/>
-    <id>http://gcusky.com/2016/02/05/test-of-latex/</id>
+    <link href="http://www.gcusky.com/2016/02/05/test-of-latex/"/>
+    <id>http://www.gcusky.com/2016/02/05/test-of-latex/</id>
     <published>2016-02-05T03:53:06.000Z</published>
     <updated>2016-03-14T02:25:48.645Z</updated>
     
@@ -925,17 +925,17 @@
     
     </summary>
     
-      <category term="test" scheme="http://gcusky.com/categories/test/"/>
+      <category term="test" scheme="http://www.gcusky.com/categories/test/"/>
     
     
-      <category term="machinelearning" scheme="http://gcusky.com/tags/machinelearning/"/>
+      <category term="machinelearning" scheme="http://www.gcusky.com/tags/machinelearning/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 基本配置</title>
-    <link href="http://gcusky.com/2016/02/02/learn-hexo/"/>
-    <id>http://gcusky.com/2016/02/02/learn-hexo/</id>
+    <link href="http://www.gcusky.com/2016/02/02/learn-hexo/"/>
+    <id>http://www.gcusky.com/2016/02/02/learn-hexo/</id>
     <published>2016-02-02T14:10:24.000Z</published>
     <updated>2016-02-03T07:25:06.036Z</updated>
     
@@ -1252,17 +1252,17 @@
     
     </summary>
     
-      <category term="hexo" scheme="http://gcusky.com/categories/hexo/"/>
+      <category term="hexo" scheme="http://www.gcusky.com/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://gcusky.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://www.gcusky.com/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>邓小平文选 第三卷 P363 思考：思维导图</title>
-    <link href="http://gcusky.com/2015/11/18/deng363/"/>
-    <id>http://gcusky.com/2015/11/18/deng363/</id>
+    <link href="http://www.gcusky.com/2015/11/18/deng363/"/>
+    <id>http://www.gcusky.com/2015/11/18/deng363/</id>
     <published>2015-11-18T13:26:11.000Z</published>
     <updated>2016-03-20T13:50:39.835Z</updated>
     
@@ -1278,19 +1278,19 @@
     
     </summary>
     
-      <category term="期刊阅览室" scheme="http://gcusky.com/categories/%E6%9C%9F%E5%88%8A%E9%98%85%E8%A7%88%E5%AE%A4/"/>
+      <category term="期刊阅览室" scheme="http://www.gcusky.com/categories/%E6%9C%9F%E5%88%8A%E9%98%85%E8%A7%88%E5%AE%A4/"/>
     
     
-      <category term="思维导图" scheme="http://gcusky.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
+      <category term="思维导图" scheme="http://www.gcusky.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
     
-      <category term="读书笔记" scheme="http://gcusky.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://www.gcusky.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>《再思毛泽东：毛泽东思想的探索》思维导图</title>
-    <link href="http://gcusky.com/2015/09/22/rethinking-mao/"/>
-    <id>http://gcusky.com/2015/09/22/rethinking-mao/</id>
+    <link href="http://www.gcusky.com/2015/09/22/rethinking-mao/"/>
+    <id>http://www.gcusky.com/2015/09/22/rethinking-mao/</id>
     <published>2015-09-22T06:34:45.000Z</published>
     <updated>2016-03-20T13:50:27.037Z</updated>
     
@@ -1306,19 +1306,19 @@
     
     </summary>
     
-      <category term="期刊阅览室" scheme="http://gcusky.com/categories/%E6%9C%9F%E5%88%8A%E9%98%85%E8%A7%88%E5%AE%A4/"/>
+      <category term="期刊阅览室" scheme="http://www.gcusky.com/categories/%E6%9C%9F%E5%88%8A%E9%98%85%E8%A7%88%E5%AE%A4/"/>
     
     
-      <category term="思维导图" scheme="http://gcusky.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
+      <category term="思维导图" scheme="http://www.gcusky.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
     
-      <category term="读书笔记" scheme="http://gcusky.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://www.gcusky.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>二分法求解非线性方程</title>
-    <link href="http://gcusky.com/2015/08/23/dichotomie/"/>
-    <id>http://gcusky.com/2015/08/23/dichotomie/</id>
+    <link href="http://www.gcusky.com/2015/08/23/dichotomie/"/>
+    <id>http://www.gcusky.com/2015/08/23/dichotomie/</id>
     <published>2015-08-23T11:30:56.000Z</published>
     <updated>2016-03-25T02:54:04.000Z</updated>
     
@@ -1338,16 +1338,16 @@
     
     </summary>
     
-      <category term="MATLAB" scheme="http://gcusky.com/categories/MATLAB/"/>
+      <category term="MATLAB" scheme="http://www.gcusky.com/categories/MATLAB/"/>
     
     
-      <category term="MATLAB" scheme="http://gcusky.com/tags/MATLAB/"/>
+      <category term="MATLAB" scheme="http://www.gcusky.com/tags/MATLAB/"/>
     
-      <category term="二分法" scheme="http://gcusky.com/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
+      <category term="二分法" scheme="http://www.gcusky.com/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
     
-      <category term="非线性方程" scheme="http://gcusky.com/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B/"/>
+      <category term="非线性方程" scheme="http://www.gcusky.com/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B/"/>
     
-      <category term="数值法" scheme="http://gcusky.com/tags/%E6%95%B0%E5%80%BC%E6%B3%95/"/>
+      <category term="数值法" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%80%BC%E6%B3%95/"/>
     
   </entry>
   
