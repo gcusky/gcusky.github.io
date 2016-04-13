@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.gcusky.com/about/index.html</loc>
+    
+    <lastmod>2016-04-13T13:40:00.204Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.gcusky.com/2016/02/02/learn-hexo/</loc>
     
     <lastmod>2016-04-13T13:37:29.092Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://www.gcusky.com/2015/03/15/hello-world/</loc>
     
     <lastmod>2016-04-13T12:15:19.614Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.gcusky.com/about/index.html</loc>
-    
-    <lastmod>2016-03-29T05:14:13.214Z</lastmod>
     
   </url>
   
