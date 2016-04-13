@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.gcusky.com/2015/03/15/hello-world/</loc>
+    
+    <lastmod>2016-04-13T12:15:19.614Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.gcusky.com/2015/02/02/learn-hexo/</loc>
+    
+    <lastmod>2016-04-13T12:14:08.089Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.gcusky.com/2015/03/22/jp/</loc>
     
     <lastmod>2016-04-11T11:24:19.798Z</lastmod>
@@ -149,13 +163,6 @@
   </url>
   
   <url>
-    <loc>http://www.gcusky.com/2016/02/02/learn-hexo/</loc>
-    
-    <lastmod>2016-02-03T07:25:06.036Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.gcusky.com/tags/index.html</loc>
     
     <lastmod>2016-02-02T14:52:39.412Z</lastmod>
@@ -166,13 +173,6 @@
     <loc>http://www.gcusky.com//404.html</loc>
     
     <lastmod>2016-02-02T14:32:19.483Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.gcusky.com/2016/03/25/hello-world/</loc>
-    
-    <lastmod>2016-02-02T14:19:35.706Z</lastmod>
     
   </url>
   
