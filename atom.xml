@@ -785,7 +785,7 @@
     <link href="http://www.gcusky.com/2016/02/02/learn-hexo/"/>
     <id>http://www.gcusky.com/2016/02/02/learn-hexo/</id>
     <published>2016-02-02T14:10:24.000Z</published>
-    <updated>2016-04-13T12:17:59.349Z</updated>
+    <updated>2016-04-13T13:37:29.092Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Hexo全局基础配置&quot;&gt;&lt;a href=&quot;#Hexo全局基础配置&quot; class=&quot;headerlink&quot; title=&quot;Hexo全局基础配置&quot;&gt;&lt;/a&gt;Hexo全局基础配置&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;用文本编辑器修改 _config.yml 这个文件，大致如下，只需要自动修改几个其他保持默认即可。&lt;br&gt;通常需要修改站点名称/URL 格式/归档设置/Disqus 评论用户名/部署配置，这几项就可以了，注意冒号后面都要添加一个半角空格，之后才是设置参数。&lt;br&gt;自定义域名设置在 source 文件夹下面新建 CNAME 文件，里面写入你的自定义域名，并设置你的 dns 配置 cname 方式到服务器供应商给出的地址即可。&lt;/p&gt;
@@ -1072,6 +1072,13 @@
 &lt;p&gt;GitHub Pages 服务分支在 master&lt;br&gt;GitCafe Pages 服务分支在 gitcafe-pages&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【2016/04/13更新】gitcafe整体被coding收购，按照下面两篇文章来在coding上搭建hexo，感觉比gitcafe稳定&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000002900848&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;在 Coding 上搭建 Hexo 个人博客！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://tengj.top/2016/03/06/hexo%E5%B9%B2%E8%B4%A7%E7%B3%BB%E5%88%97%EF%BC%9A%EF%BC%88%E5%9B%9B%EF%BC%89%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%97%B6%E6%89%98%E7%AE%A1%E5%88%B0github%E5%92%8Ccoding/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo干货系列：（四）将hexo博客同时托管到github和coding&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&quot;域名绑定&quot;&gt;&lt;a href=&quot;#域名绑定&quot; class=&quot;headerlink&quot; title=&quot;域名绑定&quot;&gt;&lt;/a&gt;域名绑定&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;在source文件夹里创建CNAME文件，里面添加你的域名信息：yoursite.com（注意前面不添加http://）&lt;/li&gt;
 &lt;li&gt;域名解析网站，添加域名，添加记录【国内解析到 GitCafe ，默认解析到 GitHub 】&lt;br&gt;&lt;img src=&quot;http://cloud.gcusky.com/hexo/domain.png&quot; alt=&quot;domain&quot;&gt;&lt;/li&gt;
