@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-04-14T14:34:18.025Z</updated>
+  <updated>2016-04-14T14:36:45.735Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.gcusky.com/2016/04/14/life/"/>
     <id>http://www.gcusky.com/2016/04/14/life/</id>
     <published>2016-04-14T14:25:28.000Z</published>
-    <updated>2016-04-14T14:34:18.025Z</updated>
+    <updated>2016-04-14T14:36:45.735Z</updated>
     
     <content type="html">&lt;p&gt;今晚，刷着ZOJ。却突然有感而发，暂缓吧，给自己个总结。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -36,8 +36,8 @@
 &lt;/blockquote&gt;
 &lt;p&gt;大一之前高考成绩出来时，知道自己错了，本来打算走3A再专插本的路线。&lt;br&gt;但父母最后决定让我上2B。&lt;br&gt;那时暑假，除了每天8、9甚至12个小时的暑假工，余下时间都在自学与规划。&lt;/p&gt;
 &lt;p&gt;进入大学坚持做了2年勤工，加入技术为主的星空，且找准了自己的定位，做了几个总要的决定：&lt;br&gt;&lt;strong&gt;第一个重要决定&lt;/strong&gt;：从机械工程转到软件工程。&lt;br&gt;&lt;strong&gt;第二个重要决定&lt;/strong&gt;：在coursera等MOOC平台上自学，发现了更广阔的世界。&lt;br&gt;&lt;strong&gt;第三个重要决定&lt;/strong&gt;：参加数学建模竞赛，因此认识了一群伙伴，几乎整个学院的12、13级都由我们撑起来的感觉Orz……&lt;/p&gt;
-&lt;p&gt;大学三年来，也不是没有迷茫过。也做错过很多事，并一味地道歉、逃避&lt;br&gt;。好在后面都反思清楚、想清楚，并存活至今。&lt;br&gt;且做了&lt;strong&gt;第四个重要的决定&lt;/strong&gt;：&lt;code&gt;考研&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;虽然在校内顺风顺水的感觉，但其实出去还是很水。各种比赛出校就发现自己仅有的水平。&lt;br&gt;MOOC自学时发现优秀的人更加优秀，以及学校、平台所带来的眼界问题。&lt;br&gt;以前没有意识到，现在教育程度和视野眼界其实真的可以划上正比。&lt;br&gt;人比人真的会气死人，接触了两种极端的人，自然而然地非常想向好的那方面靠拢。&lt;br&gt;往前走往上走，离开了就不想再回去，看见更广阔的世界就不想再回去。&lt;/p&gt;
+&lt;p&gt;大学三年来，也不是没有迷茫过。也做错过很多事，并一味地道歉、逃避。&lt;br&gt;好在后面都反思清楚、想清楚，并存活至今，且做了&lt;strong&gt;第四个重要的决定&lt;/strong&gt;：&lt;code&gt;考研&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;虽然在校内顺风顺水的感觉，但其实出去还是很水。各种比赛出校就发现自己仅有的水平。&lt;br&gt;MOOC自学时发现优秀的人更加优秀，以及学校、平台所带来的眼界问题。&lt;br&gt;以前没有意识到，现在教育程度和视野眼界其实真的可以划上正比。&lt;br&gt;接触了两种极端的人，自然而然地非常想向好的那方面靠拢。&lt;br&gt;往前走往上走，离开了就不想再回去，看见更广阔的世界就不想再回去。&lt;/p&gt;
 &lt;p&gt;在真正下决心之前投了几个大厂的简历都过筛选了，但后面的笔试和面试还是全部放下了。&lt;br&gt;毕竟在这种环境里生存了这么久，要简简单单地断断续续地后面再复习考研，幻想一蹴而就，不是那么容易的事。&lt;/p&gt;
 &lt;p&gt;端正态度，分清战略与战术的区别。&lt;br&gt;同时想清楚自己不是为了考研而考研。&lt;br&gt;学英语的好处不用多说。&lt;br&gt;而数学的话可以为后面学机器学习相关理论打下数理基础。&lt;br&gt;嗯，开心就好~&lt;br&gt;以后优先考虑在广东发展，有目标的感觉真好：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -499,9 +499,9 @@
     
       <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
-    
       <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
   </entry>
   
@@ -658,9 +658,9 @@
     
       <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="STL练习" scheme="http://www.gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
+    
+      <category term="STL练习" scheme="http://www.gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
