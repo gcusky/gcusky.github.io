@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-04-13T13:28:12.248Z</updated>
+  <updated>2016-04-14T14:27:31.071Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>花开不败</title>
+    <link href="http://www.gcusky.com/2016/04/14/life/"/>
+    <id>http://www.gcusky.com/2016/04/14/life/</id>
+    <published>2016-04-14T14:25:28.000Z</published>
+    <updated>2016-04-14T14:27:31.071Z</updated>
+    
+    <content type="html">&lt;p&gt;今晚，刷着ZOJ。却突然有感而发，暂缓吧，给自己个总结。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;因为上年在校内ACM得了一等奖，今年被拉去参加ACM省赛，本来不想去的，也少了一队友（他准备考金融硕士），可另一个队友想去，就拉了一个人。但说实在的，机会不大，毕竟……我的重心也放在考研上。&lt;/p&gt;
+&lt;p&gt;上大学至今，做了几个重要的决定：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加入校级组织-星空&lt;/li&gt;
+&lt;li&gt;转专业&lt;/li&gt;
+&lt;li&gt;MOOC自学&lt;/li&gt;
+&lt;li&gt;参加数学建模&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大一进学校之前，知道自己错了，本来打算走3A再专插本的路线。但父母最后决定让我上2B。那时暑假，除了每天8、9甚至12个小时的暑假工，余下时间都在自学与规划。&lt;/p&gt;
+&lt;p&gt;进入大学坚持做了2年勤工，加入技术为主的星空，且找准了自己的定位，做了几个总要的决定&lt;br&gt;&lt;strong&gt;第一个重要决定&lt;/strong&gt;：从机械工程转到软件工程。&lt;br&gt;&lt;strong&gt;第二个重要决定&lt;/strong&gt;：在coursera等MOOC平台上自学，发现了更广阔的世界。&lt;br&gt;&lt;strong&gt;第三个重要决定&lt;/strong&gt;：参加数学建模竞赛，因此认识了一群伙伴，几乎整个学院的12、13级都由我们撑起来的感觉Orz……&lt;/p&gt;
+&lt;p&gt;大学三年来，也不是没有迷茫过。也做错过很多事，并一味地道歉、逃避。好在后面都反思清楚、想清楚，并存活至今，且做了&lt;strong&gt;第四个重要的决定&lt;/strong&gt;：&lt;code&gt;考研&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;虽然在校内顺风顺水的感觉，但其实出去还是很水。各种比赛出校就发现自己仅有的水平；MOOC自学时发现优秀的人更加优秀，以及学校、平台所带来的眼界问题。以前没有意识到，现在教育程度和视野眼界其实真的可以划上正比。人比人真的会气死人，接触了两种极端的人，自然而然地非常想向好的那方面靠拢。往前走往上走，离开了就不想再回去，看见更广阔的世界就不想再回去。&lt;/p&gt;
+&lt;p&gt;在真正下决心之前投了几个大厂的简历都过筛选了，但后面的笔试和面试还是全部放下了。毕竟在这种环境里生存了这么久，要简简单单地断断续续地后面再复习考研，幻想一蹴而就，不是那么容易的事。&lt;/p&gt;
+&lt;p&gt;端正态度，分清战略与战术的区别。同时想清楚自己不是为了考研而考研，学英语的好处不用多说，而数学的话可以为后面学机器学习相关理论打下数理基础。嗯，开心就好~以后优先考虑在广东发展，有目标的感觉真好：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;中山大学 - 数据科学与计算机学院&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;高考那时喜欢&lt;strong&gt;花开不败&lt;/strong&gt;这短词，现在还是这么喜欢。&lt;br&gt;曾经问自己万般努力只换一日盛开，有何意义？&lt;br&gt;其实，只是为了证明我来过这世上罢了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今晚，刷着ZOJ。却突然有感而发，暂缓吧，给自己个总结。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.gcusky.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>ZOJ入门</title>
@@ -614,9 +656,9 @@
     
       <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
-    
       <category term="STL练习" scheme="http://www.gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
+    
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
   </entry>
   
