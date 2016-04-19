@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-04-19T13:43:31.466Z</updated>
+  <updated>2016-04-19T13:48:03.537Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://www.gcusky.com/2016/04/19/junit-1/"/>
     <id>http://www.gcusky.com/2016/04/19/junit-1/</id>
     <published>2016-04-19T13:40:47.000Z</published>
-    <updated>2016-04-19T13:43:31.466Z</updated>
+    <updated>2016-04-19T13:48:03.537Z</updated>
     
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+    <content type="html">&lt;p&gt;学习了JUnit &lt;strong&gt;参数化测试&lt;/strong&gt;和&lt;strong&gt;打包测试&lt;/strong&gt;两种更高效的方法&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;测试计算圆的面积与周长类&quot;&gt;&lt;a href=&quot;#测试计算圆的面积与周长类&quot; class=&quot;headerlink&quot; title=&quot;测试计算圆的面积与周长类&quot;&gt;&lt;/a&gt;测试计算圆的面积与周长类&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Circle&lt;/code&gt;类中有两个方法：&lt;code&gt;Area1(r)&lt;/code&gt;求圆形面积，&lt;code&gt;Perimeter(r)&lt;/code&gt;求圆形周长。&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Circle&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Area1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; r)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(r&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; r*r*Math.PI;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Perimeter1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; r)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(r&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*r*Math.PI;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;选中&lt;code&gt;Circle.java&lt;/code&gt;，右键，New-&amp;gt;JUnit Test Case.勾选&lt;code&gt;SetUp()&lt;/code&gt; &lt;code&gt;TearDown()&lt;/code&gt;方法，为Area1方法和Perimeter1方法分别写出测试用例。&lt;/p&gt;
@@ -36,8 +37,7 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;测试计算圆的面积与周长类&quot;&gt;&lt;a href=&quot;#测试计算圆的面积与周长类&quot; class=&quot;headerlink&quot; title=&quot;测试计算圆的面积与周长类&quot;&gt;&lt;/a&gt;测试计算圆的面积与周长类&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Circle
+      &lt;p&gt;学习了JUnit &lt;strong&gt;参数化测试&lt;/strong&gt;和&lt;strong&gt;打包测试&lt;/strong&gt;两种更高效的方法&lt;/p&gt;
     
     </summary>
     
@@ -86,7 +86,7 @@
     <link href="http://www.gcusky.com/2016/04/18/acm-11/"/>
     <id>http://www.gcusky.com/2016/04/18/acm-11/</id>
     <published>2016-04-18T12:46:14.000Z</published>
-    <updated>2016-04-18T13:55:30.527Z</updated>
+    <updated>2016-04-19T13:45:27.331Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;题目来源&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;NYOJ 587-blockhouses &lt;a href=&quot;http://acm.nyist.net/JudgeOnline/problem.php?pid=587&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://acm.nyist.net/JudgeOnline/problem.php?pid=587&lt;/a&gt;&lt;br&gt;ZOJ 1002-Fire Net &lt;a href=&quot;http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1002&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1002&lt;/a&gt;&lt;/p&gt;
@@ -131,6 +131,8 @@
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
     
       <category term="ZOJ" scheme="http://www.gcusky.com/tags/ZOJ/"/>
+    
+      <category term="搜索" scheme="http://www.gcusky.com/tags/%E6%90%9C%E7%B4%A2/"/>
     
   </entry>
   
@@ -181,11 +183,11 @@
   </entry>
   
   <entry>
-    <title>ZOJ入门</title>
+    <title>ZOJ 入门</title>
     <link href="http://www.gcusky.com/2016/04/13/acm-10/"/>
     <id>http://www.gcusky.com/2016/04/13/acm-10/</id>
     <published>2016-04-13T13:24:49.000Z</published>
-    <updated>2016-04-18T11:28:35.418Z</updated>
+    <updated>2016-04-19T13:46:45.834Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;ul&gt;
@@ -217,11 +219,11 @@
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="ZOJ" scheme="http://www.gcusky.com/tags/ZOJ/"/>
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
@@ -630,11 +632,11 @@
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
       <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
@@ -682,11 +684,11 @@
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
       <category term="分治法" scheme="http://www.gcusky.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
     
@@ -739,11 +741,11 @@
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
@@ -795,13 +797,13 @@
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
-    
-      <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
       <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
       <category term="STL练习" scheme="http://www.gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
+    
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
+    
+      <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
     
   </entry>
   
@@ -849,11 +851,11 @@
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
