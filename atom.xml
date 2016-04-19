@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-04-18T13:20:02.895Z</updated>
+  <updated>2016-04-19T13:43:31.466Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -16,11 +16,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JUnit初体验</title>
+    <title>JUnit 参数化测试和打包测试</title>
+    <link href="http://www.gcusky.com/2016/04/19/junit-1/"/>
+    <id>http://www.gcusky.com/2016/04/19/junit-1/</id>
+    <published>2016-04-19T13:40:47.000Z</published>
+    <updated>2016-04-19T13:43:31.466Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;测试计算圆的面积与周长类&quot;&gt;&lt;a href=&quot;#测试计算圆的面积与周长类&quot; class=&quot;headerlink&quot; title=&quot;测试计算圆的面积与周长类&quot;&gt;&lt;/a&gt;测试计算圆的面积与周长类&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Circle&lt;/code&gt;类中有两个方法：&lt;code&gt;Area1(r)&lt;/code&gt;求圆形面积，&lt;code&gt;Perimeter(r)&lt;/code&gt;求圆形周长。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Circle&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Area1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; r)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(r&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; r*r*Math.PI;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Perimeter1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; r)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(r&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*r*Math.PI;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;选中&lt;code&gt;Circle.java&lt;/code&gt;，右键，New-&amp;gt;JUnit Test Case.勾选&lt;code&gt;SetUp()&lt;/code&gt; &lt;code&gt;TearDown()&lt;/code&gt;方法，为Area1方法和Perimeter1方法分别写出测试用例。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; org.junit.Assert.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.After;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.Before;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.Test;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CircleTest&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Circle circle = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Circle();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Before&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; Exception &lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@After&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;tearDown&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; Exception &lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;testArea1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		assertEquals(&lt;span class=&quot;number&quot;&gt;12.56&lt;/span&gt;, circle.Area1(&lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;), &lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;testPerimeter1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		assertEquals(&lt;span class=&quot;number&quot;&gt;12.56&lt;/span&gt;, circle.Perimeter1(&lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;), &lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;参数化测试&quot;&gt;&lt;a href=&quot;#参数化测试&quot; class=&quot;headerlink&quot; title=&quot;参数化测试&quot;&gt;&lt;/a&gt;参数化测试&lt;/h2&gt;&lt;p&gt;首先，我们仅测试圆的周长方法&lt;code&gt;Perimeter1(r)&lt;/code&gt;。暂且分三类：正数、0、负数。可以最少同时运行三条测试用例。&lt;code&gt;@RunWith(Parameterized.class)&lt;/code&gt;这条语句就是为这个类指定了一个&lt;code&gt;ParameterizedRunner&lt;/code&gt;。&lt;br&gt;第二步，定义一个待测试的类，并且定义两个变量，一个用于存放参数，一个用于存放期待的结果。&lt;br&gt;接下来，定义测试数据的集合，也就是上述的&lt;code&gt;data()&lt;/code&gt;方法，该方法可以任意命名，但是必须使用&lt;code&gt;@Parameters&lt;/code&gt;标注进行修饰。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; org.junit.Assert.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.util.Arrays;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.util.Collection;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.Test;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.runner.RunWith;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.runners.Parameterized;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.runners.Parameterized.Parameters;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@RunWith&lt;/span&gt;(Parameterized.class)&lt;span class=&quot;comment&quot;&gt;//为下面的参数化类Perimeter1Test指定特殊运行器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Perimeter1Test&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Circle Circle = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Circle();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; param;&lt;span class=&quot;comment&quot;&gt;//参数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; result;&lt;span class=&quot;comment&quot;&gt;//期望值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Parameters&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//参数准备，以@Parameters标识，返回值为Collection类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Collection &lt;span class=&quot;title&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; Arrays.asList(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Object[][]&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;comment&quot;&gt;//在该静态方法中声明所有需要测试的参数对，以数组形式存放&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#123;&lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;12.56&lt;/span&gt;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#123;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#123;-&lt;span class=&quot;number&quot;&gt;2.4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//构造函数，对变量进行初始化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Perimeter1Test&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; param,&lt;span class=&quot;keyword&quot;&gt;double&lt;/span&gt; result)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.param=param;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.result=result;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Test&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;//测试方法，使用前面定义的变量作为参数进行测试&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Perimeter11&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        assertEquals(result,Circle.Perimeter1(param),&lt;span class=&quot;number&quot;&gt;0.11&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;result=&quot;&lt;/span&gt;+Circle.Perimeter1(param));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;打包测试&quot;&gt;&lt;a href=&quot;#打包测试&quot; class=&quot;headerlink&quot; title=&quot;打包测试&quot;&gt;&lt;/a&gt;打包测试&lt;/h2&gt;&lt;p&gt;通过前面的介绍我们可以感觉到，在一个项目中，只写一个测试类是不可能的，我们会写出很多很多个测试类。可是这些测试类必须一个一个的执行，也是比较麻烦的事情。鉴于此，JUnit为我们提供了打包测试的功能，将所有需要运行的测试类集中起来，一次性的运行完毕，大大的方便了我们的测试工作。具体代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.runner.RunWith;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.runners.Suite;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@RunWith&lt;/span&gt;(Suite.class) &lt;span class=&quot;comment&quot;&gt;//@RunWith标注传递一个参数 Suite.class&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Suite&lt;/span&gt;.SuiteClasses(&amp;#123;&lt;span class=&quot;comment&quot;&gt;//@Suite.SuiteClasses，来表明这个类是打包测试类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	CircleTest.class,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Perimeter1Test.class&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AllTests&lt;/span&gt; &lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个功能也需要使用一个特殊的&lt;code&gt;Runner&lt;/code&gt;，因此我们需要向&lt;code&gt;@RunWith&lt;/code&gt;标注传递一个参数&lt;code&gt;Suite.class&lt;/code&gt;。同时，我们还需要另外一个标注&lt;code&gt;@Suite.SuiteClasses&lt;/code&gt;，来表明这个类是一个打包测试类。我们把需要打包的类作为参数传递给该标注就可以了。有了这两个标注之后，就已经完整的表达了所有的含义，因此下面的类已经无关紧要，随便起一个类名，内容全部为空既可。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;测试计算圆的面积与周长类&quot;&gt;&lt;a href=&quot;#测试计算圆的面积与周长类&quot; class=&quot;headerlink&quot; title=&quot;测试计算圆的面积与周长类&quot;&gt;&lt;/a&gt;测试计算圆的面积与周长类&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Circle
+    
+    </summary>
+    
+    
+      <category term="JUnit" scheme="http://www.gcusky.com/tags/JUnit/"/>
+    
+      <category term="软件测试" scheme="http://www.gcusky.com/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="白盒测试" scheme="http://www.gcusky.com/tags/%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JUnit 初体验</title>
     <link href="http://www.gcusky.com/2016/04/18/junit/"/>
     <id>http://www.gcusky.com/2016/04/18/junit/</id>
     <published>2016-04-18T13:18:57.000Z</published>
-    <updated>2016-04-18T13:20:02.895Z</updated>
+    <updated>2016-04-19T13:40:24.371Z</updated>
     
     <content type="html">&lt;p&gt;JUnit是为Java程序开发者实现单元测试提供的一种框架。JUnit的一大主要特点是，它在执行的时候，各个方法之间是相互独立的，一个方法的失败不会导致别的方法失败，方法之间也不存在相互依赖的关系，彼此是相互独立的。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -51,7 +86,7 @@
     <link href="http://www.gcusky.com/2016/04/18/acm-11/"/>
     <id>http://www.gcusky.com/2016/04/18/acm-11/</id>
     <published>2016-04-18T12:46:14.000Z</published>
-    <updated>2016-04-18T12:58:15.908Z</updated>
+    <updated>2016-04-18T13:55:30.527Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;题目来源&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;NYOJ 587-blockhouses &lt;a href=&quot;http://acm.nyist.net/JudgeOnline/problem.php?pid=587&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://acm.nyist.net/JudgeOnline/problem.php?pid=587&lt;/a&gt;&lt;br&gt;ZOJ 1002-Fire Net &lt;a href=&quot;http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1002&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1002&lt;/a&gt;&lt;/p&gt;
@@ -63,6 +98,7 @@
 &lt;p&gt;Here we assume that a bullet is so powerful that it can run across any distance and destroy a blockhouse on its way. On the other hand, a wall is so strongly built that can stop the bullets.&lt;br&gt;在这里，我们假定子弹强大到可以毁灭弹道上任何距离的碉堡。另一方面，墙很坚固，可以阻挡子弹。&lt;/p&gt;
 &lt;p&gt;The goal is to place as many blockhouses in a city as possible so that no two can destroy each other. A configuration of blockhouses is legal provided that no two blockhouses are on the same horizontal row or vertical column in a map unless there is at least one wall separating them. In this problem we will consider small square cities (at most 4x4) that contain walls through which bullets cannot run through.&lt;br&gt;目标是使得城市中尽可能多的碉堡没有办法两两摧毁对方。配置碉堡的规定是：不能有两个碉堡在同一水平或垂直线上，除非至少有一堵墙隔开。在这个问题上我们只考虑小城市广场，最多4x4且含有子弹无法穿过的墙壁。&lt;/p&gt;
 &lt;p&gt;The following image shows five pictures of the same board. The first picture is the empty board, the second and third pictures show legal configurations, and the fourth and fifth pictures show illegal configurations. For this board, the maximum number of blockhouses in a legal configuration is 5; the second picture shows one way to do it, but there are several other ways.&lt;br&gt;下图显示了同一个方块的五张图片。第一张图片是空的，第二和第三张图片是合法配置，而第四和第五张图片为非法配置。在这一大方块中，合法配置的碉堡的最大数目为5。第二张图片展示了一种方式，但也有一些其他的方法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/acm/zoj1002.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Your task is to write a program that, given a description of a map, calculates the maximum number of blockhouses that can be placed in the city in a legal configuration.&lt;br&gt;你的任务是编写一个程序,给定一个地图的描述,计算出最大数量的堡垒,可以放置在一个合法的配置。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;输入&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The input file contains one or more map descriptions, followed by a line containing the number 0 that signals the end of the file. Each map description begins with a line containing a positive integer n that is the size of the city; n will be at most 4. The next n lines each describe one row of the map, with a ‘.’ indicating an open space and an uppercase ‘X’ indicating a wall. There are no spaces in the input file.&lt;br&gt;输入文件包含一个或多个地图描述，最后一行的数字0表示输入结束。每个地图的第一行是一个正整数n，表示城市的规模；n最大为4。接下来的n行每行描述一个排的地图，“.”表示一个开放的空间，一个大写的“X”表示墙。输入文件中没有空格。&lt;/p&gt;
@@ -246,11 +282,11 @@
   </entry>
   
   <entry>
-    <title>【C++】 素数环</title>
+    <title>NYOJ 488-素数环</title>
     <link href="http://www.gcusky.com/2016/03/18/acm-9/"/>
     <id>http://www.gcusky.com/2016/03/18/acm-9/</id>
     <published>2016-03-18T08:20:36.000Z</published>
-    <updated>2016-04-18T11:28:22.719Z</updated>
+    <updated>2016-04-19T11:48:59.788Z</updated>
     
     <content type="html">&lt;p&gt;时间限制：1000 ms  |  内存限制：65535 KB  |  难度：2&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
@@ -320,11 +356,11 @@
   </entry>
   
   <entry>
-    <title>【C++】 背包问题</title>
+    <title>NYOJ 106-背包问题</title>
     <link href="http://www.gcusky.com/2016/03/16/acm-8/"/>
     <id>http://www.gcusky.com/2016/03/16/acm-8/</id>
     <published>2016-03-16T08:14:40.000Z</published>
-    <updated>2016-04-18T11:28:19.436Z</updated>
+    <updated>2016-04-19T11:48:56.003Z</updated>
     
     <content type="html">&lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
@@ -371,11 +407,11 @@
   </entry>
   
   <entry>
-    <title>【C++】 会场安排问题</title>
+    <title>NYOJ 14-会场安排问题</title>
     <link href="http://www.gcusky.com/2016/03/16/acm-7/"/>
     <id>http://www.gcusky.com/2016/03/16/acm-7/</id>
     <published>2016-03-16T08:13:37.000Z</published>
-    <updated>2016-04-18T11:28:15.158Z</updated>
+    <updated>2016-04-19T11:48:52.615Z</updated>
     
     <content type="html">&lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：4&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
@@ -433,11 +469,11 @@
   </entry>
   
   <entry>
-    <title>【C++】 阶乘之和</title>
+    <title>NYOJ 91-阶乘之和</title>
     <link href="http://www.gcusky.com/2016/03/16/acm-6/"/>
     <id>http://www.gcusky.com/2016/03/16/acm-6/</id>
     <published>2016-03-16T03:15:30.000Z</published>
-    <updated>2016-04-18T11:28:11.287Z</updated>
+    <updated>2016-04-19T11:48:48.645Z</updated>
     
     <content type="html">&lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
@@ -484,11 +520,11 @@
   </entry>
   
   <entry>
-    <title>【C++】 过河问题</title>
+    <title>NYOJ 47-过河问题</title>
     <link href="http://www.gcusky.com/2016/03/15/acm-5/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-5/</id>
     <published>2016-03-15T12:26:19.000Z</published>
-    <updated>2016-04-18T11:28:07.878Z</updated>
+    <updated>2016-04-19T11:48:44.861Z</updated>
     
     <content type="html">&lt;p&gt;时间限制：1000 ms  |  内存限制：65535 KB  |  难度：5&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
@@ -551,11 +587,11 @@
   </entry>
   
   <entry>
-    <title>【C++】 素数求和问题</title>
+    <title>NYOJ 22-素数求和问题</title>
     <link href="http://www.gcusky.com/2016/03/15/acm-3/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-3/</id>
     <published>2016-03-15T09:52:16.000Z</published>
-    <updated>2016-04-18T11:28:01.070Z</updated>
+    <updated>2016-04-19T11:48:37.087Z</updated>
     
     <content type="html">&lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：2&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
@@ -605,11 +641,11 @@
   </entry>
   
   <entry>
-    <title>【C++】 蛇形填数</title>
+    <title>NYOJ 33-蛇形填数</title>
     <link href="http://www.gcusky.com/2016/03/15/acm-4/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-4/</id>
     <published>2016-03-15T08:38:03.000Z</published>
-    <updated>2016-04-18T11:28:04.463Z</updated>
+    <updated>2016-04-19T11:48:41.066Z</updated>
     
     <content type="html">&lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
@@ -657,11 +693,11 @@
   </entry>
   
   <entry>
-    <title>【C++】 奇偶数分离</title>
+    <title>NYOJ 11-奇偶数分离</title>
     <link href="http://www.gcusky.com/2016/03/15/acm-2/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-2/</id>
     <published>2016-03-15T08:29:58.000Z</published>
-    <updated>2016-04-18T11:27:56.868Z</updated>
+    <updated>2016-04-19T11:48:32.119Z</updated>
     
     <content type="html">&lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：1&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
@@ -712,11 +748,11 @@
   </entry>
   
   <entry>
-    <title>【C++】 ASCII码排序</title>
+    <title>NYOJ 4-ASCII码排序</title>
     <link href="http://www.gcusky.com/2016/03/15/acm-1/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-1/</id>
     <published>2016-03-15T08:20:48.000Z</published>
-    <updated>2016-04-18T11:27:46.324Z</updated>
+    <updated>2016-04-19T11:48:24.255Z</updated>
     
     <content type="html">&lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：2&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
@@ -1318,42 +1354,6 @@
       <category term="思维导图" scheme="http://www.gcusky.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
     
       <category term="读书笔记" scheme="http://www.gcusky.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二分法求解非线性方程</title>
-    <link href="http://www.gcusky.com/2015/08/23/matlab/"/>
-    <id>http://www.gcusky.com/2015/08/23/matlab/</id>
-    <published>2015-08-23T11:30:56.000Z</published>
-    <updated>2016-04-13T14:03:58.599Z</updated>
-    
-    <content type="html">&lt;p&gt;　　在所有数值方法中，二分法是求解非线性方程最直观、最简单的方法。二分法是以连续函数的介值定理为基础建立的。由介值定理可知，如果函数$f(x)$在区间$[a,b]$上连续，同时$f(a)f(b)&lt;0$，即$f(a)$和$f(b)$符号相反，那么$f(x)$在区间$[a,b]$内一定有实根。 &lt;a=&quot;&quot; id=&quot;more&quot;&gt;&lt;/0$，即$f(a)$和$f(b)$符号相反，那么$f(x)$在区间$[a,b]$内一定有实根。&gt;&lt;/p&gt;
-&lt;h1 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h1&gt;&lt;p&gt;　　二分法的基本思想为：用对分区间的思路根据分点处函数$f(x)$的符号逐步将有限区间缩小使在足够小的区间内，分点与理论上的根之间距离足够小，继而用分点的值近似理论上的根。&lt;/p&gt;
-&lt;h1 id=&quot;函数ditomy-m&quot;&gt;&lt;a href=&quot;#函数ditomy-m&quot; class=&quot;headerlink&quot; title=&quot;函数ditomy.m&quot;&gt;&lt;/a&gt;函数ditomy.m&lt;/h1&gt;&lt;figure class=&quot;highlight matlab&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;[x0,fval]&lt;/span&gt; = &lt;span class=&quot;title&quot;&gt;ditomy&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(fun,a,b,D)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%ditomy.m函数为二分法求解非线性方程&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fa = feval(fun,a);    &lt;span class=&quot;comment&quot;&gt;%计算a点函数值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fb = feval(fun,b);    &lt;span class=&quot;comment&quot;&gt;%计算b点函数值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; fa*fb &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    error(&lt;span class=&quot;string&quot;&gt;&#39;此方程无解&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; nargin &amp;lt; &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;;    &lt;span class=&quot;comment&quot;&gt;%检查输入参数个数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    error(&lt;span class=&quot;string&quot;&gt;&#39;a与b将被重定义&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;elseif&lt;/span&gt; nargin == &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    D = &lt;span class=&quot;number&quot;&gt;1e-6&lt;/span&gt;;    &lt;span class=&quot;comment&quot;&gt;%设置D的缺省值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; fa == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;    &lt;span class=&quot;comment&quot;&gt;%检查a点函数值是否为0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    m = a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fm = fa;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;elseif&lt;/span&gt; fb == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;    &lt;span class=&quot;comment&quot;&gt;%检查b点函数值是否为0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    m = b;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fm = fb;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;abs&lt;/span&gt;(b-a) &amp;gt; D;    &lt;span class=&quot;comment&quot;&gt;%控制二分法结束条件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        m = [a+b]/&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;    &lt;span class=&quot;comment&quot;&gt;%二分区间端点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fm = feval(fun,m);    &lt;span class=&quot;comment&quot;&gt;%计算中点的函数值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; fa*fm &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;    &lt;span class=&quot;comment&quot;&gt;%条件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            a = m;    &lt;span class=&quot;comment&quot;&gt;%端点更新&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            fa = fm;    &lt;span class=&quot;comment&quot;&gt;%端点函数更新&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;elseif&lt;/span&gt; fb*fm &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;    &lt;span class=&quot;comment&quot;&gt;%条件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            b = m;    &lt;span class=&quot;comment&quot;&gt;%端点更新&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            fb = fm;    &lt;span class=&quot;comment&quot;&gt;%端点函数更新&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;x0 = m;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; nargout == &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fval = fm;    &lt;span class=&quot;comment&quot;&gt;%根据输出个数赋值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;举个栗子&quot;&gt;&lt;a href=&quot;#举个栗子&quot; class=&quot;headerlink&quot; title=&quot;举个栗子&quot;&gt;&lt;/a&gt;举个栗子&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;用二分法求方程$f(x)=x^3cos(x)+2x^3-2sinx$在区间$[1,3]$内的根。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight matlab&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%非线性方程的m文件fun.m&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;f&lt;/span&gt; = &lt;span class=&quot;title&quot;&gt;fun&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(x)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f = x^&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;*&lt;span class=&quot;built_in&quot;&gt;cos&lt;/span&gt;(x)+&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*x^&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-2&lt;/span&gt;&lt;span class=&quot;built_in&quot;&gt;sin&lt;/span&gt;(x);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%调用编写的二分函数求解非线性方程&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[x0,fval] = ditomy(&lt;span class=&quot;string&quot;&gt;&#39;fun&#39;&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%运行结果&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%x0 = 2.3978&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%fval = -4.1724e-06&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;　　&lt;br&gt;参考资料&lt;br&gt;&lt;a href=&quot;http://item.jd.com/11544215.html&quot; title=&quot;京东&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MATLABR2013a求解数学问题&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;　　在所有数值方法中，二分法是求解非线性方程最直观、最简单的方法。二分法是以连续函数的介值定理为基础建立的。由介值定理可知，如果函数$f(x)$在区间$[a,b]$上连续，同时$f(a)f(b)&lt;0$，即$f(a)$和$f(b)$符号相反，那么$f(x)$在区间$[a,b]$内一定有实根。
-    
-    </summary>
-    
-      <category term="MATLAB" scheme="http://www.gcusky.com/categories/MATLAB/"/>
-    
-    
-      <category term="MATLAB" scheme="http://www.gcusky.com/tags/MATLAB/"/>
-    
-      <category term="二分法" scheme="http://www.gcusky.com/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
-    
-      <category term="非线性方程" scheme="http://www.gcusky.com/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B/"/>
-    
-      <category term="数值法" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%80%BC%E6%B3%95/"/>
     
   </entry>
   
