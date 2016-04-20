@@ -86,7 +86,7 @@
     <link href="http://www.gcusky.com/2016/04/18/acm-11/"/>
     <id>http://www.gcusky.com/2016/04/18/acm-11/</id>
     <published>2016-04-18T12:46:14.000Z</published>
-    <updated>2016-04-19T13:45:27.331Z</updated>
+    <updated>2016-04-20T04:46:16.458Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;题目来源&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;NYOJ 587-blockhouses &lt;a href=&quot;http://acm.nyist.net/JudgeOnline/problem.php?pid=587&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://acm.nyist.net/JudgeOnline/problem.php?pid=587&lt;/a&gt;&lt;br&gt;ZOJ 1002-Fire Net &lt;a href=&quot;http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1002&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1002&lt;/a&gt;&lt;/p&gt;
@@ -105,11 +105,11 @@
 &lt;p&gt;&lt;strong&gt;输出&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;For each test case, output one line containing the maximum number of blockhouses that can be placed in the city in a legal configuration.&lt;br&gt;对于每一个测试案例，输出一行包含碉堡可以放置在该市的合法配置的最大数量。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;样例输入&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.X..&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;....&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;XX..&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;....&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;XX&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.X.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X.X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.X.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.XX&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.XX&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;....&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;....&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;....&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;....&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;.X..&lt;br&gt;….&lt;br&gt;XX..&lt;br&gt;….&lt;br&gt;2&lt;br&gt;XX&lt;br&gt;.X&lt;br&gt;3&lt;br&gt;.X.&lt;br&gt;X.X&lt;br&gt;.X.&lt;br&gt;3&lt;br&gt;…&lt;br&gt;.XX&lt;br&gt;.XX&lt;br&gt;4&lt;br&gt;….&lt;br&gt;….&lt;br&gt;….&lt;br&gt;….&lt;br&gt;0&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;样例输出&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;5&lt;br&gt;1&lt;br&gt;5&lt;br&gt;2&lt;br&gt;4&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;5
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;1&lt;br&gt;5&lt;br&gt;2&lt;br&gt;4&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;自己翻译，水平有限……&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&quot;算法思路&quot;&gt;&lt;a href=&quot;#算法思路&quot; class=&quot;headerlink&quot; title=&quot;算法思路&quot;&gt;&lt;/a&gt;算法思路&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;典型的广搜思路，与八皇后非常类似，DFS试一下，ac了……&lt;/li&gt;
