@@ -86,7 +86,7 @@
     <link href="http://www.gcusky.com/2016/04/18/acm-11/"/>
     <id>http://www.gcusky.com/2016/04/18/acm-11/</id>
     <published>2016-04-18T12:46:14.000Z</published>
-    <updated>2016-04-20T04:46:16.458Z</updated>
+    <updated>2016-04-20T04:57:25.847Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;题目来源&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;NYOJ 587-blockhouses &lt;a href=&quot;http://acm.nyist.net/JudgeOnline/problem.php?pid=587&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://acm.nyist.net/JudgeOnline/problem.php?pid=587&lt;/a&gt;&lt;br&gt;ZOJ 1002-Fire Net &lt;a href=&quot;http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1002&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1002&lt;/a&gt;&lt;/p&gt;
@@ -106,11 +106,34 @@
 &lt;p&gt;For each test case, output one line containing the maximum number of blockhouses that can be placed in the city in a legal configuration.&lt;br&gt;对于每一个测试案例，输出一行包含碉堡可以放置在该市的合法配置的最大数量。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;样例输入&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;4
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;.X..&lt;br&gt;….&lt;br&gt;XX..&lt;br&gt;….&lt;br&gt;2&lt;br&gt;XX&lt;br&gt;.X&lt;br&gt;3&lt;br&gt;.X.&lt;br&gt;X.X&lt;br&gt;.X.&lt;br&gt;3&lt;br&gt;…&lt;br&gt;.XX&lt;br&gt;.XX&lt;br&gt;4&lt;br&gt;….&lt;br&gt;….&lt;br&gt;….&lt;br&gt;….&lt;br&gt;0&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;样例输出&lt;/strong&gt;&lt;/p&gt;
+.X..
+....
+XX..
+....
+2
+XX
+.X
+3
+.X.
+X.X
+.X.
+3
+...
+.XX
+.XX
+4
+....
+....
+....
+....
+0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;样例输出&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;5
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;1&lt;br&gt;5&lt;br&gt;2&lt;br&gt;4&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;自己翻译，水平有限……&lt;/code&gt;&lt;/p&gt;
+1
+5
+2
+4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;自己翻译，水平有限……&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&quot;算法思路&quot;&gt;&lt;a href=&quot;#算法思路&quot; class=&quot;headerlink&quot; title=&quot;算法思路&quot;&gt;&lt;/a&gt;算法思路&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;典型的广搜思路，与八皇后非常类似，DFS试一下，ac了……&lt;/li&gt;
 &lt;/ul&gt;
@@ -128,9 +151,9 @@
     
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
-      <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
       <category term="ZOJ" scheme="http://www.gcusky.com/tags/ZOJ/"/>
+    
+      <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
     
       <category term="搜索" scheme="http://www.gcusky.com/tags/%E6%90%9C%E7%B4%A2/"/>
     
@@ -799,9 +822,9 @@
     
       <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
-      <category term="STL练习" scheme="http://www.gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
+    
+      <category term="STL练习" scheme="http://www.gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
     
