@@ -274,11 +274,43 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="ZOJ" scheme="http://www.gcusky.com/tags/ZOJ/"/>
+    
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GCUSKY_WIKI</title>
+    <link href="http://www.gcusky.com/2016/03/25/wiki/"/>
+    <id>http://www.gcusky.com/2016/03/25/wiki/</id>
+    <published>2016-03-25T08:04:23.625Z</published>
+    <updated>2016-04-23T12:07:36.464Z</updated>
+    
+    <content type="html">&lt;p&gt;整理了一些较为系统的知识点、内容。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;ACM练习&quot;&gt;&lt;a href=&quot;#ACM练习&quot; class=&quot;headerlink&quot; title=&quot;ACM练习&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/ACM/&quot; title=&quot;ACM练习&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ACM练习&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;算法练习，以 &lt;a href=&quot;http://acm.nyist.net/JudgeOnline/profile.php?userid=gcusky&quot; title=&quot;gcusky&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NYOJ&lt;/a&gt;、&lt;a href=&quot;http://acm.zju.edu.cn/onlinejudge/showUserStatus.do?userId=137605&quot; title=&quot;ZOJ&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ZOJ&lt;/a&gt; 为主。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;HEXO折腾&quot;&gt;&lt;a href=&quot;#HEXO折腾&quot; class=&quot;headerlink&quot; title=&quot;HEXO折腾&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/hexo/&quot; title=&quot;HEXO整理&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HEXO折腾&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;对目前使用hexo主题的一些小折腾以及hexo的相关配置问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;期刊阅览室&quot;&gt;&lt;a href=&quot;#期刊阅览室&quot; class=&quot;headerlink&quot; title=&quot;期刊阅览室&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/期刊阅览室/&quot; title=&quot;期刊阅览室&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;期刊阅览室&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;图书馆三楼期刊阅览室笔记及一些读书笔记、思维导图等内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;日语五十音&quot;&gt;&lt;a href=&quot;#日语五十音&quot; class=&quot;headerlink&quot; title=&quot;日语五十音&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/日语五十音/&quot; title=&quot;日语五十音&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;日语五十音&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.hjclass.com/&quot; title=&quot;沪江网校&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;沪江网校&lt;/a&gt;自学课程，只是因兴趣而学的日语，希望早日脱离字幕看新番。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;整理了一些较为系统的知识点、内容。&lt;/p&gt;
+    
+    </summary>
+    
     
   </entry>
   
@@ -335,38 +367,6 @@ X.X
     
     
       <category term="mysql" scheme="http://www.gcusky.com/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GCUSKY_WIKI</title>
-    <link href="http://www.gcusky.com/2016/03/20/wiki/"/>
-    <id>http://www.gcusky.com/2016/03/20/wiki/</id>
-    <published>2016-03-20T10:52:35.000Z</published>
-    <updated>2016-04-23T11:50:41.437Z</updated>
-    
-    <content type="html">&lt;p&gt;整理了一些较为系统的知识点、内容。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;ACM练习&quot;&gt;&lt;a href=&quot;#ACM练习&quot; class=&quot;headerlink&quot; title=&quot;ACM练习&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/ACM/&quot; title=&quot;ACM练习&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ACM练习&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;算法练习，以 &lt;a href=&quot;http://acm.nyist.net/JudgeOnline/profile.php?userid=gcusky&quot; title=&quot;gcusky&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NYOJ&lt;/a&gt;、&lt;a href=&quot;http://acm.zju.edu.cn/onlinejudge/showUserStatus.do?userId=137605&quot; title=&quot;ZOJ&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ZOJ&lt;/a&gt; 为主。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;HEXO折腾&quot;&gt;&lt;a href=&quot;#HEXO折腾&quot; class=&quot;headerlink&quot; title=&quot;HEXO折腾&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/hexo/&quot; title=&quot;HEXO整理&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HEXO折腾&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;对目前使用hexo主题的一些小折腾以及hexo的相关配置问题。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;期刊阅览室&quot;&gt;&lt;a href=&quot;#期刊阅览室&quot; class=&quot;headerlink&quot; title=&quot;期刊阅览室&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/期刊阅览室/&quot; title=&quot;期刊阅览室&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;期刊阅览室&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;图书馆三楼期刊阅览室笔记及一些读书笔记、思维导图等内容。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;日语五十音&quot;&gt;&lt;a href=&quot;#日语五十音&quot; class=&quot;headerlink&quot; title=&quot;日语五十音&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/日语五十音/&quot; title=&quot;日语五十音&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;日语五十音&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.hjclass.com/&quot; title=&quot;沪江网校&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;沪江网校&lt;/a&gt;自学课程，只是因兴趣而学的日语，希望早日脱离字幕看新番。&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;整理了一些较为系统的知识点、内容。&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   
@@ -719,11 +719,11 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
+    
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
       <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
@@ -771,11 +771,11 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
+    
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
       <category term="分治法" scheme="http://www.gcusky.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
     
@@ -828,11 +828,11 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
+    
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
@@ -884,13 +884,13 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    
-      <category term="STL练习" scheme="http://www.gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
+    
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
+      <category term="STL练习" scheme="http://www.gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
@@ -938,11 +938,11 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
+    
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
