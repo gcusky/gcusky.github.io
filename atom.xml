@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-04-23T11:49:46.364Z</updated>
+  <updated>2016-04-23T12:04:11.657Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -20,28 +20,30 @@
     <link href="http://www.gcusky.com/2016/04/23/matlab-1/"/>
     <id>http://www.gcusky.com/2016/04/23/matlab-1/</id>
     <published>2016-04-23T11:48:38.000Z</published>
-    <updated>2016-04-23T11:49:46.364Z</updated>
+    <updated>2016-04-23T12:04:11.657Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;问题思路&quot;&gt;&lt;a href=&quot;#问题思路&quot; class=&quot;headerlink&quot; title=&quot;问题思路&quot;&gt;&lt;/a&gt;问题思路&lt;/h3&gt;&lt;p&gt;对处于纸条边缘的像素点进行取值，分割出边缘部分的像素点的值，再将不同的碎纸片的边缘灰度值相减，求出方差。通过比较方差确定纸片的匹配度，将匹配度高的组合到一起。&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.shumo.com/wiki/doku.php?id=2013_%E5%B9%B4%E5%85%A8%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AB%9E%E8%B5%9B_cumcm_%E8%AF%95%E9%A2%98&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;2013 年全国大学生数学建模竞赛(CUMCM)B题：碎纸片的拼接复原 【问题一】&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;问题思路&quot;&gt;&lt;a href=&quot;#问题思路&quot; class=&quot;headerlink&quot; title=&quot;问题思路&quot;&gt;&lt;/a&gt;问题思路&lt;/h3&gt;&lt;p&gt;对处于纸条边缘的像素点进行取值，分割出边缘部分的像素点的值，再将不同的碎纸片的边缘灰度值相减，求出方差。通过比较方差确定纸片的匹配度，将匹配度高的组合到一起。&lt;code&gt;简单解决&lt;/code&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h3 id=&quot;匹配度计算效果&quot;&gt;&lt;a href=&quot;#匹配度计算效果&quot; class=&quot;headerlink&quot; title=&quot;匹配度计算效果&quot;&gt;&lt;/a&gt;匹配度计算效果&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/math/matlab-1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;代码实现&quot;&gt;&lt;a href=&quot;#代码实现&quot; class=&quot;headerlink&quot; title=&quot;代码实现&quot;&gt;&lt;/a&gt;代码实现&lt;/h3&gt;&lt;figure class=&quot;highlight matlab&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dirs：碎纸图类型 &amp;lt;19x1 struct&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Atc：碎纸图存储，三维数组 &amp;lt;1980x72x19 uint8&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    LengthFiles：碎纸图数量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Atc_l Atc_r：左右列向量，二维数组 &amp;lt;1980x19 uint8&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fzz：19*19标准差矩阵 &amp;lt;19x19 double&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fc_2：排列前相对最适匹配图，一维数组 &amp;lt;1x19 double&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fd：排列好的图，一维数组 &amp;lt;1x19 double&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    x y：中间变量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;%&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ans&lt;/span&gt; = &lt;span class=&quot;title&quot;&gt;mytest&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(~)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dirName =&lt;span class=&quot;string&quot;&gt;&#39;B\附件1\&#39;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dirs=dir(strcat(dirName,&#39;&lt;/span&gt;*.bmp&#39;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    LengthFiles = &lt;span class=&quot;built_in&quot;&gt;length&lt;/span&gt;(dirs);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; x = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:LengthFiles;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Atc(:,:,x) = imread(strcat(dirName,dirs(x).name));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        y = Atc(:,:,x);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Atc_r(:,x) = y(:,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Atc_l(:,x) = y(:,&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;:&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; x = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:LengthFiles;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; y = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:LengthFiles;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            fzz(x,y) = std2(Atc_r(:,x)-Atc_l(:,y));	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fzz(fzz==&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)=&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    y=fzz&#39;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [x,fc_2] = min(fzz);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [y,x] = min(y);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [x,fd(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)] = max(y);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; x = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:LengthFiles;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fd(x) = fc_2(fd(x&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;ans&lt;/span&gt; = [];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; x = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:LengthFiles;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;ans&lt;/span&gt; = [ans Atc(:,:,fd(x))];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;%hold on;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    imshow(&lt;span class=&quot;built_in&quot;&gt;ans&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;拼接效果&quot;&gt;&lt;a href=&quot;#拼接效果&quot; class=&quot;headerlink&quot; title=&quot;拼接效果&quot;&gt;&lt;/a&gt;拼接效果&lt;/h3&gt;&lt;h4 id=&quot;拼接前&quot;&gt;&lt;a href=&quot;#拼接前&quot; class=&quot;headerlink&quot; title=&quot;拼接前&quot;&gt;&lt;/a&gt;拼接前&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/math/matlab-2.jpg&quot; alt=&quot;拼接前&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;拼接前-1&quot;&gt;&lt;a href=&quot;#拼接前-1&quot; class=&quot;headerlink&quot; title=&quot;拼接前&quot;&gt;&lt;/a&gt;拼接前&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/math/matlab-3.jpg&quot; alt=&quot;拼接后&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;拼接效果&quot;&gt;&lt;a href=&quot;#拼接效果&quot; class=&quot;headerlink&quot; title=&quot;拼接效果&quot;&gt;&lt;/a&gt;拼接效果&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/math/matlab-2.jpg?imageView/2/w/700&quot; alt=&quot;拼接前&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/math/matlab-3.jpg?imageView/2/w/700&quot; alt=&quot;拼接后&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;问题思路&quot;&gt;&lt;a href=&quot;#问题思路&quot; class=&quot;headerlink&quot; title=&quot;问题思路&quot;&gt;&lt;/a&gt;问题思路&lt;/h3&gt;&lt;p&gt;对处于纸条边缘的像素点进行取值，分割出边缘部分的像素点的值，再将不同的碎纸片的边缘灰度值相减，求出方差。通过比较方差确定纸片的匹配度，将匹配度高的组合到一起。&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.shumo.com/wiki/doku.php?id=2013_%E5%B9%B4%E5%85%A8%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AB%9E%E8%B5%9B_cumcm_%E8%AF%95%E9%A2%98&quot;&gt;2013 年全国大学生数学建模竞赛(CUMCM)B题：碎纸片的拼接复原 【问题一】&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;问题思路&quot;&gt;&lt;a href=&quot;#问题思路&quot; class=&quot;headerlink&quot; title=&quot;问题思路&quot;&gt;&lt;/a&gt;问题思路&lt;/h3&gt;&lt;p&gt;对处于纸条边缘的像素点进行取值，分割出边缘部分的像素点的值，再将不同的碎纸片的边缘灰度值相减，求出方差。通过比较方差确定纸片的匹配度，将匹配度高的组合到一起。&lt;code&gt;简单解决&lt;/code&gt;&lt;/p&gt;
     
     </summary>
     
       <category term="MATLAB" scheme="http://www.gcusky.com/categories/MATLAB/"/>
     
     
-      <category term="MATLAB" scheme="http://www.gcusky.com/tags/MATLAB/"/>
-    
       <category term="数学建模" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+      <category term="MATLAB" scheme="http://www.gcusky.com/tags/MATLAB/"/>
     
   </entry>
   
@@ -272,11 +274,11 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="ZOJ" scheme="http://www.gcusky.com/tags/ZOJ/"/>
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
@@ -337,11 +339,11 @@ X.X
   </entry>
   
   <entry>
-    <title>GCUSKY_Wiki</title>
+    <title>GCUSKY_WIKI</title>
     <link href="http://www.gcusky.com/2016/03/20/wiki/"/>
     <id>http://www.gcusky.com/2016/03/20/wiki/</id>
     <published>2016-03-20T10:52:35.000Z</published>
-    <updated>2016-04-23T10:40:29.733Z</updated>
+    <updated>2016-04-23T11:50:41.437Z</updated>
     
     <content type="html">&lt;p&gt;整理了一些较为系统的知识点、内容。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -717,11 +719,11 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
       <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
@@ -769,11 +771,11 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
       <category term="分治法" scheme="http://www.gcusky.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
     
@@ -826,11 +828,11 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
@@ -882,13 +884,13 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
-    
-      <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
       <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
       <category term="STL练习" scheme="http://www.gcusky.com/tags/STL%E7%BB%83%E4%B9%A0/"/>
+    
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
+    
+      <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
     
   </entry>
   
@@ -936,11 +938,11 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
