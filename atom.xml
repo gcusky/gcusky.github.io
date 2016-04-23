@@ -307,6 +307,38 @@ X.X
   </entry>
   
   <entry>
+    <title>GCUSKY_Wiki</title>
+    <link href="http://www.gcusky.com/2016/03/20/wiki/"/>
+    <id>http://www.gcusky.com/2016/03/20/wiki/</id>
+    <published>2016-03-20T10:52:35.000Z</published>
+    <updated>2016-04-23T08:18:21.246Z</updated>
+    
+    <content type="html">&lt;p&gt;整理了一些较为系统的知识点、内容。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;ACM练习&quot;&gt;&lt;a href=&quot;#ACM练习&quot; class=&quot;headerlink&quot; title=&quot;ACM练习&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/ACM/&quot; title=&quot;ACM练习&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ACM练习&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;算法练习，以 &lt;a href=&quot;http://acm.nyist.net/JudgeOnline/profile.php?userid=gcusky&quot; title=&quot;gcusky&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NYOJ&lt;/a&gt;、&lt;a href=&quot;http://acm.zju.edu.cn/onlinejudge/showUserStatus.do?userId=137605&quot; title=&quot;ZOJ&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ZOJ&lt;/a&gt; 为主。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;HEXO折腾&quot;&gt;&lt;a href=&quot;#HEXO折腾&quot; class=&quot;headerlink&quot; title=&quot;HEXO折腾&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/hexo/&quot; title=&quot;HEXO整理&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HEXO折腾&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;对目前使用hexo主题的一些小折腾以及hexo的相关配置问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;期刊阅览室&quot;&gt;&lt;a href=&quot;#期刊阅览室&quot; class=&quot;headerlink&quot; title=&quot;期刊阅览室&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/期刊阅览室/&quot; title=&quot;期刊阅览室&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;期刊阅览室&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;图书馆三楼期刊阅览室笔记及一些读书笔记、思维导图等内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;日语五十音&quot;&gt;&lt;a href=&quot;#日语五十音&quot; class=&quot;headerlink&quot; title=&quot;日语五十音&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/日语五十音/&quot; title=&quot;日语五十音&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;日语五十音&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.hjclass.com/&quot; title=&quot;沪江网校&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;沪江网校&lt;/a&gt;自学课程，只是因兴趣而学的日语，希望早日脱离字幕看新番。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;整理了一些较为系统的知识点、内容。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>NYOJ 488-素数环</title>
     <link href="http://www.gcusky.com/2016/03/18/acm-9/"/>
     <id>http://www.gcusky.com/2016/03/18/acm-9/</id>
@@ -1342,34 +1374,6 @@ X.X
     <summary type="html">
     
       &lt;h3 id=&quot;思维导图&quot;&gt;&lt;a href=&quot;#思维导图&quot; class=&quot;headerlink&quot; title=&quot;思维导图&quot;&gt;&lt;/a&gt;思维导图&lt;/h3&gt;&lt;p&gt;还是思政课程的作业~o(^_^)o&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="期刊阅览室" scheme="http://www.gcusky.com/categories/%E6%9C%9F%E5%88%8A%E9%98%85%E8%A7%88%E5%AE%A4/"/>
-    
-    
-      <category term="思维导图" scheme="http://www.gcusky.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
-    
-      <category term="读书笔记" scheme="http://www.gcusky.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《再思毛泽东：毛泽东思想的探索》思维导图</title>
-    <link href="http://www.gcusky.com/2015/09/22/learn/"/>
-    <id>http://www.gcusky.com/2015/09/22/learn/</id>
-    <published>2015-09-22T06:34:45.000Z</published>
-    <updated>2016-03-20T13:50:27.037Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;思维导图&quot;&gt;&lt;a href=&quot;#思维导图&quot; class=&quot;headerlink&quot; title=&quot;思维导图&quot;&gt;&lt;/a&gt;思维导图&lt;/h3&gt;&lt;p&gt;以前思政课程的作业，要读一本有关毛泽东的书。&lt;br&gt;觉得这本书理论与知识都挺有趣的，遂整理为思维导图。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/xmind/RethinkingMao.png&quot; alt=&quot;再思毛泽东：毛泽东思想的探索&quot; title=&quot;再思毛泽东：毛泽东思想的探索&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://item.jd.com/11546212.html&quot; title=&quot;再思毛泽东：毛泽东思想的探索&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;再思毛泽东：毛泽东思想的探索&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;思维导图&quot;&gt;&lt;a href=&quot;#思维导图&quot; class=&quot;headerlink&quot; title=&quot;思维导图&quot;&gt;&lt;/a&gt;思维导图&lt;/h3&gt;&lt;p&gt;以前思政课程的作业，要读一本有关毛泽东的书。&lt;br&gt;觉得这本书理论与知识都挺有趣的，遂整理为思维导图。&lt;/p&gt;
     
     </summary>
     

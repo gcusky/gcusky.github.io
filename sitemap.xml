@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.gcusky.com/about/more.html</loc>
+    
+    <lastmod>2016-04-23T10:31:03.340Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.gcusky.com/about/index.html</loc>
+    
+    <lastmod>2016-04-23T10:30:34.608Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.gcusky.com/2016/03/20/wiki/</loc>
+    
+    <lastmod>2016-04-23T08:18:21.246Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.gcusky.com/2016/04/18/acm-11/</loc>
     
     <lastmod>2016-04-20T04:57:25.847Z</lastmod>
@@ -89,20 +110,6 @@
     <loc>http://www.gcusky.com/2016/03/15/acm-1/</loc>
     
     <lastmod>2016-04-19T11:48:24.255Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.gcusky.com/about/index.html</loc>
-    
-    <lastmod>2016-04-18T13:23:50.007Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.gcusky.com/about/wiki.html</loc>
-    
-    <lastmod>2016-04-18T12:50:40.668Z</lastmod>
     
   </url>
   
