@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-04-27T14:09:36.988Z</updated>
+  <updated>2016-04-27T14:13:12.644Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.gcusky.com/2016/04/27/english-2/"/>
     <id>http://www.gcusky.com/2016/04/27/english-2/</id>
     <published>2016-04-27T14:09:00.000Z</published>
-    <updated>2016-04-27T14:09:36.988Z</updated>
+    <updated>2016-04-27T14:13:12.644Z</updated>
     
     <content type="html">&lt;p&gt;&lt;code&gt;英语的基本构词法主要包括词缀法、合成法、转换法。&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;词缀法是派生法的一种主要构词法，它利用派生词缀和词根结合构成新词。&lt;/p&gt;
@@ -40,26 +40,86 @@
 &lt;li&gt;表&lt;strong&gt;数量&lt;/strong&gt;的前缀，如 &lt;code&gt;uni-/mono-&lt;/code&gt;、&lt;code&gt;bi-/di-&lt;/code&gt;、&lt;code&gt;tri-&lt;/code&gt;、&lt;code&gt;multi-/poly-&lt;/code&gt; 等。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&quot;常见的构词能力较强的前缀&quot;&gt;&lt;a href=&quot;#常见的构词能力较强的前缀&quot; class=&quot;headerlink&quot; title=&quot;常见的构词能力较强的前缀&quot;&gt;&lt;/a&gt;常见的构词能力较强的前缀&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ant-/anti-&lt;/code&gt;表 against&lt;br&gt;eg. anti-art 非正统派艺术；antibiotic 抗生的、抗生素；anti-body 抗体；anti-social 反社会的&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;auto-&lt;/code&gt;表 self&lt;br&gt;eg. autoboat 汽艇；automation 自动化；automobile 汽车&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;co-/con-/col-/cor-&lt;/code&gt;表“结合、联合、共同；相互的关系”&lt;br&gt;eg. cooperate 合作；cochairman 联合主席；colleague 同事；combine 联合；concur 同时发生；correspond 符合、相称、通信&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;counter-&lt;/code&gt;表“与……相反，反”&lt;br&gt;eg. counterattack 反击；counterpart 对应一方；counterplot 对抗策略&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;dis-&lt;/code&gt;表“与……相反，不”&lt;br&gt;eg. disallow 不承认（某事物）有效、不接受；disadapt 使……不适应；disambiguate 消除……的歧义&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;de-&lt;/code&gt;表“除去、向下”&lt;br&gt;eg. decentralize 权力分散；de-compose 腐烂、拆分；defunct 已消亡的；deoil 去油；devalue 贬值&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ex-&lt;/code&gt;表“外面、朝外、前……”&lt;br&gt;eg. exhale 呼气；extertor 外部的；ex-president 前任总统；ex-student 前学生&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;extra-&lt;/code&gt;表outside、beyond&lt;br&gt;eg. extra-strong 超强；extraordinary 不平常的；extramarital 私通的&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fore-&lt;/code&gt;表“前部、先”&lt;br&gt;eg. forearm 前臂；forecast 预言；foremost 首要的&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;inter-&lt;/code&gt;表“在—……之间、在……中间”&lt;br&gt;eg. inter-city 市际间的；intercollege 学院间的；interface 共界面&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mal-&lt;/code&gt;表“恶、不良”&lt;br&gt;eg. maladjusted 心理失调的；maltreat 虐待；malnutrition 营养不良&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mini-&lt;/code&gt;表“小、微小；短暂”&lt;br&gt;eg. minibus 小公共汽车、面包车；miniboom 短暂的繁荣&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mis-&lt;/code&gt;表“错误、歧途”&lt;br&gt;eg. miscalculate 算错；misconduct 不端行为；misfortune 不幸&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;non-&lt;/code&gt;表“无、非、不；假、劣；缺乏传统特征的”&lt;br&gt;eg. non-aligned 不结盟的；non-classical 非经典的；nondebate 假辩论、noninvoled 拒绝介入的&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;over-&lt;/code&gt;表“过于、过分；上方”&lt;br&gt;eg. overdo 做得过头；overconfident 过分自信；overbridge 天桥&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;post-&lt;/code&gt;表“在……之后”&lt;br&gt;eg. postgraduate 研究生、post-doctorial 博士后；post-war 战后的&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pre-&lt;/code&gt;表“在……之前”&lt;br&gt;eg. precaution 预防；prearrange 预先准备；pre-battle 战前的&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;re-&lt;/code&gt;表“再、复”&lt;br&gt;eg. rebuild 重建；reaffirm 重申；react 反作用&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;un-&lt;/code&gt;表“不、非”&lt;br&gt;eg. unfair 不公平；unexpected 意外的；unfeeling 残酷、冷漠；unwrap 打开、展开&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;under-&lt;/code&gt;表“在……之下、过小、不足”&lt;br&gt;eg. underground 地下的；undereducated 未受过良好教育的； underdeveloped 不发达的&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ant-/anti-&lt;/code&gt;表 against&lt;ul&gt;
+&lt;li&gt;eg. anti-art 非正统派艺术；antibiotic 抗生的、抗生素；anti-body 抗体；anti-social 反社会的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;auto-&lt;/code&gt;表 self&lt;ul&gt;
+&lt;li&gt;eg. autoboat 汽艇；automation 自动化；automobile 汽车&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;co-/con-/col-/cor-&lt;/code&gt;表“结合、联合、共同；相互的关系”&lt;ul&gt;
+&lt;li&gt;eg. cooperate 合作；cochairman 联合主席；colleague 同事；combine 联合；concur 同时发生；correspond 符合、相称、通信&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;counter-&lt;/code&gt;表“与……相反，反”&lt;ul&gt;
+&lt;li&gt;eg. counterattack 反击；counterpart 对应一方；counterplot 对抗策略&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dis-&lt;/code&gt;表“与……相反，不”&lt;ul&gt;
+&lt;li&gt;eg. disallow 不承认（某事物）有效、不接受；disadapt 使……不适应；disambiguate 消除……的歧义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;de-&lt;/code&gt;表“除去、向下”&lt;ul&gt;
+&lt;li&gt;eg. decentralize 权力分散；de-compose 腐烂、拆分；defunct 已消亡的；deoil 去油；devalue 贬值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ex-&lt;/code&gt;表“外面、朝外、前……”&lt;ul&gt;
+&lt;li&gt;eg. exhale 呼气；extertor 外部的；ex-president 前任总统；ex-student 前学生&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;extra-&lt;/code&gt;表outside、beyond&lt;ul&gt;
+&lt;li&gt;eg. extra-strong 超强；extraordinary 不平常的；extramarital 私通的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fore-&lt;/code&gt;表“前部、先”&lt;ul&gt;
+&lt;li&gt;eg. forearm 前臂；forecast 预言；foremost 首要的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;inter-&lt;/code&gt;表“在—……之间、在……中间”&lt;ul&gt;
+&lt;li&gt;eg. inter-city 市际间的；intercollege 学院间的；interface 共界面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mal-&lt;/code&gt;表“恶、不良”&lt;ul&gt;
+&lt;li&gt;eg. maladjusted 心理失调的；maltreat 虐待；malnutrition 营养不良&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mini-&lt;/code&gt;表“小、微小；短暂”&lt;ul&gt;
+&lt;li&gt;eg. minibus 小公共汽车、面包车；miniboom 短暂的繁荣&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mis-&lt;/code&gt;表“错误、歧途”&lt;ul&gt;
+&lt;li&gt;eg. miscalculate 算错；misconduct 不端行为；misfortune 不幸&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;non-&lt;/code&gt;表“无、非、不；假、劣；缺乏传统特征的”&lt;ul&gt;
+&lt;li&gt;eg. non-aligned 不结盟的；non-classical 非经典的；nondebate 假辩论、noninvoled 拒绝介入的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;over-&lt;/code&gt;表“过于、过分；上方”&lt;ul&gt;
+&lt;li&gt;eg. overdo 做得过头；overconfident 过分自信；overbridge 天桥&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;post-&lt;/code&gt;表“在……之后”&lt;ul&gt;
+&lt;li&gt;eg. postgraduate 研究生、post-doctorial 博士后；post-war 战后的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pre-&lt;/code&gt;表“在……之前”&lt;ul&gt;
+&lt;li&gt;eg. precaution 预防；prearrange 预先准备；pre-battle 战前的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;re-&lt;/code&gt;表“再、复”&lt;ul&gt;
+&lt;li&gt;eg. rebuild 重建；reaffirm 重申；react 反作用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;un-&lt;/code&gt;表“不、非”&lt;ul&gt;
+&lt;li&gt;eg. unfair 不公平；unexpected 意外的；unfeeling 残酷、冷漠；unwrap 打开、展开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;under-&lt;/code&gt;表“在……之下、过小、不足”&lt;ul&gt;
+&lt;li&gt;eg. underground 地下的；undereducated 未受过良好教育的； underdeveloped 不发达的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;可改变词性的前缀&quot;&gt;&lt;a href=&quot;#可改变词性的前缀&quot; class=&quot;headerlink&quot; title=&quot;可改变词性的前缀&quot;&gt;&lt;/a&gt;可改变词性的前缀&lt;/h3&gt;&lt;table&gt;
 &lt;thead&gt;
@@ -365,9 +425,9 @@
       <category term="MATLAB" scheme="http://www.gcusky.com/categories/MATLAB/"/>
     
     
-      <category term="数学建模" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
-    
       <category term="MATLAB" scheme="http://www.gcusky.com/tags/MATLAB/"/>
+    
+      <category term="数学建模" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
     
   </entry>
   
