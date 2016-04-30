@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-04-28T09:35:21.552Z</updated>
+  <updated>2016-04-30T14:03:34.953Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -16,11 +16,184 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>UML 类图</title>
+    <link href="http://www.gcusky.com/2016/04/30/DesignPattern/"/>
+    <id>http://www.gcusky.com/2016/04/30/DesignPattern/</id>
+    <published>2016-04-30T14:01:28.000Z</published>
+    <updated>2016-04-30T14:03:34.953Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;怪自己之前的 &lt;strong&gt;UML&lt;/strong&gt; 没有注意到其重要性认真对待，现在学起 &lt;strong&gt;设计模式&lt;/strong&gt; 简直了……&lt;br&gt;重新捡起来吧，为时不晚……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;类图（Class diagram）是&lt;strong&gt;显示了模型的静态结构&lt;/strong&gt;，特别是模型中存在的类、类的内部结构以及它们与其他类的关系等。&lt;/li&gt;
+&lt;li&gt;类图&lt;strong&gt;不显示暂时性信息&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;类的表示&quot;&gt;&lt;a href=&quot;#类的表示&quot; class=&quot;headerlink&quot; title=&quot;类的表示&quot;&gt;&lt;/a&gt;类的表示&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;在UML中，类使用具有类名称、属性、操作分隔得长方形来表示。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;eg. 定义一个类 &lt;code&gt;Employee&lt;/code&gt; ，它包含属性 &lt;code&gt;name&lt;/code&gt; 、 &lt;code&gt;age&lt;/code&gt; 和 &lt;code&gt;email&lt;/code&gt;，以及操作 &lt;code&gt;modifyInfo()&lt;/code&gt;，在UML类图中该类如图示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-01.jpg&quot; alt=&quot;Employee&quot;&gt;&lt;/p&gt;
+&lt;p&gt;该类对应的Java代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Employee&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; age;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String email;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;modifyInfo&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// ……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;按照Java语言的命名规范，&lt;strong&gt;类名&lt;/strong&gt;中每一个单词的首字母均大写。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;属性&lt;/strong&gt;表示方式：&lt;code&gt;可见性 名称 : 类型 [ = 默认值]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;操作&lt;/strong&gt;表示方式：&lt;code&gt;可见性 名称(参数列表) [ : 返回类型]&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;可见性：&lt;code&gt;+&lt;/code&gt; 公有（public）、&lt;code&gt;-&lt;/code&gt; 私有（private）、&lt;code&gt;#&lt;/code&gt; 受保护（protected）、&lt;code&gt;*&lt;/code&gt; 包内可见性（package）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;类之间的关系&quot;&gt;&lt;a href=&quot;#类之间的关系&quot; class=&quot;headerlink&quot; title=&quot;类之间的关系&quot;&gt;&lt;/a&gt;类之间的关系&lt;/h2&gt;&lt;h3 id=&quot;依赖关系&quot;&gt;&lt;a href=&quot;#依赖关系&quot; class=&quot;headerlink&quot; title=&quot;依赖关系&quot;&gt;&lt;/a&gt;依赖关系&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;依赖（Dependency）关系是一种&lt;strong&gt;使用关系&lt;/strong&gt;【所以要尽量不使用双向的互相依赖】，特定事物的改变有可能会影响到使用该事物的其他事物，在需要表示一个事物使用另一个事物时使用依赖关系。&lt;/li&gt;
+&lt;li&gt;在系统实施阶段，依赖关系通常通过三种方式来实现：&lt;ul&gt;
+&lt;li&gt;第一种也是最常用的一种方式是将一个类的对象作为另一个类中方法的参数；&lt;/li&gt;
+&lt;li&gt;第二种方式是在一个类的方法中将另一个类的对象作为其局部变量；&lt;/li&gt;
+&lt;li&gt;第三种方式是在一个类的方法中调用另一个类的静态方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;大多数情况下，&lt;strong&gt;依赖关系体现在某个类的方法使用另一个类的对象作为参数&lt;/strong&gt;【第一种方式】。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;eg. 驾驶员开车，在 &lt;code&gt;Driver&lt;/code&gt; 类的 &lt;code&gt;drive()&lt;/code&gt; 方法中将 &lt;code&gt;Car&lt;/code&gt; 类型的对象&lt;code&gt;car&lt;/code&gt; 作为一个参数传递，以便在 &lt;code&gt;drive()&lt;/code&gt; 方法中能够调用 &lt;code&gt;car&lt;/code&gt; 的 &lt;code&gt;move()&lt;/code&gt; 方法，且驾驶员的 &lt;code&gt;drive()&lt;/code&gt; 方法依赖车的 &lt;code&gt;move()&lt;/code&gt; 方法，因此类 &lt;code&gt;Driver&lt;/code&gt; 依赖类 &lt;code&gt;Car&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-02.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Driver&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Car car)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        car.move();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Car&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;关联关系&quot;&gt;&lt;a href=&quot;#关联关系&quot; class=&quot;headerlink&quot; title=&quot;关联关系&quot;&gt;&lt;/a&gt;关联关系&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;关联关系（Association）是一种&lt;strong&gt;结构化关系&lt;/strong&gt;，用于表示一类对象与另一类对象之间有联系。&lt;/li&gt;
+&lt;li&gt;在实现关联关系时，通常将一个类的对象作为另一个类的成员变量。&lt;/li&gt;
+&lt;li&gt;箭头及指向：带普通箭头的实心线，指向被拥有者。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;单向关联&quot;&gt;&lt;a href=&quot;#单向关联&quot; class=&quot;headerlink&quot; title=&quot;单向关联&quot;&gt;&lt;/a&gt;单向关联&lt;/h4&gt;&lt;p&gt;eg. 顾客（Customer）拥有地址（Address），则 &lt;code&gt;Customer&lt;/code&gt; 类与 &lt;code&gt;Address&lt;/code&gt; 类具有单向关联关系。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Customer&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Address address;&lt;span class=&quot;comment&quot;&gt;//定义为成员变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Address&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;双向关联&quot;&gt;&lt;a href=&quot;#双向关联&quot; class=&quot;headerlink&quot; title=&quot;双向关联&quot;&gt;&lt;/a&gt;双向关联&lt;/h4&gt;&lt;p&gt;eg. 顾客（Customer）购买商品（Product）并拥有商品，反之，卖出的商品总有某个顾客与之相关联。因此，&lt;code&gt;Customer&lt;/code&gt; 类和 &lt;code&gt;Product&lt;/code&gt; 类之间具有双向关联关系。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-04.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Customer&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Product[] products;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Product&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Customer customer;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;自关联&quot;&gt;&lt;a href=&quot;#自关联&quot; class=&quot;headerlink&quot; title=&quot;自关联&quot;&gt;&lt;/a&gt;自关联&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;在系统中可能会存在一些类的属性对象为该类本身，称为自关联。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;eg. 一个节点类（Node）的成员又是节点对象。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-05.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Node&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Node subNode;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;多重关联&quot;&gt;&lt;a href=&quot;#多重关联&quot; class=&quot;headerlink&quot; title=&quot;多重关联&quot;&gt;&lt;/a&gt;多重关联&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;表示方式&lt;/th&gt;
+&lt;th&gt;多重说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;1..1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;表示另一个类的一个对象只与一个该类对象有关系&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;0..*&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;表示另一个类的一个对象与零个或多个该类对象有关系&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;1..*&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;表示另一个类的一个对象与一个或多个该类对象有关系&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;0..1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;表示另一个类的一个对象没有或只与一个该类对象有关系&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;m..n&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;表示另一个类的一个对象与最少m、最多n个该类对象有关系 $( m &amp;lt;= n )$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;eg. 一个界面（Form）可以拥有零个或多个按钮（Button），但是一个按钮只能属于一个界面，因此，一个 &lt;code&gt;Form&lt;/code&gt; 类的对象可以与零个或多个 &lt;code&gt;Button&lt;/code&gt; 类的对象相关联，但一个 &lt;code&gt;Button&lt;/code&gt; 类的对象只能与一个 &lt;code&gt;Form&lt;/code&gt; 类的对象关联。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-06.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Form&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Button[] buttons; &lt;span class=&quot;comment&quot;&gt;//定义一个集合对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Button&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;聚合关系&quot;&gt;&lt;a href=&quot;#聚合关系&quot; class=&quot;headerlink&quot; title=&quot;聚合关系&quot;&gt;&lt;/a&gt;聚合关系&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;聚合（Aggregation）关系表示&lt;strong&gt;整体与部分的关系&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;在聚合关系中，成员对象是整体对象的一部分，但是成员对象可以脱离整体对象独立存在。&lt;/li&gt;
+&lt;li&gt;聚合关系是关联关系的一种，是强的关联关系；关联和聚合在语法上无法区分，必须考察具体的逻辑关系。&lt;/li&gt;
+&lt;li&gt;在代码实现聚合关系时，成员对象通常作为构造方法、Setter方法或业务方法的参数注入（Injection）到整体对象中。&lt;/li&gt;
+&lt;li&gt;箭头及指向：带实心菱形的实线，菱形指向整体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;eg. 汽车发动机（Engine）是汽车（Car）的组成部分，但是汽车发动机可以独立存在，因此，汽车和发动机是聚合关系。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-07.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Car&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Engine engine;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//构造注入&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Engine engine)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.engine = engine;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//设值注入&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setEngine&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Engine engine)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.engine = engine;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Engine&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在上述代码中，&lt;code&gt;Car&lt;/code&gt; 定义了一个 &lt;code&gt;Engine&lt;/code&gt; 类型的成员变量，从语义上来说，&lt;code&gt;Engine&lt;/code&gt; 是 &lt;code&gt;Car&lt;/code&gt; 的一部分，但是 &lt;code&gt;Engine&lt;/code&gt; 对象可以脱离 &lt;code&gt;Car&lt;/code&gt; 单独存在，因此在类 &lt;code&gt;Car&lt;/code&gt; 中并不直接实例化 &lt;code&gt;Engine&lt;/code&gt;，而是通过构造方法或者设值方法 &lt;code&gt;Setter&lt;/code&gt; 将在类外部实例化好的 &lt;code&gt;Engine&lt;/code&gt; 对象以参数形式传入到 &lt;code&gt;Car&lt;/code&gt; 中，这种传入方式称为注入。正因为 &lt;code&gt;Car&lt;/code&gt; 和 &lt;code&gt;Engine&lt;/code&gt; 的实例化时刻不同，因此它们之间不存在生命周期的制约关系，而仅仅只是整体与部分之间的关系而已。&lt;/p&gt;
+&lt;h3 id=&quot;组合关系&quot;&gt;&lt;a href=&quot;#组合关系&quot; class=&quot;headerlink&quot; title=&quot;组合关系&quot;&gt;&lt;/a&gt;组合关系&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;组合（Composition）关系也表示类之间&lt;strong&gt;整体和部分的关系&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;但组合关系中整体对象可以控制成员对象的生命周期：&lt;ul&gt;
+&lt;li&gt;一旦整体对象不存在，成员对象也将不存在，成员对象与整体对象之间具有同生共死的关系。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;在代码实现组合关系时，通常在整体类的构造方法中直接实例化成员类。&lt;/li&gt;
+&lt;li&gt;箭头及指向：带实心菱形的实线，菱形指向整体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;eg. 人的头（Head）与嘴巴（Mouth），嘴巴是头的组成部分之一，而且如果头没了，嘴巴也就没了，因此头和嘴巴是组合关系。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-08.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Head&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; Mouth mouth;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Head&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        mouth = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Mouth(); &lt;span class=&quot;comment&quot;&gt;//实例化成员类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Mouth&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;泛化关系&quot;&gt;&lt;a href=&quot;#泛化关系&quot; class=&quot;headerlink&quot; title=&quot;泛化关系&quot;&gt;&lt;/a&gt;泛化关系&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;泛化（Generalization）关系也就是&lt;strong&gt;继承关系&lt;/strong&gt;，用于描述父类与子类之间的关系。&lt;/li&gt;
+&lt;li&gt;泛化关系指定了子类如何特化父类的所有特征和行为。&lt;/li&gt;
+&lt;li&gt;在代码实现时，我们使用面向对象的继承机制来实现泛化关系：&lt;ul&gt;
+&lt;li&gt;如在Java语言中使用 &lt;code&gt;extends&lt;/code&gt; 关键字、在C++/C#中使用冒号 &lt;code&gt;:&lt;/code&gt; 来实现。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;箭头指向：带三角箭头的实线，箭头指向父类。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;eg. &lt;code&gt;Student&lt;/code&gt; 类和 &lt;code&gt;Teacher&lt;/code&gt; 类都是 &lt;code&gt;Person&lt;/code&gt; 类的子类，&lt;code&gt;Student&lt;/code&gt; 类和 &lt;code&gt;Teacher&lt;/code&gt; 类继承了 &lt;code&gt;Person&lt;/code&gt; 类的属性和方法，&lt;code&gt;Person&lt;/code&gt; 类的属性包含姓名（name）和年龄（age），每一个 &lt;code&gt;Student&lt;/code&gt; 和 &lt;code&gt;Teacher&lt;/code&gt; 也都具有这两个属性，另外 &lt;code&gt;Student&lt;/code&gt; 类增加了属性学号（studentNo），&lt;code&gt;Teacher&lt;/code&gt; 类增加了属性教师编号（teacherNo），&lt;code&gt;Person&lt;/code&gt; 类的方法包括行走 &lt;code&gt;move()&lt;/code&gt; 和说话 &lt;code&gt;say()&lt;/code&gt;，&lt;code&gt;Student&lt;/code&gt; 类和 &lt;code&gt;Teacher&lt;/code&gt; 类继承了这两个方法，而且 &lt;code&gt;Student&lt;/code&gt; 类还新增方法 &lt;code&gt;study()&lt;/code&gt;，&lt;code&gt;Teacher&lt;/code&gt; 类还新增方法 &lt;code&gt;teach()&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-09.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//父类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Person&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; String name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; age;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;say&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//子类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Student&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Person&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String studentNo;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;study&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//子类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Teacher&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Person&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String teacherNo;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;teach&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;实现关系&quot;&gt;&lt;a href=&quot;#实现关系&quot; class=&quot;headerlink&quot; title=&quot;实现关系&quot;&gt;&lt;/a&gt;实现关系&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;实现关系（Realization）是一种&lt;strong&gt;类与接口的关系&lt;/strong&gt;，表示类是接口所有特征和行为的实现。&lt;/li&gt;
+&lt;li&gt;在接口中，通常没有属性，而且所有的操作都是抽象的，只有操作的声明，没有操作的实现。&lt;/li&gt;
+&lt;li&gt;接口之间也可以有与类之间关系类似的继承关系和依赖关系，但是接口和类之间还存在一种实现关系：&lt;ul&gt;
+&lt;li&gt;在这种关系中，类实现了接口，类中的操作实现了接口中所声明的操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;箭头指向：带三角箭头的虚线，箭头指向接口。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;eg. 定义了一个交通工具接口 &lt;code&gt;Vehicle&lt;/code&gt;，包含一个抽象操作 &lt;code&gt;move()&lt;/code&gt;，在类 &lt;code&gt;Ship&lt;/code&gt; 和类 &lt;code&gt;Car&lt;/code&gt; 中都实现了该 &lt;code&gt;move()&lt;/code&gt; 操作，不过具体的实现细节将会不一样，如图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-10.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Vehicle&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Ship&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Vehicle&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Vehicle&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;综合考虑&quot;&gt;&lt;a href=&quot;#综合考虑&quot; class=&quot;headerlink&quot; title=&quot;综合考虑&quot;&gt;&lt;/a&gt;综合考虑&lt;/h2&gt;&lt;p&gt;各种关系的强弱顺序：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;泛化 = 实现 &amp;gt; 组合 &amp;gt; 聚合 &amp;gt; 关联 &amp;gt; 依赖
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;下面这张UML图，比较形象地展示了各种类图关系&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-11.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关于企鹅跟气候的关系&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;程杰出的《大话设计模式》P14页他这样解释：“你看企鹅和气候两个类，企鹅是很特别的鸟，会游不会飞。更重要的是，它与气候有很大的关联。我们不去讨论为什么北极没有企鹅，为什么它们要每年长途跋涉。总之，企鹅需要‘知道’气候的变化，需要‘了解’气候规律。当一个类‘知道’另一个类时，可以用关联（association）。关联关系用实线箭头来表示。”&lt;br&gt;根据引用的解释，再来看&lt;strong&gt;关联关系：是一种拥有的关系,它使一个类知道另一个类的属性和方法。&lt;/strong&gt;就非常容易理解了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;刘伟技术博客 —— UML &lt;a href=&quot;http://blog.csdn.net/LoveLion/article/category/738449&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/LoveLion/article/category/738449&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;UML类图几种关系的总结 &lt;a href=&quot;http://blog.csdn.net/tianhai110/article/details/6339565&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/tianhai110/article/details/6339565&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;怪自己之前的 &lt;strong&gt;UML&lt;/strong&gt; 没有注意到其重要性认真对待，现在学起 &lt;strong&gt;设计模式&lt;/strong&gt; 简直了……&lt;br&gt;重新捡起来吧，为时不晚……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;类图（Class diagram）是&lt;strong&gt;显示了模型的静态结构&lt;/strong&gt;，特别是模型中存在的类、类的内部结构以及它们与其他类的关系等。&lt;/li&gt;
+&lt;li&gt;类图&lt;strong&gt;不显示暂时性信息&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.gcusky.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="UML" scheme="http://www.gcusky.com/tags/UML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>设计模式概述</title>
-    <link href="http://www.gcusky.com/2016/04/28/DesignPattern/"/>
-    <id>http://www.gcusky.com/2016/04/28/DesignPattern/</id>
+    <link href="http://www.gcusky.com/2016/04/28/DesignPattern-1/"/>
+    <id>http://www.gcusky.com/2016/04/28/DesignPattern-1/</id>
     <published>2016-04-28T09:18:41.000Z</published>
-    <updated>2016-04-28T09:35:21.552Z</updated>
+    <updated>2016-04-30T14:03:23.619Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;设计模式是一套被反复使用、代码设计经验的总结。&lt;/p&gt;
@@ -34,7 +207,7 @@
 &lt;li&gt;&lt;strong&gt;Context&lt;/strong&gt;（模式可适用的前提条件）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Theme或Problem&lt;/strong&gt;（在特定条件下要解决的目标问题）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Solution&lt;/strong&gt;（对目标问题求解过程中各种物理关系的记述）&lt;/li&gt;
-&lt;li&gt;Alexander给出了关于模式的经典定义：每个模式都描述了一个&lt;strong&gt;在我们的环境中不断出现的问题&lt;/strong&gt;，然后描述了该问题的&lt;strong&gt;解决方案&lt;/strong&gt;的核心，通过这种方式，我们可以无数次地重用那些已有的解决方案，无需再重复相同的工作。 &lt;/li&gt;
+&lt;li&gt;Alexander：每个模式都描述了一个&lt;strong&gt;在我们的环境中不断出现的问题&lt;/strong&gt;，然后描述了该问题的&lt;strong&gt;解决方案&lt;/strong&gt;的核心，通过这种方式，我们可以无数次地重用那些已有的解决方案，无需再重复相同的工作。 &lt;/li&gt;
 &lt;li&gt;A pattern is a &lt;strong&gt;solution&lt;/strong&gt; to a &lt;strong&gt;problem&lt;/strong&gt; in a &lt;strong&gt;context&lt;/strong&gt; —— 模式是在&lt;strong&gt;特定环境&lt;/strong&gt;中&lt;strong&gt;解决问题&lt;/strong&gt;的一种&lt;strong&gt;方案&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;软件模式&quot;&gt;&lt;a href=&quot;#软件模式&quot; class=&quot;headerlink&quot; title=&quot;软件模式&quot;&gt;&lt;/a&gt;软件模式&lt;/h3&gt;&lt;ul&gt;
@@ -84,9 +257,6 @@
 &lt;td style=&quot;text-align:center&quot;&gt;解释器模式&lt;br&gt;模板方法模式&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;&lt;strong&gt;对象模式&lt;/strong&gt;&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;抽象工厂模式&lt;br&gt;建造者模式&lt;br&gt;原型模式&lt;br&gt;单例模式&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;（对象）适配器模式&lt;br&gt;桥接模式&lt;br&gt;组合模式&lt;br&gt;装饰模式&lt;br&gt;外观模式&lt;br&gt;享元模式&lt;br&gt;代理模式&lt;/td&gt;
@@ -114,7 +284,7 @@
     
     </summary>
     
-      <category term="软件体系结构" scheme="http://www.gcusky.com/categories/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
+      <category term="设计模式" scheme="http://www.gcusky.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
       <category term="设计模式" scheme="http://www.gcusky.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
@@ -764,11 +934,11 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="ZOJ" scheme="http://www.gcusky.com/tags/ZOJ/"/>
+    
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
@@ -1209,65 +1379,13 @@ X.X
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
+    
+      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     
       <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NYOJ 33-蛇形填数</title>
-    <link href="http://www.gcusky.com/2016/03/15/acm-4/"/>
-    <id>http://www.gcusky.com/2016/03/15/acm-4/</id>
-    <published>2016-03-15T08:38:03.000Z</published>
-    <updated>2016-04-19T11:48:41.066Z</updated>
-    
-    <content type="html">&lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在$n×n$方阵里填入$1,2,…,n×n$,要求填成蛇形。例如$n=4$时方阵为：&lt;/p&gt;
-&lt;p&gt;$$&lt;br&gt;\begin{matrix}&lt;br&gt;10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \\&lt;br&gt;9 &amp;amp; 16 &amp;amp; 13 &amp;amp; 2 \\&lt;br&gt;8 &amp;amp; 15 &amp;amp; 14 &amp;amp; 3 \\&lt;br&gt;7 &amp;amp; 6 &amp;amp; 5 &amp;amp; 4 \\&lt;br&gt;\end{matrix}&lt;br&gt;$$&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;strong&gt;输入&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;直接输入方阵的维数，即n的值。(n&amp;lt;=100)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;输出&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;输出结果是蛇形方阵。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;样例输入&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;3&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;样例输出&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;7 8 1&lt;br&gt;6 9 2&lt;br&gt;5 4 3&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;题目来源&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://acm.nyist.net/JudgeOnline/problem.php?pid=33&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://acm.nyist.net/JudgeOnline/problem.php?pid=33&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;程序实现：分治法实现数字旋转方阵&quot;&gt;&lt;a href=&quot;#程序实现：分治法实现数字旋转方阵&quot; class=&quot;headerlink&quot; title=&quot;程序实现：分治法实现数字旋转方阵&quot;&gt;&lt;/a&gt;程序实现：分治法实现数字旋转方阵&lt;/h3&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; **data;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//number：要填的数值，begin：每一层的起始位置(i)，size：方阵的大小 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Full&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; number, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; begin, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; size)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//从number开始填写size阶方阵，右上角的下标（begin，begin+size-1）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i,j,k;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(size==&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(size==&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		data[begin][begin] = number;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	i = begin; j = begin+size&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//初始化右上角坐标 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(k=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; k&amp;lt;size&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;; k++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		data[i][j] = number;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		number++;i++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(k=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; k&amp;lt;size&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;; k++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		data[i][j] = number;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		number++;j--;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(k=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; k&amp;lt;size&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;; k++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		data[i][j] = number;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		number++;i--;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(k=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; k&amp;lt;size&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;; k++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		data[i][j] = number;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		number++;j++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Full(number, begin+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,size&lt;span class=&quot;number&quot;&gt;-2&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//递归&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; num;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;cin&lt;/span&gt;&amp;gt;&amp;gt;num;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	data = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; *[num];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;num; i++) data[i] = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[num];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Full(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,num);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;num; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; j&amp;lt;num; j++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;data[i][j]&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot; &quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;C-全局二维数组&quot;&gt;&lt;a href=&quot;#C-全局二维数组&quot; class=&quot;headerlink&quot; title=&quot;C++  全局二维数组&quot;&gt;&lt;/a&gt;C++  全局二维数组&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;C/C++无法声明一个全局不定大小的二维数组，不过可以用二级指针来模拟&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;int **data; //声明二级指针data，指向一个指针数组（切记不是指向一个二维数组）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;int main()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    int M,N;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    cin &amp;gt;&amp;gt; M &amp;gt;&amp;gt; N; //输入两个维度&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    data = new int *[M]; //开辟指针数组&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;for(i=0; i&amp;lt;M; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data[i] = new int[N];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//这样以后使用data[i][j]就像二维数组一样&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在$n×n$方阵里填入$1,2,…,n×n$,要求填成蛇形。例如$n=4$时方阵为：&lt;/p&gt;
-&lt;p&gt;$$&lt;br&gt;\begin{matrix}&lt;br&gt;10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \\&lt;br&gt;9 &amp;amp; 16 &amp;amp; 13 &amp;amp; 2 \\&lt;br&gt;8 &amp;amp; 15 &amp;amp; 14 &amp;amp; 3 \\&lt;br&gt;7 &amp;amp; 6 &amp;amp; 5 &amp;amp; 4 \\&lt;br&gt;\end{matrix}&lt;br&gt;$$&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
-    
-    
-      <category term="语言入门" scheme="http://www.gcusky.com/tags/%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    
-      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
-    
-      <category term="NYOJ" scheme="http://www.gcusky.com/tags/NYOJ/"/>
-    
-      <category term="分治法" scheme="http://www.gcusky.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
     
   </entry>
   
