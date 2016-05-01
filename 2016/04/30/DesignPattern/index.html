@@ -20,7 +20,7 @@
 类图（Class diagram）是显示了模型的静态结构，特别是模型中存在的类、类的内部结构以及它们与其他类的关系等。
 类图不显示暂时性信息。">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/uml-01.jpg">
-<meta property="og:image" content="http://cloud.gcusky.com/uml/uml-02.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/uml-02-1.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/uml-03.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/uml-04.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/uml-05.jpg">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://cloud.gcusky.com/uml/uml-09.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/uml-10.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/uml-11.jpg">
-<meta property="og:updated_time" content="2016-04-30T14:03:34.953Z">
+<meta property="og:updated_time" content="2016-05-01T09:58:17.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UML 类图">
 <meta name="twitter:description" content="怪自己之前的 UML 没有注意到其重要性认真对待，现在学起 设计模式 简直了……重新捡起来吧，为时不晚……
@@ -329,7 +329,7 @@
 <li>大多数情况下，<strong>依赖关系体现在某个类的方法使用另一个类的对象作为参数</strong>【第一种方式】。</li>
 </ul>
 <p>eg. 驾驶员开车，在 <code>Driver</code> 类的 <code>drive()</code> 方法中将 <code>Car</code> 类型的对象<code>car</code> 作为一个参数传递，以便在 <code>drive()</code> 方法中能够调用 <code>car</code> 的 <code>move()</code> 方法，且驾驶员的 <code>drive()</code> 方法依赖车的 <code>move()</code> 方法，因此类 <code>Driver</code> 依赖类 <code>Car</code>。</p>
-<p><img src="http://cloud.gcusky.com/uml/uml-02.jpg" alt=""></p>
+<p><img src="http://cloud.gcusky.com/uml/uml-02-1.jpg" alt=""></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Driver</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">(Car car)</span> </span>&#123;</span><br><span class="line">        car.move();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//……</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//……</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//……</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="关联关系"><a href="#关联关系" class="headerlink" title="关联关系"></a>关联关系</h3><ul>
 <li>关联关系（Association）是一种<strong>结构化关系</strong>，用于表示一类对象与另一类对象之间有联系。</li>
@@ -451,7 +451,7 @@
         <p><span>本文标题:</span><a href="/2016/04/30/DesignPattern/">UML 类图</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
         <p><span>发布时间:</span>2016-04-30, 22:01:28</p>
-        <p><span>最后更新:</span>2016-04-30, 22:03:34</p>
+        <p><span>最后更新:</span>2016-05-01, 17:58:17</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/04/30/DesignPattern/" title="UML 类图">http://www.gcusky.com/2016/04/30/DesignPattern/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/04/30/DesignPattern/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

@@ -208,7 +208,7 @@
     <link href="http://www.gcusky.com/2016/04/30/DesignPattern/"/>
     <id>http://www.gcusky.com/2016/04/30/DesignPattern/</id>
     <published>2016-04-30T14:01:28.000Z</published>
-    <updated>2016-04-30T14:03:34.953Z</updated>
+    <updated>2016-05-01T09:58:17.299Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;怪自己之前的 &lt;strong&gt;UML&lt;/strong&gt; 没有注意到其重要性认真对待，现在学起 &lt;strong&gt;设计模式&lt;/strong&gt; 简直了……&lt;br&gt;重新捡起来吧，为时不晚……&lt;/p&gt;
@@ -244,7 +244,7 @@
 &lt;li&gt;大多数情况下，&lt;strong&gt;依赖关系体现在某个类的方法使用另一个类的对象作为参数&lt;/strong&gt;【第一种方式】。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;eg. 驾驶员开车，在 &lt;code&gt;Driver&lt;/code&gt; 类的 &lt;code&gt;drive()&lt;/code&gt; 方法中将 &lt;code&gt;Car&lt;/code&gt; 类型的对象&lt;code&gt;car&lt;/code&gt; 作为一个参数传递，以便在 &lt;code&gt;drive()&lt;/code&gt; 方法中能够调用 &lt;code&gt;car&lt;/code&gt; 的 &lt;code&gt;move()&lt;/code&gt; 方法，且驾驶员的 &lt;code&gt;drive()&lt;/code&gt; 方法依赖车的 &lt;code&gt;move()&lt;/code&gt; 方法，因此类 &lt;code&gt;Driver&lt;/code&gt; 依赖类 &lt;code&gt;Car&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-02.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/uml-02-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Driver&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Car car)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        car.move();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Car&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;关联关系&quot;&gt;&lt;a href=&quot;#关联关系&quot; class=&quot;headerlink&quot; title=&quot;关联关系&quot;&gt;&lt;/a&gt;关联关系&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;关联关系（Association）是一种&lt;strong&gt;结构化关系&lt;/strong&gt;，用于表示一类对象与另一类对象之间有联系。&lt;/li&gt;
@@ -1190,9 +1190,9 @@
       <category term="MATLAB" scheme="http://www.gcusky.com/categories/MATLAB/"/>
     
     
-      <category term="数学建模" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
-    
       <category term="MATLAB" scheme="http://www.gcusky.com/tags/MATLAB/"/>
+    
+      <category term="数学建模" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
     
   </entry>
   
@@ -1436,7 +1436,7 @@ X.X
     <link href="http://www.gcusky.com/2016/03/25/wiki/"/>
     <id>http://www.gcusky.com/2016/03/25/wiki/</id>
     <published>2016-03-25T08:04:23.000Z</published>
-    <updated>2016-04-23T12:13:55.414Z</updated>
+    <updated>2016-05-01T09:51:31.283Z</updated>
     
     <content type="html">&lt;p&gt;整理了一些较为系统的知识点、内容。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -1449,9 +1449,11 @@ X.X
 &lt;h3 id=&quot;期刊阅览室&quot;&gt;&lt;a href=&quot;#期刊阅览室&quot; class=&quot;headerlink&quot; title=&quot;期刊阅览室&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/期刊阅览室/&quot; title=&quot;期刊阅览室&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;期刊阅览室&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;图书馆三楼期刊阅览室笔记及一些读书笔记、思维导图等内容。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;日语五十音&quot;&gt;&lt;a href=&quot;#日语五十音&quot; class=&quot;headerlink&quot; title=&quot;日语五十音&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://gcusky.com/categories/日语五十音/&quot; title=&quot;日语五十音&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;日语五十音&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.hjclass.com/&quot; title=&quot;沪江网校&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;沪江网校&lt;/a&gt;自学课程，只是因兴趣而学的日语，希望早日脱离字幕看新番。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;!--
+### [日语五十音][6]
+
+- [沪江网校][7]自学课程，只是因兴趣而学的日语，希望早日脱离字幕看新番。
+--&gt;
 </content>
     
     <summary type="html">
