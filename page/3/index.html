@@ -159,7 +159,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/JUnit/" style="font-size: 12.86px;">JUnit</a> <a href="/tags/MATLAB/" style="font-size: 11.43px;">MATLAB</a> <a href="/tags/NYOJ/" style="font-size: 18.57px;">NYOJ</a> <a href="/tags/STL练习/" style="font-size: 10px;">STL练习</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/ZOJ/" style="font-size: 11.43px;">ZOJ</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/machinelearning/" style="font-size: 10px;">machinelearning</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/二分法/" style="font-size: 10px;">二分法</a> <a href="/tags/分治法/" style="font-size: 10px;">分治法</a> <a href="/tags/回溯法/" style="font-size: 10px;">回溯法</a> <a href="/tags/思维导图/" style="font-size: 11.43px;">思维导图</a> <a href="/tags/搜索/" style="font-size: 11.43px;">搜索</a> <a href="/tags/数值法/" style="font-size: 10px;">数值法</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学建模/" style="font-size: 10px;">数学建模</a> <a href="/tags/白盒测试/" style="font-size: 11.43px;">白盒测试</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语言入门/" style="font-size: 15.71px;">语言入门</a> <a href="/tags/读书笔记/" style="font-size: 17.14px;">读书笔记</a> <a href="/tags/贪心算法/" style="font-size: 14.29px;">贪心算法</a> <a href="/tags/软件测试/" style="font-size: 12.86px;">软件测试</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/非线性方程/" style="font-size: 10px;">非线性方程</a> <a href="/tags/黑盒测试/" style="font-size: 10px;">黑盒测试</a>
+                        <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/JUnit/" style="font-size: 12.86px;">JUnit</a> <a href="/tags/MATLAB/" style="font-size: 11.43px;">MATLAB</a> <a href="/tags/NYOJ/" style="font-size: 18.57px;">NYOJ</a> <a href="/tags/STL练习/" style="font-size: 10px;">STL练习</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/ZOJ/" style="font-size: 11.43px;">ZOJ</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/machinelearning/" style="font-size: 10px;">machinelearning</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/二分法/" style="font-size: 10px;">二分法</a> <a href="/tags/分治法/" style="font-size: 10px;">分治法</a> <a href="/tags/回溯法/" style="font-size: 10px;">回溯法</a> <a href="/tags/思维导图/" style="font-size: 11.43px;">思维导图</a> <a href="/tags/搜索/" style="font-size: 11.43px;">搜索</a> <a href="/tags/数值法/" style="font-size: 10px;">数值法</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学建模/" style="font-size: 10px;">数学建模</a> <a href="/tags/白盒测试/" style="font-size: 11.43px;">白盒测试</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语言入门/" style="font-size: 15.71px;">语言入门</a> <a href="/tags/读书笔记/" style="font-size: 17.14px;">读书笔记</a> <a href="/tags/贪心算法/" style="font-size: 14.29px;">贪心算法</a> <a href="/tags/软件测试/" style="font-size: 12.86px;">软件测试</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/非线性方程/" style="font-size: 10px;">非线性方程</a> <a href="/tags/面向对象设计原则/" style="font-size: 10px;">面向对象设计原则</a> <a href="/tags/黑盒测试/" style="font-size: 10px;">黑盒测试</a>
                     </div>
                 </section>
                 
@@ -236,6 +236,73 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-acm-6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/16/acm-6/" class="article-date">
+      <time datetime="2016-03-16T03:15:30.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/16/acm-6/">NYOJ 91-阶乘之和</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3</p>
+<p><strong>描述</strong></p>
+<p>给你一个非负数整数$n$，判断$n$是不是一些数（这些数不允许重复使用，且为正数）的阶乘之和，如 $9=1!+2!+3!$ ，如果是，则输出Yes，否则输出No；</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/ACM/">ACM</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NYOJ/">NYOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/贪心算法/">贪心算法</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2016/03/16/acm-6/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-acm-5" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -823,71 +890,6 @@
       
         <p class="article-more-link">
           <a href="/2015/11/18/learn-1/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-learn" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/22/learn/" class="article-date">
-      <time datetime="2015-09-22T06:34:45.000Z" itemprop="datePublished">2015-09-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/22/learn/">《再思毛泽东：毛泽东思想的探索》思维导图</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h3><p>以前思政课程的作业，要读一本有关毛泽东的书。<br>觉得这本书理论与知识都挺有趣的，遂整理为思维导图。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/期刊阅览室/">期刊阅览室</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2015/09/22/learn/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
