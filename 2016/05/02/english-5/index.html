@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JUnit 参数化测试和打包测试 | GCUSKY_SPACE</title>
+  <title>英语的其他构词法 | GCUSKY_SPACE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习了JUnit 参数化测试和打包测试两种更高效的方法">
+  <meta name="description" content="英语除了三种主要的构词法，此外还有几种次要的构词方法，尽管构词量不及前几种，但在英语中也起着重要的作用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JUnit 参数化测试和打包测试">
-<meta property="og:url" content="http://www.gcusky.com/2016/04/19/junit-1/index.html">
+<meta property="og:title" content="英语的其他构词法">
+<meta property="og:url" content="http://www.gcusky.com/2016/05/02/english-5/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
-<meta property="og:description" content="学习了JUnit 参数化测试和打包测试两种更高效的方法">
-<meta property="og:updated_time" content="2016-04-19T13:49:00.363Z">
+<meta property="og:description" content="英语除了三种主要的构词法，此外还有几种次要的构词方法，尽管构词量不及前几种，但在英语中也起着重要的作用。">
+<meta property="og:updated_time" content="2016-05-02T14:02:18.444Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JUnit 参数化测试和打包测试">
-<meta name="twitter:description" content="学习了JUnit 参数化测试和打包测试两种更高效的方法">
+<meta name="twitter:title" content="英语的其他构词法">
+<meta name="twitter:description" content="英语除了三种主要的构词法，此外还有几种次要的构词方法，尽管构词量不及前几种，但在英语中也起着重要的作用。">
   
     <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
   
@@ -229,11 +229,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-junit-1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-english-5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/19/junit-1/" class="article-date">
-      <time datetime="2016-04-19T13:40:47.000Z" itemprop="datePublished">2016-04-19</time>
+      <a href="/2016/05/02/english-5/" class="article-date">
+      <time datetime="2016-05-02T14:01:12.000Z" itemprop="datePublished">2016-05-02</time>
 </a>
     </div>
   
@@ -246,7 +246,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JUnit 参数化测试和打包测试
+      英语的其他构词法
     </h1>
   
 
@@ -254,10 +254,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/英语/">英语</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JUnit/">JUnit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/白盒测试/">白盒测试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件测试/">软件测试</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -267,17 +271,396 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>学习了JUnit <strong>参数化测试</strong>和<strong>打包测试</strong>两种更高效的方法</p>
+        <blockquote>
+<p>英语除了三种主要的构词法，此外还有几种次要的构词方法，尽管构词量不及前几种，但在英语中也起着重要的作用。</p>
+</blockquote>
 <a id="more"></a>
-<h3 id="测试计算圆的面积与周长类"><a href="#测试计算圆的面积与周长类" class="headerlink" title="测试计算圆的面积与周长类"></a>测试计算圆的面积与周长类</h3><p><code>Circle</code>类中有两个方法：<code>Area1(r)</code>求圆形面积，<code>Perimeter(r)</code>求圆形周长。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Circle</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">Area1</span><span class="params">(<span class="keyword">double</span> r)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(r&gt;<span class="number">0</span>) <span class="keyword">return</span> r*r*Math.PI;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">Perimeter1</span><span class="params">(<span class="keyword">double</span> r)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(r&gt;<span class="number">0</span>) <span class="keyword">return</span> <span class="number">2</span>*r*Math.PI;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>选中<code>Circle.java</code>，右键，New-&gt;JUnit Test Case.勾选<code>SetUp()</code> <code>TearDown()</code>方法，为Area1方法和Perimeter1方法分别写出测试用例。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.*;</span><br><span class="line"><span class="keyword">import</span> org.junit.After;</span><br><span class="line"><span class="keyword">import</span> org.junit.Before;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CircleTest</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Circle circle = <span class="keyword">new</span> Circle();</span><br><span class="line">	<span class="meta">@Before</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;&#125;</span><br><span class="line">	<span class="meta">@After</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tearDown</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;&#125;</span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testArea1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		assertEquals(<span class="number">12.56</span>, circle.Area1(<span class="number">2.0</span>), <span class="number">0.1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPerimeter1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		assertEquals(<span class="number">12.56</span>, circle.Perimeter1(<span class="number">2.0</span>), <span class="number">0.1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="参数化测试"><a href="#参数化测试" class="headerlink" title="参数化测试"></a>参数化测试</h3><p>首先，我们仅测试圆的周长方法<code>Perimeter1(r)</code>。暂且分三类：正数、0、负数。可以最少同时运行三条测试用例。<code>@RunWith(Parameterized.class)</code>这条语句就是为这个类指定了一个<code>ParameterizedRunner</code>。<br>第二步，定义一个待测试的类，并且定义两个变量，一个用于存放参数，一个用于存放期待的结果。<br>接下来，定义测试数据的集合，也就是上述的<code>data()</code>方法，该方法可以任意命名，但是必须使用<code>@Parameters</code>标注进行修饰。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.junit.runners.Parameterized;</span><br><span class="line"><span class="keyword">import</span> org.junit.runners.Parameterized.Parameters;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith</span>(Parameterized.class)<span class="comment">//为下面的参数化类Perimeter1Test指定特殊运行器</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Perimeter1Test</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Circle Circle = <span class="keyword">new</span> Circle();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> param;<span class="comment">//参数</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> result;<span class="comment">//期望值</span></span><br><span class="line">    </span><br><span class="line">	<span class="meta">@Parameters</span><span class="comment">//参数准备，以@Parameters标识，返回值为Collection类</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Collection <span class="title">data</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Arrays.asList(<span class="keyword">new</span> Object[][]&#123;</span><br><span class="line">			<span class="comment">//在该静态方法中声明所有需要测试的参数对，以数组形式存放</span></span><br><span class="line">			&#123;<span class="number">2.0</span>,<span class="number">12.56</span>&#125;,</span><br><span class="line">			&#123;<span class="number">0</span>,<span class="number">0</span>&#125;,</span><br><span class="line">			&#123;-<span class="number">2.4</span>,<span class="number">0</span>&#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//构造函数，对变量进行初始化</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Perimeter1Test</span><span class="params">(<span class="keyword">double</span> param,<span class="keyword">double</span> result)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.param=param;</span><br><span class="line">		<span class="keyword">this</span>.result=result;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Test</span> <span class="comment">//测试方法，使用前面定义的变量作为参数进行测试</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Perimeter11</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        assertEquals(result,Circle.Perimeter1(param),<span class="number">0.11</span>);</span><br><span class="line">        System.out.println(<span class="string">"result="</span>+Circle.Perimeter1(param));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="打包测试"><a href="#打包测试" class="headerlink" title="打包测试"></a>打包测试</h3><p>通过前面的介绍我们可以感觉到，在一个项目中，只写一个测试类是不可能的，我们会写出很多很多个测试类。可是这些测试类必须一个一个的执行，也是比较麻烦的事情。鉴于此，JUnit为我们提供了打包测试的功能，将所有需要运行的测试类集中起来，一次性的运行完毕，大大的方便了我们的测试工作。具体代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.junit.runners.Suite;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith</span>(Suite.class) <span class="comment">//@RunWith标注传递一个参数 Suite.class</span></span><br><span class="line"><span class="meta">@Suite</span>.SuiteClasses(&#123;<span class="comment">//@Suite.SuiteClasses，来表明这个类是打包测试类</span></span><br><span class="line">	CircleTest.class,</span><br><span class="line">	Perimeter1Test.class</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AllTests</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>这个功能也需要使用一个特殊的<code>Runner</code>，因此我们需要向<code>@RunWith</code>标注传递一个参数<code>Suite.class</code>。同时，我们还需要另外一个标注<code>@Suite.SuiteClasses</code>，来表明这个类是一个打包测试类。我们把需要打包的类作为参数传递给该标注就可以了。有了这两个标注之后，就已经完整的表达了所有的含义，因此下面的类已经无关紧要，随便起一个类名，内容全部为空既可。</p>
+<h2 id="缩略法"><a href="#缩略法" class="headerlink" title="缩略法"></a>缩略法</h2><p>缩略法主要有两种构词方式，一种是截短词，即去掉原来完整词中的一部分字母或音节构成新词；另一种是首字母缩略词，即取一个词组中每个词的首字母组成一个词。</p>
+<h3 id="截短词"><a href="#截短词" class="headerlink" title="截短词"></a>截短词</h3><h4 id="截掉词尾"><a href="#截掉词尾" class="headerlink" title="截掉词尾"></a>截掉词尾</h4><table>
+<thead>
+<tr>
+<th>原词</th>
+<th>截短词</th>
+<th>意思</th>
+<th>原词</th>
+<th>截短词</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>advertisement</td>
+<td>ad</td>
+<td>广告</td>
+<td>gentleman</td>
+<td>gent</td>
+<td>绅士、君子</td>
+</tr>
+<tr>
+<td>automobile</td>
+<td>auto</td>
+<td>汽车</td>
+<td>laboratory</td>
+<td>lab</td>
+<td>实验室</td>
+</tr>
+<tr>
+<td>demonstration</td>
+<td>demo</td>
+<td>示威游行</td>
+<td>luncheon</td>
+<td>lunch</td>
+<td>午餐</td>
+</tr>
+<tr>
+<td>discotheque</td>
+<td>disco</td>
+<td>迪斯科</td>
+<td>gasoline</td>
+<td>gas</td>
+<td>汽油</td>
+</tr>
+<tr>
+<td>dormitory</td>
+<td>dorm</td>
+<td>宿舍</td>
+<td>miniskirt</td>
+<td>mini</td>
+<td>超短裙</td>
+</tr>
+<tr>
+<td>facsimile</td>
+<td>fax</td>
+<td>电传</td>
+<td>professional</td>
+<td>pro</td>
+<td>职业的</td>
+</tr>
+<tr>
+<td>fanatic</td>
+<td>fan</td>
+<td>狂热者、入迷者</td>
+<td>telecommunication</td>
+<td>telecom</td>
+<td>电信</td>
+</tr>
+</tbody>
+</table>
+<h4 id="截掉词头"><a href="#截掉词头" class="headerlink" title="截掉词头"></a>截掉词头</h4><table>
+<thead>
+<tr>
+<th>原词</th>
+<th>截短词</th>
+<th>意思</th>
+<th>原词</th>
+<th>截短词</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>omnibus</td>
+<td>bus</td>
+<td>公共汽车</td>
+<td>earthquake</td>
+<td>quake</td>
+<td>地震</td>
+</tr>
+<tr>
+<td>bulldozer</td>
+<td>dozer</td>
+<td>推土机</td>
+<td>periwig</td>
+<td>wig</td>
+<td>假发</td>
+</tr>
+<tr>
+<td>hamburger</td>
+<td>burger</td>
+<td>汉堡包</td>
+<td>parachute</td>
+<td>chute</td>
+<td>降落伞</td>
+</tr>
+<tr>
+<td>helicopter</td>
+<td>copter</td>
+<td>直升机</td>
+<td>telephone</td>
+<td>phone</td>
+<td>电话</td>
+</tr>
+<tr>
+<td>bicycle</td>
+<td>cycle/bike</td>
+<td>自行车</td>
+<td>telescope</td>
+<td>scope</td>
+<td>望远镜</td>
+</tr>
+<tr>
+<td>caravan</td>
+<td>van</td>
+<td>大篷车</td>
+<td>violoncello</td>
+<td>cello</td>
+<td>大提琴</td>
+</tr>
+</tbody>
+</table>
+<h4 id="截掉词头和词尾"><a href="#截掉词头和词尾" class="headerlink" title="截掉词头和词尾"></a>截掉词头和词尾</h4><table>
+<thead>
+<tr>
+<th>原词</th>
+<th>截短词</th>
+<th>意思</th>
+<th>原词</th>
+<th>截短词</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>influenze</td>
+<td>flu</td>
+<td>流行性感冒</td>
+<td>refrigerator</td>
+<td>fridge</td>
+<td>冰箱</td>
+</tr>
+<tr>
+<td>detective</td>
+<td>tec</td>
+<td>侦探</td>
+<td>prescription</td>
+<td>script</td>
+<td>处方</td>
+</tr>
+</tbody>
+</table>
+<h4 id="截掉词中"><a href="#截掉词中" class="headerlink" title="截掉词中"></a>截掉词中</h4><table>
+<thead>
+<tr>
+<th>原词</th>
+<th>截短词</th>
+<th>意思</th>
+<th>原词</th>
+<th>截短词</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assistant</td>
+<td>asst</td>
+<td>助手</td>
+<td>mathematics</td>
+<td>maths</td>
+<td>数学</td>
+</tr>
+<tr>
+<td>bicycle</td>
+<td>bike</td>
+<td>自行车</td>
+<td>pacificist</td>
+<td>pacifist</td>
+<td>和平主义者</td>
+</tr>
+<tr>
+<td>department</td>
+<td>dept</td>
+<td>系、部</td>
+<td>spectacles</td>
+<td>specs</td>
+<td>眼镜</td>
+</tr>
+<tr>
+<td>fossilization</td>
+<td>fossilation</td>
+<td>化石化</td>
+<td>symbolology</td>
+<td>symbology</td>
+<td>象征学</td>
+</tr>
+<tr>
+<td>international</td>
+<td>intl</td>
+<td>国际的</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="首字母缩写"><a href="#首字母缩写" class="headerlink" title="首字母缩写"></a>首字母缩写</h3><p>VOA（美国之音） AD/A.D.（公元） ABS（防锁死刹车系统） AVM（自动售货机） TVM（自动售票机） BBC（英国广播电视台） CAAC（中国民航） F（氟） GDP（国内生产总值） GNP（国民生产总值） GHQ（总司令部） IMF（国际货币基金组织） UN（联合国）<br>AIDS（艾滋病，获得性免疫功能丧失综合症） APEC（亚太经贸合作组织：亚太经合组织） ASHCAN（东南亚国家联盟：东盟） BASIC（初学者通用指令码） DOS（磁盘操作系统） OPEC（欧佩克，石油输出国组织） ROM（只读内存） SAM（地对空导弹，萨姆防空导弹） SIMM（单列直插存储器模块：内存条） TOEFL（托福，英语能力测试） UNESCO（联合国教科文组织）</p>
+<h2 id="拼缀法"><a href="#拼缀法" class="headerlink" title="拼缀法"></a>拼缀法</h2><p>把两个独立的词进行截取，或取其词首、或取其词尾、或掐头去尾拼合成一个新词，这种方法称为拼缀法。</p>
+<h3 id="第一个词的词头与第二个词的词尾相拼"><a href="#第一个词的词头与第二个词的词尾相拼" class="headerlink" title="第一个词的词头与第二个词的词尾相拼"></a>第一个词的词头与第二个词的词尾相拼</h3><table>
+<thead>
+<tr>
+<th>第一个词</th>
+<th>第二个词</th>
+<th>拼缀词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>binary</td>
+<td>digit</td>
+<td>bit 二进制位数字</td>
+</tr>
+<tr>
+<td>breakfast</td>
+<td>lunch</td>
+<td>brunch 早中餐</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>tunnel</td>
+<td>chunnel 海峡隧道</td>
+</tr>
+<tr>
+<td>motor</td>
+<td>hotel</td>
+<td>motel 汽车旅馆</td>
+</tr>
+<tr>
+<td>smoke</td>
+<td>fog</td>
+<td>smog 烟雾</td>
+</tr>
+<tr>
+<td>television</td>
+<td>broadcast</td>
+<td>telecast 电视广播</td>
+</tr>
+</tbody>
+</table>
+<h3 id="第一个词与第二个词的词尾相拼"><a href="#第一个词与第二个词的词尾相拼" class="headerlink" title="第一个词与第二个词的词尾相拼"></a>第一个词与第二个词的词尾相拼</h3><table>
+<thead>
+<tr>
+<th>第一个词</th>
+<th>第二个词</th>
+<th>拼缀词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cable</td>
+<td>telecast</td>
+<td>cablecast 有线电视广播</td>
+</tr>
+<tr>
+<td>profit</td>
+<td>toward</td>
+<td>profitward 趋利</td>
+</tr>
+<tr>
+<td>work</td>
+<td>welfare</td>
+<td>workfare 就业福利</td>
+</tr>
+<tr>
+<td>book</td>
+<td>mobile</td>
+<td>bookmobile 流动图书馆</td>
+</tr>
+<tr>
+<td>lunar</td>
+<td>astronaut</td>
+<td>lunarnaut 探月宇航员</td>
+</tr>
+<tr>
+<td>television</td>
+<td>broadcast</td>
+<td>telecast 电视广播</td>
+</tr>
+</tbody>
+</table>
+<h3 id="第一个词的词头与第二个词相拼"><a href="#第一个词的词头与第二个词相拼" class="headerlink" title="第一个词的词头与第二个词相拼"></a>第一个词的词头与第二个词相拼</h3><table>
+<thead>
+<tr>
+<th>第一个词</th>
+<th>第二个词</th>
+<th>拼缀词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>European</td>
+<td>Asia</td>
+<td>Eurasia 欧亚</td>
+</tr>
+<tr>
+<td>medical</td>
+<td>care</td>
+<td>medicare 医疗</td>
+</tr>
+<tr>
+<td>medical</td>
+<td>aid</td>
+<td>medicaid 医疗补助</td>
+</tr>
+<tr>
+<td>parachute</td>
+<td>troops</td>
+<td>paratroops 空降部队</td>
+</tr>
+</tbody>
+</table>
+<h3 id="两个词的词头相拼"><a href="#两个词的词头相拼" class="headerlink" title="两个词的词头相拼"></a>两个词的词头相拼</h3><table>
+<thead>
+<tr>
+<th>第一个词</th>
+<th>第二个词</th>
+<th>拼缀词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>American</td>
+<td>Indian</td>
+<td>Amerind 美洲印第安人</td>
+</tr>
+<tr>
+<td>human</td>
+<td>intelligence</td>
+<td>humint 人工情报（指利用间谍搜集情报的业务）</td>
+</tr>
+<tr>
+<td>situation</td>
+<td>comedy</td>
+<td>sitcom 情景喜剧</td>
+</tr>
+<tr>
+<td>international</td>
+<td>dice</td>
+<td>interpol 国际警察</td>
+</tr>
+</tbody>
+</table>
+<h2 id="拟声法"><a href="#拟声法" class="headerlink" title="拟声法"></a>拟声法</h2><p>模拟事物的声音而产生词的方法称为拟声法。</p>
+<h3 id="基本拟声词"><a href="#基本拟声词" class="headerlink" title="基本拟声词"></a>基本拟声词</h3><p>基本拟声词又称“初级拟声词”，是指因与义的相似，能引起音与形之间的联想或联系。基本拟声词大多是机械地模拟人、动物以及自然界中没有生命物体的声音。</p>
+<ol>
+<li>模仿人的声音。eg. babble 婴儿牙牙学语；cough 咳嗽；sob 抽泣；heehaw 傻笑；bellow 怒吼；chuckle 咯咯地笑。</li>
+<li>模仿动物的鸣叫。eg. pigeons coo 鸽子咕咕叫；flogs croak 青蛙呱呱叫；apes gibber 猿啼；bees buzz 蜜蜂嗡嗡叫。</li>
+<li>模仿水声。eg. ebb 退潮；bubble 冒泡；lap 拍打；ripple 涟漪；ooze 渗流。</li>
+</ol>
+<h3 id="次要拟声词"><a href="#次要拟声词" class="headerlink" title="次要拟声词"></a>次要拟声词</h3><p>次要拟声词是指因某种象征性的意义发生联想的词。从词源上讲，这类词是没有拟声依据的，但它们某些字母的发音能象征某种概念或意境，使人产生联想。简单来说，也就是这些词具有拟声的作用。</p>
+<ol>
+<li>以 <code>gr-</code> 开头的单词，这类词多表示一种沉闷、不快的声音，往往暗示一种不快或悲惨的事。<br>eg. groan 呻吟；grumble 抱怨；grudge 怨恨；grubby 肮脏；gruesome 可憎的；groggy 不稳的；greed 贪婪的；grumpy 性格暴躁的</li>
+<li>以 <code>bl-</code> 开头的单词，这类词往往含有“充气”的含义。<br>eg. blast 鼓风；bluster 风狂吹；bloat 使膨胀、肿起</li>
+<li>以 <code>cl-</code> 开头的单词，这类词通常表示一种尖脆的声音。<br>eg. clap 拍手声；clang 铿锵有力的撞击声；clunk 哐啷声；clatter 哗啦声；clash 撞击声；clink 叮当声</li>
+<li>以 <code>fl-</code> 开头的单词，这类词往往含有“快速移动或运动”的含义。<br>eg. fly 飞；flap 飘动；flow 流动；flit 掠过</li>
+<li>以 <code>sk-</code> 开头的单词，这类词常指表面的摩擦。<br>eg. skid 打滑；skate 溜冰；scrape 刮；scour 擦亮；skid 刹车</li>
+<li>以 <code>sl-</code> 开头的单词，这类词多表示“滑”或“粘”。<br>eg. slick 滑溜的；sleek 光滑的；slide 滑行；slimy 粘滑的</li>
+<li>以 <code>sn-</code> 开头的单词，这类词往往与鼻子有关。<br>eg. snot 鼻涕；snore 打呼噜；sneeze 打喷嚏；sniffle 抽鼻子；snuffle （吸气时）发出响声；snivel 哭鼻子；sneer 讥笑、冷笑；snicker 暗笑0</li>
+<li>以 <code>sp-</code> 开头的单词，这类词可使人联想到水或其他液体、火药所产生的声响。<br>eg. spurt 喷射出；sputter 喷溅；splatter 飞溅；splash 溅湿；spit 吐唾沫；sprinkle 喷洒；spray 喷雾；spill 溅出</li>
+<li>以 <code>qu-</code> 开头的单词，这类词往往具有“摇动、颤动”的含义。<br>eg. quake 颤抖、震动；quaver 声音等颤抖</li>
+<li>以 <code>wh-</code> 开头的单词，这类词多表示一种气流的移动。<br>eg. whirl 旋转；whistle 吹口哨；whirr 呼呼声；wheeze 喘息；whisk 在空中掠；whizz 飕飕声；whip 用鞭子打</li>
+<li>以 <code>-sh</code> 结尾的单词，这类词常暗示一种粗暴、迅捷的行动或事物；或者形容破裂、粉碎的响声。<br>eg. clash 撞击声；crush 碾碎；bash 猛击；flush 冲洗；smash 打碎</li>
+<li>以 <code>-ump</code> 结尾的单词，这类词多表示“沉重地碰击”。<br>eg. lump 重重地坐下；bump 碰撞；plump 坠落；thump 重打；slump 暴跌</li>
+<li>以 <code>-are</code> 结尾的单词，这类词常表示强大或大噪声。<br>eg. flare 火焰闪耀；blare 发嘟嘟声、发出耀眼的光；glare 光闪耀、怒视</li>
+</ol>
+<h3 id="重叠拟声词"><a href="#重叠拟声词" class="headerlink" title="重叠拟声词"></a>重叠拟声词</h3><p>重叠拟声词是次要拟声词中最重要的一种形式，指的是一个拟声词为基词重叠而成的词。例如：hush-hush 嘘嘘；chirp-chirp 唧唧；tom-tom 咚咚；whine-whine 呜呜；tick-tick 滴答滴答等。</p>
 
       
     </div>
@@ -286,13 +669,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/04/19/junit-1/">JUnit 参数化测试和打包测试</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/02/english-5/">英语的其他构词法</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
-        <p><span>发布时间:</span>2016-04-19, 21:40:47</p>
-        <p><span>最后更新:</span>2016-04-19, 21:49:00</p>
+        <p><span>发布时间:</span>2016-05-02, 22:01:12</p>
+        <p><span>最后更新:</span>2016-05-02, 22:02:18</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/04/19/junit-1/" title="JUnit 参数化测试和打包测试">http://www.gcusky.com/2016/04/19/junit-1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/04/19/junit-1/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/02/english-5/" title="英语的其他构词法">http://www.gcusky.com/2016/05/02/english-5/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/05/02/english-5/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -305,16 +688,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/04/23/matlab-1/">
-                    纵切碎纸片复原的简单实现
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/18/junit/">
-                    JUnit 初体验
+                <a href="/2016/05/02/DesignPattern-2/">
+                    面向对象设计原则
                 </a>
             </div>
         
@@ -325,7 +702,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#测试计算圆的面积与周长类"><span class="toc-number">1.</span> <span class="toc-text">测试计算圆的面积与周长类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数化测试"><span class="toc-number">2.</span> <span class="toc-text">参数化测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包测试"><span class="toc-number">3.</span> <span class="toc-text">打包测试</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#缩略法"><span class="toc-number">1.</span> <span class="toc-text">缩略法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#截短词"><span class="toc-number">1.1.</span> <span class="toc-text">截短词</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#截掉词尾"><span class="toc-number">1.1.1.</span> <span class="toc-text">截掉词尾</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#截掉词头"><span class="toc-number">1.1.2.</span> <span class="toc-text">截掉词头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#截掉词头和词尾"><span class="toc-number">1.1.3.</span> <span class="toc-text">截掉词头和词尾</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#截掉词中"><span class="toc-number">1.1.4.</span> <span class="toc-text">截掉词中</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#首字母缩写"><span class="toc-number">1.2.</span> <span class="toc-text">首字母缩写</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拼缀法"><span class="toc-number">2.</span> <span class="toc-text">拼缀法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一个词的词头与第二个词的词尾相拼"><span class="toc-number">2.1.</span> <span class="toc-text">第一个词的词头与第二个词的词尾相拼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一个词与第二个词的词尾相拼"><span class="toc-number">2.2.</span> <span class="toc-text">第一个词与第二个词的词尾相拼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一个词的词头与第二个词相拼"><span class="toc-number">2.3.</span> <span class="toc-text">第一个词的词头与第二个词相拼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两个词的词头相拼"><span class="toc-number">2.4.</span> <span class="toc-text">两个词的词头相拼</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拟声法"><span class="toc-number">3.</span> <span class="toc-text">拟声法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本拟声词"><span class="toc-number">3.1.</span> <span class="toc-text">基本拟声词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#次要拟声词"><span class="toc-number">3.2.</span> <span class="toc-text">次要拟声词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重叠拟声词"><span class="toc-number">3.3.</span> <span class="toc-text">重叠拟声词</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -387,7 +764,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/19/junit-1/" data-title="JUnit 参数化测试和打包测试" data-url="http://www.gcusky.com/2016/04/19/junit-1/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/02/english-5/" data-title="英语的其他构词法" data-url="http://www.gcusky.com/2016/05/02/english-5/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -411,15 +788,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/23/matlab-1/" title="上一篇: 纵切碎纸片复原的简单实现">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/04/18/junit/" title="下一篇: JUnit 初体验">
+            <a href="/2016/05/02/DesignPattern-2/" title="下一篇: 面向对象设计原则">
                 <i class="fa fa-angle-right"></i>
             </a>
         
