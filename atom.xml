@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-05-02T08:24:40.410Z</updated>
+  <updated>2016-05-02T08:30:49.439Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://www.gcusky.com/2016/05/02/DesignPattern-2/"/>
     <id>http://www.gcusky.com/2016/05/02/DesignPattern-2/</id>
     <published>2016-05-02T08:23:45.000Z</published>
-    <updated>2016-05-02T08:24:40.410Z</updated>
+    <updated>2016-05-02T08:30:49.439Z</updated>
     
     <content type="html">&lt;p&gt;面向对象设计原则是学习设计模式的基础，每一种设计模式都符合某一种或多种面向对象设计原则。通过在软件开发中使用这些原则可以提高软件的可维护性和可复用性，让我们可以设计出更加灵活也更容易扩展的软件系统，实现可维护性复用的目标。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;软件的可维护性和可复用性&quot;&gt;&lt;a href=&quot;#软件的可维护性和可复用性&quot; class=&quot;headerlink&quot; title=&quot;软件的可维护性和可复用性&quot;&gt;&lt;/a&gt;软件的可维护性和可复用性&lt;/h3&gt;&lt;ul&gt;
+&lt;h2 id=&quot;软件的可维护性和可复用性&quot;&gt;&lt;a href=&quot;#软件的可维护性和可复用性&quot; class=&quot;headerlink&quot; title=&quot;软件的可维护性和可复用性&quot;&gt;&lt;/a&gt;软件的可维护性和可复用性&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;知名软件大师 _Robert C.Martin_ 认为一个可维护性（Maintainability）较低的软件设计，通常由于如下四个原因造成：&lt;ul&gt;
 &lt;li&gt;过于僵硬（Rigidity） &lt;/li&gt;
 &lt;li&gt;过于脆弱（Fragility） &lt;/li&gt;
@@ -43,7 +43,7 @@
 &lt;li&gt;在面向对象的设计里面，&lt;strong&gt;可维护性复用都是以面向对象设计原则为基础的&lt;/strong&gt;，这些设计原则首先都是复用的原则，遵循这些设计原则可以有效地提高系统的复用性，同时提高系统的可维护性。 &lt;/li&gt;
 &lt;li&gt;面向对象设计原则和设计模式也是对系统进行合理重构的指南针，&lt;strong&gt;重构（Refactoring）是在不改变软件现有功能的基础上，通过调整程序代码改善软件的质量、性能，使其程序的设计模式和架构更趋合理，提高软件的扩展性和维护性&lt;/strong&gt;。 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;面向对象设计原则综述&quot;&gt;&lt;a href=&quot;#面向对象设计原则综述&quot; class=&quot;headerlink&quot; title=&quot;面向对象设计原则综述&quot;&gt;&lt;/a&gt;面向对象设计原则综述&lt;/h3&gt;&lt;table&gt;
+&lt;h2 id=&quot;面向对象设计原则综述&quot;&gt;&lt;a href=&quot;#面向对象设计原则综述&quot; class=&quot;headerlink&quot; title=&quot;面向对象设计原则综述&quot;&gt;&lt;/a&gt;面向对象设计原则综述&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;设计原则名称&lt;/th&gt;
@@ -89,16 +89,16 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&quot;单一职责原则&quot;&gt;&lt;a href=&quot;#单一职责原则&quot; class=&quot;headerlink&quot; title=&quot;单一职责原则&quot;&gt;&lt;/a&gt;单一职责原则&lt;/h3&gt;&lt;h4 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h4&gt;&lt;ul&gt;
+&lt;h2 id=&quot;单一职责原则&quot;&gt;&lt;a href=&quot;#单一职责原则&quot; class=&quot;headerlink&quot; title=&quot;单一职责原则&quot;&gt;&lt;/a&gt;单一职责原则&lt;/h2&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;一个对象应该只包含&lt;strong&gt;单一的职责&lt;/strong&gt;，并且该职责被完整地封装在一个类中。&lt;/li&gt;
 &lt;li&gt;就一个类而言，应该&lt;strong&gt;仅有一个引起它变化的原因&lt;/strong&gt;。 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;一个类（或者大到模块，小到方法）承担的职责越多，它被复用的可能性越小。&lt;/li&gt;
 &lt;li&gt;类的职责主要包括两个方面：数据职责和行为职责，&lt;strong&gt;数据职责&lt;/strong&gt;通过其&lt;strong&gt;属性&lt;/strong&gt;来体现，而&lt;strong&gt;行为职责&lt;/strong&gt;通过其&lt;strong&gt;方法&lt;/strong&gt;来体现。&lt;/li&gt;
 &lt;li&gt;单一职责原则是实现&lt;strong&gt;高内聚、低耦合的指导方针&lt;/strong&gt;。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;电话通话的时候有四个过程发生：拨号、通话、回应、挂机。&lt;/p&gt;
+&lt;h3 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;p&gt;电话通话的时候有四个过程发生：拨号、通话、回应、挂机。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;IPhone&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//拨通电话&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;dial&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String phoneNumber)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//通话&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;chat&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Object o)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//通话完毕，挂电话&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;hangup&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;当前 &lt;code&gt;IPhone&lt;/code&gt; 这个接口包含了两个职责：一个是协议管理，一个是数据传送。&lt;code&gt;dial()&lt;/code&gt; 和 &lt;code&gt;hangup()&lt;/code&gt; 两个方法实现的是协议管理，分别负责拨通和挂机；&lt;code&gt;chat()&lt;/code&gt; 实现的是数据传输，把我们说的话转换成模拟信号或数字信号传递到对方，然后再把对方传递过来的信号还原成我们听得懂的语言。而且这两个职责变化互不相关，那就考虑拆分成两个接口，类图如下：&lt;/p&gt;
@@ -106,15 +106,15 @@
 &lt;p&gt;这个类图完全满足了单一职责原则，但一个手机类要把 &lt;code&gt;ConnectionManager&lt;/code&gt; 和 &lt;code&gt;DataTransfer&lt;/code&gt; 组合在一起才能使用。组合是一种强耦关系，而且还增加了类的复杂性，多了两个类。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;这样设计才是完美的，一个类实现了两个接口，把两个职责融合在一一个类中。虽然 &lt;code&gt;Phone&lt;/code&gt; 中有两个原因引起变化，但我们是面向接口编程【后面依赖倒置原则会提到】，我们对外公布的是接口不是实现类。而且如果真的要实现类的单一职责，这就必须使用上面的组合模式了，这会引起类间耦合过重、类的数量增加等问题，人为增加设计的复杂性。&lt;/p&gt;
-&lt;h4 id=&quot;注意&quot;&gt;&lt;a href=&quot;#注意&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;注意&quot;&gt;&lt;a href=&quot;#注意&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;单一职责原则提出了一个编写程序的标准，用“职责”或“变化原因”来衡量接口或类设计得是否优良，但是“职责”和“变化原因”都是不可度量的，因项目而异，因环境而异。&lt;/li&gt;
 &lt;li&gt;对于单一职责原则，建议是接口&lt;strong&gt;一定&lt;/strong&gt;要做到单一职责原则，类的设计&lt;strong&gt;尽量&lt;/strong&gt;做到只有一个原因引起变化。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;里氏替换原则&quot;&gt;&lt;a href=&quot;#里氏替换原则&quot; class=&quot;headerlink&quot; title=&quot;里氏替换原则&quot;&gt;&lt;/a&gt;里氏替换原则&lt;/h3&gt;&lt;h4 id=&quot;定义-1&quot;&gt;&lt;a href=&quot;#定义-1&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h4&gt;&lt;ul&gt;
+&lt;h2 id=&quot;里氏替换原则&quot;&gt;&lt;a href=&quot;#里氏替换原则&quot; class=&quot;headerlink&quot; title=&quot;里氏替换原则&quot;&gt;&lt;/a&gt;里氏替换原则&lt;/h2&gt;&lt;h3 id=&quot;定义-1&quot;&gt;&lt;a href=&quot;#定义-1&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;如果对每一个类型为S的对象o1，都有类型为T的对象o2，使得以T定义的所有程序P在所有的对象o1都代换成o2时，程序P的行为没有变化，那么类型S是类型T的子类型。&lt;/li&gt;
 &lt;li&gt;所有引用基类（父类）的地方必须能透明地使用其子类的对象。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;分析-1&quot;&gt;&lt;a href=&quot;#分析-1&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;分析-1&quot;&gt;&lt;a href=&quot;#分析-1&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;里氏代换原则可以通俗表述为：&lt;strong&gt;在软件中如果能够使用基类对象，那么一定能够使用其子类对象&lt;/strong&gt;。只要父类能出现的地方子类就可以出现，而且替换为子类也不会产生任何错误或异常，使用者可能根本就不需要知道是父类还是子类。但是反过来就不行，有子类出现的地方，父类未必就能适应。&lt;/li&gt;
 &lt;li&gt;里氏代换原则是实现&lt;strong&gt;开闭原则&lt;/strong&gt;的重要方式之一，由于使用基类对象的地方都可以使用子类对象，因此在程序中尽量使用基类类型来对对象进行定义，而在运行时再确定其子类类型，用子类对象来替换父类对象。&lt;/li&gt;
 &lt;li&gt;更通俗来讲&lt;strong&gt;子类可以扩展父类的功能，但不能改变父类原有的功能&lt;/strong&gt;。它包含以下4层含义：&lt;ul&gt;
@@ -127,17 +127,17 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;助解类图&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-04.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;例子-1&quot;&gt;&lt;a href=&quot;#例子-1&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;我喜欢动物，那我一定喜欢狗，因为狗是动物的子类；但是我喜欢狗，不能据此断定我喜欢动物，因为我并不喜欢老鼠，虽然它也是动物。&lt;/p&gt;
-&lt;h4 id=&quot;注意-1&quot;&gt;&lt;a href=&quot;#注意-1&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;例子-1&quot;&gt;&lt;a href=&quot;#例子-1&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;p&gt;我喜欢动物，那我一定喜欢狗，因为狗是动物的子类；但是我喜欢狗，不能据此断定我喜欢动物，因为我并不喜欢老鼠，虽然它也是动物。&lt;/p&gt;
+&lt;h3 id=&quot;注意-1&quot;&gt;&lt;a href=&quot;#注意-1&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;在类中调用其它类时务必要使用父类或接口，如果不能使用父类或接口，则说明类的设计已经违背了LSP原则。&lt;/li&gt;
 &lt;li&gt;如果子类不能完整地实现父类的方法，或者父类的某些方法在子类中已经发生“畸变”，则建议断开父子继承关系，采用依赖、聚合、组合等关系代替继承。&lt;/li&gt;
 &lt;li&gt;在项目中，采用里氏替换原则时，尽量避免子类的“个性”，一旦子类有“个性”，这个子类和父类之间的关系就很难调。把子类当做父类使用，子类的“个性”就会被抹杀；而把子类单独作为一个业务来使用，则会让代码间的耦合关系变得扑朔迷离 —— 缺乏类替换的标准。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;依赖倒转原则&quot;&gt;&lt;a href=&quot;#依赖倒转原则&quot; class=&quot;headerlink&quot; title=&quot;依赖倒转原则&quot;&gt;&lt;/a&gt;依赖倒转原则&lt;/h3&gt;&lt;h4 id=&quot;定义-2&quot;&gt;&lt;a href=&quot;#定义-2&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h4&gt;&lt;ul&gt;
+&lt;h2 id=&quot;依赖倒转原则&quot;&gt;&lt;a href=&quot;#依赖倒转原则&quot; class=&quot;headerlink&quot; title=&quot;依赖倒转原则&quot;&gt;&lt;/a&gt;依赖倒转原则&lt;/h2&gt;&lt;h3 id=&quot;定义-2&quot;&gt;&lt;a href=&quot;#定义-2&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;高层模块&lt;/strong&gt;不应该依赖低层模块，它们都应该依赖抽象。&lt;strong&gt;抽象&lt;/strong&gt;不应该依赖于细节，&lt;strong&gt;细节&lt;/strong&gt;应该依赖于抽象。&lt;/li&gt;
 &lt;li&gt;要针对接口编程，不要针对实现编程。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;分析-2&quot;&gt;&lt;a href=&quot;#分析-2&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;分析-2&quot;&gt;&lt;a href=&quot;#分析-2&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;简单来说，依赖倒转原则就是指：&lt;strong&gt;代码要依赖于抽象的类，而不要依赖于具体的类；要针对接口或抽象类编程，而不是针对具体类编程&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;实现开闭原则的关键是抽象化，并且从抽象化导出具体化实现，如果说&lt;strong&gt;开闭原则是面向对象设计的目标的话&lt;/strong&gt;，那么&lt;strong&gt;依赖倒转原则就是面向对象设计的主要手段&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;依赖倒转原则的常用实现方式之一是在代码中使用抽象类，而将具体类放在配置文件中。 &lt;ul&gt;
@@ -155,8 +155,8 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;例子-2&quot;&gt;&lt;a href=&quot;#例子-2&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;参考 &lt;strong&gt;单一职责原则&lt;/strong&gt; 例子。&lt;/p&gt;
-&lt;h4 id=&quot;注意-2&quot;&gt;&lt;a href=&quot;#注意-2&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h4&gt;&lt;ol&gt;
+&lt;h3 id=&quot;例子-2&quot;&gt;&lt;a href=&quot;#例子-2&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;p&gt;参考 &lt;strong&gt;单一职责原则&lt;/strong&gt; 例子。&lt;/p&gt;
+&lt;h3 id=&quot;注意-2&quot;&gt;&lt;a href=&quot;#注意-2&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;每个类&lt;strong&gt;尽量&lt;/strong&gt;有接口或抽象类，或者抽象类和接口两者具备。&lt;br&gt;【尽量而已，如一些工具类xxxUtils不需要接口或抽象类】&lt;/li&gt;
 &lt;li&gt;变量的表面类型尽量是接口或抽象类。&lt;br&gt;【表面类型是在定义的时候赋予的类型，实际类型是对象的类型】&lt;/li&gt;
 &lt;li&gt;任何类都不应该从具体类派生。&lt;br&gt;【有时设计缺陷在所难免，因此只要不超过两层的继承都是可以忍受的】&lt;/li&gt;
@@ -169,11 +169,11 @@
 &lt;li&gt;在项目中，只要记得“面向接口编程”就基本上掌握了依赖倒置原则的核心。&lt;/li&gt;
 &lt;li&gt;在现实中也存在必须依赖细节的事物，具体问题具体分析。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;接口隔离原则&quot;&gt;&lt;a href=&quot;#接口隔离原则&quot; class=&quot;headerlink&quot; title=&quot;接口隔离原则&quot;&gt;&lt;/a&gt;接口隔离原则&lt;/h3&gt;&lt;h4 id=&quot;定义-3&quot;&gt;&lt;a href=&quot;#定义-3&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h4&gt;&lt;ul&gt;
+&lt;h2 id=&quot;接口隔离原则&quot;&gt;&lt;a href=&quot;#接口隔离原则&quot; class=&quot;headerlink&quot; title=&quot;接口隔离原则&quot;&gt;&lt;/a&gt;接口隔离原则&lt;/h2&gt;&lt;h3 id=&quot;定义-3&quot;&gt;&lt;a href=&quot;#定义-3&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;客户端&lt;strong&gt;不应该依赖&lt;/strong&gt;那些它&lt;strong&gt;不需要的接口&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;一旦一个&lt;strong&gt;接口太大&lt;/strong&gt;，则需要将它&lt;strong&gt;分割成一些更细小的接口&lt;/strong&gt;，使用该接口的客户端仅需知道与之相关的方法即可。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;分析-3&quot;&gt;&lt;a href=&quot;#分析-3&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;分析-3&quot;&gt;&lt;a href=&quot;#分析-3&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;接口隔离原则是指&lt;strong&gt;使用多个专门的接口，而不使用单一的总接口&lt;/strong&gt;。每一个接口应该承担一种相对独立的角色，不多不少，不干不该干的事，该干的事都要干。&lt;ol&gt;
 &lt;li&gt;一个接口就&lt;strong&gt;只代表一个角色&lt;/strong&gt;，每个角色都有它特定的一个接口，此时这个原则可以叫做“角色隔离原则”。  &lt;/li&gt;
 &lt;li&gt;接口&lt;strong&gt;仅仅提供客户端需要的行为&lt;/strong&gt;，即所需的方法，客户端不需要的行为则隐藏起来，应当为客户端提供尽可能小的单独的接口，而不要提供大的总接口。 &lt;/li&gt;
@@ -182,11 +182,11 @@
 &lt;li&gt;使用接口隔离原则拆分接口时，首先必须满足&lt;strong&gt;单一职责原则&lt;/strong&gt;，将一组相关的操作定义在一个接口中，且在满足高内聚的前提下，接口中的方法越少越好。&lt;/li&gt;
 &lt;li&gt;可以在进行系统设计时采用&lt;strong&gt;定制服务&lt;/strong&gt;的方式，即&lt;strong&gt;为不同的客户端提供宽窄不同的接口&lt;/strong&gt;，只提供用户需要的行为，而隐藏用户不需要的行为。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;例子-3&quot;&gt;&lt;a href=&quot;#例子-3&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;胖接口原始类图&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;例子-3&quot;&gt;&lt;a href=&quot;#例子-3&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;胖接口原始类图&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-05.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;胖接口细化后的系统类图&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-06.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;注意-3&quot;&gt;&lt;a href=&quot;#注意-3&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;注意-3&quot;&gt;&lt;a href=&quot;#注意-3&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;保证接口的纯洁性&lt;ol&gt;
 &lt;li&gt;接口要尽量小【“小”是有限度的，根据接口隔离原则拆分接口时，首先必须满足单一职责原则】&lt;/li&gt;
 &lt;li&gt;接口要高内聚【高内聚就是提高接口、类、模块的处理能力，减少对外的交互；具体到接口隔离原则就是，要求在接口中少公布 public 方法，接口是对外的承诺，承诺越少对系统开发越有利，变更的风险也就越少，同时利于降低成本】&lt;/li&gt;
@@ -196,12 +196,12 @@
 &lt;/li&gt;
 &lt;li&gt;已经被污染的接口，尽量去修复；若变更的风险较大，则采用适配器模式进行转化处理。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;迪米特法则&quot;&gt;&lt;a href=&quot;#迪米特法则&quot; class=&quot;headerlink&quot; title=&quot;迪米特法则&quot;&gt;&lt;/a&gt;迪米特法则&lt;/h3&gt;&lt;h4 id=&quot;定义-4&quot;&gt;&lt;a href=&quot;#定义-4&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h4&gt;&lt;ul&gt;
+&lt;h2 id=&quot;迪米特法则&quot;&gt;&lt;a href=&quot;#迪米特法则&quot; class=&quot;headerlink&quot; title=&quot;迪米特法则&quot;&gt;&lt;/a&gt;迪米特法则&lt;/h2&gt;&lt;h3 id=&quot;定义-4&quot;&gt;&lt;a href=&quot;#定义-4&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;不要和“陌生人”说话。&lt;/li&gt;
 &lt;li&gt;只与你的直接朋友通信。&lt;/li&gt;
 &lt;li&gt;每一个软件单位对其他的单位都只有最少的知识，而且局限于那些与本单位密切相关的软件单位。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;分析-4&quot;&gt;&lt;a href=&quot;#分析-4&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;分析-4&quot;&gt;&lt;a href=&quot;#分析-4&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;在迪米特法则中，对于一个对象，其朋友包括以下几类：&lt;ol&gt;
 &lt;li&gt;当前对象本身(this)；&lt;/li&gt;
 &lt;li&gt;以参数形式传入到当前对象方法中的对象；&lt;/li&gt;
@@ -224,29 +224,29 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;例子-4&quot;&gt;&lt;a href=&quot;#例子-4&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;某系统界面类（如Form1、Form2等类）与数据访问类（如DAO1、DAO2等类）之间的调用关系较为复杂，如图所示：&lt;/p&gt;
+&lt;h3 id=&quot;例子-4&quot;&gt;&lt;a href=&quot;#例子-4&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;p&gt;某系统界面类（如Form1、Form2等类）与数据访问类（如DAO1、DAO2等类）之间的调用关系较为复杂，如图所示：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-07.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;使用迪米特法则之后：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-08.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;注意-4&quot;&gt;&lt;a href=&quot;#注意-4&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;注意-4&quot;&gt;&lt;a href=&quot;#注意-4&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;类与类之间的关系是建立在类间的，而不是方法间，因此一个方法尽量不引入一个类中不存在的对象。&lt;/li&gt;
 &lt;li&gt;朋友类的定义：出现在成员变量、方法的输入输出参数中的类称为成员朋友类，而出现在方法体内部的类不属于朋友类。&lt;/li&gt;
 &lt;li&gt;如果一个方法放在本类中，既不增加类间关系，也对本类不产生负面影响，那就放置在本类中。&lt;/li&gt;
 &lt;li&gt;迪米特法则的核心观念就是类间解耦，弱耦合；只有弱耦合了以后，类的复用率才可以提高。其要求的结果就是产生了大量的中转或跳转类，导致系统的复杂性提高，同时也为维护带来了难度。所以在使用迪米特法则时需要反复权衡，既做到让结构清晰，又做到高内聚低耦合。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;开闭原则&quot;&gt;&lt;a href=&quot;#开闭原则&quot; class=&quot;headerlink&quot; title=&quot;开闭原则&quot;&gt;&lt;/a&gt;开闭原则&lt;/h3&gt;&lt;h4 id=&quot;定义-5&quot;&gt;&lt;a href=&quot;#定义-5&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h4&gt;&lt;ul&gt;
+&lt;h2 id=&quot;开闭原则&quot;&gt;&lt;a href=&quot;#开闭原则&quot; class=&quot;headerlink&quot; title=&quot;开闭原则&quot;&gt;&lt;/a&gt;开闭原则&lt;/h2&gt;&lt;h3 id=&quot;定义-5&quot;&gt;&lt;a href=&quot;#定义-5&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;一个软件实体应当&lt;strong&gt;对扩展开放，对修改关闭。&lt;/strong&gt;也就是说在设计一个模块的时候，应当使这个模块可以在不被修改的前提下被扩展，即实现在不修改源代码的情况下改变这个模块的行为。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;分析-5&quot;&gt;&lt;a href=&quot;#分析-5&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;分析-5&quot;&gt;&lt;a href=&quot;#分析-5&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;在开闭原则的定义中，软件实体可以指一个软件模块、一个由多个类组成的局部结构或一个独立的类。&lt;/li&gt;
 &lt;li&gt;抽象化是开闭原则的关键。 &lt;/li&gt;
 &lt;li&gt;开闭原则还可以通过一个更加具体的“对可变性封装原则”来描述，对可变性封装原则（Principle of Encapsulation of Variation, EVP）要求找到系统的可变因素并将其封装起来。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;例子-5&quot;&gt;&lt;a href=&quot;#例子-5&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;某图形界面系统提供了各种不同形状的按钮，客户端代码可针对这些按钮进行编程，用户可能会改变需求要求使用不同的按钮，原始设计方案如图所示：&lt;/p&gt;
+&lt;h3 id=&quot;例子-5&quot;&gt;&lt;a href=&quot;#例子-5&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;p&gt;某图形界面系统提供了各种不同形状的按钮，客户端代码可针对这些按钮进行编程，用户可能会改变需求要求使用不同的按钮，原始设计方案如图所示：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-09.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;现对该系统进行重构，使之满足开闭原则的要求。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-10.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;注意-5&quot;&gt;&lt;a href=&quot;#注意-5&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;注意-5&quot;&gt;&lt;a href=&quot;#注意-5&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;软件实体：项目或软件产品中按照一定的逻辑规则划分的模块、抽象和类、方法。&lt;/li&gt;
 &lt;li&gt;在非金融类项目中对货币处理时，一般取2未精度，通常的设计方法是在运算过程中扩大100倍，在需要展示时再缩小100倍，减少精度带来的误差。&lt;/li&gt;
 &lt;li&gt;如何使用开闭原则：&lt;ol&gt;
@@ -257,10 +257,10 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;合成复用原则&quot;&gt;&lt;a href=&quot;#合成复用原则&quot; class=&quot;headerlink&quot; title=&quot;合成复用原则&quot;&gt;&lt;/a&gt;合成复用原则&lt;/h3&gt;&lt;h4 id=&quot;定义-6&quot;&gt;&lt;a href=&quot;#定义-6&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h4&gt;&lt;ul&gt;
+&lt;h2 id=&quot;合成复用原则&quot;&gt;&lt;a href=&quot;#合成复用原则&quot; class=&quot;headerlink&quot; title=&quot;合成复用原则&quot;&gt;&lt;/a&gt;合成复用原则&lt;/h2&gt;&lt;h3 id=&quot;定义-6&quot;&gt;&lt;a href=&quot;#定义-6&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;尽量使用对象组合&lt;/strong&gt;，而&lt;strong&gt;不是继承&lt;/strong&gt;来达到复用的目的。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;分析-6&quot;&gt;&lt;a href=&quot;#分析-6&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;分析-6&quot;&gt;&lt;a href=&quot;#分析-6&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;在面向对象设计中，可以通过两种基本方法在不同的环境中复用已有的设计和实现，即通过&lt;strong&gt;组合/聚合关系&lt;/strong&gt;或通过&lt;strong&gt;继承&lt;/strong&gt;。&lt;ul&gt;
 &lt;li&gt;继承复用：实现简单，易于扩展。破坏系统的封装性；从基类继承而来的实现是静态的，不可能在运行时发生改变，没有足够的灵活性；只能在有限的环境中使用。（“白箱”复用 ）&lt;/li&gt;
 &lt;li&gt;组合/聚合复用：耦合度相对较低，选择性地调用成员对象的操作；可以在运行时动态进行。（“黑箱”复用 ）&lt;/li&gt;
@@ -268,11 +268,11 @@
 &lt;/li&gt;
 &lt;li&gt;组合/聚合可以&lt;strong&gt;使系统更加灵活&lt;/strong&gt;，类与类之间的&lt;strong&gt;耦合度降低&lt;/strong&gt;，一个类的变化对其他类造成的影响相对较少，因此一般&lt;strong&gt;首选使用组合/聚合来实现复用&lt;/strong&gt;；其次才考虑继承，在使用继承时，需要严格遵循里氏代换原则，有效使用继承会有助于对问题的理解，降低复杂度，而滥用继承反而会增加系统构建和维护的难度以及系统的复杂度，因此需要&lt;strong&gt;慎重使用继承复用&lt;/strong&gt;。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;例子-6&quot;&gt;&lt;a href=&quot;#例子-6&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;某教学管理系统部分数据库访问类设计如图所示：&lt;/p&gt;
+&lt;h3 id=&quot;例子-6&quot;&gt;&lt;a href=&quot;#例子-6&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;p&gt;某教学管理系统部分数据库访问类设计如图所示：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-11.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;如果需要更换数据库连接方式，如原来采用JDBC连接数据库，现在采用数据库连接池连接，则需要修改DBUtil类源代码。如果StudentDAO采用JDBC连接，但是TeacherDAO采用连接池连接，则需要增加一个新的DBUtil类，并修改StudentDAO或TeacherDAO的源代码，使之继承新的数据库连接类，这将违背开闭原则，系统扩展性较差。&lt;br&gt;现使用合成复用原则对其进行重构。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/umloo-12.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;注意-6&quot;&gt;&lt;a href=&quot;#注意-6&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;注意-6&quot;&gt;&lt;a href=&quot;#注意-6&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;只有当以下的条件全部被满足时，才应当使用继承关系。&lt;ol&gt;
 &lt;li&gt;子类是超类的一个特殊种类，而不是超类的一个角色，也就是区分“Has-A”和“Is-A”.只有“Is-A”关系才符合继承关系，“Has-A”关系应当使用聚合来描述。&lt;/li&gt;
 &lt;li&gt;永远不会出现需要将子类换成另外一个类的子类的情况。如果不能肯定将来是否会变成另外一个子类的话，就不要使用继承。&lt;/li&gt;
@@ -280,7 +280,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;ul&gt;
+&lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://item.jd.com/10854678.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《设计模式》&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://item.jd.com/11414555.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《设计模式之禅（第2版）》&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://cloud.gcusky.com/uml/umloo-10.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/umloo-11.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/umloo-12.jpg">
-<meta property="og:updated_time" content="2016-05-02T08:24:40.410Z">
+<meta property="og:updated_time" content="2016-05-02T08:30:49.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象设计原则">
 <meta name="twitter:description" content="面向对象设计原则是学习设计模式的基础，每一种设计模式都符合某一种或多种面向对象设计原则。通过在软件开发中使用这些原则可以提高软件的可维护性和可复用性，让我们可以设计出更加灵活也更容易扩展的软件系统，实现可维护性复用的目标。">
@@ -286,7 +286,7 @@
           
         <p>面向对象设计原则是学习设计模式的基础，每一种设计模式都符合某一种或多种面向对象设计原则。通过在软件开发中使用这些原则可以提高软件的可维护性和可复用性，让我们可以设计出更加灵活也更容易扩展的软件系统，实现可维护性复用的目标。</p>
 <a id="more"></a>
-<h3 id="软件的可维护性和可复用性"><a href="#软件的可维护性和可复用性" class="headerlink" title="软件的可维护性和可复用性"></a>软件的可维护性和可复用性</h3><ul>
+<h2 id="软件的可维护性和可复用性"><a href="#软件的可维护性和可复用性" class="headerlink" title="软件的可维护性和可复用性"></a>软件的可维护性和可复用性</h2><ul>
 <li>知名软件大师 _Robert C.Martin_ 认为一个可维护性（Maintainability）较低的软件设计，通常由于如下四个原因造成：<ul>
 <li>过于僵硬（Rigidity） </li>
 <li>过于脆弱（Fragility） </li>
@@ -305,7 +305,7 @@
 <li>在面向对象的设计里面，<strong>可维护性复用都是以面向对象设计原则为基础的</strong>，这些设计原则首先都是复用的原则，遵循这些设计原则可以有效地提高系统的复用性，同时提高系统的可维护性。 </li>
 <li>面向对象设计原则和设计模式也是对系统进行合理重构的指南针，<strong>重构（Refactoring）是在不改变软件现有功能的基础上，通过调整程序代码改善软件的质量、性能，使其程序的设计模式和架构更趋合理，提高软件的扩展性和维护性</strong>。 </li>
 </ul>
-<h3 id="面向对象设计原则综述"><a href="#面向对象设计原则综述" class="headerlink" title="面向对象设计原则综述"></a>面向对象设计原则综述</h3><table>
+<h2 id="面向对象设计原则综述"><a href="#面向对象设计原则综述" class="headerlink" title="面向对象设计原则综述"></a>面向对象设计原则综述</h2><table>
 <thead>
 <tr>
 <th>设计原则名称</th>
@@ -351,16 +351,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
+<h2 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ul>
 <li>一个对象应该只包含<strong>单一的职责</strong>，并且该职责被完整地封装在一个类中。</li>
 <li>就一个类而言，应该<strong>仅有一个引起它变化的原因</strong>。 </li>
 </ul>
-<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><ul>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><ul>
 <li>一个类（或者大到模块，小到方法）承担的职责越多，它被复用的可能性越小。</li>
 <li>类的职责主要包括两个方面：数据职责和行为职责，<strong>数据职责</strong>通过其<strong>属性</strong>来体现，而<strong>行为职责</strong>通过其<strong>方法</strong>来体现。</li>
 <li>单一职责原则是实现<strong>高内聚、低耦合的指导方针</strong>。</li>
 </ul>
-<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>电话通话的时候有四个过程发生：拨号、通话、回应、挂机。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>电话通话的时候有四个过程发生：拨号、通话、回应、挂机。</p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-01.jpg" alt=""></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IPhone</span> </span>&#123;</span><br><span class="line">    <span class="comment">//拨通电话</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dial</span><span class="params">(String phoneNumber)</span></span>;</span><br><span class="line">    <span class="comment">//通话</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">chat</span><span class="params">(Object o)</span></span>;</span><br><span class="line">    <span class="comment">//通话完毕，挂电话</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hangup</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当前 <code>IPhone</code> 这个接口包含了两个职责：一个是协议管理，一个是数据传送。<code>dial()</code> 和 <code>hangup()</code> 两个方法实现的是协议管理，分别负责拨通和挂机；<code>chat()</code> 实现的是数据传输，把我们说的话转换成模拟信号或数字信号传递到对方，然后再把对方传递过来的信号还原成我们听得懂的语言。而且这两个职责变化互不相关，那就考虑拆分成两个接口，类图如下：</p>
@@ -368,15 +368,15 @@
 <p>这个类图完全满足了单一职责原则，但一个手机类要把 <code>ConnectionManager</code> 和 <code>DataTransfer</code> 组合在一起才能使用。组合是一种强耦关系，而且还增加了类的复杂性，多了两个类。</p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-03.jpg" alt=""></p>
 <p>这样设计才是完美的，一个类实现了两个接口，把两个职责融合在一一个类中。虽然 <code>Phone</code> 中有两个原因引起变化，但我们是面向接口编程【后面依赖倒置原则会提到】，我们对外公布的是接口不是实现类。而且如果真的要实现类的单一职责，这就必须使用上面的组合模式了，这会引起类间耦合过重、类的数量增加等问题，人为增加设计的复杂性。</p>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
 <li>单一职责原则提出了一个编写程序的标准，用“职责”或“变化原因”来衡量接口或类设计得是否优良，但是“职责”和“变化原因”都是不可度量的，因项目而异，因环境而异。</li>
 <li>对于单一职责原则，建议是接口<strong>一定</strong>要做到单一职责原则，类的设计<strong>尽量</strong>做到只有一个原因引起变化。</li>
 </ul>
-<h3 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><ul>
+<h2 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><ul>
 <li>如果对每一个类型为S的对象o1，都有类型为T的对象o2，使得以T定义的所有程序P在所有的对象o1都代换成o2时，程序P的行为没有变化，那么类型S是类型T的子类型。</li>
 <li>所有引用基类（父类）的地方必须能透明地使用其子类的对象。</li>
 </ul>
-<h4 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h4><ul>
+<h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><ul>
 <li>里氏代换原则可以通俗表述为：<strong>在软件中如果能够使用基类对象，那么一定能够使用其子类对象</strong>。只要父类能出现的地方子类就可以出现，而且替换为子类也不会产生任何错误或异常，使用者可能根本就不需要知道是父类还是子类。但是反过来就不行，有子类出现的地方，父类未必就能适应。</li>
 <li>里氏代换原则是实现<strong>开闭原则</strong>的重要方式之一，由于使用基类对象的地方都可以使用子类对象，因此在程序中尽量使用基类类型来对对象进行定义，而在运行时再确定其子类类型，用子类对象来替换父类对象。</li>
 <li>更通俗来讲<strong>子类可以扩展父类的功能，但不能改变父类原有的功能</strong>。它包含以下4层含义：<ul>
@@ -389,17 +389,17 @@
 </ul>
 <p><strong>助解类图</strong></p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-04.jpg" alt=""></p>
-<h4 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h4><p>我喜欢动物，那我一定喜欢狗，因为狗是动物的子类；但是我喜欢狗，不能据此断定我喜欢动物，因为我并不喜欢老鼠，虽然它也是动物。</p>
-<h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4><ul>
+<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><p>我喜欢动物，那我一定喜欢狗，因为狗是动物的子类；但是我喜欢狗，不能据此断定我喜欢动物，因为我并不喜欢老鼠，虽然它也是动物。</p>
+<h3 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h3><ul>
 <li>在类中调用其它类时务必要使用父类或接口，如果不能使用父类或接口，则说明类的设计已经违背了LSP原则。</li>
 <li>如果子类不能完整地实现父类的方法，或者父类的某些方法在子类中已经发生“畸变”，则建议断开父子继承关系，采用依赖、聚合、组合等关系代替继承。</li>
 <li>在项目中，采用里氏替换原则时，尽量避免子类的“个性”，一旦子类有“个性”，这个子类和父类之间的关系就很难调。把子类当做父类使用，子类的“个性”就会被抹杀；而把子类单独作为一个业务来使用，则会让代码间的耦合关系变得扑朔迷离 —— 缺乏类替换的标准。</li>
 </ul>
-<h3 id="依赖倒转原则"><a href="#依赖倒转原则" class="headerlink" title="依赖倒转原则"></a>依赖倒转原则</h3><h4 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h4><ul>
+<h2 id="依赖倒转原则"><a href="#依赖倒转原则" class="headerlink" title="依赖倒转原则"></a>依赖倒转原则</h2><h3 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h3><ul>
 <li><strong>高层模块</strong>不应该依赖低层模块，它们都应该依赖抽象。<strong>抽象</strong>不应该依赖于细节，<strong>细节</strong>应该依赖于抽象。</li>
 <li>要针对接口编程，不要针对实现编程。</li>
 </ul>
-<h4 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h4><ul>
+<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3><ul>
 <li>简单来说，依赖倒转原则就是指：<strong>代码要依赖于抽象的类，而不要依赖于具体的类；要针对接口或抽象类编程，而不是针对具体类编程</strong>。</li>
 <li>实现开闭原则的关键是抽象化，并且从抽象化导出具体化实现，如果说<strong>开闭原则是面向对象设计的目标的话</strong>，那么<strong>依赖倒转原则就是面向对象设计的主要手段</strong>。</li>
 <li>依赖倒转原则的常用实现方式之一是在代码中使用抽象类，而将具体类放在配置文件中。 <ul>
@@ -417,8 +417,8 @@
 </ul>
 </li>
 </ul>
-<h4 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h4><p>参考 <strong>单一职责原则</strong> 例子。</p>
-<h4 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h4><ol>
+<h3 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h3><p>参考 <strong>单一职责原则</strong> 例子。</p>
+<h3 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h3><ol>
 <li>每个类<strong>尽量</strong>有接口或抽象类，或者抽象类和接口两者具备。<br>【尽量而已，如一些工具类xxxUtils不需要接口或抽象类】</li>
 <li>变量的表面类型尽量是接口或抽象类。<br>【表面类型是在定义的时候赋予的类型，实际类型是对象的类型】</li>
 <li>任何类都不应该从具体类派生。<br>【有时设计缺陷在所难免，因此只要不超过两层的继承都是可以忍受的】</li>
@@ -431,11 +431,11 @@
 <li>在项目中，只要记得“面向接口编程”就基本上掌握了依赖倒置原则的核心。</li>
 <li>在现实中也存在必须依赖细节的事物，具体问题具体分析。</li>
 </ul>
-<h3 id="接口隔离原则"><a href="#接口隔离原则" class="headerlink" title="接口隔离原则"></a>接口隔离原则</h3><h4 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h4><ul>
+<h2 id="接口隔离原则"><a href="#接口隔离原则" class="headerlink" title="接口隔离原则"></a>接口隔离原则</h2><h3 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h3><ul>
 <li>客户端<strong>不应该依赖</strong>那些它<strong>不需要的接口</strong>。</li>
 <li>一旦一个<strong>接口太大</strong>，则需要将它<strong>分割成一些更细小的接口</strong>，使用该接口的客户端仅需知道与之相关的方法即可。</li>
 </ul>
-<h4 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h4><ul>
+<h3 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h3><ul>
 <li>接口隔离原则是指<strong>使用多个专门的接口，而不使用单一的总接口</strong>。每一个接口应该承担一种相对独立的角色，不多不少，不干不该干的事，该干的事都要干。<ol>
 <li>一个接口就<strong>只代表一个角色</strong>，每个角色都有它特定的一个接口，此时这个原则可以叫做“角色隔离原则”。  </li>
 <li>接口<strong>仅仅提供客户端需要的行为</strong>，即所需的方法，客户端不需要的行为则隐藏起来，应当为客户端提供尽可能小的单独的接口，而不要提供大的总接口。 </li>
@@ -444,11 +444,11 @@
 <li>使用接口隔离原则拆分接口时，首先必须满足<strong>单一职责原则</strong>，将一组相关的操作定义在一个接口中，且在满足高内聚的前提下，接口中的方法越少越好。</li>
 <li>可以在进行系统设计时采用<strong>定制服务</strong>的方式，即<strong>为不同的客户端提供宽窄不同的接口</strong>，只提供用户需要的行为，而隐藏用户不需要的行为。</li>
 </ul>
-<h4 id="例子-3"><a href="#例子-3" class="headerlink" title="例子"></a>例子</h4><p><strong>胖接口原始类图</strong></p>
+<h3 id="例子-3"><a href="#例子-3" class="headerlink" title="例子"></a>例子</h3><p><strong>胖接口原始类图</strong></p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-05.jpg" alt=""></p>
 <p><strong>胖接口细化后的系统类图</strong></p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-06.jpg" alt=""></p>
-<h4 id="注意-3"><a href="#注意-3" class="headerlink" title="注意"></a>注意</h4><ul>
+<h3 id="注意-3"><a href="#注意-3" class="headerlink" title="注意"></a>注意</h3><ul>
 <li>保证接口的纯洁性<ol>
 <li>接口要尽量小【“小”是有限度的，根据接口隔离原则拆分接口时，首先必须满足单一职责原则】</li>
 <li>接口要高内聚【高内聚就是提高接口、类、模块的处理能力，减少对外的交互；具体到接口隔离原则就是，要求在接口中少公布 public 方法，接口是对外的承诺，承诺越少对系统开发越有利，变更的风险也就越少，同时利于降低成本】</li>
@@ -458,12 +458,12 @@
 </li>
 <li>已经被污染的接口，尽量去修复；若变更的风险较大，则采用适配器模式进行转化处理。</li>
 </ul>
-<h3 id="迪米特法则"><a href="#迪米特法则" class="headerlink" title="迪米特法则"></a>迪米特法则</h3><h4 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h4><ul>
+<h2 id="迪米特法则"><a href="#迪米特法则" class="headerlink" title="迪米特法则"></a>迪米特法则</h2><h3 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h3><ul>
 <li>不要和“陌生人”说话。</li>
 <li>只与你的直接朋友通信。</li>
 <li>每一个软件单位对其他的单位都只有最少的知识，而且局限于那些与本单位密切相关的软件单位。</li>
 </ul>
-<h4 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h4><ul>
+<h3 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h3><ul>
 <li>在迪米特法则中，对于一个对象，其朋友包括以下几类：<ol>
 <li>当前对象本身(this)；</li>
 <li>以参数形式传入到当前对象方法中的对象；</li>
@@ -486,29 +486,29 @@
 </ul>
 </li>
 </ul>
-<h4 id="例子-4"><a href="#例子-4" class="headerlink" title="例子"></a>例子</h4><p>某系统界面类（如Form1、Form2等类）与数据访问类（如DAO1、DAO2等类）之间的调用关系较为复杂，如图所示：</p>
+<h3 id="例子-4"><a href="#例子-4" class="headerlink" title="例子"></a>例子</h3><p>某系统界面类（如Form1、Form2等类）与数据访问类（如DAO1、DAO2等类）之间的调用关系较为复杂，如图所示：</p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-07.jpg" alt=""></p>
 <p>使用迪米特法则之后：</p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-08.jpg" alt=""></p>
-<h4 id="注意-4"><a href="#注意-4" class="headerlink" title="注意"></a>注意</h4><ul>
+<h3 id="注意-4"><a href="#注意-4" class="headerlink" title="注意"></a>注意</h3><ul>
 <li>类与类之间的关系是建立在类间的，而不是方法间，因此一个方法尽量不引入一个类中不存在的对象。</li>
 <li>朋友类的定义：出现在成员变量、方法的输入输出参数中的类称为成员朋友类，而出现在方法体内部的类不属于朋友类。</li>
 <li>如果一个方法放在本类中，既不增加类间关系，也对本类不产生负面影响，那就放置在本类中。</li>
 <li>迪米特法则的核心观念就是类间解耦，弱耦合；只有弱耦合了以后，类的复用率才可以提高。其要求的结果就是产生了大量的中转或跳转类，导致系统的复杂性提高，同时也为维护带来了难度。所以在使用迪米特法则时需要反复权衡，既做到让结构清晰，又做到高内聚低耦合。</li>
 </ul>
-<h3 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h3><h4 id="定义-5"><a href="#定义-5" class="headerlink" title="定义"></a>定义</h4><ul>
+<h2 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h2><h3 id="定义-5"><a href="#定义-5" class="headerlink" title="定义"></a>定义</h3><ul>
 <li>一个软件实体应当<strong>对扩展开放，对修改关闭。</strong>也就是说在设计一个模块的时候，应当使这个模块可以在不被修改的前提下被扩展，即实现在不修改源代码的情况下改变这个模块的行为。</li>
 </ul>
-<h4 id="分析-5"><a href="#分析-5" class="headerlink" title="分析"></a>分析</h4><ul>
+<h3 id="分析-5"><a href="#分析-5" class="headerlink" title="分析"></a>分析</h3><ul>
 <li>在开闭原则的定义中，软件实体可以指一个软件模块、一个由多个类组成的局部结构或一个独立的类。</li>
 <li>抽象化是开闭原则的关键。 </li>
 <li>开闭原则还可以通过一个更加具体的“对可变性封装原则”来描述，对可变性封装原则（Principle of Encapsulation of Variation, EVP）要求找到系统的可变因素并将其封装起来。</li>
 </ul>
-<h4 id="例子-5"><a href="#例子-5" class="headerlink" title="例子"></a>例子</h4><p>某图形界面系统提供了各种不同形状的按钮，客户端代码可针对这些按钮进行编程，用户可能会改变需求要求使用不同的按钮，原始设计方案如图所示：</p>
+<h3 id="例子-5"><a href="#例子-5" class="headerlink" title="例子"></a>例子</h3><p>某图形界面系统提供了各种不同形状的按钮，客户端代码可针对这些按钮进行编程，用户可能会改变需求要求使用不同的按钮，原始设计方案如图所示：</p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-09.jpg" alt=""></p>
 <p>现对该系统进行重构，使之满足开闭原则的要求。</p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-10.jpg" alt=""></p>
-<h4 id="注意-5"><a href="#注意-5" class="headerlink" title="注意"></a>注意</h4><ul>
+<h3 id="注意-5"><a href="#注意-5" class="headerlink" title="注意"></a>注意</h3><ul>
 <li>软件实体：项目或软件产品中按照一定的逻辑规则划分的模块、抽象和类、方法。</li>
 <li>在非金融类项目中对货币处理时，一般取2未精度，通常的设计方法是在运算过程中扩大100倍，在需要展示时再缩小100倍，减少精度带来的误差。</li>
 <li>如何使用开闭原则：<ol>
@@ -519,10 +519,10 @@
 </ol>
 </li>
 </ul>
-<h3 id="合成复用原则"><a href="#合成复用原则" class="headerlink" title="合成复用原则"></a>合成复用原则</h3><h4 id="定义-6"><a href="#定义-6" class="headerlink" title="定义"></a>定义</h4><ul>
+<h2 id="合成复用原则"><a href="#合成复用原则" class="headerlink" title="合成复用原则"></a>合成复用原则</h2><h3 id="定义-6"><a href="#定义-6" class="headerlink" title="定义"></a>定义</h3><ul>
 <li><strong>尽量使用对象组合</strong>，而<strong>不是继承</strong>来达到复用的目的。</li>
 </ul>
-<h4 id="分析-6"><a href="#分析-6" class="headerlink" title="分析"></a>分析</h4><ul>
+<h3 id="分析-6"><a href="#分析-6" class="headerlink" title="分析"></a>分析</h3><ul>
 <li>在面向对象设计中，可以通过两种基本方法在不同的环境中复用已有的设计和实现，即通过<strong>组合/聚合关系</strong>或通过<strong>继承</strong>。<ul>
 <li>继承复用：实现简单，易于扩展。破坏系统的封装性；从基类继承而来的实现是静态的，不可能在运行时发生改变，没有足够的灵活性；只能在有限的环境中使用。（“白箱”复用 ）</li>
 <li>组合/聚合复用：耦合度相对较低，选择性地调用成员对象的操作；可以在运行时动态进行。（“黑箱”复用 ）</li>
@@ -530,11 +530,11 @@
 </li>
 <li>组合/聚合可以<strong>使系统更加灵活</strong>，类与类之间的<strong>耦合度降低</strong>，一个类的变化对其他类造成的影响相对较少，因此一般<strong>首选使用组合/聚合来实现复用</strong>；其次才考虑继承，在使用继承时，需要严格遵循里氏代换原则，有效使用继承会有助于对问题的理解，降低复杂度，而滥用继承反而会增加系统构建和维护的难度以及系统的复杂度，因此需要<strong>慎重使用继承复用</strong>。</li>
 </ul>
-<h4 id="例子-6"><a href="#例子-6" class="headerlink" title="例子"></a>例子</h4><p>某教学管理系统部分数据库访问类设计如图所示：</p>
+<h3 id="例子-6"><a href="#例子-6" class="headerlink" title="例子"></a>例子</h3><p>某教学管理系统部分数据库访问类设计如图所示：</p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-11.jpg" alt=""></p>
 <p>如果需要更换数据库连接方式，如原来采用JDBC连接数据库，现在采用数据库连接池连接，则需要修改DBUtil类源代码。如果StudentDAO采用JDBC连接，但是TeacherDAO采用连接池连接，则需要增加一个新的DBUtil类，并修改StudentDAO或TeacherDAO的源代码，使之继承新的数据库连接类，这将违背开闭原则，系统扩展性较差。<br>现使用合成复用原则对其进行重构。</p>
 <p><img src="http://cloud.gcusky.com/uml/umloo-12.jpg" alt=""></p>
-<h4 id="注意-6"><a href="#注意-6" class="headerlink" title="注意"></a>注意</h4><ul>
+<h3 id="注意-6"><a href="#注意-6" class="headerlink" title="注意"></a>注意</h3><ul>
 <li>只有当以下的条件全部被满足时，才应当使用继承关系。<ol>
 <li>子类是超类的一个特殊种类，而不是超类的一个角色，也就是区分“Has-A”和“Is-A”.只有“Is-A”关系才符合继承关系，“Has-A”关系应当使用聚合来描述。</li>
 <li>永远不会出现需要将子类换成另外一个类的子类的情况。如果不能肯定将来是否会变成另外一个子类的话，就不要使用继承。</li>
@@ -542,7 +542,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="http://item.jd.com/10854678.html" target="_blank" rel="external">《设计模式》</a></li>
 <li><a href="http://item.jd.com/11414555.html" target="_blank" rel="external">《设计模式之禅（第2版）》</a></li>
 </ul>
@@ -557,7 +557,7 @@
         <p><span>本文标题:</span><a href="/2016/05/02/DesignPattern-2/">面向对象设计原则</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
         <p><span>发布时间:</span>2016-05-02, 16:23:45</p>
-        <p><span>最后更新:</span>2016-05-02, 16:24:40</p>
+        <p><span>最后更新:</span>2016-05-02, 16:30:49</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/05/02/DesignPattern-2/" title="面向对象设计原则">http://www.gcusky.com/2016/05/02/DesignPattern-2/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/05/02/DesignPattern-2/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -587,7 +587,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件的可维护性和可复用性"><span class="toc-number">1.</span> <span class="toc-text">软件的可维护性和可复用性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象设计原则综述"><span class="toc-number">2.</span> <span class="toc-text">面向对象设计原则综述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单一职责原则"><span class="toc-number">3.</span> <span class="toc-text">单一职责原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义"><span class="toc-number">3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析"><span class="toc-number">3.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#例子"><span class="toc-number">3.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意"><span class="toc-number">3.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#里氏替换原则"><span class="toc-number">4.</span> <span class="toc-text">里氏替换原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义-1"><span class="toc-number">4.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析-1"><span class="toc-number">4.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#例子-1"><span class="toc-number">4.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意-1"><span class="toc-number">4.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖倒转原则"><span class="toc-number">5.</span> <span class="toc-text">依赖倒转原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义-2"><span class="toc-number">5.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析-2"><span class="toc-number">5.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#例子-2"><span class="toc-number">5.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意-2"><span class="toc-number">5.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口隔离原则"><span class="toc-number">6.</span> <span class="toc-text">接口隔离原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义-3"><span class="toc-number">6.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析-3"><span class="toc-number">6.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#例子-3"><span class="toc-number">6.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意-3"><span class="toc-number">6.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迪米特法则"><span class="toc-number">7.</span> <span class="toc-text">迪米特法则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义-4"><span class="toc-number">7.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析-4"><span class="toc-number">7.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#例子-4"><span class="toc-number">7.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意-4"><span class="toc-number">7.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开闭原则"><span class="toc-number">8.</span> <span class="toc-text">开闭原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义-5"><span class="toc-number">8.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析-5"><span class="toc-number">8.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#例子-5"><span class="toc-number">8.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意-5"><span class="toc-number">8.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合成复用原则"><span class="toc-number">9.</span> <span class="toc-text">合成复用原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义-6"><span class="toc-number">9.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析-6"><span class="toc-number">9.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#例子-6"><span class="toc-number">9.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意-6"><span class="toc-number">9.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">10.</span> <span class="toc-text">参考资料</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件的可维护性和可复用性"><span class="toc-number">1.</span> <span class="toc-text">软件的可维护性和可复用性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象设计原则综述"><span class="toc-number">2.</span> <span class="toc-text">面向对象设计原则综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单一职责原则"><span class="toc-number">3.</span> <span class="toc-text">单一职责原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析"><span class="toc-number">3.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子"><span class="toc-number">3.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意"><span class="toc-number">3.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#里氏替换原则"><span class="toc-number">4.</span> <span class="toc-text">里氏替换原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义-1"><span class="toc-number">4.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-1"><span class="toc-number">4.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-1"><span class="toc-number">4.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意-1"><span class="toc-number">4.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖倒转原则"><span class="toc-number">5.</span> <span class="toc-text">依赖倒转原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义-2"><span class="toc-number">5.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-2"><span class="toc-number">5.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-2"><span class="toc-number">5.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意-2"><span class="toc-number">5.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口隔离原则"><span class="toc-number">6.</span> <span class="toc-text">接口隔离原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义-3"><span class="toc-number">6.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-3"><span class="toc-number">6.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-3"><span class="toc-number">6.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意-3"><span class="toc-number">6.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#迪米特法则"><span class="toc-number">7.</span> <span class="toc-text">迪米特法则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义-4"><span class="toc-number">7.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-4"><span class="toc-number">7.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-4"><span class="toc-number">7.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意-4"><span class="toc-number">7.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开闭原则"><span class="toc-number">8.</span> <span class="toc-text">开闭原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义-5"><span class="toc-number">8.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-5"><span class="toc-number">8.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-5"><span class="toc-number">8.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意-5"><span class="toc-number">8.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#合成复用原则"><span class="toc-number">9.</span> <span class="toc-text">合成复用原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义-6"><span class="toc-number">9.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析-6"><span class="toc-number">9.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-6"><span class="toc-number">9.3.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意-6"><span class="toc-number">9.4.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">10.</span> <span class="toc-text">参考资料</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
