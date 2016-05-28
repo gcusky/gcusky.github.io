@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.gcusky.com/2016/05/28/DesignPattern-3/</loc>
+    
+    <lastmod>2016-05-28T08:26:54.436Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.gcusky.com/about/index.html</loc>
+    
+    <lastmod>2016-05-28T03:29:26.761Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.gcusky.com/2016/05/02/english-5/</loc>
     
     <lastmod>2016-05-02T14:02:18.444Z</lastmod>
@@ -75,13 +89,6 @@
     <loc>http://www.gcusky.com/2016/04/26/junit-2/</loc>
     
     <lastmod>2016-04-26T09:56:30.424Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.gcusky.com/about/index.html</loc>
-    
-    <lastmod>2016-04-26T08:02:17.745Z</lastmod>
     
   </url>
   
