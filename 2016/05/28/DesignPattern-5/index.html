@@ -3,23 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo 基本配置 | GCUSKY_SPACE</title>
+  <title>单例模式 | GCUSKY_SPACE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo全局基础配置
-用文本编辑器修改 _config.yml 这个文件，大致如下，只需要自动修改几个其他保持默认即可。通常需要修改站点名称/URL 格式/归档设置/Disqus 评论用户名/部署配置，这几项就可以了，注意冒号后面都要添加一个半角空格，之后才是设置参数。自定义域名设置在 source 文件夹下面新建 CNAME 文件，里面写入你的自定义域名，并设置你的 dns 配置 cname 方">
+  <meta name="description" content="模式定义
+单例模式(Singleton Pattern)：单例模式确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例，这个类称为单例类，它提供全局访问的方法。
+单例模式的要点有三个：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。单例模式是一种对象创建型模式。单例模式又名单件模式或单态模式。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 基本配置">
-<meta property="og:url" content="http://www.gcusky.com/2016/02/02/learn-hexo/index.html">
+<meta property="og:title" content="单例模式">
+<meta property="og:url" content="http://www.gcusky.com/2016/05/28/DesignPattern-5/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
-<meta property="og:description" content="Hexo全局基础配置
-用文本编辑器修改 _config.yml 这个文件，大致如下，只需要自动修改几个其他保持默认即可。通常需要修改站点名称/URL 格式/归档设置/Disqus 评论用户名/部署配置，这几项就可以了，注意冒号后面都要添加一个半角空格，之后才是设置参数。自定义域名设置在 source 文件夹下面新建 CNAME 文件，里面写入你的自定义域名，并设置你的 dns 配置 cname 方">
-<meta property="og:image" content="http://cloud.gcusky.com/hexo/domain.png">
-<meta property="og:updated_time" content="2016-04-13T13:37:29.092Z">
+<meta property="og:description" content="模式定义
+单例模式(Singleton Pattern)：单例模式确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例，这个类称为单例类，它提供全局访问的方法。
+单例模式的要点有三个：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。单例模式是一种对象创建型模式。单例模式又名单件模式或单态模式。">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-10.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-11.jpg">
+<meta property="og:updated_time" content="2016-05-28T11:31:16.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 基本配置">
-<meta name="twitter:description" content="Hexo全局基础配置
-用文本编辑器修改 _config.yml 这个文件，大致如下，只需要自动修改几个其他保持默认即可。通常需要修改站点名称/URL 格式/归档设置/Disqus 评论用户名/部署配置，这几项就可以了，注意冒号后面都要添加一个半角空格，之后才是设置参数。自定义域名设置在 source 文件夹下面新建 CNAME 文件，里面写入你的自定义域名，并设置你的 dns 配置 cname 方">
-<meta name="twitter:image" content="http://cloud.gcusky.com/hexo/domain.png">
+<meta name="twitter:title" content="单例模式">
+<meta name="twitter:description" content="模式定义
+单例模式(Singleton Pattern)：单例模式确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例，这个类称为单例类，它提供全局访问的方法。
+单例模式的要点有三个：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。单例模式是一种对象创建型模式。单例模式又名单件模式或单态模式。">
+<meta name="twitter:image" content="http://cloud.gcusky.com/uml/cjx-10.jpg">
   
     <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
   
@@ -234,11 +238,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-learn-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-DesignPattern-5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/02/learn-hexo/" class="article-date">
-      <time datetime="2016-02-02T14:10:24.000Z" itemprop="datePublished">2016-02-02</time>
+      <a href="/2016/05/28/DesignPattern-5/" class="article-date">
+      <time datetime="2016-05-28T11:27:09.000Z" itemprop="datePublished">2016-05-28</time>
 </a>
     </div>
   
@@ -251,7 +255,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo 基本配置
+      单例模式
     </h1>
   
 
@@ -260,13 +264,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创建型模式/">创建型模式</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -276,316 +280,34 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Hexo全局基础配置"><a href="#Hexo全局基础配置" class="headerlink" title="Hexo全局基础配置"></a>Hexo全局基础配置</h2><blockquote>
-<p>用文本编辑器修改 _config.yml 这个文件，大致如下，只需要自动修改几个其他保持默认即可。<br>通常需要修改站点名称/URL 格式/归档设置/Disqus 评论用户名/部署配置，这几项就可以了，注意冒号后面都要添加一个半角空格，之后才是设置参数。<br>自定义域名设置在 source 文件夹下面新建 CNAME 文件，里面写入你的自定义域名，并设置你的 dns 配置 cname 方式到服务器供应商给出的地址即可。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="网站-Site"><a href="#网站-Site" class="headerlink" title="网站 Site"></a>网站 Site</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td>网站标题</td>
-</tr>
-<tr>
-<td>subtitle</td>
-<td>网站副标题</td>
-</tr>
-<tr>
-<td>description</td>
-<td>网站描述</td>
-</tr>
-<tr>
-<td>author</td>
-<td>你的名字</td>
-</tr>
-<tr>
-<td>language</td>
-<td>网站使用的语言</td>
-</tr>
-<tr>
-<td>timezone</td>
-<td>网站时区，Hexo 预设使用你电脑的时区，时区列表。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="网址-URL"><a href="#网址-URL" class="headerlink" title="网址 URL"></a>网址 URL</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>url</td>
-<td>网址</td>
-<td><a href="http://yoursite.com/" target="_blank" rel="external">http://yoursite.com/</a></td>
-</tr>
-<tr>
-<td>root</td>
-<td>网站根目录</td>
-<td>/</td>
-</tr>
-<tr>
-<td>permalink</td>
-<td>文章的永久链接格式</td>
-<td>：year/:month/:day/:title/</td>
-</tr>
-<tr>
-<td>permalink_default</td>
-<td>永久连接中各部分的默认值</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>网站存放在子目录</strong><br>如果你的网站存放在子目录中，例如 <a href="http://yoursite.com/blog" target="_blank" rel="external">http://yoursite.com/blog</a> ，则请将 url 设为 <a href="http://yoursite/blog" target="_blank" rel="external">http://yoursite/blog</a> 并把 root 设为 /blog/。</p>
-</blockquote>
-<h3 id="目录-Directory"><a href="#目录-Directory" class="headerlink" title="目录 Directory"></a>目录 Directory</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>source_dir</td>
-<td>资源文件夹，这个文件夹用来存放内容</td>
-<td>source</td>
-</tr>
-<tr>
-<td>public_dir</td>
-<td>公共文件夹，这个文件夹用于存放生成的站点文件</td>
-<td>public</td>
-</tr>
-<tr>
-<td>tag_dir</td>
-<td>标签文件夹</td>
-<td>tags</td>
-</tr>
-<tr>
-<td>archive_dir</td>
-<td>归档文件夹</td>
-<td>archives</td>
-</tr>
-<tr>
-<td>category_dir</td>
-<td>分类文件夹</td>
-<td>categories</td>
-</tr>
-<tr>
-<td>code_dir</td>
-<td>Incloud code 文件夹</td>
-<td>downloads/code</td>
-</tr>
-<tr>
-<td>i18n_dir</td>
-<td>国际化（i18n）文件夹</td>
-<td>lang</td>
-</tr>
-<tr>
-<td>skip_render</td>
-<td>跳过制定文件的渲染，你可以使用 glob 来配置路径。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="文章-Writing"><a href="#文章-Writing" class="headerlink" title="文章 Writing"></a>文章 Writing</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>new_post_name</td>
-<td>新文章的文件名称为</td>
-<td>title.md</td>
-</tr>
-<tr>
-<td>default_layout</td>
-<td>预设布局</td>
-<td>post</td>
-</tr>
-<tr>
-<td>auto_spacing</td>
-<td>在中文和英文之间加入空格</td>
-<td>false</td>
-</tr>
-<tr>
-<td>titlecase</td>
-<td>把标题转化为 title case</td>
-<td>false</td>
-</tr>
-<tr>
-<td>external_link</td>
-<td>在新建标签中打开链接</td>
-<td>true</td>
-</tr>
-<tr>
-<td>filename_case</td>
-<td>把文件名称转换为（1）小写或（2）大写</td>
-<td>0</td>
-</tr>
-<tr>
-<td>render_drafts</td>
-<td>显示草稿</td>
-<td>false</td>
-</tr>
-<tr>
-<td>post_asset_folder</td>
-<td>启动 Asset 文件夹</td>
-<td>false</td>
-</tr>
-<tr>
-<td>relative_link</td>
-<td>把链接改为与根目录相对的位置</td>
-<td>false</td>
-</tr>
-<tr>
-<td>future</td>
-<td>显示未来的文章标题</td>
-<td>ture</td>
-</tr>
-<tr>
-<td>highlight</td>
-<td>代码块的设置</td>
-</tr>
-</tbody>
-</table>
-<h3 id="分类-amp-标签-Category-amp-Tag"><a href="#分类-amp-标签-Category-amp-Tag" class="headerlink" title="分类&amp;标签 Category &amp; Tag"></a>分类&amp;标签 Category &amp; Tag</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>default_category</td>
-<td>默认分类</td>
-<td>uncategoried</td>
-</tr>
-<tr>
-<td>category_map</td>
-<td>分类别名</td>
-<td></td>
-</tr>
-<tr>
-<td>tap_map</td>
-<td>标签名称</td>
-</tr>
-</tbody>
-</table>
-<h3 id="日期-时间格式-Date-Time-format"><a href="#日期-时间格式-Date-Time-format" class="headerlink" title="日期/时间格式 Date / Time format"></a>日期/时间格式 Date / Time format</h3><p>Hexo 使用 Moment.js 来解析和显示时间。</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>date_format</td>
-<td>日期格式</td>
-<td>MMM D YYYY</td>
-</tr>
-<tr>
-<td>time_format</td>
-<td>时间格式</td>
-<td>H:mm:ss</td>
-</tr>
-</tbody>
-</table>
-<h3 id="分页-Pagination"><a href="#分页-Pagination" class="headerlink" title="分页 Pagination"></a>分页 Pagination</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>per_page</td>
-<td>每页显示的文章量（0=关闭分页功能）</td>
-<td>10</td>
-</tr>
-<tr>
-<td>pagination_dir</td>
-<td>分页目录</td>
-<td>page</td>
-</tr>
-</tbody>
-</table>
-<h3 id="扩展与部署-Extensions-Deployment"><a href="#扩展与部署-Extensions-Deployment" class="headerlink" title="扩展与部署 Extensions / Deployment"></a>扩展与部署 Extensions / Deployment</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>theme</td>
-<td>当前主标题名称</td>
-</tr>
-<tr>
-<td>deploy</td>
-<td>部署</td>
-</tr>
-</tbody>
-</table>
-<h2 id="github和gitcafe多部署"><a href="#github和gitcafe多部署" class="headerlink" title="github和gitcafe多部署"></a>github和gitcafe多部署</h2><h3 id="修改-config-yml的deploy"><a href="#修改-config-yml的deploy" class="headerlink" title="修改_config.yml的deploy"></a>修改_config.yml的deploy</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  message: update  ##git message 建议默认字段 update 可以自定义</span><br><span class="line">  repo: </span><br><span class="line">  gitcafe: &lt;repository url&gt;,[branch] ##gitcafe 仓库地址和分支</span><br><span class="line">  github: &lt;repository url&gt;,[branch] ##github 仓库地址和分支</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>repository url 都使用SSH链接可免密码操作</p>
-</blockquote>
-<h3 id="分别在-github-和-gitcafe-创建项目"><a href="#分别在-github-和-gitcafe-创建项目" class="headerlink" title="分别在 github 和 gitcafe 创建项目"></a>分别在 github 和 gitcafe 创建项目</h3><p>生成.ssh，添加到</p>
-<blockquote>
-<p>GitHub -&gt; settings -&gt; SSH keys<br>GitCafe -&gt; 账户设置 -&gt; SSH公匙管理</p>
-</blockquote>
-<p>创建一个与用户名(如果是组织，就是组织名)相同名称的项目<br>【github 项目名要加上 <code>.github.io</code>】</p>
-<blockquote>
-<p>GitHub Pages 服务分支在 master<br>GitCafe Pages 服务分支在 gitcafe-pages</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>【2016/04/13更新】gitcafe整体被coding收购，按照下面两篇文章来在coding上搭建hexo，感觉比gitcafe稳定</p>
-<ol>
-<li><a href="https://segmentfault.com/a/1190000002900848" target="_blank" rel="external">在 Coding 上搭建 Hexo 个人博客！</a></li>
-<li><a href="http://tengj.top/2016/03/06/hexo%E5%B9%B2%E8%B4%A7%E7%B3%BB%E5%88%97%EF%BC%9A%EF%BC%88%E5%9B%9B%EF%BC%89%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%97%B6%E6%89%98%E7%AE%A1%E5%88%B0github%E5%92%8Ccoding/" target="_blank" rel="external">hexo干货系列：（四）将hexo博客同时托管到github和coding</a></li>
-</ol>
-</blockquote>
-<h3 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h3><ol>
-<li>在source文件夹里创建CNAME文件，里面添加你的域名信息：yoursite.com（注意前面不添加http://）</li>
-<li>域名解析网站，添加域名，添加记录【国内解析到 GitCafe ，默认解析到 GitHub 】<br><img src="http://cloud.gcusky.com/hexo/domain.png" alt="domain"></li>
-</ol>
-<blockquote>
-<p>GitHub 解析到 <code>项目名.github.io</code><br>GitCafe 解析到 <code>gitcafe.io</code>【GitCafe还要根据 <code>相关链接2</code> 设置自定义域名】</p>
-</blockquote>
-<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ul>
-<li><code>hexo d</code> 部署提示找不到git，<code>hexo s</code> 执行hexo server提示找不到该指令 </li>
-<li>在Hexo 3.0版本后 <code>deploy git</code>、 <code>hexo server</code> 被分开，需先进行安装：<code>npm install hexo-deployer-git --save</code> <code>npm install hexo-server --save</code></li>
+        <h3 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h3><ul>
+<li>单例模式(Singleton Pattern)：单例模式确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例，这个类称为单例类，它提供全局访问的方法。</li>
+<li>单例模式的要点有三个：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。单例模式是一种对象创建型模式。单例模式又名单件模式或单态模式。</li>
 </ul>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ol>
-<li>Git教程 - 廖雪峰的官方网站 <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></li>
-<li>gitcafe Pages 相关帮助 <a href="https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9" target="_blank" rel="external">https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9</a></li>
-<li>Hexo 3.0 静态博客使用指南  <a href="https://help.gitcafe.com/practices/hexo" target="_blank" rel="external">https://help.gitcafe.com/practices/hexo</a></li>
-<li>zipperar的hexo相关教程 <a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">http://zipperary.com/categories/hexo/</a></li>
-<li>Hexo 搭建博客-基础配置篇 <a href="http://www.jianshu.com/p/df3edc4286d2" target="_blank" rel="external">http://www.jianshu.com/p/df3edc4286d2</a></li>
-</ol>
+<a id="more"></a>
+<h3 id="饿汉式单例模式"><a href="#饿汉式单例模式" class="headerlink" title="饿汉式单例模式"></a>饿汉式单例模式</h3><p>由于在定义静态变量的时候实例化单例类，因此在类加载的时候就已经创建了单例对象；当类被加载时，静态变量 <code>instance</code> 会被初始化，此时类的私有构造函数会被调用，单例类的唯一实例将被创建。</p>
+<p><img src="http://cloud.gcusky.com/uml/cjx-10.jpg" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EagerSingleton</span> </span>&#123;</span><br><span class="line">	<span class="comment">//1.将构造方法私有化，不允许外部直接创建对象</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">EagerSingleton</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//2.创建类的唯一实例，使用private static修饰</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> EagerSingleton instance=<span class="keyword">new</span> EagerSingleton();</span><br><span class="line">	<span class="comment">//3.提供一个用于获取实例的方法，使用public static修饰</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> EagerSingleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="懒汉式单例模式"><a href="#懒汉式单例模式" class="headerlink" title="懒汉式单例模式"></a>懒汉式单例模式</h3><p>懒汉式单例在第一次调用 <code>getInstance()</code> 方法时实例化，在类加载时并不自行实例化，这种技术又称为延迟加载(Lazy Load)技术。</p>
+<p><img src="http://cloud.gcusky.com/uml/cjx-11.jpg" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LazySingleton</span> </span>&#123;</span><br><span class="line">	<span class="comment">//1.将构造方式私有化，不允许外边直接创建对象</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">LazySingleton</span><span class="params">()</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//2.声明类的唯一实例，使用private static修饰</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> LazySingleton instance;</span><br><span class="line">	<span class="comment">//3.提供一个用于获取实例的方法，使用public static修饰</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> LazySingleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(instance==<span class="keyword">null</span>)&#123;</span><br><span class="line">			instance=<span class="keyword">new</span> LazySingleton();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该懒汉式单例类实现静态工厂方法时使用了同步化机制，以处理多线程环境。同时，由于构造函数是私有的，因此该类不能被继承。</p>
+<h3 id="饿汉式单例与懒汉式单例类比较"><a href="#饿汉式单例与懒汉式单例类比较" class="headerlink" title="饿汉式单例与懒汉式单例类比较"></a>饿汉式单例与懒汉式单例类比较</h3><ul>
+<li>饿汉式单例类在自己被加载时就将自己实例化。单从资源利用效率角度来讲，这个比懒汉式单例类稍差些。从速度和反应时间角度来讲，则比懒汉式单例类稍好些。</li>
+<li>懒汉式单例类在实例化时，必须处理好在多个线程同时首次引用此类时的访问限制问题，特别是当单例类作为资源控制器，在实例化时必然涉及资源初始化，而资源初始化很有可能耗费大量时间，这意味着出现多线程同时首次引用此类的机率变得较大，需要通过同步化机制进行控制。</li>
+</ul>
+<h3 id="模式优缺点"><a href="#模式优缺点" class="headerlink" title="模式优缺点"></a>模式优缺点</h3><h4 id="单例模式的优点"><a href="#单例模式的优点" class="headerlink" title="单例模式的优点"></a>单例模式的优点</h4><ul>
+<li>提供了对唯一实例的受控访问。因为单例类封装了它的唯一实例，所以它可以严格控制客户怎样以及何时访问它，并为设计及开发团队提供了共享的概念。</li>
+<li>由于在系统内存中只存在一个对象，因此可以节约系统资源，对于一些需要频繁创建和销毁的对象，单例模式无疑可以提高系统的性能。</li>
+<li>允许可变数目的实例。我们可以基于单例模式进行扩展，使用与单例控制相似的方法来获得指定个数的对象实例。</li>
+</ul>
+<h4 id="单例模式的缺点"><a href="#单例模式的缺点" class="headerlink" title="单例模式的缺点"></a>单例模式的缺点</h4><ul>
+<li>由于单例模式中没有抽象层，因此单例类的扩展有很大的困难。</li>
+<li>单例类的职责过重，在一定程度上<strong>违背了“单一职责原则”</strong>。因为单例类既充当了工厂角色，提供了工厂方法，同时又充当了产品角色，包含一些业务方法，将产品的创建和产品的本身的功能融合到一起。</li>
+<li>滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为单例类，可能会导致共享连接池对象的程序过多而出现连接池溢出；现在很多面向对象语言(如Java、C#)的运行环境都提供了自动垃圾回收的技术，因此，如果实例化的对象长时间不被利用，系统会认为它是垃圾，会自动销毁并回收资源，下次利用时又将重新实例化，这将导致对象状态的丢失。</li>
+</ul>
+<h3 id="多例模式"><a href="#多例模式" class="headerlink" title="多例模式"></a>多例模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Multiton</span> </span>&#123;</span><br><span class="line">	<span class="comment">//maxNum：定义最多能产生的实例数量</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> maxNum = <span class="number">3</span>;</span><br><span class="line">	<span class="comment">//定义一个列表，容纳所有的实例   </span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> ArrayList&lt;Multiton&gt; MultitionList = <span class="keyword">new</span> ArrayList&lt;Multiton&gt;();</span><br><span class="line">	<span class="comment">//当前实例序列号</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> countNum = <span class="number">0</span>;</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Multiton</span><span class="params">()</span></span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//懒汉模式，生产实例</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Multiton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(countNum&lt;maxNum)&#123;</span><br><span class="line">			MultitionList.add(<span class="keyword">new</span> Multiton());</span><br><span class="line">			System.out.println(<span class="string">"生产实例"</span>+(countNum+<span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> MultitionList.get(countNum++);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			System.out.println(<span class="string">"超过最多能产生的实例数量："</span>+maxNum);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Multiton <span class="title">getInstance</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> MultitionList.get(num);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			System.out.println(<span class="string">"没有该实例"</span>+(num+<span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestofMutition</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> Num = <span class="number">5</span>;</span><br><span class="line">		Multiton s;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;Num ;i++)&#123;</span><br><span class="line">			s = Multiton.getInstance();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;Num ;i++)&#123;</span><br><span class="line">			s = Multiton.getInstance(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -594,13 +316,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/02/learn-hexo/">Hexo 基本配置</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/28/DesignPattern-5/">单例模式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
-        <p><span>发布时间:</span>2016-02-02, 22:10:24</p>
-        <p><span>最后更新:</span>2016-04-13, 21:37:29</p>
+        <p><span>发布时间:</span>2016-05-28, 19:27:09</p>
+        <p><span>最后更新:</span>2016-05-28, 19:31:16</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/02/learn-hexo/" title="Hexo 基本配置">http://www.gcusky.com/2016/02/02/learn-hexo/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/02/02/learn-hexo/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/28/DesignPattern-5/" title="单例模式">http://www.gcusky.com/2016/05/28/DesignPattern-5/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/05/28/DesignPattern-5/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -613,16 +335,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/05/test-of-latex/">
-                    test-of-latex【机器学习week1-2】
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/11/18/learn-1/">
-                    邓小平文选 第三卷 P363 思考：思维导图
+                <a href="/2016/05/28/DesignPattern-4/">
+                    原形模式
                 </a>
             </div>
         
@@ -633,7 +349,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo全局基础配置"><span class="toc-number">1.</span> <span class="toc-text">Hexo全局基础配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网站-Site"><span class="toc-number">1.1.</span> <span class="toc-text">网站 Site</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网址-URL"><span class="toc-number">1.2.</span> <span class="toc-text">网址 URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录-Directory"><span class="toc-number">1.3.</span> <span class="toc-text">目录 Directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文章-Writing"><span class="toc-number">1.4.</span> <span class="toc-text">文章 Writing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类-amp-标签-Category-amp-Tag"><span class="toc-number">1.5.</span> <span class="toc-text">分类&标签 Category & Tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期-时间格式-Date-Time-format"><span class="toc-number">1.6.</span> <span class="toc-text">日期/时间格式 Date / Time format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分页-Pagination"><span class="toc-number">1.7.</span> <span class="toc-text">分页 Pagination</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展与部署-Extensions-Deployment"><span class="toc-number">1.8.</span> <span class="toc-text">扩展与部署 Extensions / Deployment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github和gitcafe多部署"><span class="toc-number">2.</span> <span class="toc-text">github和gitcafe多部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-config-yml的deploy"><span class="toc-number">2.1.</span> <span class="toc-text">修改_config.yml的deploy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分别在-github-和-gitcafe-创建项目"><span class="toc-number">2.2.</span> <span class="toc-text">分别在 github 和 gitcafe 创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名绑定"><span class="toc-number">2.3.</span> <span class="toc-text">域名绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解决"><span class="toc-number">3.</span> <span class="toc-text">问题解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关链接"><span class="toc-number">4.</span> <span class="toc-text">相关链接</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#模式定义"><span class="toc-number">1.</span> <span class="toc-text">模式定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#饿汉式单例模式"><span class="toc-number">2.</span> <span class="toc-text">饿汉式单例模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#懒汉式单例模式"><span class="toc-number">3.</span> <span class="toc-text">懒汉式单例模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#饿汉式单例与懒汉式单例类比较"><span class="toc-number">4.</span> <span class="toc-text">饿汉式单例与懒汉式单例类比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式优缺点"><span class="toc-number">5.</span> <span class="toc-text">模式优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#单例模式的优点"><span class="toc-number">5.1.</span> <span class="toc-text">单例模式的优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单例模式的缺点"><span class="toc-number">5.2.</span> <span class="toc-text">单例模式的缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多例模式"><span class="toc-number">6.</span> <span class="toc-text">多例模式</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -695,7 +411,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/02/02/learn-hexo/" data-title="Hexo 基本配置" data-url="http://www.gcusky.com/2016/02/02/learn-hexo/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/28/DesignPattern-5/" data-title="单例模式" data-url="http://www.gcusky.com/2016/05/28/DesignPattern-5/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -719,15 +435,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/05/test-of-latex/" title="上一篇: test-of-latex【机器学习week1-2】">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/11/18/learn-1/" title="下一篇: 邓小平文选 第三卷 P363 思考：思维导图">
+            <a href="/2016/05/28/DesignPattern-4/" title="下一篇: 原形模式">
                 <i class="fa fa-angle-right"></i>
             </a>
         
