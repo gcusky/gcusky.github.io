@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>二分法求解非线性方程 | GCUSKY_SPACE</title>
+  <title>结构型模式之适配器模式 | GCUSKY_SPACE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在所有数值方法中，二分法是求解非线性方程最直观、最简单的方法。二分法是以连续函数的介值定理为基础建立的。由介值定理可知，如果函数$f(x)$在区间$[a,b]$上连续，同时$f(a)f(b)">
+  <meta name="description" content="结构型模式结构型模式概述结构型模式(Structural Pattern)描述如何将类或者对象结合在一起形成更大的结构，就像搭积木，可以通过简单积木的组合形成复杂的、功能更为强大的结构。
+结构型模式可以分为类结构型模式和对象结构型模式：
+
+类结构型模式关心类的组合，由多个类可以组合成一个更大的系统，在类结构型模式中一般只存在继承关系和实现关系。
+对象结构型模式关心类与对象的组合，通过关联关系使得在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二分法求解非线性方程">
-<meta property="og:url" content="http://www.gcusky.com/2015/08/23/matlab/index.html">
+<meta property="og:title" content="结构型模式之适配器模式">
+<meta property="og:url" content="http://www.gcusky.com/2016/05/28/DesignPattern-6/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
-<meta property="og:description" content="在所有数值方法中，二分法是求解非线性方程最直观、最简单的方法。二分法是以连续函数的介值定理为基础建立的。由介值定理可知，如果函数$f(x)$在区间$[a,b]$上连续，同时$f(a)f(b)">
-<meta property="og:updated_time" content="2016-04-13T14:03:58.599Z">
+<meta property="og:description" content="结构型模式结构型模式概述结构型模式(Structural Pattern)描述如何将类或者对象结合在一起形成更大的结构，就像搭积木，可以通过简单积木的组合形成复杂的、功能更为强大的结构。
+结构型模式可以分为类结构型模式和对象结构型模式：
+
+类结构型模式关心类的组合，由多个类可以组合成一个更大的系统，在类结构型模式中一般只存在继承关系和实现关系。
+对象结构型模式关心类与对象的组合，通过关联关系使得在">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-12.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-13.jpg">
+<meta property="og:updated_time" content="2016-05-28T12:23:02.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二分法求解非线性方程">
-<meta name="twitter:description" content="在所有数值方法中，二分法是求解非线性方程最直观、最简单的方法。二分法是以连续函数的介值定理为基础建立的。由介值定理可知，如果函数$f(x)$在区间$[a,b]$上连续，同时$f(a)f(b)">
+<meta name="twitter:title" content="结构型模式之适配器模式">
+<meta name="twitter:description" content="结构型模式结构型模式概述结构型模式(Structural Pattern)描述如何将类或者对象结合在一起形成更大的结构，就像搭积木，可以通过简单积木的组合形成复杂的、功能更为强大的结构。
+结构型模式可以分为类结构型模式和对象结构型模式：
+
+类结构型模式关心类的组合，由多个类可以组合成一个更大的系统，在类结构型模式中一般只存在继承关系和实现关系。
+对象结构型模式关心类与对象的组合，通过关联关系使得在">
+<meta name="twitter:image" content="http://cloud.gcusky.com/uml/cjx-12.jpg">
   
     <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
   
@@ -229,11 +244,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-matlab" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-DesignPattern-6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/23/matlab/" class="article-date">
-      <time datetime="2015-08-23T11:30:56.000Z" itemprop="datePublished">2015-08-23</time>
+      <a href="/2016/05/28/DesignPattern-6/" class="article-date">
+      <time datetime="2016-05-28T12:22:36.000Z" itemprop="datePublished">2016-05-28</time>
 </a>
     </div>
   
@@ -246,7 +261,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      二分法求解非线性方程
+      结构型模式之适配器模式
     </h1>
   
 
@@ -255,13 +270,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/MATLAB/">MATLAB</a>
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二分法/">二分法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数值法/">数值法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/非线性方程/">非线性方程</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/结构型模式/">结构型模式</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -271,14 +286,51 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　　在所有数值方法中，二分法是求解非线性方程最直观、最简单的方法。二分法是以连续函数的介值定理为基础建立的。由介值定理可知，如果函数$f(x)$在区间$[a,b]$上连续，同时$f(a)f(b)<0$，即$f(a)$和$f(b)$符号相反，那么$f(x)$在区间$[a,b]$内一定有实根。 <a="" id="more"></0$，即$f(a)$和$f(b)$符号相反，那么$f(x)$在区间$[a,b]$内一定有实根。></p>
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>　　二分法的基本思想为：用对分区间的思路根据分点处函数$f(x)$的符号逐步将有限区间缩小使在足够小的区间内，分点与理论上的根之间距离足够小，继而用分点的值近似理论上的根。</p>
-<h1 id="函数ditomy-m"><a href="#函数ditomy-m" class="headerlink" title="函数ditomy.m"></a>函数ditomy.m</h1><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[x0,fval]</span> = <span class="title">ditomy</span><span class="params">(fun,a,b,D)</span></span></span><br><span class="line"><span class="comment">%ditomy.m函数为二分法求解非线性方程</span></span><br><span class="line">fa = feval(fun,a);    <span class="comment">%计算a点函数值</span></span><br><span class="line">fb = feval(fun,b);    <span class="comment">%计算b点函数值</span></span><br><span class="line"><span class="keyword">if</span> fa*fb &gt; <span class="number">0</span>;</span><br><span class="line">    error(<span class="string">'此方程无解'</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">if</span> nargin &lt; <span class="number">3</span>;    <span class="comment">%检查输入参数个数</span></span><br><span class="line">    error(<span class="string">'a与b将被重定义'</span>);</span><br><span class="line"><span class="keyword">elseif</span> nargin == <span class="number">3</span>;</span><br><span class="line">    D = <span class="number">1e-6</span>;    <span class="comment">%设置D的缺省值</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">if</span> fa == <span class="number">0</span>;    <span class="comment">%检查a点函数值是否为0</span></span><br><span class="line">    m = a;</span><br><span class="line">    fm = fa;</span><br><span class="line"><span class="keyword">elseif</span> fb == <span class="number">0</span>;    <span class="comment">%检查b点函数值是否为0</span></span><br><span class="line">    m = b;</span><br><span class="line">    fm = fb;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">abs</span>(b-a) &gt; D;    <span class="comment">%控制二分法结束条件</span></span><br><span class="line">        m = [a+b]/<span class="number">2</span>;    <span class="comment">%二分区间端点</span></span><br><span class="line">        fm = feval(fun,m);    <span class="comment">%计算中点的函数值</span></span><br><span class="line">        <span class="keyword">if</span> fa*fm &gt; <span class="number">0</span>;    <span class="comment">%条件</span></span><br><span class="line">            a = m;    <span class="comment">%端点更新</span></span><br><span class="line">            fa = fm;    <span class="comment">%端点函数更新</span></span><br><span class="line">        <span class="keyword">elseif</span> fb*fm &gt; <span class="number">0</span>;    <span class="comment">%条件</span></span><br><span class="line">            b = m;    <span class="comment">%端点更新</span></span><br><span class="line">            fb = fm;    <span class="comment">%端点函数更新</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">x0 = m;</span><br><span class="line"><span class="keyword">if</span> nargout == <span class="number">2</span>;</span><br><span class="line">    fval = fm;    <span class="comment">%根据输出个数赋值</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h1 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h1><blockquote>
-<p>用二分法求方程$f(x)=x^3cos(x)+2x^3-2sinx$在区间$[1,3]$内的根。</p>
-</blockquote>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%非线性方程的m文件fun.m</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun</span><span class="params">(x)</span></span></span><br><span class="line">f = x^<span class="number">3</span>*<span class="built_in">cos</span>(x)+<span class="number">2</span>*x^<span class="number">2</span><span class="number">-2</span><span class="built_in">sin</span>(x);</span><br><span class="line"></span><br><span class="line"><span class="comment">%调用编写的二分函数求解非线性方程</span></span><br><span class="line">[x0,fval] = ditomy(<span class="string">'fun'</span>,<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">%运行结果</span></span><br><span class="line"><span class="comment">%x0 = 2.3978</span></span><br><span class="line"><span class="comment">%fval = -4.1724e-06</span></span><br></pre></td></tr></table></figure>
-<p>　　<br>参考资料<br><a href="http://item.jd.com/11544215.html" title="京东" target="_blank" rel="external">MATLABR2013a求解数学问题</a></p>
+        <h2 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h2><h3 id="结构型模式概述"><a href="#结构型模式概述" class="headerlink" title="结构型模式概述"></a>结构型模式概述</h3><p>结构型模式(Structural Pattern)描述如何将类或者对象结合在一起形成更大的结构，就像搭积木，可以通过简单积木的组合形成复杂的、功能更为强大的结构。</p>
+<p>结构型模式可以分为类结构型模式和对象结构型模式：</p>
+<ul>
+<li>类结构型模式关心类的组合，由多个类可以组合成一个更大的系统，在类结构型模式中一般只存在<strong>继承关系和实现关系</strong>。</li>
+<li>对象结构型模式关心类与对象的组合，通过<strong>关联关系</strong>使得在一个类中定义另一个类的实例对象，然后通过该对象调用其方法。</li>
+<li><strong>根据“合成复用原则”，在系统中尽量使用关联关系来替代继承关系，因此大部分结构型模式都是对象结构型模式。</strong></li>
+</ul>
+<a id="more"></a>
+<h2 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h2><h3 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h3><p>适配器模式(Adapter Pattern) ：将一个接口转换成客户希望的另一个接口，适配器模式使接口不兼容的那些类可以一起工作，其别名为包装器(Wrapper)。适配器模式既可以作为类结构型模式，也可以作为对象结构型模式。</p>
+<h3 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h3><ul>
+<li>Target（目标抽象类）：目标抽象类定义客户所需接口，可以是一个抽象类或接口，也可以是具体类。</li>
+<li>Adapter（适配器类）：适配器可以调用另一个接口，作为一个转换器，对Adaptee和Target进行适配，适配器类是适配器模式的核心，在对象适配器中，它通过继承Target并关联一个Adaptee对象使二者产生联系。</li>
+<li>Adaptee（适配者类）：适配者即被适配的角色，它定义了一个已经存在的接口，这个接口需要适配，适配者类一般是一个具体类，包含了客户希望使用的业务方法，在某些情况下可能没有适配者类的源代码。</li>
+</ul>
+<h4 id="类适配器"><a href="#类适配器" class="headerlink" title="类适配器"></a>类适配器</h4><p><img src="http://cloud.gcusky.com/uml/cjx-12.jpg" alt="类适配器"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adapter</span> <span class="keyword">extends</span> <span class="title">Adaptee</span> <span class="keyword">implements</span> <span class="title">Target</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">request</span><span class="params">()</span></span>&#123;</span><br><span class="line">        specificRequest();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="对象适配器"><a href="#对象适配器" class="headerlink" title="对象适配器"></a>对象适配器</h4><p><img src="http://cloud.gcusky.com/uml/cjx-13.jpg" alt="对象适配器"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adapter</span> <span class="keyword">extends</span> <span class="title">Target</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Adaptee adaptee;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Adapter</span><span class="params">(Adaptee adaptee)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.adaptee=adaptee;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">request</span><span class="params">()</span></span>&#123;</span><br><span class="line">        adaptee.specificRequest();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="模式实例"><a href="#模式实例" class="headerlink" title="模式实例"></a>模式实例</h3><p>某公司打算开发一个根据邮编代号来判断地点的功能，目前开发方已开发了一个类 <code>C</code> ，类中有方法 <code>string findzipcode(int zipcode[5])</code>，在输入美国邮编的情况下得到美国的地址。假定现在又想开发中国邮编查询的功能，这时开发方获得了一个中国邮编查询的类 <code>U</code>，该类也有类似的方法 <code>string zipcode(int code[6])</code>，请用适配器模式来解决这个问题。（注：中国邮编是6位，美国邮编是5位）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//目标抽象类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Target</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findzipcode</span><span class="params">(String zipcode)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">implements</span> <span class="title">Target</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findzipcode</span><span class="params">(String zipcode)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"邮编："</span>+zipcode+<span class="string">"；美国地址：xxxx"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">U</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findAddress</span><span class="params">(String zipcode)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"邮编："</span>+zipcode+<span class="string">"；中国地址：xxxx"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UAdapter</span> <span class="keyword">extends</span> <span class="title">U</span> <span class="keyword">implements</span> <span class="title">Target</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findzipcode</span><span class="params">(String zipcode)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.findAddress(zipcode);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestOfMail</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Target a1 = <span class="keyword">new</span> UAdapter();</span><br><span class="line">		a1.findzipcode(<span class="string">"545454"</span>);</span><br><span class="line">		</span><br><span class="line">		Target a2 = <span class="keyword">new</span> C();</span><br><span class="line">		a2.findzipcode(<span class="string">"54545"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="模式优缺点"><a href="#模式优缺点" class="headerlink" title="模式优缺点"></a>模式优缺点</h3><p>####适配器模式的优点</p>
+<ul>
+<li><strong>将目标类和适配者类解耦</strong>，通过引入一个适配器类来重用现有的适配者类，而无须修改原有代码。</li>
+<li><strong>增加了类的透明性和复用性</strong>，将具体的实现封装在适配者类中，对于客户端类来说是透明的，而且提高了适配者的复用性。</li>
+<li><strong>灵活性和扩展性都非常好</strong>，通过使用配置文件，可以很方便地更换适配器，也可以在不修改原有代码的基础上增加新的适配器类，<strong>完全符合“开闭原则”</strong>。</li>
+</ul>
+<hr>
+<p>类适配器模式还具有如下优点：</p>
+<ul>
+<li>由于适配器类是适配者类的子类，因此可以在适配器类中置换一些适配者的方法，使得适配器的灵活性更强。</li>
+</ul>
+<p>类适配器模式的缺点如下：</p>
+<ul>
+<li>对于Java、C#等不支持多重继承的语言，一次最多只能适配一个适配者类，而且目标抽象类只能为抽象类，不能为具体类，其使用有一定的局限性，不能将一个适配者类和它的子类都适配到目标接口。</li>
+</ul>
+<hr>
+<p>对象适配器模式还具有如下优点：</p>
+<ul>
+<li>一个对象适配器可以把多个不同的适配者适配到同一个目标，也就是说，同一个适配器可以把适配者类和它的子类都适配到目标接口。</li>
+</ul>
+<p>对象适配器模式的缺点如下：</p>
+<ul>
+<li>与类适配器模式相比，要想置换适配者类的方法就不容易。如果一定要置换掉适配者类的一个或多个方法，就只好先做一个适配者类的子类，将适配者类的方法置换掉，然后再把适配者类的子类当做真正的适配者进行适配，实现过程较为复杂。</li>
+</ul>
+<h3 id="模式适用环境"><a href="#模式适用环境" class="headerlink" title="模式适用环境"></a>模式适用环境</h3><p>在以下情况下可以使用适配器模式：<br>系统需要使用现有的类，而这些类的接口不符合系统的需要。<br>想要建立一个可以重复使用的类，用于与一些彼此之间没有太大关联的一些类，包括一些可能在将来引进的类一起工作。</p>
 
       
     </div>
@@ -287,13 +339,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/08/23/matlab/">二分法求解非线性方程</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/28/DesignPattern-6/">结构型模式之适配器模式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
-        <p><span>发布时间:</span>2015-08-23, 19:30:56</p>
-        <p><span>最后更新:</span>2016-04-13, 22:03:58</p>
+        <p><span>发布时间:</span>2016-05-28, 20:22:36</p>
+        <p><span>最后更新:</span>2016-05-28, 20:23:02</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/08/23/matlab/" title="二分法求解非线性方程">http://www.gcusky.com/2015/08/23/matlab/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2015/08/23/matlab/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/28/DesignPattern-6/" title="结构型模式之适配器模式">http://www.gcusky.com/2016/05/28/DesignPattern-6/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/05/28/DesignPattern-6/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -306,16 +358,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/09/22/learn/">
-                    《再思毛泽东：毛泽东思想的探索》思维导图
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/03/15/hello-world/">
-                    Hello World
+                <a href="/2016/05/28/DesignPattern-5/">
+                    单例模式
                 </a>
             </div>
         
@@ -326,7 +372,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#原理"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数ditomy-m"><span class="toc-number">2.</span> <span class="toc-text">函数ditomy.m</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#举个栗子"><span class="toc-number">3.</span> <span class="toc-text">举个栗子</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#结构型模式"><span class="toc-number">1.</span> <span class="toc-text">结构型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#结构型模式概述"><span class="toc-number">1.1.</span> <span class="toc-text">结构型模式概述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#适配器模式"><span class="toc-number">2.</span> <span class="toc-text">适配器模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模式定义"><span class="toc-number">2.1.</span> <span class="toc-text">模式定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式结构"><span class="toc-number">2.2.</span> <span class="toc-text">模式结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类适配器"><span class="toc-number">2.2.1.</span> <span class="toc-text">类适配器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象适配器"><span class="toc-number">2.2.2.</span> <span class="toc-text">对象适配器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式实例"><span class="toc-number">2.3.</span> <span class="toc-text">模式实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式优缺点"><span class="toc-number">2.4.</span> <span class="toc-text">模式优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式适用环境"><span class="toc-number">2.5.</span> <span class="toc-text">模式适用环境</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -388,7 +434,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2015/08/23/matlab/" data-title="二分法求解非线性方程" data-url="http://www.gcusky.com/2015/08/23/matlab/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/28/DesignPattern-6/" data-title="结构型模式之适配器模式" data-url="http://www.gcusky.com/2016/05/28/DesignPattern-6/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -412,15 +458,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/09/22/learn/" title="上一篇: 《再思毛泽东：毛泽东思想的探索》思维导图">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/03/15/hello-world/" title="下一篇: Hello World">
+            <a href="/2016/05/28/DesignPattern-5/" title="下一篇: 单例模式">
                 <i class="fa fa-angle-right"></i>
             </a>
         
