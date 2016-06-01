@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-05-28T14:03:43.117Z</updated>
+  <updated>2016-06-01T02:29:02.858Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -14,6 +14,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>外观模式</title>
+    <link href="http://www.gcusky.com/2016/06/01/DesignPattern-8/"/>
+    <id>http://www.gcusky.com/2016/06/01/DesignPattern-8/</id>
+    <published>2016-06-01T02:28:33.000Z</published>
+    <updated>2016-06-01T02:29:02.858Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h3&gt;&lt;p&gt;引入外观角色之后，用户只需要直接与外观角色交互，用户与子系统之间的复杂关系由外观角色来实现，从而降低了系统的耦合度。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/cjx-3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;模式定义&quot;&gt;&lt;a href=&quot;#模式定义&quot; class=&quot;headerlink&quot; title=&quot;模式定义&quot;&gt;&lt;/a&gt;模式定义&lt;/h3&gt;&lt;p&gt;外观模式(Facade Pattern)：外部与一个子系统的通信必须通过一个统一的外观对象进行，为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。外观模式又称为门面模式，它是一种对象结构型模式。&lt;/p&gt;
+&lt;h3 id=&quot;模式结构&quot;&gt;&lt;a href=&quot;#模式结构&quot; class=&quot;headerlink&quot; title=&quot;模式结构&quot;&gt;&lt;/a&gt;模式结构&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/cjx-4.png&quot; alt=&quot;&quot;&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/cjx-5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Facade&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; SubSystemA obj1 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SubSystemA();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; SubSystemB obj2 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SubSystemB();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; SubSystemC obj3 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SubSystemC();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        obj1.method();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        obj2.method();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        obj3.method();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;Facade（外观角色）：在客户端可以调用它的方法，在外观角色中可以知道相关的（一个或者多个）子系统的功能和责任；在正常情况下，它将所有从客户端发来的请求委派到相应的子系统去，传递给相应的子系统对象处理。&lt;/li&gt;
+&lt;li&gt;SubSystem（子系统角色）：在软件系统中可以有一个或者多个子系统角色，每一个子系统可以不是一个单独的类，而是一个类的集合，它实现子系统的功能；每一个子系统都可以被客户端直接调用，或者被外观角色调用，它处理由外观类传过来的请求；子系统并不知道外观的存在，对于子系统而言，外观角色仅仅是另外一个客户端而已。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;模式分析&quot;&gt;&lt;a href=&quot;#模式分析&quot; class=&quot;headerlink&quot; title=&quot;模式分析&quot;&gt;&lt;/a&gt;模式分析&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;根据“单一职责原则”，在软件中将一个系统划分为若干个子系统有利于降低整个系统的复杂性，一个常见的设计目标是使子系统间的通信和相互依赖关系达到最小，而达到该目标的途径之一就是引入一个外观对象，它为子系统的访问提供了一个简单而单一的入口。&lt;/li&gt;
+&lt;li&gt;外观模式也是“迪米特法则”的体现，通过引入一个新的外观类可以降低原有系统的复杂度，同时降低客户类与子系统类的耦合度。&lt;/li&gt;
+&lt;li&gt;外观模式要求一个子系统的外部与其内部的通信通过一个统一的外观对象进行，外观类将客户端与子系统的内部复杂性分隔开，使得客户端只需要与外观对象打交道，而不需要与子系统内部的很多对象打交道。&lt;/li&gt;
+&lt;li&gt;外观模式的目的在于降低系统的复杂程度。&lt;/li&gt;
+&lt;li&gt;外观模式从很大程度上提高了客户端使用的便捷性，使得客户端无须关心子系统的工作细节，通过外观角色即可调用相关功能。 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;模式优缺点&quot;&gt;&lt;a href=&quot;#模式优缺点&quot; class=&quot;headerlink&quot; title=&quot;模式优缺点&quot;&gt;&lt;/a&gt;模式优缺点&lt;/h3&gt;&lt;h4 id=&quot;外观模式的优点&quot;&gt;&lt;a href=&quot;#外观模式的优点&quot; class=&quot;headerlink&quot; title=&quot;外观模式的优点&quot;&gt;&lt;/a&gt;外观模式的优点&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;对客户屏蔽子系统组件，减少了客户处理的对象数目并使得子系统使用起来更加容易。通过引入外观模式，客户代码将变得很简单，与之关联的对象也很少。&lt;/li&gt;
+&lt;li&gt;实现了子系统与客户之间的松耦合关系，这使得子系统的组件变化不会影响到调用它的客户类，只需要调整外观类即可。&lt;/li&gt;
+&lt;li&gt;降低了大型软件系统中的编译依赖性，并简化了系统在不同平台之间的移植过程，因为编译一个子系统一般不需要编译所有其他的子系统。一个子系统的修改对其他子系统没有任何影响，而且子系统内部变化也不会影响到外观对象。&lt;/li&gt;
+&lt;li&gt;只是提供了一个访问子系统的统一入口，并不影响用户直接使用子系统类。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;外观模式的缺点&quot;&gt;&lt;a href=&quot;#外观模式的缺点&quot; class=&quot;headerlink&quot; title=&quot;外观模式的缺点&quot;&gt;&lt;/a&gt;外观模式的缺点&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;不能很好地限制客户使用子系统类，如果对客户访问子系统类做太多的限制则减少了可变性和灵活性。&lt;/li&gt;
+&lt;li&gt;在不引入抽象外观类的情况下，增加新的子系统可能需要修改外观类或客户端的源代码，违背了“开闭原则”。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;模式适用环境&quot;&gt;&lt;a href=&quot;#模式适用环境&quot; class=&quot;headerlink&quot; title=&quot;模式适用环境&quot;&gt;&lt;/a&gt;模式适用环境&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;当要为一个复杂子系统提供一个简单接口时可以使用外观模式。该接口可以满足大多数用户的需求，而且用户也可以越过外观类直接访问子系统。&lt;/li&gt;
+&lt;li&gt;客户程序与多个子系统之间存在很大的依赖性。引入外观类将子系统与客户以及其他子系统解耦，可以提高子系统的独立性和可移植性。&lt;/li&gt;
+&lt;li&gt;在层次化结构中，可以使用外观模式定义系统中每一层的入口，层与层之间不直接产生联系，而通过外观类建立联系，降低层之间的耦合度。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;模式扩展&quot;&gt;&lt;a href=&quot;#模式扩展&quot; class=&quot;headerlink&quot; title=&quot;模式扩展&quot;&gt;&lt;/a&gt;模式扩展&lt;/h3&gt;&lt;h4 id=&quot;一个系统有多个外观类&quot;&gt;&lt;a href=&quot;#一个系统有多个外观类&quot; class=&quot;headerlink&quot; title=&quot;一个系统有多个外观类&quot;&gt;&lt;/a&gt;一个系统有多个外观类&lt;/h4&gt;&lt;p&gt;在外观模式中，通常只需要一个外观类，并且此外观类只有一个实例，换言之它是一个单例类。在很多情况下为了节约系统资源，一般将外观类设计为单例类。当然这并不意味着在整个系统里只能有一个外观类，在一个系统中可以设计多个外观类，每个外观类都负责和一些特定的子系统交互，向用户提供相应的业务功能。&lt;/p&gt;
+&lt;h4 id=&quot;不要试图通过外观类为子系统增加新行为&quot;&gt;&lt;a href=&quot;#不要试图通过外观类为子系统增加新行为&quot; class=&quot;headerlink&quot; title=&quot;不要试图通过外观类为子系统增加新行为&quot;&gt;&lt;/a&gt;不要试图通过外观类为子系统增加新行为&lt;/h4&gt;&lt;p&gt;不要通过继承一个外观类在子系统中加入新的行为，这种做法是错误的。外观模式的用意是为子系统提供一个集中化和简化的沟通渠道，而不是向子系统加入新的行为，新的行为的增加应该通过修改原有子系统类或增加新的子系统类来实现，不能通过外观类来实现。&lt;/p&gt;
+&lt;h4 id=&quot;外观模式与迪米特法则&quot;&gt;&lt;a href=&quot;#外观模式与迪米特法则&quot; class=&quot;headerlink&quot; title=&quot;外观模式与迪米特法则&quot;&gt;&lt;/a&gt;外观模式与迪米特法则&lt;/h4&gt;&lt;p&gt;外观模式创造出一个外观对象，将客户端所涉及的属于一个子系统的协作伙伴的数量减到最少，使得客户端与子系统内部的对象的相互作用被外观对象所取代。外观类充当了客户类与子系统类之间的“第三者”，降低了客户类与子系统类之间的耦合度，外观模式就是实现代码重构以便达到“迪米特法则”要求的一个强有力的武器。&lt;/p&gt;
+&lt;h4 id=&quot;抽象外观类的引入&quot;&gt;&lt;a href=&quot;#抽象外观类的引入&quot; class=&quot;headerlink&quot; title=&quot;抽象外观类的引入&quot;&gt;&lt;/a&gt;抽象外观类的引入&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;外观模式最大的缺点在于违背了“开闭原则”&lt;/strong&gt;，当增加新的子系统或者移除子系统时需要修改外观类，可以通过引入抽象外观类在一定程度上解决该问题，客户端针对抽象外观类进行编程。对于新的业务需求，不修改原有外观类，而对应增加一个新的具体外观类，由新的具体外观类来关联新的子系统对象，同时通过修改配置文件来达到不修改源代码并更换外观类的目的。 &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h3&gt;&lt;p&gt;引入外观角色之后，用户只需要直接与外观角色交互，用户与子系统之间的复杂关系由外观角色来实现，从而降低了系统的耦合度。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/uml/cjx-3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://www.gcusky.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="结构型模式" scheme="http://www.gcusky.com/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>桥接模式</title>
@@ -2339,52 +2398,6 @@ X.X
       <category term="ZOJ" scheme="http://www.gcusky.com/tags/ZOJ/"/>
     
       <category term="搜索" scheme="http://www.gcusky.com/tags/%E6%90%9C%E7%B4%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>花开不败</title>
-    <link href="http://www.gcusky.com/2016/04/14/life/"/>
-    <id>http://www.gcusky.com/2016/04/14/life/</id>
-    <published>2016-04-14T14:25:28.000Z</published>
-    <updated>2016-04-14T14:38:36.293Z</updated>
-    
-    <content type="html">&lt;p&gt;今晚，刷着ZOJ。却突然有感而发，暂缓吧，给自己个总结。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;因为上年在校内ACM得了一等奖，今年被拉去参加ACM省赛。&lt;br&gt;本来不想去的，也少了一队友（他准备考金融硕士）。&lt;br&gt;可另一个队友想去，就拉了一个人。&lt;br&gt;但说实在的，机会不大，毕竟……我的重心也放在考研上。&lt;/p&gt;
-&lt;p&gt;上大学至今，做了几个重要的决定：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;加入校级组织-星空&lt;/li&gt;
-&lt;li&gt;转专业&lt;/li&gt;
-&lt;li&gt;MOOC自学&lt;/li&gt;
-&lt;li&gt;参加数学建模&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;大一之前高考成绩出来时，知道自己错了，本来打算走3A再专插本的路线。&lt;br&gt;但父母最后决定让我上2B。&lt;br&gt;那时暑假，除了每天8、9甚至12个小时的暑假工，余下时间都在自学与规划。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;进入大学坚持做了2年勤工，加入技术为主的星空，且找准了自己的定位，做了几个总要的决定：&lt;br&gt;&lt;strong&gt;第一个重要决定&lt;/strong&gt;：从机械工程转到软件工程。&lt;br&gt;&lt;strong&gt;第二个重要决定&lt;/strong&gt;：在coursera等MOOC平台上自学，发现了更广阔的世界。&lt;br&gt;&lt;strong&gt;第三个重要决定&lt;/strong&gt;：参加数学建模竞赛，因此认识了一群伙伴，几乎整个学院的12、13级都由我们撑起来的感觉Orz……&lt;/p&gt;
-&lt;p&gt;大学三年来，也不是没有迷茫过。也做错过很多事，并一味地道歉、逃避。&lt;br&gt;好在后面都反思清楚、想清楚，并存活至今，且做了&lt;strong&gt;第四个重要的决定&lt;/strong&gt;：&lt;code&gt;考研&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;虽然在校内顺风顺水的感觉，但其实出去还是很水。各种比赛出校就发现自己仅有的水平。&lt;br&gt;MOOC自学时发现优秀的人更加优秀，以及学校、平台所带来的眼界问题。&lt;br&gt;以前没有意识到，现在教育程度和视野眼界其实真的可以划上正比。&lt;br&gt;接触了两种极端的人，自然而然地非常想向好的那方面靠拢。&lt;br&gt;往前走往上走，离开了就不想再回去，看见更广阔的世界就不想再回去。&lt;/p&gt;
-&lt;p&gt;在真正下决心之前投了几个大厂的简历都过筛选了，但后面的笔试和面试还是全部放下了。&lt;br&gt;毕竟在这种环境里生存了这么久，要简简单单地断断续续地后面再复习考研，幻想一蹴而就，不是那么容易的事。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;端正态度，分清战略与战术的区别。&lt;br&gt;同时想清楚自己不是为了考研而考研。&lt;br&gt;学英语的好处不用多说。&lt;br&gt;而数学的话可以为后面学机器学习相关理论打下数理基础。&lt;br&gt;嗯，开心就好~&lt;br&gt;以后优先考虑在广东发展，有目标的感觉真好：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;中山大学 - 数据科学与计算机学院&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;高考那时喜欢 &lt;strong&gt;花开不败&lt;/strong&gt; 这短词，现在还是这么喜欢。&lt;br&gt;曾经问自己万般努力只换一日盛开，有何意义？&lt;br&gt;其实，只是为了证明我来过这世上罢了。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今晚，刷着ZOJ。却突然有感而发，暂缓吧，给自己个总结。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://www.gcusky.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
