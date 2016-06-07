@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>英语词汇文化内涵分类 | GCUSKY_SPACE</title>
+  <title>Gauss 消元 | GCUSKY_SPACE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="《英语词汇学多维度探究》读书笔记之 英语词汇文化内涵分类
-词语的文化内涵，是指词语中蕴含着某一民族或社会团体所固有的或特定的传统和思想特征。每一种文化都有无比鲜明的民族性，每个民族必定具备独有的特征。英语词汇具有丰富的文化内涵，反映了英美社会生活的方方面面。">
+  <meta name="description" content="任务给一个 $n$ 元一次方程，求它们的解集。
+说明将方程组做成矩阵形式，再利用三种初等矩阵变换，得到上三角矩阵，最后回代得解集。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="英语词汇文化内涵分类">
-<meta property="og:url" content="http://www.gcusky.com/2016/04/27/english-1/index.html">
+<meta property="og:title" content="Gauss 消元">
+<meta property="og:url" content="http://www.gcusky.com/2016/06/07/acm-13/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
-<meta property="og:description" content="《英语词汇学多维度探究》读书笔记之 英语词汇文化内涵分类
-词语的文化内涵，是指词语中蕴含着某一民族或社会团体所固有的或特定的传统和思想特征。每一种文化都有无比鲜明的民族性，每个民族必定具备独有的特征。英语词汇具有丰富的文化内涵，反映了英美社会生活的方方面面。">
-<meta property="og:updated_time" content="2016-04-27T12:21:37.172Z">
+<meta property="og:description" content="任务给一个 $n$ 元一次方程，求它们的解集。
+说明将方程组做成矩阵形式，再利用三种初等矩阵变换，得到上三角矩阵，最后回代得解集。">
+<meta property="og:updated_time" content="2016-06-07T12:13:15.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="英语词汇文化内涵分类">
-<meta name="twitter:description" content="《英语词汇学多维度探究》读书笔记之 英语词汇文化内涵分类
-词语的文化内涵，是指词语中蕴含着某一民族或社会团体所固有的或特定的传统和思想特征。每一种文化都有无比鲜明的民族性，每个民族必定具备独有的特征。英语词汇具有丰富的文化内涵，反映了英美社会生活的方方面面。">
+<meta name="twitter:title" content="Gauss 消元">
+<meta name="twitter:description" content="任务给一个 $n$ 元一次方程，求它们的解集。
+说明将方程组做成矩阵形式，再利用三种初等矩阵变换，得到上三角矩阵，最后回代得解集。">
   
     <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
   
@@ -232,11 +232,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-english-1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-acm-13" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/27/english-1/" class="article-date">
-      <time datetime="2016-04-27T12:21:03.000Z" itemprop="datePublished">2016-04-27</time>
+      <a href="/2016/06/07/acm-13/" class="article-date">
+      <time datetime="2016-06-07T12:12:41.000Z" itemprop="datePublished">2016-06-07</time>
 </a>
     </div>
   
@@ -249,7 +249,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      英语词汇文化内涵分类
+      Gauss 消元
     </h1>
   
 
@@ -258,13 +258,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/英语/">英语</a>
+    <a class="article-category-link" href="/categories/ACM/">ACM</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学/">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/矩阵/">矩阵</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -274,62 +274,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><code>《英语词汇学多维度探究》读书笔记之 英语词汇文化内涵分类</code></p>
-<p>词语的文化内涵，是指词语中蕴含着某一民族或社会团体所固有的或特定的传统和思想特征。每一种文化都有无比鲜明的民族性，每个民族必定具备独有的特征。英语词汇具有丰富的文化内涵，反映了英美社会生活的方方面面。</p>
+        <h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><p>给一个 $n$ 元一次方程，求它们的解集。</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>将方程组做成矩阵形式，再利用三种初等矩阵变换，得到上三角矩阵，最后回代得解集。</p>
 <a id="more"></a>
-<p>下面列举了一些例子：</p>
-<h3 id="社会"><a href="#社会" class="headerlink" title="社会"></a>社会</h3><ol>
-<li>hippies（嬉皮士）是老一代音乐家给年轻一代音乐家的一个绰号。而到了20世60年代，人们将这个词用于形容反主流文化的一批青年。</li>
-<li>American Dream（美国梦）指美国标榜的立国精神，人人自由和机会均等。</li>
-<li>blue boy 指经过变形手术由男性转变为女性的人。</li>
-<li>beefcake（男性健美照）cheesecake（女性健美照）Halfway house（康复医院）Pink Lady 是一种鸡尾酒名。</li>
-</ol>
-<h3 id="政治"><a href="#政治" class="headerlink" title="政治"></a>政治</h3><ol>
-<li>propaganda 具有贬义，因此我们不能把“宣传部”译为 Propaganda Department，而是 Publicity Department。</li>
-<li>politician在美国英语具有很强的贬义色彩，它是指为谋取个人私利而搞政治、耍手段的人；也指精明圆滑的人，指一个人做事说话信心十足，非常老练。<br>而statesman主要是指善于管理国家的明智之士，人们通常把有威望的高级官员称为statesman。</li>
-</ol>
-<h3 id="传说、典故"><a href="#传说、典故" class="headerlink" title="传说、典故"></a>传说、典故</h3><ol>
-<li>来自希腊神话的 the touch of Midas（点金术）Pandora’s box（灾祸之根源）Herculean task（艰巨的任务）hand by a thread（千钧一发）</li>
-<li>来自伊索寓言的 a dog in the manger（占着茅坑不拉屎）</li>
-<li>来自《圣经》的 as poor as the church mouse（像教堂里的老鼠一样穷）to escape by the skin of one’s teeth（幸免于难）</li>
-</ol>
-<h3 id="动物"><a href="#动物" class="headerlink" title="动物"></a>动物</h3><ol>
-<li>black sheep（指人干的事情让人无法接受，违背传统）</li>
-<li>to bell the cat（冒险，在危险中挺身而出，采取冒险行动）</li>
-<li>cold fish（为人冷漠、性情怪癖、很不合群的人）</li>
-<li>not even a dog’s chance（毫无机会）</li>
-<li>to put on the dog（摆排场给别人看）</li>
-<li>monkey business（不道德或不合法的行为）</li>
-<li>a horse laugh（不信任的嘲笑）</li>
-<li>like a duck in a thunderstorm（垂头丧气）</li>
-</ol>
-<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><ol>
-<li>英语中的white常带有褒义，而black带有贬义。如white lie（善意的谎言）black lie（恶毒的谎言，诽谤）blackguard（恶棍）black list（黑名单）black mark（污点）black sheep（败家子）</li>
-<li>但black也有表示褒义的时候，如in the black（公司有盈余）</li>
-<li>其他颜色也具有各自文化内涵，如in the pink 形容那些看起来很健壮的马或指一个人身体健康；pink slip指“解雇工人的通知书”</li>
-</ol>
-<h3 id="食品"><a href="#食品" class="headerlink" title="食品"></a>食品</h3><ol>
-<li>lemon 在美国英语中指质量很差，不起作用的东西。</li>
-<li>doggy bag 是人们把在饭馆里吃剩下来的饭菜装在里面带回家的袋子。</li>
-<li>in hot water 指某人或某些人遇到非常麻烦的问题。</li>
-<li>go bananas 意思是一些不愉快的事把人弄得十分烦躁，好像快要发疯了似的。</li>
-</ol>
-<h3 id="人体"><a href="#人体" class="headerlink" title="人体"></a>人体</h3><ol>
-<li>to get cold feet 是指已决定做某件事，现在却畏缩害怕了</li>
-<li>to be led by the nose 指被人牵着鼻子走</li>
-<li>to pay through the nose 是指付出很高价钱或为付出的钱实在太多而感到心痛</li>
-<li>up to one’s ears 意思是很忙或完全介入某件事</li>
-<li>rubberneck 是指喜欢打听别人隐私的人、喜欢围观者</li>
-</ol>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>除了以上几种，英语词汇文化内涵还有：</p>
-<ol>
-<li>来自运动场的，如 to pull your socks up（振作起来）to knock your socks off（使人感到非常震惊）</li>
-<li>有来自扑克牌游戏的，如 poker face（脸上毫无表情、不漏声色）to sweeten the pot（为了一个提议更有吸引力而在原有条件的基础上增加一些对对方有利的条件）</li>
-<li>有来自航空用语的，如 right on the beam（一个人做某件事做得很对）</li>
-<li>有来自电影、音乐的，如 bomb（不成功、不受欢迎、卖座率很低）</li>
-<li>有来自战争的，如 to burn one’s bridges（采取行动不留退路、没有改弦的可能）D-day（计划行动开始日，该词来自二战）</li>
-</ol>
-
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><table>
+<thead>
+<tr>
+<th>复杂度</th>
+<th>$O(n^3)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入</td>
+<td><code>a</code> 方程组对应的矩阵<br><code>n</code> 未知数个数<br><code>l, ans</code> 存储解，<code>l[]</code> 表示是否为自由元</td>
+</tr>
+<tr>
+<td>输出</td>
+<td>解空间的维数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">double</span> a[][MAXN], <span class="keyword">bool</span> l[], <span class="keyword">double</span> ans[], <span class="keyword">const</span> <span class="keyword">int</span>&amp; n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        l[i] = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=r; j&lt;n; ++j)</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[j][i]) &gt; EPS)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=i; k&lt;=n; ++k)</span><br><span class="line">                    swap(a[j][k], a[r][k]);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[r][i]) &lt; EPS)&#123;</span><br><span class="line">            ++res;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; ++j)</span><br><span class="line">            <span class="keyword">if</span>(j!=r &amp;&amp; a[j][i]) &gt; EPS)&#123;</span><br><span class="line">                <span class="keyword">double</span> tmp = a[j][i] / a[r][i];</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=i; k&lt;=n; ++k)</span><br><span class="line">                    a[j][k] -= tmp * a[r][k];</span><br><span class="line">            &#125;</span><br><span class="line">        l[i] = <span class="literal">true</span>;</span><br><span class="line">        ++r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="keyword">if</span>(l[i])</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; ++j)</span><br><span class="line">                <span class="keyword">if</span>(a[j][i]) &gt; <span class="number">0</span>)</span><br><span class="line">                    ans[i] = a[j][n] /a[j][i];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -337,13 +303,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/04/27/english-1/">英语词汇文化内涵分类</a></p>
+        <p><span>本文标题:</span><a href="/2016/06/07/acm-13/">Gauss 消元</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
-        <p><span>发布时间:</span>2016-04-27, 20:21:03</p>
-        <p><span>最后更新:</span>2016-04-27, 20:21:37</p>
+        <p><span>发布时间:</span>2016-06-07, 20:12:41</p>
+        <p><span>最后更新:</span>2016-06-07, 20:13:15</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/04/27/english-1/" title="英语词汇文化内涵分类">http://www.gcusky.com/2016/04/27/english-1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/04/27/english-1/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/06/07/acm-13/" title="Gauss 消元">http://www.gcusky.com/2016/06/07/acm-13/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/06/07/acm-13/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -357,15 +323,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/04/27/english-2/">
-                    英语基本构词法之词缀法
+                <a href="/2016/06/07/python-1/">
+                    Python 实现统计字数
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/26/junit-2/">
-                    JUnit 黑盒测试
+                <a href="/2016/06/05/python/">
+                    Python简单入门
                 </a>
             </div>
         
@@ -376,7 +342,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#社会"><span class="toc-number">1.</span> <span class="toc-text">社会</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#政治"><span class="toc-number">2.</span> <span class="toc-text">政治</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传说、典故"><span class="toc-number">3.</span> <span class="toc-text">传说、典故</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动物"><span class="toc-number">4.</span> <span class="toc-text">动物</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色"><span class="toc-number">5.</span> <span class="toc-text">颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#食品"><span class="toc-number">6.</span> <span class="toc-text">食品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#人体"><span class="toc-number">7.</span> <span class="toc-text">人体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">8.</span> <span class="toc-text">其他</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#任务"><span class="toc-number">1.</span> <span class="toc-text">任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明"><span class="toc-number">2.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口"><span class="toc-number">3.</span> <span class="toc-text">接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -438,7 +404,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/27/english-1/" data-title="英语词汇文化内涵分类" data-url="http://www.gcusky.com/2016/04/27/english-1/"></div>
+    <div class="ds-thread" data-thread-key="2016/06/07/acm-13/" data-title="Gauss 消元" data-url="http://www.gcusky.com/2016/06/07/acm-13/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -462,7 +428,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/27/english-2/" title="上一篇: 英语基本构词法之词缀法">
+            <a href="/2016/06/07/python-1/" title="上一篇: Python 实现统计字数">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -470,7 +436,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/04/26/junit-2/" title="下一篇: JUnit 黑盒测试">
+            <a href="/2016/06/05/python/" title="下一篇: Python简单入门">
                 <i class="fa fa-angle-right"></i>
             </a>
         
