@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-06-07T13:12:27.735Z</updated>
+  <updated>2017-01-09T08:36:30.050Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -14,6 +14,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2017伊始</title>
+    <link href="http://www.gcusky.com/2017/01/09/life2/"/>
+    <id>http://www.gcusky.com/2017/01/09/life2/</id>
+    <published>2017-01-09T08:35:18.000Z</published>
+    <updated>2017-01-09T08:36:30.050Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;微信小程序发布&quot;&gt;&lt;a href=&quot;#微信小程序发布&quot; class=&quot;headerlink&quot; title=&quot;微信小程序发布&quot;&gt;&lt;/a&gt;微信小程序发布&lt;/h2&gt;&lt;p&gt;今天，2017年1月9日，微信的小程序发布了。我打开了美团外卖小程序，然后把美团外卖app卸载了；我打开了摩拜单车小程序，然后把摩拜单车app卸载了。有人问，这种小程序与网页版的桌面图标有什么区别，其实就仅仅相对于用户而言，&lt;strong&gt;在微信中使用小程序，会比打开一个HTML5网页流畅很多&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;我还没仔细研究微信小程序的开发流程，但自己做过小小的试验：专门断开网络之后，可以打开小程序，并且有缓存整体框架和部分数据。这和目前uc浏览器、360手机助手之类的软件留在桌面的“小程序”有所不同，节省流量是次要的，重要的是可以加快流畅度，使得不会体验到明显卡顿的感觉。&lt;/p&gt;
+&lt;p&gt;所以我的感觉就是，微信小程序无非是缓存框架留出接口，只要有网络，拥有数据交互功能就可以实现这样一个小程序。除了一些较为私人的、安全支付类的、需要结合手机GPU等性能的app，其余软件其实用这种类型的小程序就足矣。再说5G时代的到来，这种趋势是不可避免的。&lt;/p&gt;
+&lt;p&gt;以前因为个人计算机性能低下，所以推崇B/S结构；后来个人计算机符合摩尔定理发展迅速，但网络跟不上，所以我们推崇C/S结构；而如今网络宽带速度越来越快，我们来到了4G时代乃至5G时代将至，未来我们会慢慢回到B/S结构之中（当然，以上所谈只是争对一般大众软件，如大型游戏【手游】、高度机密系统【支付软件】依旧采用C/S结构【app】，但诸如一些生活消费类的软件就没必要了）。&lt;/p&gt;
+&lt;p&gt;而腾讯因为有了微信这个巨无霸，在这个时代起着引领革新的作用。如今它推出了小程序，那些原本的浏览器类软件肯定会采取行动维护自己原有的份额。但最重要的是&lt;strong&gt;腾讯改变了大众的观念，而不是腾讯这单个企业的发展&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;未来趋势感慨&quot;&gt;&lt;a href=&quot;#未来趋势感慨&quot; class=&quot;headerlink&quot; title=&quot;未来趋势感慨&quot;&gt;&lt;/a&gt;未来趋势感慨&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;不是落后者要学习领先者，而是领先者要学习落后者。比如你是一家股票走势预测的公司，你们公司的业绩取决于你预测的准确率的年度排名。十个月过去了，你现在排第一。为了保证年底的时候你还排在第一，这时候你应该采取什么策略？ &lt;strong&gt;答案是直接抄袭其他人的预测。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;现在我们要说的是那种改变游戏规则，改变商业模式，“根本性”的创新。这种创新往往具有历史意义，你一旦成功，会有很多后来者向你学习。你不是创新图存，而是引领风气之先。但是，&lt;strong&gt;创新最大的特点，不是“开放的头脑”之类的优秀品质，而是风险！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如今腾讯体量这么大，但是却变成了领先者创新。其实不仅仅是腾讯，像阿里巴巴之前几年一直在发展云计算一样。互联网行业的发展的确不能用传统行业的思维来解释，不创新就像百度一样由原先的BAT之中陨落。&lt;/p&gt;
+&lt;p&gt;话虽这样说，百度之前也做过直达号啊，但现在也半死不活的！这里面有很多因素，范围太广就不展开讨论了，已知就有用户粘合度、技术创新性、入门门槛等方面以及百度内部的原因。更简单点看，我想百度可能就因为少了一个像微信、支付宝这种不可替代的客户端吧。很多时候要做对事很难，但&lt;strong&gt;运气，本来就是成功的必要条件。&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;唠完宏观方面，我们来聊下技术&lt;strong&gt;（个人见解，不喜勿喷，但可以多多交流……）&lt;/strong&gt;。按照目前的状况，安卓和ios后期可能会出现供过于求的情况。它们都是基于特定平台进行开发，其学习内容更新也挺快的，虽然这方面的人才需要是需要的，但不需要太多。未来像小程序这种简单点的开发才是主流。对于我个人理解来说，&lt;strong&gt;服务器才是王道，网页多终端才是王道。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不过呢，厉害的人跨方向并不难，都是编程，思想一样，而且都喜欢玩玩新鲜有趣的技术。&lt;/p&gt;
+&lt;p&gt;当前还有一种趋势是MVC有种合而为一的感觉。当然，特别说的是V这一层。从node.js开始，就没必要单独分得那么细了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/MLF/no_mvc.jpg&quot; alt=&quot;no_mvc&quot;&gt;&lt;/p&gt;
+&lt;p&gt;不过也不能说死，前后端分离有利于合作交流分任务，这是多年来实践的结果。凡事都有一个度，我们要把握好平衡点。总之可以多思考未来的趋势，我庆幸生活在这个时代，见证了互联网迅速发展的这十几年，感慨到一种合久必分分久必合的感觉。&lt;/p&gt;
+&lt;h2 id=&quot;个人发展计划&quot;&gt;&lt;a href=&quot;#个人发展计划&quot; class=&quot;headerlink&quot; title=&quot;个人发展计划&quot;&gt;&lt;/a&gt;个人发展计划&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;人生面临着一个风险悖论。如果你一辈子谨慎小心，干什么事情都谋定而后动，你的生活再差也差不到哪去；而如果你勇于承担风险、大胆尝试，你可能会特别失败，但也可能特别成功。那么平均而言，我们到底应该更冒险一点好，还是更谨慎一点好呢？&lt;br&gt;根据2011年发表在《自然》上的一篇论文，&lt;strong&gt;答案是冒险更好。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对于我来说，之前经历了一场考研，很多人不懂为什么我要去考，难度大且容易失败（像现在我这样……），不过也许真的只有考过研的人才能理解我的感受与决定……我在考研期间，也领悟到了自己的不足之处：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;知识的匮乏性，没有完整的知识体系结构&lt;/li&gt;
+&lt;li&gt;不会在关键点时出问题，而是在关键之前出差错&lt;/li&gt;
+&lt;li&gt;竭力追求广而泛的完美，却忽略了单而精的极致&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我不是乐天派，而是一个偏向于悲观主义的人。但正因为如此，我更多地发现了我很多要改的地方并进行改正：利用OnteNote、Xmind等方式组织管理笔记；在该阶段缺乏什么就多阅读相关书籍，适当参加一些线上live活动；利用自我监控、培养习惯的手段提高意志力；意识到情绪管控的重要性（自诩为理性的人，但时常和情绪化仅有一步之遥555），总在最后一百米冲刺阶段承受不住，也许在这一阶段我的确需要一个相互激励的对象……&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/MLF/onenote.png&quot; alt=&quot;onenote&quot;&gt;&lt;/p&gt;
+&lt;p&gt;而目前我的职业追求，更倾向于后端开发（也对Angular2和KeystoneJS稍微有点兴趣，但只会在业余时间有空玩玩）。年后再去找实习，目前在刷面试笔试题目以及做毕业设计，为年后找工作做准备以及减轻一下负担。同时也会适当地多看一些书籍，因为&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;世界上有很多比读书重要的事。在做事和读书之间，做事优先。但读书是除实践外迅速积累见识的最好办法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;今天权当2016年的总结，展望2017，也许会很累，但这是我所追求的存在。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;文章引用部分来自：《万万没想到：用理工科思维思考世界》（现在亚马逊电子书只要1毛钱哟hhh）&lt;/code&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;微信小程序发布&quot;&gt;&lt;a href=&quot;#微信小程序发布&quot; class=&quot;headerlink&quot; title=&quot;微信小程序发布&quot;&gt;&lt;/a&gt;微信小程序发布&lt;/h2&gt;&lt;p&gt;今天，2017年1月9日，微信的小程序发布了。我打开了美团外卖小程序，然后把美团外卖app卸载了；我
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.gcusky.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>Python 实现统计字数</title>
@@ -81,9 +136,9 @@
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
+    
+      <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="矩阵" scheme="http://www.gcusky.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
@@ -686,9 +741,9 @@
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
+    
+      <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="矩阵" scheme="http://www.gcusky.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
@@ -2255,459 +2310,6 @@
     
     
       <category term="设计模式" scheme="http://www.gcusky.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语基本构词法之词缀法</title>
-    <link href="http://www.gcusky.com/2016/04/27/english-2/"/>
-    <id>http://www.gcusky.com/2016/04/27/english-2/</id>
-    <published>2016-04-27T14:09:00.000Z</published>
-    <updated>2016-05-01T07:42:11.273Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;code&gt;英语的基本构词法主要包括词缀法、合成法、转换法。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;词缀法是派生法的一种主要构词法，它利用派生词缀和词根结合构成新词。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;前缀&quot;&gt;&lt;a href=&quot;#前缀&quot; class=&quot;headerlink&quot; title=&quot;前缀&quot;&gt;&lt;/a&gt;前缀&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;通常情况下，前缀对词义的影响较大，一般对词汇意义起修饰或限制作用，基本不改变词性，如unfair、unhappy、dishonest等。&lt;/li&gt;
-&lt;li&gt;前缀所起的作用与&lt;strong&gt;副词&lt;/strong&gt;相仿，可以表示态度、程度、方式、否定、时间、地点等概念。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;前缀的分类&quot;&gt;&lt;a href=&quot;#前缀的分类&quot; class=&quot;headerlink&quot; title=&quot;前缀的分类&quot;&gt;&lt;/a&gt;前缀的分类&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;表&lt;strong&gt;否定&lt;/strong&gt;意义的前缀，如 &lt;code&gt;a-&lt;/code&gt;、&lt;code&gt;un-&lt;/code&gt;、&lt;code&gt;non-&lt;/code&gt;、&lt;code&gt;in-&lt;/code&gt;、&lt;code&gt;dis-&lt;/code&gt; 等。&lt;/li&gt;
-&lt;li&gt;表&lt;strong&gt;相反或消极&lt;/strong&gt;的前缀，如 &lt;code&gt;un-&lt;/code&gt;、&lt;code&gt;de-&lt;/code&gt;、&lt;code&gt;dis-&lt;/code&gt; 等。&lt;/li&gt;
-&lt;li&gt;表&lt;strong&gt;程度或大小&lt;/strong&gt;的前缀，如 &lt;code&gt;arch-&lt;/code&gt;、&lt;code&gt;super-&lt;/code&gt;、&lt;code&gt;out-&lt;/code&gt;、&lt;code&gt;sub-&lt;/code&gt;、&lt;code&gt;over-&lt;/code&gt;、&lt;code&gt;under-&lt;/code&gt;、&lt;code&gt;hyper-&lt;/code&gt;、&lt;code&gt;ultra-&lt;/code&gt;、&lt;code&gt;mini-&lt;/code&gt; 等。&lt;/li&gt;
-&lt;li&gt;表&lt;strong&gt;轻视&lt;/strong&gt;的前缀，如 &lt;code&gt;mis-&lt;/code&gt;、&lt;code&gt;mal-&lt;/code&gt;、&lt;code&gt;pseudo-&lt;/code&gt; 等。&lt;/li&gt;
-&lt;li&gt;表&lt;strong&gt;态度&lt;/strong&gt;的前缀，如 &lt;code&gt;co-&lt;/code&gt;、&lt;code&gt;counter-&lt;/code&gt;、&lt;code&gt;anti-&lt;/code&gt;、&lt;code&gt;pro-&lt;/code&gt; 等。&lt;/li&gt;
-&lt;li&gt;表&lt;strong&gt;时间或顺序&lt;/strong&gt;的前缀，如 &lt;code&gt;fore-&lt;/code&gt;、&lt;code&gt;pie-&lt;/code&gt;、&lt;code&gt;post-&lt;/code&gt;、&lt;code&gt;ex-&lt;/code&gt;、&lt;code&gt;re-&lt;/code&gt; 等。&lt;/li&gt;
-&lt;li&gt;表&lt;strong&gt;方位&lt;/strong&gt;的前缀，如 &lt;code&gt;fore-&lt;/code&gt;、&lt;code&gt;inter-&lt;/code&gt;、&lt;code&gt;trans-&lt;/code&gt; 等。&lt;/li&gt;
-&lt;li&gt;表&lt;strong&gt;数量&lt;/strong&gt;的前缀，如 &lt;code&gt;uni-/mono-&lt;/code&gt;、&lt;code&gt;bi-/di-&lt;/code&gt;、&lt;code&gt;tri-&lt;/code&gt;、&lt;code&gt;multi-/poly-&lt;/code&gt; 等。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;构词能力较强的前缀&quot;&gt;&lt;a href=&quot;#构词能力较强的前缀&quot; class=&quot;headerlink&quot; title=&quot;构词能力较强的前缀&quot;&gt;&lt;/a&gt;构词能力较强的前缀&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ant-/anti-&lt;/code&gt; 表 against&lt;ul&gt;
-&lt;li&gt;eg. anti-art 非正统派艺术；antibiotic 抗生的、抗生素；anti-body 抗体；anti-social 反社会的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;auto-&lt;/code&gt; 表 self&lt;ul&gt;
-&lt;li&gt;eg. autoboat 汽艇；automation 自动化；automobile 汽车&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;co-/con-/col-/cor-&lt;/code&gt; 表“结合、联合、共同；相互的关系”&lt;ul&gt;
-&lt;li&gt;eg. cooperate 合作；cochairman 联合主席；colleague 同事；combine 联合；concur 同时发生；correspond 符合、相称、通信&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;counter-&lt;/code&gt; 表“与……相反，反”&lt;ul&gt;
-&lt;li&gt;eg. counterattack 反击；counterpart 对应一方；counterplot 对抗策略&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;dis-&lt;/code&gt; 表“与……相反，不”&lt;ul&gt;
-&lt;li&gt;eg. disallow 不承认（某事物）有效、不接受；disadapt 使……不适应；disambiguate 消除……的歧义&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;de-&lt;/code&gt; 表“除去、向下”&lt;ul&gt;
-&lt;li&gt;eg. decentralize 权力分散；de-compose 腐烂、拆分；defunct 已消亡的；deoil 去油；devalue 贬值&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ex-&lt;/code&gt; 表“外面、朝外、前……”&lt;ul&gt;
-&lt;li&gt;eg. exhale 呼气；extertor 外部的；ex-president 前任总统；ex-student 前学生&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;extra-&lt;/code&gt; 表outside、beyond&lt;ul&gt;
-&lt;li&gt;eg. extra-strong 超强；extraordinary 不平常的；extramarital 私通的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fore-&lt;/code&gt; 表“前部、先”&lt;ul&gt;
-&lt;li&gt;eg. forearm 前臂；forecast 预言；foremost 首要的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;inter-&lt;/code&gt; 表“在……之间、在……中间”&lt;ul&gt;
-&lt;li&gt;eg. inter-city 市际间的；intercollege 学院间的；interface 共界面&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mal-&lt;/code&gt; 表“恶、不良”&lt;ul&gt;
-&lt;li&gt;eg. maladjusted 心理失调的；maltreat 虐待；malnutrition 营养不良&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mini-&lt;/code&gt; 表“小、微小；短暂”&lt;ul&gt;
-&lt;li&gt;eg. minibus 小公共汽车、面包车；miniboom 短暂的繁荣&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mis-&lt;/code&gt; 表“错误、歧途”&lt;ul&gt;
-&lt;li&gt;eg. miscalculate 算错；misconduct 不端行为；misfortune 不幸&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;non-&lt;/code&gt; 表“无、非、不；假、劣；缺乏传统特征的”&lt;ul&gt;
-&lt;li&gt;eg. non-aligned 不结盟的；non-classical 非经典的；nondebate 假辩论、noninvoled 拒绝介入的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;over-&lt;/code&gt; 表“过于、过分；上方”&lt;ul&gt;
-&lt;li&gt;eg. overdo 做得过头；overconfident 过分自信；overbridge 天桥&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;post-&lt;/code&gt; 表“在……之后”&lt;ul&gt;
-&lt;li&gt;eg. postgraduate 研究生、post-doctorial 博士后；post-war 战后的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pre-&lt;/code&gt; 表“在……之前”&lt;ul&gt;
-&lt;li&gt;eg. precaution 预防；prearrange 预先准备；pre-battle 战前的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;re-&lt;/code&gt; 表“再、复”&lt;ul&gt;
-&lt;li&gt;eg. rebuild 重建；reaffirm 重申；react 反作用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;un-&lt;/code&gt; 表“不、非”&lt;ul&gt;
-&lt;li&gt;eg. unfair 不公平；unexpected 意外的；unfeeling 残酷、冷漠；unwrap 打开、展开&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;under-&lt;/code&gt; 表“在……之下、过小、不足”&lt;ul&gt;
-&lt;li&gt;eg. underground 地下的；undereducated 未受过良好教育的； underdeveloped 不发达的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;改变词性的前缀&quot;&gt;&lt;a href=&quot;#改变词性的前缀&quot; class=&quot;headerlink&quot; title=&quot;改变词性的前缀&quot;&gt;&lt;/a&gt;改变词性的前缀&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;前缀&lt;/th&gt;
-&lt;th&gt;意义&lt;/th&gt;
-&lt;th&gt;词性转换&lt;/th&gt;
-&lt;th&gt;例词&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;en-、em-&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;使……，受……；使……变成&lt;/td&gt;
-&lt;td&gt;名 → 动&lt;br&gt;形 → 动&lt;/td&gt;
-&lt;td&gt;embody 体现、empower 授权、encourage 鼓励；&lt;br&gt;enable 使能够、enlarge 扩大、enrich 使富裕、ensure 担保&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;be-&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;使……（成为）&lt;/td&gt;
-&lt;td&gt;名 → 动&lt;br&gt;形 → 动&lt;/td&gt;
-&lt;td&gt;becloud 遮掩、befriend 尽朋友之道；&lt;br&gt;becalm 使……平静、benumb 使麻木&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;a-&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;使……进入状态&lt;/td&gt;
-&lt;td&gt;动 → 形&lt;br&gt;名 → 形&lt;/td&gt;
-&lt;td&gt;asleep 睡着、astir 激动起来、astray 误入歧途的；&lt;br&gt;afire 燃烧着、afoot 在进行中&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&quot;后缀&quot;&gt;&lt;a href=&quot;#后缀&quot; class=&quot;headerlink&quot; title=&quot;后缀&quot;&gt;&lt;/a&gt;后缀&lt;/h2&gt;&lt;p&gt;后缀的作用是语法功能，往往会改变词性，也就是使一种词类变成另一种词类.按词类划分，后缀一般可归纳为：&lt;strong&gt;名词后缀、动词后缀、形容词后缀、副词后缀&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&quot;名词后缀&quot;&gt;&lt;a href=&quot;#名词后缀&quot; class=&quot;headerlink&quot; title=&quot;名词后缀&quot;&gt;&lt;/a&gt;名词后缀&lt;/h3&gt;&lt;h4 id=&quot;抽象名词后缀&quot;&gt;&lt;a href=&quot;#抽象名词后缀&quot; class=&quot;headerlink&quot; title=&quot;抽象名词后缀&quot;&gt;&lt;/a&gt;抽象名词后缀&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-age&lt;/code&gt; 表“度、量”&lt;ul&gt;
-&lt;li&gt;eg. acreage 英亩数；percentage 百分率；wastage 浪费（量）、损耗（量）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-dom&lt;/code&gt; 表“状态、领域”&lt;ul&gt;
-&lt;li&gt;eg. freedom 自由；martyrdom 牺牲；wisdom 智慧&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ry/-ery&lt;/code&gt; 表“与……相关的状态或行为；场所；集合”&lt;ul&gt;
-&lt;li&gt;eg. bakery 面包店；delivery 递送；machinery 机械；soldiery军队&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ful&lt;/code&gt; 表“所容的量”&lt;ul&gt;
-&lt;li&gt;eg. mouthful 一口的量；handful 一捧的量；hopeful 有希望的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-hood&lt;/code&gt; 表“某种状态或时段”&lt;ul&gt;
-&lt;li&gt;eg. brotherhood 手足之情；priesthood 教士的职位；adulthood 成人期；childhood 童年&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ing&lt;/code&gt; 表“某种活动；材料、制……的工艺”&lt;ul&gt;
-&lt;li&gt;eg. swimming 游泳；farming 农事；coloring 着色法；spelling 拼写法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ism&lt;/code&gt; 表“某种道义或做法”&lt;ul&gt;
-&lt;li&gt;eg. consumerism 消费主义；buddhism 佛教；journalism 新闻业&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ship&lt;/code&gt; 表“某种状态或品质”&lt;ul&gt;
-&lt;li&gt;eg. friendship 友情；fellowship 友谊；membership 成员资格&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;具体名词后缀&quot;&gt;&lt;a href=&quot;#具体名词后缀&quot; class=&quot;headerlink&quot; title=&quot;具体名词后缀&quot;&gt;&lt;/a&gt;具体名词后缀&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-ee&lt;/code&gt; 表“受……的人”（动词 → 名词）&lt;ul&gt;
-&lt;li&gt;eg. examinee 考生；interviewee 被采访者；trainee 学员&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-eer&lt;/code&gt; 表“从事……的人”（名词 → 名词）&lt;ul&gt;
-&lt;li&gt;eg. engineer 工程师；blackmarketeer 黑市商人&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-er/-or/-ar&lt;/code&gt; 表“者，物”（动词 → 名词）&lt;ul&gt;
-&lt;li&gt;eg. examiner 考官；actor 演员；beggar 乞丐&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ess&lt;/code&gt; 表“阴性”（名词 → 名词）&lt;ul&gt;
-&lt;li&gt;eg. priestess 女神职人员；waitress 女服务员&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-(t)ion&lt;/code&gt; 表“某种动作导致的状态或机构”（动词 → 名词）&lt;ul&gt;
-&lt;li&gt;eg. decision 决定；admission 进入；alternation 交替；complication 复杂化&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ing&lt;/code&gt; 表“动作的结果”（动词 → 名词）&lt;ul&gt;
-&lt;li&gt;eg. savings 储蓄；earnings 赚的钱&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ist&lt;/code&gt; 表“有某种技能的人；信奉……的人”（动词 → 名词；名词 → 名词）&lt;ul&gt;
-&lt;li&gt;eg. anarchist 无政府主义者；cellist 大提琴演奏者；communist 共产党员&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ment&lt;/code&gt; 表“动作的过程”（动词 → 名词）&lt;ul&gt;
-&lt;li&gt;eg. development 发展；enjoyment 愉快&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ness&lt;/code&gt; 表“状态、品质、程度”（形容词 → 名词）&lt;ul&gt;
-&lt;li&gt;eg. correctness 正确；carelessness 粗心；goodness 善良&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;国家、国籍后缀&quot;&gt;&lt;a href=&quot;#国家、国籍后缀&quot; class=&quot;headerlink&quot; title=&quot;国家、国籍后缀&quot;&gt;&lt;/a&gt;国家、国籍后缀&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;以 &lt;code&gt;-an&lt;/code&gt; 为国籍的后缀&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;国家&lt;/th&gt;
-&lt;th&gt;国籍&lt;/th&gt;
-&lt;th&gt;语言&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;America（美国）&lt;/td&gt;
-&lt;td&gt;American&lt;/td&gt;
-&lt;td&gt;English&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Australia（澳大利亚）&lt;/td&gt;
-&lt;td&gt;Australian&lt;/td&gt;
-&lt;td&gt;English&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Canada（加拿大）&lt;/td&gt;
-&lt;td&gt;Canadian&lt;/td&gt;
-&lt;td&gt;English/French&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Colombia（哥伦比亚）&lt;/td&gt;
-&lt;td&gt;Colombian&lt;/td&gt;
-&lt;td&gt;Spanish&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Cuba（古巴）&lt;/td&gt;
-&lt;td&gt;Cuban&lt;/td&gt;
-&lt;td&gt;Spanish&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Italy（意大利）&lt;/td&gt;
-&lt;td&gt;Italian&lt;/td&gt;
-&lt;td&gt;Italian&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Russia（俄罗斯）&lt;/td&gt;
-&lt;td&gt;Russian&lt;/td&gt;
-&lt;td&gt;Russian&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;以 &lt;code&gt;-sh&lt;/code&gt; 或 &lt;code&gt;-ch&lt;/code&gt; 为国籍的后缀&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;国家&lt;/th&gt;
-&lt;th&gt;国籍&lt;/th&gt;
-&lt;th&gt;语言&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Britain（英国）&lt;/td&gt;
-&lt;td&gt;British&lt;/td&gt;
-&lt;td&gt;English&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Finland（芬兰）&lt;/td&gt;
-&lt;td&gt;Finnish&lt;/td&gt;
-&lt;td&gt;Finnish/Swedish&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Denmark（丹麦）&lt;/td&gt;
-&lt;td&gt;Danish&lt;/td&gt;
-&lt;td&gt;Danish&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;France（法国）&lt;/td&gt;
-&lt;td&gt;French&lt;/td&gt;
-&lt;td&gt;French&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Ireland（爱尔兰）&lt;/td&gt;
-&lt;td&gt;Irish&lt;/td&gt;
-&lt;td&gt;Irish&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;以 &lt;code&gt;-ese&lt;/code&gt; 为国籍的后缀&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;国家&lt;/th&gt;
-&lt;th&gt;国籍&lt;/th&gt;
-&lt;th&gt;语言&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;China（中国）&lt;/td&gt;
-&lt;td&gt;Chinese&lt;/td&gt;
-&lt;td&gt;Chinese&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Japan（日本）&lt;/td&gt;
-&lt;td&gt;Japanese&lt;/td&gt;
-&lt;td&gt;Japanese&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Portugal（葡萄牙）&lt;/td&gt;
-&lt;td&gt;Portuguese&lt;/td&gt;
-&lt;td&gt;Portuguese&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Burma（缅甸）&lt;/td&gt;
-&lt;td&gt;Burmese&lt;/td&gt;
-&lt;td&gt;Burmese&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;以 &lt;code&gt;-ese&lt;/code&gt; 为国籍的后缀&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;国家&lt;/th&gt;
-&lt;th&gt;国籍&lt;/th&gt;
-&lt;th&gt;语言&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Iraq（伊拉克）&lt;/td&gt;
-&lt;td&gt;Iraqi&lt;/td&gt;
-&lt;td&gt;Arabic&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Kuwait（科威特）&lt;/td&gt;
-&lt;td&gt;Kuwaiti&lt;/td&gt;
-&lt;td&gt;Arabic&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Israel（以色列）&lt;/td&gt;
-&lt;td&gt;Israeli&lt;/td&gt;
-&lt;td&gt;Hebrew/Arabic&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Yemen（也门）&lt;/td&gt;
-&lt;td&gt;Yemeni&lt;/td&gt;
-&lt;td&gt;Arabic&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&quot;形容词后缀&quot;&gt;&lt;a href=&quot;#形容词后缀&quot; class=&quot;headerlink&quot; title=&quot;形容词后缀&quot;&gt;&lt;/a&gt;形容词后缀&lt;/h3&gt;&lt;h4 id=&quot;由名词转成形容词的后缀&quot;&gt;&lt;a href=&quot;#由名词转成形容词的后缀&quot; class=&quot;headerlink&quot; title=&quot;由名词转成形容词的后缀&quot;&gt;&lt;/a&gt;由名词转成形容词的后缀&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-ed&lt;/code&gt; 表“有……特性”&lt;ul&gt;
-&lt;li&gt;eg. kind hearted 善意的；simpleminded 纯朴的，（头脑）简单的；one-eyed 独眼的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ful&lt;/code&gt; 表“充满着、有……的”&lt;ul&gt;
-&lt;li&gt;eg. harmful 有害的；beautiful 美丽的；meaningful 有意义的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ish&lt;/code&gt; 表“某种程度上像；某种程度；某国人、某国语言”&lt;ul&gt;
-&lt;li&gt;eg. boyish 男孩似的；bookish 书生气的；Spanish 西班牙语&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-less&lt;/code&gt; 表“无……”&lt;ul&gt;
-&lt;li&gt;eg. hopeless 无希望的；lifeless 无生命力的；homeless 无家可归的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-like&lt;/code&gt; 表“像；具有……特征；适于”&lt;ul&gt;
-&lt;li&gt;eg. dreamlike 梦一般的，朦胧的；lifelike 栩栩如生的；lady-like 淑女&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ly&lt;/code&gt; 表“相似的；有……性质的；时间的反复”&lt;ul&gt;
-&lt;li&gt;eg. kingly 国王似的；friendly 友好的；daily 每天的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-y&lt;/code&gt; 表“有……性质、有……倾向”&lt;ul&gt;
-&lt;li&gt;eg. dirty 脏的；bloody 流血的、血腥的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ous&lt;/code&gt; 表“多……的；有……特征的”&lt;ul&gt;
-&lt;li&gt;eg. glorious 光荣的；courageous 勇敢的、无畏的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;由动词转成形容词的后缀&quot;&gt;&lt;a href=&quot;#由动词转成形容词的后缀&quot; class=&quot;headerlink&quot; title=&quot;由动词转成形容词的后缀&quot;&gt;&lt;/a&gt;由动词转成形容词的后缀&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-able/-ible/-ble&lt;/code&gt; 表“可……的；值得……的”&lt;ul&gt;
-&lt;li&gt;eg. comfortable 舒适的；contemptible 可鄙的；eatable 可食用的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ive&lt;/code&gt; 表“有……倾向、有……特征的”&lt;ul&gt;
-&lt;li&gt;eg. active 积极的；creative 创意的；attractive 有吸引力的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;副词后缀&quot;&gt;&lt;a href=&quot;#副词后缀&quot; class=&quot;headerlink&quot; title=&quot;副词后缀&quot;&gt;&lt;/a&gt;副词后缀&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-ly&lt;/code&gt; 表“程度、次序、某一时间”&lt;ul&gt;
-&lt;li&gt;eg. happily 高兴的；badly 坏；recently 最近&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ward(s)&lt;/code&gt; 表“向……”&lt;ul&gt;
-&lt;li&gt;eg. eastward 向东走；onward 向前；toward 朝&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-fold&lt;/code&gt; 表“倍数”&lt;ul&gt;
-&lt;li&gt;eg. tenfold 十倍；hundredfold 百倍&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-wise&lt;/code&gt; 表“方式；方向；方面”&lt;ul&gt;
-&lt;li&gt;eg. lengthwise 纵向的；education-wise 教育方向&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;动词后缀&quot;&gt;&lt;a href=&quot;#动词后缀&quot; class=&quot;headerlink&quot; title=&quot;动词后缀&quot;&gt;&lt;/a&gt;动词后缀&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-ate&lt;/code&gt; 表“成为、使化合”&lt;ul&gt;
-&lt;li&gt;eg. chlorinate 用氯处理；hyphenate 用连接号连接&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-en&lt;/code&gt; 表“使有、变得有”&lt;ul&gt;
-&lt;li&gt;eg. heighten （使）变高；darken 变黑；shorten 变短&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-fy/ify&lt;/code&gt; 表“使……成为、使有”&lt;ul&gt;
-&lt;li&gt;eg. beautify 美化；purify 净化；solidify 使……变为固体&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ize&lt;/code&gt; 表“使……变成、使……化”&lt;ul&gt;
-&lt;li&gt;eg. legalize 使合法化；computerize 电脑化&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;英语的基本构词法主要包括词缀法、合成法、转换法。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;词缀法是派生法的一种主要构词法，它利用派生词缀和词根结合构成新词。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="英语" scheme="http://www.gcusky.com/categories/%E8%8B%B1%E8%AF%AD/"/>
-    
-    
-      <category term="读书笔记" scheme="http://www.gcusky.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
