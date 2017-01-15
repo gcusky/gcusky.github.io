@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
-  
-  <title>NYOJ 22-素数求和问题 | GCUSKY_SPACE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="时间限制：3000 ms  |  内存限制：65535 KB  |  难度：2
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="GCUSKY" />
+
+
+
+<meta name="description" content="时间限制：3000 ms  |  内存限制：65535 KB  |  难度：2
 描述
 现在给你$N$个数$(0&amp;lt;N&amp;lt;1000)$，现在要求你写出一个程序，找出这$N$个数中的所有素数，并求和。">
 <meta property="og:type" content="article">
@@ -21,51 +31,71 @@
 <meta name="twitter:description" content="时间限制：3000 ms  |  内存限制：65535 KB  |  难度：2
 描述
 现在给你$N$个数$(0&amp;lt;N&amp;lt;1000)$，现在要求你写出一个程序，找出这$N$个数中的所有素数，并求和。">
-  
-    <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  
-  
-  
-      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-      <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-  
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
-  <script>
-      var yiliaConfig = {
-          fancybox: true,
-          animate: true,
-          isHome: false,
-          isPost: true,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false,
-      }
-  </script>
 
-  
-      <script>
-          yiliaConfig.rootUrl = "/";
-      </script>
-  
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
-  
 
-     
+    <link rel="alternate" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>NYOJ 22-素数求和问题 | GCUSKY_SPACE</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
 </head>
 <body>
   <div id="container">
@@ -83,7 +113,15 @@
         
         <p class="header-subtitle">云山自清，青水自流。</p>
         
-                
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
 
 
         
@@ -142,15 +180,15 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <li id="Email"><a class="Email" target="_blank" href="mailto:gcusky@foxmail.com" title="Email"></a></li>
+                                <a class="fa Email" href="mailto:gcusky@163.com" title="Email"></a>
                             
-                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a></li>
+                                <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
                             
-                                <li id="V2EX"><a class="V2EX" target="_blank" href="http://v2ex.com/member/ltrans" title="V2EX"></a></li>
+                                <a class="fa V2EX" href="http://v2ex.com/member/ltrans" title="V2EX"></a>
                             
-                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
                             
-                                <li id="SegmentFault"><a class="SegmentFault" target="_blank" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a></li>
+                                <a class="fa SegmentFault" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
                             
                         </ul>
                     </nav>
@@ -159,7 +197,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/JUnit/" style="font-size: 12.5px;">JUnit</a> <a href="/tags/MATLAB/" style="font-size: 11.25px;">MATLAB</a> <a href="/tags/NYOJ/" style="font-size: 18.75px;">NYOJ</a> <a href="/tags/Python/" style="font-size: 11.25px;">Python</a> <a href="/tags/STL练习/" style="font-size: 10px;">STL练习</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/ZOJ/" style="font-size: 11.25px;">ZOJ</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/machinelearning/" style="font-size: 10px;">machinelearning</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/二分法/" style="font-size: 10px;">二分法</a> <a href="/tags/分治法/" style="font-size: 10px;">分治法</a> <a href="/tags/创建型模式/" style="font-size: 12.5px;">创建型模式</a> <a href="/tags/回溯法/" style="font-size: 10px;">回溯法</a> <a href="/tags/思维导图/" style="font-size: 11.25px;">思维导图</a> <a href="/tags/搜索/" style="font-size: 11.25px;">搜索</a> <a href="/tags/数值法/" style="font-size: 10px;">数值法</a> <a href="/tags/数学/" style="font-size: 12.5px;">数学</a> <a href="/tags/数学建模/" style="font-size: 10px;">数学建模</a> <a href="/tags/白盒测试/" style="font-size: 11.25px;">白盒测试</a> <a href="/tags/矩阵/" style="font-size: 11.25px;">矩阵</a> <a href="/tags/结构型模式/" style="font-size: 15px;">结构型模式</a> <a href="/tags/行为型模式/" style="font-size: 10px;">行为型模式</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/语言入门/" style="font-size: 16.25px;">语言入门</a> <a href="/tags/读书笔记/" style="font-size: 17.5px;">读书笔记</a> <a href="/tags/贪心算法/" style="font-size: 13.75px;">贪心算法</a> <a href="/tags/软件测试/" style="font-size: 12.5px;">软件测试</a> <a href="/tags/随笔/" style="font-size: 11.25px;">随笔</a> <a href="/tags/非线性方程/" style="font-size: 10px;">非线性方程</a> <a href="/tags/面向对象设计原则/" style="font-size: 10px;">面向对象设计原则</a> <a href="/tags/黑盒测试/" style="font-size: 10px;">黑盒测试</a>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JUnit/">JUnit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NYOJ/">NYOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL练习/">STL练习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZOJ/">ZOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分法/">二分法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分治法/">分治法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创建型模式/">创建型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/回溯法/">回溯法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搜索/">搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数值法/">数值法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学建模/">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/白盒测试/">白盒测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/矩阵/">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/结构型模式/">结构型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行为型模式/">行为型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语言入门/">语言入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心算法/">贪心算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性方程/">非线性方程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象设计原则/">面向对象设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
                     </div>
                 </section>
                 
@@ -168,11 +206,11 @@
                 <section class="switch-part switch-part3">
                     <div id="js-friends">
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
                     
                     </div>
                 </section>
@@ -220,20 +258,21 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <li id="Email"><a class="Email" target="_blank" href="mailto:gcusky@foxmail.com" title="Email"></a></li>
+                                <a class="fa Email" target="_blank" href="mailto:gcusky@163.com" title="Email"></a>
                             
-                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a></li>
+                                <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
                             
-                                <li id="V2EX"><a class="V2EX" target="_blank" href="http://v2ex.com/member/ltrans" title="V2EX"></a></li>
+                                <a class="fa V2EX" target="_blank" href="http://v2ex.com/member/ltrans" title="V2EX"></a>
                             
-                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
                             
-                                <li id="SegmentFault"><a class="SegmentFault" target="_blank" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a></li>
+                                <a class="fa SegmentFault" target="_blank" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
                             
                         </ul>
             </nav>
         </header>                
     </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap"><article id="post-acm-3" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -241,6 +280,8 @@
       <a href="/2016/03/15/acm-3/" class="article-date">
       <time datetime="2016-03-15T09:52:16.000Z" itemprop="datePublished">2016-03-15</time>
 </a>
+
+
     </div>
   
   <div class="article-inner">
@@ -316,7 +357,6 @@
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/15/acm-3/" title="NYOJ 22-素数求和问题">http://www.gcusky.com/2016/03/15/acm-3/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/03/15/acm-3/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -347,86 +387,113 @@
 </article>
 
     <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一：枚举法"><span class="toc-number">1.</span> <span class="toc-text">方法一：枚举法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二：Miller-Rabin测试"><span class="toc-number">2.</span> <span class="toc-text">方法二：Miller-Rabin测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
-</div>
-<style>
-    .left-col .switch-btn {
-        display: none;
-    }
-    .left-col .switch-area {
-        display: none;
-    }
-</style>
-
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
-        }
-    })
-
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
-    }
-</script>
-
-
-
-
-    <div class="share">
-    <div class="bdsharebuttonbox">
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
-    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一：枚举法"><span class="toc-number">1.</span> <span class="toc-text">方法一：枚举法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二：Miller-Rabin测试"><span class="toc-number">2.</span> <span class="toc-text">方法二：Miller-Rabin测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
+        
     </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
     <script>
-        window._bd_share_config={
-            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
     </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"NYOJ 22-素数求和问题　| GCUSKY_SPACE　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
 </div>
+
+
+
+
 
 
 
     
       <div class="duoshuo" id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/15/acm-3/" data-title="NYOJ 22-素数求和问题" data-url="http://www.gcusky.com/2016/03/15/acm-3/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:"gcusky"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-    <!-- 多说公共JS代码 end -->
-</div>
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/03/15/acm-3/" data-title="NYOJ 22-素数求和问题" data-url="http://www.gcusky.com/2016/03/15/acm-3/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"gcusky"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
 
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=gcusky&threads=2016/03/15/acm-3/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
     
 
 
@@ -448,7 +515,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/09/life2/">2017伊始-随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/07/python-1/">Python 实现统计字数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/07/acm-13/">高斯消元</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/05/python/">Python简单入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/04/DesignPattern-11/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/04/DesignPattern-10/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/04/acm-12/">矩阵的基本变换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/DesignPattern-9/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/DesignPattern-8/">外观模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/DesignPattern-7/">桥接模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/DesignPattern-6/">结构型模式之适配器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/DesignPattern-5/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/DesignPattern-4/">原形模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/DesignPattern-3/">创建型模式与三大工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/02/english-5/">英语的其他构词法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/02/DesignPattern-2/">面向对象设计原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/01/english-4/">英语基本构词法之转换法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/01/english-3/">英语基本构词法之合成法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/30/DesignPattern/">UML 类图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/28/DesignPattern-1/">设计模式概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/27/english-2/">英语基本构词法之词缀法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/27/english-1/">英语词汇文化内涵分类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/26/junit-2/">JUnit 黑盒测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/26/english/">英语发展历史</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/23/matlab-1/">纵切碎纸片复原的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/19/junit-1/">JUnit 参数化测试和打包测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/18/junit/">JUnit 初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/18/acm-11/">NYOJ 587-blockhouses | ZOJ 1002-Fire Net</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/14/life/">花开不败</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/acm-10/">ZOJ 入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/25/wiki/">GCUSKY_WIKI</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/20/mysql-index/">MySQL数据库索引问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/acm-9/">NYOJ 488-素数环</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-8/">NYOJ 106-背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-7/">NYOJ 14-会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-6/">NYOJ 91-阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-5/">NYOJ 47-过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-3/">NYOJ 22-素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-4/">NYOJ 33-蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-2/">NYOJ 11-奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-1/">NYOJ 4-ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/14/acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/learn-hexo/">Hexo 基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/learn-1/">邓小平文选 第三卷 P363 思考：思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/22/learn/">《再思毛泽东：毛泽东思想的探索》思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/23/matlab/">二分法求解非线性方程</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/15/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/15/hexo-1/">博客样式更新</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/09/life2/">2017伊始-随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/07/python-1/">Python 实现统计字数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/07/acm-13/">高斯消元</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/05/python/">Python简单入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/04/DesignPattern-11/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/04/DesignPattern-10/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/04/acm-12/">矩阵的基本变换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/DesignPattern-9/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/DesignPattern-8/">外观模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/DesignPattern-7/">桥接模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/DesignPattern-6/">结构型模式之适配器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/DesignPattern-5/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/DesignPattern-4/">原形模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/DesignPattern-3/">创建型模式与三大工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/02/english-5/">英语的其他构词法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/02/DesignPattern-2/">面向对象设计原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/01/english-4/">英语基本构词法之转换法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/01/english-3/">英语基本构词法之合成法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/30/DesignPattern/">UML 类图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/28/DesignPattern-1/">设计模式概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/27/english-2/">英语基本构词法之词缀法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/27/english-1/">英语词汇文化内涵分类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/26/junit-2/">JUnit 黑盒测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/26/english/">英语发展历史</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/23/matlab-1/">纵切碎纸片复原的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/19/junit-1/">JUnit 参数化测试和打包测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/18/junit/">JUnit 初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/18/acm-11/">NYOJ 587-blockhouses | ZOJ 1002-Fire Net</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/14/life/">花开不败</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/acm-10/">ZOJ 入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/25/wiki/">GCUSKY_WIKI</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/20/mysql-index/">MySQL数据库索引问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/acm-9/">NYOJ 488-素数环</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-8/">NYOJ 106-背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-7/">NYOJ 14-会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-6/">NYOJ 91-阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-5/">NYOJ 47-过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-3/">NYOJ 22-素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-4/">NYOJ 33-蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-2/">NYOJ 11-奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-1/">NYOJ 4-ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/14/acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/learn-hexo/">Hexo 基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/learn-1/">邓小平文选 第三卷 P363 思考：思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/22/learn/">《再思毛泽东：毛泽东思想的探索》思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/23/matlab/">二分法求解非线性方程</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/15/hello-world/">Hello World</a></li></ul>
 
 
 
@@ -461,28 +528,30 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2017 GCUSKY
+                <i class="fa fa-copyright"></i> 
+                2015-2017 GCUSKY
                 
                     <a href="http://www.miibeian.gov.cn/">粤ICP备15063973号-2</a>
                 
             </div>
             <div class="footer-right">
-                Theme of <a href="https://github.com/gcusky/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> , Improved by <a href="/">gcusky</a>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE , Improved by <a href="/">GCUSKY</a>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >本站到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
                 
+                    <span>| </span>
+                
+                
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">， 本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -492,7 +561,7 @@
 </footer>
     </div>
     
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -509,6 +578,7 @@
             }
         })
     </script>
+
 
 
 <!-- Google Analytics -->
@@ -549,13 +619,50 @@ MathJax.Hub.Queue(function() {
 
 <div class="scroll" id="scroll">
     <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
     <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-
   </div>
 </body>
 </html>

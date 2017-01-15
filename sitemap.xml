@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.gcusky.com/2017/01/15/hexo-1/</loc>
+    
+    <lastmod>2017-01-15T15:50:08.477Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.gcusky.com//404.html</loc>
+    
+    <lastmod>2017-01-15T15:14:10.745Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.gcusky.com/2017/01/09/life2/</loc>
     
     <lastmod>2017-01-09T09:54:26.097Z</lastmod>
@@ -362,13 +376,6 @@
     <loc>http://www.gcusky.com/tags/index.html</loc>
     
     <lastmod>2016-02-02T14:52:39.412Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.gcusky.com//404.html</loc>
-    
-    <lastmod>2016-02-02T14:32:19.483Z</lastmod>
     
   </url>
   
