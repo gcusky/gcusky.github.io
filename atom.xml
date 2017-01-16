@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2017-01-16T10:23:11.107Z</updated>
+  <updated>2017-01-16T10:26:40.946Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -20,57 +20,70 @@
     <link href="http://www.gcusky.com/2017/01/16/project-1/"/>
     <id>http://www.gcusky.com/2017/01/16/project-1/</id>
     <published>2017-01-16T10:20:44.000Z</published>
-    <updated>2017-01-16T10:23:11.107Z</updated>
+    <updated>2017-01-16T10:26:40.946Z</updated>
     
     <content type="html">&lt;p&gt;总结了好久以前 &lt;code&gt;2015年10月份&lt;/code&gt; 的数据库课程设计，重点放在数据库依照范式的建表过程。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;功能性需求分析&quot;&gt;&lt;a href=&quot;#功能性需求分析&quot; class=&quot;headerlink&quot; title=&quot;功能性需求分析&quot;&gt;&lt;/a&gt;功能性需求分析&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;商品管理功能&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
+&lt;li&gt;商品管理功能&lt;ul&gt;
 &lt;li&gt;商品种类设置&lt;/li&gt;
 &lt;li&gt;商品余量设置&lt;/li&gt;
 &lt;li&gt;商品回收情况&lt;/li&gt;
 &lt;li&gt;商品销售情况&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;客户管理功能&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
+&lt;/li&gt;
+&lt;li&gt;客户管理功能&lt;ul&gt;
 &lt;li&gt;完善客户信息&lt;/li&gt;
 &lt;li&gt;用户账户管理&lt;/li&gt;
 &lt;li&gt;用户信用评级&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;销售管理功能&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
+&lt;/li&gt;
+&lt;li&gt;销售管理功能&lt;ul&gt;
 &lt;li&gt;报价管理&lt;/li&gt;
 &lt;li&gt;订单管理&lt;/li&gt;
 &lt;li&gt;收款管理&lt;/li&gt;
 &lt;li&gt;退单申请&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;决策管理功能&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
+&lt;/li&gt;
+&lt;li&gt;决策管理功能&lt;ul&gt;
 &lt;li&gt;权限管理&lt;/li&gt;
 &lt;li&gt;库存查询&lt;/li&gt;
 &lt;li&gt;销售汇总&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&quot;概念结构设计（E-R模型）&quot;&gt;&lt;a href=&quot;#概念结构设计（E-R模型）&quot; class=&quot;headerlink&quot; title=&quot;概念结构设计（E-R模型）&quot;&gt;&lt;/a&gt;概念结构设计（E-R模型）&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/0116-1.png&quot; alt=&quot;概念结构设计&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;数据库的建表过程&quot;&gt;&lt;a href=&quot;#数据库的建表过程&quot; class=&quot;headerlink&quot; title=&quot;数据库的建表过程&quot;&gt;&lt;/a&gt;数据库的建表过程&lt;/h2&gt;&lt;p&gt;该管理系统最主要的形式为订单，由订单出发：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/0116-2.png&quot; alt=&quot;销售报表&quot;&gt;&lt;/p&gt;
-&lt;p&gt;该销售报表内容有：&lt;br&gt;&lt;strong&gt;销售报表&lt;/strong&gt;（报表编号、日期、客户编号、客户名、商品编号、商品名称、单价、数量）&lt;/p&gt;
+&lt;p&gt;该销售报表内容有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;销售报表&lt;/strong&gt;（报表编号、日期、客户编号、客户名、商品编号、商品名称、单价、数量）&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&quot;第一范式&quot;&gt;&lt;a href=&quot;#第一范式&quot; class=&quot;headerlink&quot; title=&quot;第一范式&quot;&gt;&lt;/a&gt;第一范式&lt;/h3&gt;&lt;p&gt;第一范式（1NF）是指数据库表的每一列都是不可分割的基本数据项，同一列中不能有多个值，即实体中的某个属性不能有多个值或者不能有重复的属性。因此，使用第一范式，将关系上述关系进行规范化，分割为销售表和销售明细表：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;销售表-1&lt;/strong&gt; （报表编号、日期、客户编号、客户名称）&lt;br&gt;&lt;strong&gt;销售明细表-1&lt;/strong&gt; （报表编号、商品编号、商品名称、单价、数量）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;销售表-1&lt;/strong&gt; （报表编号、日期、客户编号、客户名称）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;销售明细表-1&lt;/strong&gt; （报表编号、商品编号、商品名称、单价、数量）&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&quot;第二范式&quot;&gt;&lt;a href=&quot;#第二范式&quot; class=&quot;headerlink&quot; title=&quot;第二范式&quot;&gt;&lt;/a&gt;第二范式&lt;/h3&gt;&lt;p&gt;第二范式（2NF）是数据库规范化中所使用的一种正规形式。它的规则是要求数据表里的所有数据都要和该数据表的主键有完全依赖关系；如果有哪些数据只和主键的一部份有关的话，它就不符合第二范式。因此可知在第一范式生成的 &lt;strong&gt;销售明细表-1&lt;/strong&gt; 并不符合第二范式，再次将其分割，得出商品表和销售明细表：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;商品表&lt;/strong&gt; （商品编号、商品名称、单价）&lt;br&gt;&lt;strong&gt;销售明细表&lt;/strong&gt; （报表编号、商品编号、数量）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;商品表&lt;/strong&gt; （商品编号、商品名称、单价）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;销售明细表&lt;/strong&gt; （报表编号、商品编号、数量）&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&quot;第三范式&quot;&gt;&lt;a href=&quot;#第三范式&quot; class=&quot;headerlink&quot; title=&quot;第三范式&quot;&gt;&lt;/a&gt;第三范式&lt;/h3&gt;&lt;p&gt;第三范式（3NF）规定，每个非关键字列都独立于其他非关键字列，并依赖于关键字，即数据库中不能存在传递函数依赖关系。而第一范式生成的 &lt;strong&gt;销售表-1&lt;/strong&gt; 中明显有销售与客户的依赖关系，则应将其分割，得出销售表和客户表：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;销售表&lt;/strong&gt; （报表编号、日期、客户编号）&lt;br&gt;&lt;strong&gt;客户表&lt;/strong&gt; （客户编号、客户名称）&lt;/p&gt;
-&lt;h3 id=&quot;主键确立&quot;&gt;&lt;a href=&quot;#主键确立&quot; class=&quot;headerlink&quot; title=&quot;主键确立&quot;&gt;&lt;/a&gt;主键确立&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;商品表&lt;/strong&gt; （&lt;strong&gt;商品编号&lt;/strong&gt;、商品名称、单价）&lt;br&gt;&lt;strong&gt;客户表&lt;/strong&gt; （&lt;strong&gt;客户编号&lt;/strong&gt;、客户名称）&lt;br&gt;&lt;strong&gt;销售表&lt;/strong&gt; （&lt;strong&gt;报表编号&lt;/strong&gt;、日期、客户编号）&lt;br&gt;&lt;strong&gt;销售明细表&lt;/strong&gt; （&lt;strong&gt;报表编号&lt;/strong&gt;、&lt;strong&gt;商品编号&lt;/strong&gt;、数量）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;销售表&lt;/strong&gt; （报表编号、日期、客户编号）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;客户表&lt;/strong&gt; （客户编号、客户名称）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;主键确立&quot;&gt;&lt;a href=&quot;#主键确立&quot; class=&quot;headerlink&quot; title=&quot;主键确立&quot;&gt;&lt;/a&gt;主键确立&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;商品表&lt;/strong&gt; （&lt;strong&gt;商品编号&lt;/strong&gt;、商品名称、单价）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;客户表&lt;/strong&gt; （&lt;strong&gt;客户编号&lt;/strong&gt;、客户名称）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;销售表&lt;/strong&gt; （&lt;strong&gt;报表编号&lt;/strong&gt;、日期、客户编号）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;销售明细表&lt;/strong&gt; （&lt;strong&gt;报表编号&lt;/strong&gt;、&lt;strong&gt;商品编号&lt;/strong&gt;、数量）&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&quot;报价问题&quot;&gt;&lt;a href=&quot;#报价问题&quot; class=&quot;headerlink&quot; title=&quot;报价问题&quot;&gt;&lt;/a&gt;报价问题&lt;/h3&gt;&lt;p&gt;由于销售管理子系统可进行报价管理，因为修改价格涉及到退单退款问题。因此在销售明细表加入下单时商品单价的数据项。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;销售明细表&lt;/strong&gt; （&lt;strong&gt;报表编号&lt;/strong&gt;、&lt;strong&gt;商品编号&lt;/strong&gt;、数量、下单时单价）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;销售明细表&lt;/strong&gt; （&lt;strong&gt;报表编号&lt;/strong&gt;、&lt;strong&gt;商品编号&lt;/strong&gt;、数量、下单时单价）&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&quot;退单问题&quot;&gt;&lt;a href=&quot;#退单问题&quot; class=&quot;headerlink&quot; title=&quot;退单问题&quot;&gt;&lt;/a&gt;退单问题&lt;/h3&gt;&lt;p&gt;由于该销售管理系统可进行退单操作，涉及到货物与金额问题。于是在销售表加入三个布尔数据项：pay、goods、order，它们组成的位图可表示为：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -170,10 +183,18 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&quot;权限问题&quot;&gt;&lt;a href=&quot;#权限问题&quot; class=&quot;headerlink&quot; title=&quot;权限问题&quot;&gt;&lt;/a&gt;权限问题&lt;/h3&gt;&lt;p&gt;将各个表单操作以及系统权限分发给各个不同的管理员，需要建立权限表进行功能管理分配，可得：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;权限表&lt;/strong&gt; （&lt;strong&gt;账户编号&lt;/strong&gt;、账户名称、账户密码、权限、备注）&lt;/p&gt;
-&lt;h3 id=&quot;最终结果&quot;&gt;&lt;a href=&quot;#最终结果&quot; class=&quot;headerlink&quot; title=&quot;最终结果&quot;&gt;&lt;/a&gt;最终结果&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;权限表&lt;/strong&gt; （&lt;strong&gt;账户编号&lt;/strong&gt;、账户名称、账户密码、权限、备注）&lt;br&gt;&lt;strong&gt;商品表&lt;/strong&gt; （&lt;strong&gt;商品编号&lt;/strong&gt;、商品名称、商品价格、商品产地、库存数量、备注）&lt;br&gt;&lt;strong&gt;客户表&lt;/strong&gt; （&lt;strong&gt;客户编号&lt;/strong&gt;、客户名称、客户地址、客户电话、信用状态、预付款、备注）&lt;br&gt;&lt;strong&gt;销售表&lt;/strong&gt; （&lt;strong&gt;报表编号&lt;/strong&gt;、日期、客户编号、付款情况、货物情况、订单状态、备注）&lt;br&gt;&lt;strong&gt;销售明细表&lt;/strong&gt; （&lt;strong&gt;报表编号&lt;/strong&gt;、&lt;strong&gt;商品编号&lt;/strong&gt;、购买数量、下单时的价格）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;权限表&lt;/strong&gt; （&lt;strong&gt;账户编号&lt;/strong&gt;、账户名称、账户密码、权限、备注）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;最终结果&quot;&gt;&lt;a href=&quot;#最终结果&quot; class=&quot;headerlink&quot; title=&quot;最终结果&quot;&gt;&lt;/a&gt;最终结果&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;权限表&lt;/strong&gt; （&lt;strong&gt;账户编号&lt;/strong&gt;、账户名称、账户密码、权限、备注）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;商品表&lt;/strong&gt; （&lt;strong&gt;商品编号&lt;/strong&gt;、商品名称、商品价格、商品产地、库存数量、备注）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;客户表&lt;/strong&gt; （&lt;strong&gt;客户编号&lt;/strong&gt;、客户名称、客户地址、客户电话、信用状态、预付款、备注）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;销售表&lt;/strong&gt; （&lt;strong&gt;报表编号&lt;/strong&gt;、日期、客户编号、付款情况、货物情况、订单状态、备注）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;销售明细表&lt;/strong&gt; （&lt;strong&gt;报表编号&lt;/strong&gt;、&lt;strong&gt;商品编号&lt;/strong&gt;、购买数量、下单时的价格）&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&quot;系统功能实现&quot;&gt;&lt;a href=&quot;#系统功能实现&quot; class=&quot;headerlink&quot; title=&quot;系统功能实现&quot;&gt;&lt;/a&gt;系统功能实现&lt;/h2&gt;&lt;h3 id=&quot;框架目录&quot;&gt;&lt;a href=&quot;#框架目录&quot; class=&quot;headerlink&quot; title=&quot;框架目录&quot;&gt;&lt;/a&gt;框架目录&lt;/h3&gt;&lt;p&gt;www      WEB部署目录（或者子目录）&lt;br&gt;├─index.php           入口文件&lt;br&gt;├─README.md        README文件&lt;br&gt;├─composer.json       Composer定义文件&lt;br&gt;├─App               应用目录&lt;br&gt;├─Runtime            运行缓存目录&lt;br&gt;├─Public              资源文件目录&lt;br&gt;└─ThinkPHP            框架目录&lt;/p&gt;
-&lt;h3 id=&quot;应用目录&quot;&gt;&lt;a href=&quot;#应用目录&quot; class=&quot;headerlink&quot; title=&quot;应用目录&quot;&gt;&lt;/a&gt;应用目录&lt;/h3&gt;&lt;p&gt;App        默认应用目录&lt;br&gt;├─Common                             公共模块（不能直接访问）&lt;br&gt;├─Home                                主体模块&lt;br&gt;│  ├─Conf                             配置文件目录&lt;br&gt;│  ├─Common                          公共函数目录&lt;br&gt;│  ├─Controller                         控制器目录&lt;br&gt;│  │  ├─IndexController.class.php        前台控制器&lt;br&gt;│  │  ├─AdminController.class.php       后台控制器&lt;br&gt;│  │  ├─SmscoController.class.php        商品前台控制器&lt;br&gt;│  │  ├─SmscuController.class.php        客户前台控制器&lt;br&gt;│  │  ├─SmssaController.class.php        销售前台控制器&lt;br&gt;│  │  ├─UserController.class.php            权限管理控制器&lt;br&gt;│  │  ├─CustomerController.class.php        客户后台控制器&lt;br&gt;│  │  ├─ProductController.class.php      商品后台控制器&lt;br&gt;│  └───SalesController.class.php        销售后台控制器&lt;br&gt;│  ├─Model                            模型目录&lt;br&gt;│  │  ├─CustomerModel.class.php        D函数客户模型&lt;br&gt;│  │  ├─ProductModel.class.php          D函数产品模型&lt;br&gt;│  └───UserModel.class.php           D函数权限模型&lt;br&gt;│  └─View                            视图目录&lt;br&gt;│  │  ├─Public                         公共目录&lt;br&gt;│  │  ├─Index                         前台目录&lt;br&gt;│  │  ├─Admin                         后台目录&lt;br&gt;│  │  ├─Smsco                          商品管理目录&lt;br&gt;│  │  ├─Smscu                        客户管理目录&lt;br&gt;│  │  ├─Smssa                       销售管理目录&lt;br&gt;└──└──└─layout.html                   布局模板&lt;/p&gt;
+&lt;h3 id=&quot;应用目录&quot;&gt;&lt;a href=&quot;#应用目录&quot; class=&quot;headerlink&quot; title=&quot;应用目录&quot;&gt;&lt;/a&gt;应用目录&lt;/h3&gt;&lt;p&gt;App        默认应用目录&lt;br&gt;├─Common                             公共模块（不能直接访问）&lt;br&gt;├─Home                                主体模块&lt;br&gt;│  ├─Conf                             配置文件目录&lt;br&gt;│  ├─Common                          公共函数目录&lt;br&gt;│  ├─Controller                         控制器目录&lt;br&gt;│  │  ├─IndexController.class.php        前台控制器&lt;br&gt;│  │  ├─AdminController.class.php       后台控制器&lt;br&gt;│  │  ├─SmscoController.class.php        商品前台控制器&lt;br&gt;│  │  ├─SmscuController.class.php        客户前台控制器&lt;br&gt;│  │  ├─SmssaController.class.php        销售前台控制器&lt;br&gt;│  │  ├─UserController.class.php            权限管理控制器&lt;br&gt;│  │  ├─CustomerController.class.php        客户后台控制器&lt;br&gt;│  │  ├─ProductController.class.php      商品后台控制器&lt;br&gt;│  └───SalesController.class.php        销售后台控制器&lt;br&gt;│  ├─Model                            模型目录&lt;br&gt;│  │  ├─CustomerModel.class.php        D函数客户模型&lt;br&gt;│  │  ├─ProductModel.class.php          D函数产品模型&lt;br&gt;│  └───UserModel.class.php           D函数权限模型&lt;br&gt;│  └─View                            视图目录&lt;br&gt;│  │  ├─Public                         公共目录&lt;br&gt;│  │  ├─Index                         前台目录&lt;br&gt;│  │  ├─Admin                         后台目录&lt;br&gt;│  │  ├─Smsco                          商品管理目录&lt;br&gt;│  │  ├─Smscu                        客户管理目录&lt;br&gt;│  │  ├─Smssa                       销售管理目录&lt;br&gt;└─└─└─layout.html                   布局模板&lt;/p&gt;
 &lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;该项目使用了ThinkPHP3.2.3作为后端框架，MySQL作为数据库，并且使用Pure作为前端框架。实现的过程中学新的后端框架就像学一门新的语言，但正因为是框架的原因学起来非常快，且对于数据库操作，MVC模式都有特定的类、函数、规范，因此省去了很多冗余的代码来实现这个项目。&lt;br&gt;但这个系统还是有几个不足：一是没有进行过大量的压力测试。二是没有使用上信用问题，仅仅当信用为差时不可下订单而已。&lt;/p&gt;
 &lt;p&gt;具体代码见：&lt;a href=&quot;https://coding.net/u/gcusky/p/psms/git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://coding.net/u/gcusky/p/psms/git&lt;/a&gt;&lt;/p&gt;
 </content>
