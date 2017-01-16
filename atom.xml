@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2017-01-16T10:26:40.946Z</updated>
+  <updated>2017-01-16T14:38:13.715Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>献血管理系统</title>
+    <link href="http://www.gcusky.com/2017/01/16/project-2/"/>
+    <id>http://www.gcusky.com/2017/01/16/project-2/</id>
+    <published>2017-01-16T14:32:06.000Z</published>
+    <updated>2017-01-16T14:38:13.715Z</updated>
+    
+    <content type="html">&lt;p&gt;总结了好久以前 &lt;code&gt;2016年6月份&lt;/code&gt; 的软件项目实践，重点放在设计模式的应用过程。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;模型层&quot;&gt;&lt;a href=&quot;#模型层&quot; class=&quot;headerlink&quot; title=&quot;模型层&quot;&gt;&lt;/a&gt;模型层&lt;/h2&gt;&lt;h3 id=&quot;饿汉式多例模式实现连接池&quot;&gt;&lt;a href=&quot;#饿汉式多例模式实现连接池&quot; class=&quot;headerlink&quot; title=&quot;饿汉式多例模式实现连接池&quot;&gt;&lt;/a&gt;饿汉式多例模式实现连接池&lt;/h3&gt;&lt;p&gt;&lt;code&gt;Conn&lt;/code&gt; 类的数据库连接池参考了&lt;a href=&quot;http://gcusky.com/2016/05/28/DesignPattern-5/&quot; title=&quot;单例模式&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;单例模式&lt;/a&gt;使用了饿汉式多例模式，保证了数据库连接的安全。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; ArrayList&amp;lt;Connection&amp;gt;list = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;Connection&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// 获得数据库连接&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;synchronized&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Connection &lt;span class=&quot;title&quot;&gt;getConnection&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		Connection con = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(list.size()&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; list.remove(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;; i++)&amp;#123;&lt;span class=&quot;comment&quot;&gt;// 最大连接池数量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					Class.forName(&lt;span class=&quot;string&quot;&gt;&quot;com.mysql.jdbc.Driver&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (ClassNotFoundException e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					e.printStackTrace();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					con = DriverManager.getConnection(&lt;span class=&quot;string&quot;&gt;&quot;jdbc:mysql://localhost:3306/ddsystem?user=root&amp;amp;password=root&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					list.add(con);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (SQLException e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					e.printStackTrace();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; list.remove(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// 关闭连接&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;synchronized&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Connection con)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(con!=&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) list.add(con);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;封装与SQL交互的方法&quot;&gt;&lt;a href=&quot;#封装与SQL交互的方法&quot; class=&quot;headerlink&quot; title=&quot;封装与SQL交互的方法&quot;&gt;&lt;/a&gt;封装与SQL交互的方法&lt;/h3&gt;&lt;p&gt;将增删改查各个实现方法打包，更新、添加、删除返回 &lt;code&gt;boolean&lt;/code&gt; 值，大多数查找结果封装为 &lt;code&gt;Map&amp;lt;String, Object&amp;gt;&lt;/code&gt; 且放入 &lt;code&gt;ArrayList&lt;/code&gt; 中，方便后续编程获取。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;// 新增、修改、删除操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;updateByParams&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String sql, Object param[])&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; flag = &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Connection con = getConnection();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	PreparedStatement ps = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		ps = con.prepareStatement(sql);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(param!=&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i&amp;lt;=param.length; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				ps.setObject(i, param[i-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; n = ps.executeUpdate();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(n&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) flag = &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (SQLException e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		e.printStackTrace();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125; &lt;span class=&quot;keyword&quot;&gt;finally&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		close(&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;, ps, con);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; flag;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 新增、修改、删除 多条记录（批量处理）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;BatchUpdateByParams&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String sql, Object param[][])&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Connection con = getConnection();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	PreparedStatement ps = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		ps = con.prepareStatement(sql);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(param!=&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;param.length; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; j&amp;lt;=param[i].length; j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					ps.setObject(j, param[i][j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				ps.addBatch();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			ps.executeBatch();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (SQLException e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		e.printStackTrace();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125; &lt;span class=&quot;keyword&quot;&gt;finally&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		close(&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;, ps, con);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 查询&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; List&amp;lt;Map&amp;lt;String, Object&amp;gt;&amp;gt;select(String sql, Object[] param)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 单值返回&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String &lt;span class=&quot;title&quot;&gt;selectOne&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String sql, Object[] param)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//……&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;面向接口编程——依赖倒置原则&quot;&gt;&lt;a href=&quot;#面向接口编程——依赖倒置原则&quot; class=&quot;headerlink&quot; title=&quot;面向接口编程——依赖倒置原则&quot;&gt;&lt;/a&gt;面向接口编程——依赖倒置原则&lt;/h3&gt;&lt;p&gt;后端遵循了&lt;a href=&quot;http://gcusky.com/2016/05/02/DesignPattern-2/#%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;依赖倒置原则&lt;/a&gt;即面向接口编程。 &lt;code&gt;dao&lt;/code&gt; 包中全是接口，真正的接口实现在 &lt;code&gt;impl&lt;/code&gt; 包中。&lt;/p&gt;
+&lt;h3 id=&quot;简单工厂模式——迪米特法则&quot;&gt;&lt;a href=&quot;#简单工厂模式——迪米特法则&quot; class=&quot;headerlink&quot; title=&quot;简单工厂模式——迪米特法则&quot;&gt;&lt;/a&gt;简单工厂模式——迪米特法则&lt;/h3&gt;&lt;p&gt;同时也为了遵循&lt;a href=&quot;http://gcusky.com/2016/05/02/DesignPattern-2/#%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;迪米特法则&lt;/a&gt;，在 &lt;code&gt;dao&lt;/code&gt; 包中还配备了&lt;a href=&quot;http://gcusky.com/2016/05/28/DesignPattern-3/#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;简单工厂&lt;/a&gt; &lt;code&gt;DAOFactory&lt;/code&gt;，将真正在 &lt;code&gt;impl&lt;/code&gt; 包实现接口的类放进去，供控制台调用的只要知道工厂以及接口类型即可调用。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/0116-5.png&quot; alt=&quot;dao&amp;amp;impl&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;控制层&quot;&gt;&lt;a href=&quot;#控制层&quot; class=&quot;headerlink&quot; title=&quot;控制层&quot;&gt;&lt;/a&gt;控制层&lt;/h2&gt;&lt;h3 id=&quot;过滤器解决中文乱码问题&quot;&gt;&lt;a href=&quot;#过滤器解决中文乱码问题&quot; class=&quot;headerlink&quot; title=&quot;过滤器解决中文乱码问题&quot;&gt;&lt;/a&gt;过滤器解决中文乱码问题&lt;/h3&gt;&lt;p&gt;&lt;code&gt;filters&lt;/code&gt; 包中有两个过滤器，其中，&lt;code&gt;SetCharacterEncodingFilter&lt;/code&gt; 解决中文乱码问题&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;doFilter&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(ServletRequest arg0, ServletResponse arg1,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		FilterChain arg2)&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; IOException, ServletException &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	arg0.setCharacterEncoding(&lt;span class=&quot;string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	arg2.doFilter(arg0, arg1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;过滤器解决登陆验证问题和权限分割问题&quot;&gt;&lt;a href=&quot;#过滤器解决登陆验证问题和权限分割问题&quot; class=&quot;headerlink&quot; title=&quot;过滤器解决登陆验证问题和权限分割问题&quot;&gt;&lt;/a&gt;过滤器解决登陆验证问题和权限分割问题&lt;/h3&gt;&lt;p&gt;&lt;code&gt;filters&lt;/code&gt; 包中另一个过滤器 &lt;code&gt;LoginValidateFilter&lt;/code&gt; 解决了登陆验证问题以及各个子系统权限分割问题。&lt;/p&gt;
+&lt;p&gt;在权限分割上分为两种，一种直接获取 &lt;code&gt;.jsp&lt;/code&gt;，只要判断 &lt;code&gt;jsp&lt;/code&gt; 文件所在文件夹为哪个子系统，直接判断权限即可。另一种为 &lt;code&gt;servlet&lt;/code&gt; 请求，去除上下文路径，得到关键路径的前缀，如系统管理员的 &lt;code&gt;servlet&lt;/code&gt; 以 &lt;code&gt;admin_&lt;/code&gt; 开头，规范化了 &lt;code&gt;servlet&lt;/code&gt; 的命名，也方便权限分割。&lt;/p&gt;
+&lt;h3 id=&quot;servlet充分利用get方法精简代码及开发流程&quot;&gt;&lt;a href=&quot;#servlet充分利用get方法精简代码及开发流程&quot; class=&quot;headerlink&quot; title=&quot;servlet充分利用get方法精简代码及开发流程&quot;&gt;&lt;/a&gt;servlet充分利用get方法精简代码及开发流程&lt;/h3&gt;&lt;p&gt;&lt;code&gt;servlet&lt;/code&gt; 包中有四个子包，分别对应四个子系统的功能实现。同时，一些诸如登陆、个人信息修改等公用功能将直接放在 &lt;code&gt;servlet&lt;/code&gt; 包即可。&lt;code&gt;servlet&lt;/code&gt; 的实现也充分利用了 &lt;code&gt;get&lt;/code&gt; 方法，以 &lt;code&gt;get&lt;/code&gt; 参数的方法来整理相同数据类型的各个操作管理，如设定动作参数为 &lt;code&gt;act&lt;/code&gt;，若值为 &lt;code&gt;add&lt;/code&gt; 则为添加，值为 &lt;code&gt;update&lt;/code&gt; 则为更新等等。极大地减少了 &lt;code&gt;servlet&lt;/code&gt; 类，精简了代码以及开发流程。&lt;/p&gt;
+&lt;h2 id=&quot;软件测试&quot;&gt;&lt;a href=&quot;#软件测试&quot; class=&quot;headerlink&quot; title=&quot;软件测试&quot;&gt;&lt;/a&gt;软件测试&lt;/h2&gt;&lt;h3 id=&quot;Junit4软件测试：参数化测试、打包测试&quot;&gt;&lt;a href=&quot;#Junit4软件测试：参数化测试、打包测试&quot; class=&quot;headerlink&quot; title=&quot;Junit4软件测试：参数化测试、打包测试&quot;&gt;&lt;/a&gt;Junit4软件测试：参数化测试、打包测试&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://gcusky.com/2016/04/19/junit-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;使用了 Junit4 进行软件测试&lt;/a&gt;，主要测试 &lt;code&gt;db&lt;/code&gt; 包，因为数据库连接、执行SQL语句以及数据的处理都在该包中。使用了参数化测试以及打包测试。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; db;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.runner.RunWith;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.runners.Suite;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@RunWith&lt;/span&gt;(Suite.class) &lt;span class=&quot;comment&quot;&gt;//@RunWith标注传递一个参数 Suite.class&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Suite&lt;/span&gt;.SuiteClasses(&amp;#123;&lt;span class=&quot;comment&quot;&gt;//@Suite.SuiteClasses，来表明这个类是打包测试类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	ConnTest.class,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	userDBTest.class&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AllTests&lt;/span&gt; &lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;该项目用了最简单的 &lt;code&gt;jsp/servlet&lt;/code&gt;，重点实践了&lt;a href=&quot;http://gcusky.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;设计模式&lt;/a&gt;、&lt;a href=&quot;http://gcusky.com/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;软件测试&lt;/a&gt;这两部分。&lt;/p&gt;
+&lt;p&gt;具体代码见：&lt;a href=&quot;https://coding.net/u/gcusky/p/ddsystem/git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://coding.net/u/gcusky/p/ddsystem/git&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;总结了好久以前 &lt;code&gt;2016年6月份&lt;/code&gt; 的软件项目实践，重点放在设计模式的应用过程。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="http://www.gcusky.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="软件测试" scheme="http://www.gcusky.com/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="jsp/servlet" scheme="http://www.gcusky.com/tags/jsp-servlet/"/>
+    
+  </entry>
   
   <entry>
     <title>产品销售管理系统</title>
@@ -2161,127 +2202,6 @@
     
       &lt;p&gt;&lt;code&gt;英语的基本构词法主要包括词缀法、合成法、转换法。&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;一个词在没有词形变化的前提下可转换用作其他词类，如一个词既可以作名词，又可以作动词；或一个词既可以用作动词，也可以作名词。这种构词方式就是&lt;strong&gt;转换法&lt;/strong&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="英语" scheme="http://www.gcusky.com/categories/%E8%8B%B1%E8%AF%AD/"/>
-    
-    
-      <category term="读书笔记" scheme="http://www.gcusky.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语基本构词法之合成法</title>
-    <link href="http://www.gcusky.com/2016/05/01/english-3/"/>
-    <id>http://www.gcusky.com/2016/05/01/english-3/</id>
-    <published>2016-05-01T08:32:05.000Z</published>
-    <updated>2016-05-01T09:16:59.341Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;code&gt;英语的基本构词法主要包括词缀法、合成法、转换法。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;合成法&lt;/strong&gt;，具体是指将两个或两个以上的词按一定的顺序组成在一起构成新词的方法。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;一般合成词组成部分之间的句法关系有以下几种：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;主谓关系&lt;/strong&gt;：sunnse（日出）—— The sunnses。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;动宾关系&lt;/strong&gt;：record-breaking（创纪录的）—— to break the record。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;主宾关系&lt;/strong&gt;：gaslight（煤气灯）—— The gas produces light。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;限定关系&lt;/strong&gt;：compact disc（激光唱盘）French fries（炸薯条）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;同位关系&lt;/strong&gt;：boyfriend（男朋友）—— The boy is a friend。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;并列关系&lt;/strong&gt;：face-to-face（面对面的）life-and-death（生死攸关的）。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;关于合成词的书写，主要有以下几种：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;合成词连写&lt;/strong&gt;：mailbox（信箱）basketball（蓝球）outbreak（爆发）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;合成词间带有连字符&lt;/strong&gt;：laid-back（放松的、不慌不忙的）man-made（人造的）good-for-nothing（不中用的人）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;合成词间分开&lt;/strong&gt;写：remote control（遥控）bird of prey（猛禽）point of view（观点）。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;合成词的构成&quot;&gt;&lt;a href=&quot;#合成词的构成&quot; class=&quot;headerlink&quot; title=&quot;合成词的构成&quot;&gt;&lt;/a&gt;合成词的构成&lt;/h2&gt;&lt;h3 id=&quot;合成名词&quot;&gt;&lt;a href=&quot;#合成名词&quot; class=&quot;headerlink&quot; title=&quot;合成名词&quot;&gt;&lt;/a&gt;合成名词&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;名词+名词&lt;/strong&gt;，eg. clubfoot 畸形足；flowerpot 花盘；homework 家庭作业；girl friend 女朋友；hot days 暑天。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;名词+动词&lt;/strong&gt;，eg. daybreak 黎明；heartbeat 心搏；earthquake 地震。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;动词+名词&lt;/strong&gt;，eg. haircut 理发；crybaby 爱哭的人；breakwater 防洪堤。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;形容词+名词&lt;/strong&gt;，eg. deadline 截止日期；blueprint 蓝图；black hole 黑洞。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;名词+&lt;code&gt;-ing&lt;/code&gt;&lt;/strong&gt;，eg. brainwashing 洗脑；handwriting 书法；sun-bathing 日光浴。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-ing&lt;/code&gt;+名词&lt;/strong&gt;，eg. cleaning lady 清洁女工；baking powder 发酵粉；chewing gum 口香糖。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;副词+名词&lt;/strong&gt;，eg. overburden 过重的负担；afterthought 事后想到的事物。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;副词+动词&lt;/strong&gt;，eg. downfall 垮台；onflow 滚滚向前；outbreak （暴力、疾病等坏事的）爆发。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;合成形容词&quot;&gt;&lt;a href=&quot;#合成形容词&quot; class=&quot;headerlink&quot; title=&quot;合成形容词&quot;&gt;&lt;/a&gt;合成形容词&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;名词+形容词&lt;/strong&gt;，eg. care-free 无忧无虑的；duty-free 免税的；homesick 想家的。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;形容词+形容词&lt;/strong&gt;，eg. curly-haired 卷发的；bitter-sweet 又苦又乐的。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;数词+名词&lt;/strong&gt;，eg. ten-storey 十层的；first-class 一流的；five-star 五星级的。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;名词+&lt;code&gt;-ing&lt;/code&gt;&lt;/strong&gt;，eg. peace-loving 爱好和平的；nine-saving 省时间的；ocean-going 远洋的。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;形容词+&lt;code&gt;-ing&lt;/code&gt;&lt;/strong&gt;，eg. easy-going 随和的；ever-lasing 永恒的；far-reaching 深远的。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-ing&lt;/code&gt;+形容词&lt;/strong&gt;，eg. freezing-cold 冰冷的；wringing-wet 湿得可拧出水来的。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;副词+&lt;code&gt;-ing&lt;/code&gt;&lt;/strong&gt;，eg. hard-working 勤劳的；out-going 性格外向的；forthcoming 现成的。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;名词+&lt;code&gt;-ed&lt;/code&gt;&lt;/strong&gt;，eg. book-filled 放满书的；hen-pecked 怕老婆的；air-conditioned 有空调的。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;形容词/副词+&lt;code&gt;-ed&lt;/code&gt;&lt;/strong&gt;，eg. far-fetched 牵强附会的；good-tempered 脾气好的。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;合成动词&quot;&gt;&lt;a href=&quot;#合成动词&quot; class=&quot;headerlink&quot; title=&quot;合成动词&quot;&gt;&lt;/a&gt;合成动词&lt;/h3&gt;&lt;p&gt;同合成名词和合成形容词一样，合成动词也可以直接由两个词组合而成如 test-drive（试车），但其主要组成方式是以合成名词和合成形容词为基础，采用词类转换或逆生法生成。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;运用词类转换生成动词&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;合成名词&lt;/th&gt;
-&lt;th&gt;转化成合成动词&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;blueprint 蓝图&lt;/td&gt;
-&lt;td&gt;to blueprint 为……制蓝图&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;blacklist 黑名单&lt;/td&gt;
-&lt;td&gt;to blacklist 列入黑名单&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;honeymoon 蜜月&lt;/td&gt;
-&lt;td&gt;to honeymoon 度蜜月&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;first name 名&lt;/td&gt;
-&lt;td&gt;to first name 直呼其名&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;spotlight 公众注意中心&lt;/td&gt;
-&lt;td&gt;to spotlight 使突出醒目&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;使用逆生法生成动词&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;合成名词/形容词&lt;/th&gt;
-&lt;th&gt;逆生成合成动词&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;chain smoker 一支接一支抽烟的人&lt;/td&gt;
-&lt;td&gt;to chain smoker 一支接着一支地抽烟&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;speed-reading 快速阅读&lt;/td&gt;
-&lt;td&gt;to speed-reading 快速阅读&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;vacuum cleaner 真空吸尘器&lt;/td&gt;
-&lt;td&gt;to vacuum cleaner 用真空吸尘器除尘&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;tape recorder 磁带录音机&lt;/td&gt;
-&lt;td&gt;to tape recorder 用磁带录音&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;英语的基本构词法主要包括词缀法、合成法、转换法。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;合成法&lt;/strong&gt;，具体是指将两个或两个以上的词按一定的顺序组成在一起构成新词的方法。&lt;/p&gt;
     
     </summary>
     
