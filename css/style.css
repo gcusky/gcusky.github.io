@@ -118,7 +118,7 @@ button::-moz-focus-inner {
   padding: 0;
 }
 html {
-  font-size: 18px;
+  font-size: 20px;
 }
 body {
   font-family: "Lucida Grande", Verdana, "Helvetica Neue", Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
@@ -232,7 +232,7 @@ a {
 }
 #container .left-col {
   background: rgba(255,255,255,0.85);
-  width: 310px;
+  width: 340px;
   position: fixed;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in;
@@ -263,7 +263,7 @@ a {
   right: 0;
   min-height: 100%;
   background: rgba(255,255,255,0.8);
-  left: 310px;
+  left: 340px;
   width: auto;
 }
 @media screen and (max-width: 800px) {
@@ -560,7 +560,7 @@ a {
   text-align: center;
   margin: 13px 0;
   font-family: Times, Georgia, serif;
-  font-size: 32px;
+  font-size: 34px;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
@@ -581,8 +581,8 @@ a {
   border: 5px solid #fff;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  width: 130px;
-  height: 130px;
+  width: 132px;
+  height: 132px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -691,7 +691,7 @@ a {
 }
 #header .header-menu li a {
   font-size: 0.875rem;
-  min-width: 310px;
+  min-width: 340px;
 }
 #header .switch-area {
   position: relative;
@@ -762,14 +762,14 @@ a {
   font-family: Arial;
 }
 #header .header-nav .social a {
-  width: 39px;
-  height: 39px;
+  width: 41px;
+  height: 41px;
   -webkit-border-radius: 50%;
   border-radius: 50%;
   margin: 0 2px 6px;
   vertical-align: middle;
-  font-size: 25.740000000000002px;
-  line-height: 39px;
+  font-size: 27.060000000000002px;
+  line-height: 41px;
   text-align: center;
   color: #fff;
   background: #6f7170;
@@ -1039,7 +1039,7 @@ a {
 }
 .hide-labels {
   position: fixed;
-  left: 388px;
+  left: 418px;
   top: 30px;
   padding: 1px;
   border: none;
@@ -1060,7 +1060,7 @@ a {
   opacity: 1;
 }
 #post-nav-button {
-  left: 310px;
+  left: 340px;
   top: 61.8%;
 }
 #post-nav-button a {
@@ -1231,7 +1231,7 @@ body .ui-tooltip {
   color: #999;
   position: relative;
   margin-right: 10px;
-  font: 18px FontAwesome;
+  font: 20px FontAwesome;
 }
 .archive-article-inner .article-meta .article-category:before {
   float: left;
@@ -1704,7 +1704,7 @@ li:hover {
 }
 #tocButton {
   position: fixed;
-  left: 230px;
+  left: 260px;
   top: 385px;
   font-size: 0.9em;
   font-weight: bold;
@@ -1721,12 +1721,12 @@ li:hover {
 }
 .toc-article {
   position: fixed;
-  width: 240px;
+  width: 270px;
   top: 378px;
   bottom: 1em;
   left: 0;
   margin-left: 0;
-  padding: 6px 10px 10px 46px;
+  padding: 6px 10px 10px 42px;
   -webkit-border-radius: 2.8%;
   border-radius: 2.8%;
   overflow: auto;
@@ -2106,7 +2106,7 @@ aside.comment-bar:active {
   color: #999;
   position: relative;
   margin-right: 10px;
-  font: 18px FontAwesome;
+  font: 20px FontAwesome;
 }
 .archive-article-inner .article-meta .article-category:before {
   float: left;
@@ -2895,7 +2895,7 @@ pre .javascript .function {
 .article-category::before {
   float: left;
   color: #999;
-  font: 18px FontAwesome;
+  font: 20px FontAwesome;
   margin-right: 5px;
   margin-top: 0.333333333333333rem;
 }
@@ -2912,7 +2912,7 @@ pre .javascript .function {
 .article-pop-out:before {
   color: #999;
   content: "\f08d";
-  font: 18px FontAwesome;
+  font: 20px FontAwesome;
   float: left;
   margin-right: 5px;
   margin-top: 0.333333333333333rem;
