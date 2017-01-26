@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2017-01-16T14:38:13.715Z</updated>
+  <updated>2017-01-26T10:09:58.977Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -16,11 +16,99 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>学生信息管理系统</title>
+    <link href="http://www.gcusky.com/2017/01/26/project-3/"/>
+    <id>http://www.gcusky.com/2017/01/26/project-3/</id>
+    <published>2017-01-26T10:07:56.000Z</published>
+    <updated>2017-01-26T10:09:58.977Z</updated>
+    
+    <content type="html">&lt;p&gt;总结了好久以前 &lt;code&gt;2015年4月份&lt;/code&gt; 的数据结构课程设计，重点放在链表的存取实现与 &lt;code&gt;bootstrap&lt;/code&gt; 前端搭建。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;设计思路&quot;&gt;&lt;a href=&quot;#设计思路&quot; class=&quot;headerlink&quot; title=&quot;设计思路&quot;&gt;&lt;/a&gt;设计思路&lt;/h2&gt;&lt;p&gt;设计该系统时已经学过数据结构一段时间，因此首先是实现无界面的&lt;strong&gt;学生信息管理系统V1.0&lt;/strong&gt;，目的是可以先充分复习单链表的定义、存储形式、表达方式、基本操作及熟悉其特点等。&lt;br&gt;将该系统初步实现后，再结合学过的 &lt;code&gt;JSP/Servlet&lt;/code&gt; 的知识，引用V1.0 的单链表实现的核心代码，重新实现图形用户界面、学生信息的各个操作，并扩充了可由不同用户登录实现不同权限等操作，以及 &lt;code&gt;Excel&lt;/code&gt; 表格的生成、下载等操作等等功能。&lt;br&gt;为了实现 &lt;code&gt;Excel&lt;/code&gt;表格的读写功能，最后决定引用 &lt;code&gt;Apache POI&lt;/code&gt;，实现了表格的读写功能。&lt;br&gt;为了节约时间，同时体现图形界面的友好性，又使用了前端开发的开源工具包 &lt;code&gt;Bootstrap&lt;/code&gt;，初步实现响应式页面布局，带给使用者更良好的体验。&lt;/p&gt;
+&lt;h2 id=&quot;学生信息管理系统V1-0&quot;&gt;&lt;a href=&quot;#学生信息管理系统V1-0&quot; class=&quot;headerlink&quot; title=&quot;学生信息管理系统V1.0&quot;&gt;&lt;/a&gt;学生信息管理系统V1.0&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;学生单链表模块：主要将学生的基本数据和选课数据生成的Student对象封装为单链表模式。&lt;/li&gt;
+&lt;li&gt;登录模块：主要对教务员和学生的登录进行区分并分配各自对应的模块和权限。&lt;/li&gt;
+&lt;li&gt;信息管理模块：主要完成对学生的基本数据和选课数据进行插入、删除、修改、查询等功能。&lt;/li&gt;
+&lt;li&gt;选课模块：主要实现学生的课程选择、修改功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;学生信息管理系统V2-0&quot;&gt;&lt;a href=&quot;#学生信息管理系统V2-0&quot; class=&quot;headerlink&quot; title=&quot;学生信息管理系统V2.0&quot;&gt;&lt;/a&gt;学生信息管理系统V2.0&lt;/h2&gt;&lt;h3 id=&quot;模块结构图&quot;&gt;&lt;a href=&quot;#模块结构图&quot; class=&quot;headerlink&quot; title=&quot;模块结构图&quot;&gt;&lt;/a&gt;模块结构图&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/170126-1.png&quot; alt=&quot;模块结构图&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;模块详细设计&quot;&gt;&lt;a href=&quot;#模块详细设计&quot; class=&quot;headerlink&quot; title=&quot;模块详细设计&quot;&gt;&lt;/a&gt;模块详细设计&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;登录模块&lt;ul&gt;
+&lt;li&gt;输入用户名称和密码，如果用户名、密码正确，进入主控制平台；否则无法登录。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;系统维护模块&lt;ul&gt;
+&lt;li&gt;权限管理子模块：系统管理员进行用户权限设置和初始密码的设置。&lt;/li&gt;
+&lt;li&gt;信息管理子模块：对学生的基本数据和选课数据进行插入、删除、修改、查询等功能。&lt;/li&gt;
+&lt;li&gt;课程设置子模块：在每学期开始需要进行本学期需要开设课程的设置。在某一课程发生变动时可以进行课程的维护，包括修改课程的名称、学分等，也可以删除某一课程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;学生信息管理模块&lt;ul&gt;
+&lt;li&gt;学生信息查询子模块：方便教务管理人员快速的查找某一学生。分为按照学生的姓名进行查，利于管理人员随时掌握学生信息。&lt;/li&gt;
+&lt;li&gt;更新学生信息子模块：教务管理人员可以随时更改学生的某些信息，包括学生姓名、学号、班级等信息的更改。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;信息文件子模块&lt;ul&gt;
+&lt;li&gt;Excel导出子模块：实现进行学生信息操作之后导出为Excel表格，方便信息的保存、备份与可交流性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;帮助信息模块&lt;ul&gt;
+&lt;li&gt;显示系统的开发版本和系统说明信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;逻辑层结构&quot;&gt;&lt;a href=&quot;#逻辑层结构&quot; class=&quot;headerlink&quot; title=&quot;逻辑层结构&quot;&gt;&lt;/a&gt;逻辑层结构&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/170126-2.png&quot; alt=&quot;逻辑层结构&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;视图层结构&quot;&gt;&lt;a href=&quot;#视图层结构&quot; class=&quot;headerlink&quot; title=&quot;视图层结构&quot;&gt;&lt;/a&gt;视图层结构&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/170126-3.png&quot; alt=&quot;视图层结构&quot;&gt;&lt;/p&gt;
+&lt;p&gt;另外，还有两个Excel表，一个存放管理员帐号，另一个存放学生信息。&lt;/p&gt;
+&lt;h3 id=&quot;主要类描述&quot;&gt;&lt;a href=&quot;#主要类描述&quot; class=&quot;headerlink&quot; title=&quot;主要类描述&quot;&gt;&lt;/a&gt;主要类描述&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;链表核心类包node&lt;/strong&gt;&lt;br&gt;该包主要存放重点类：单链表的 &lt;code&gt;Student&lt;/code&gt; 类、结点类、描述类以及接口；接口的实现在 &lt;code&gt;Manage&lt;/code&gt; 包中。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Student&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;// 结点内的Student对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String id;&lt;span class=&quot;comment&quot;&gt;// 学号&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String name;&lt;span class=&quot;comment&quot;&gt;// 姓名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String sex;&lt;span class=&quot;comment&quot;&gt;// 性别&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String classed;&lt;span class=&quot;comment&quot;&gt;// 班级&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String phone;&lt;span class=&quot;comment&quot;&gt;// 手机号&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String coursera;&lt;span class=&quot;comment&quot;&gt;// 选修课程&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//Getters and Setters&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;StuNode&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 结点类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;｝&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;StuInterface&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;// 对外接口类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;addStu&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Student s)&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; Exception&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;removeStu&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String name)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;updateStu&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Student stu)&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; Exception&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;Student &lt;span class=&quot;title&quot;&gt;findStu&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String name)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;ArrayList &lt;span class=&quot;title&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;用户登录包user&lt;/strong&gt;&lt;br&gt;该类包主要存放用户登录与权限分配有关的类。&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; user;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Login&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String userName; &lt;span class=&quot;comment&quot;&gt;// 用户名    &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String password; &lt;span class=&quot;comment&quot;&gt;// 密码&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//Getters and Setters&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Admin&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 存放从Excel读取的管理员账户密码进行登录检测，以及对Excel进行操作的方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Stuser&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	ArrayList&amp;lt;Login&amp;gt; df = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;Login&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Stuser&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; IOException&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;comment&quot;&gt;// 与Admin类实现的方法类似&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; Login &lt;span class=&quot;title&quot;&gt;checkUser&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String username, String password)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;comment&quot;&gt;// 与Admin类实现的方法类似&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;信息管理包Manage&lt;/strong&gt;&lt;br&gt;该类包主要存放 &lt;code&gt;Excel&lt;/code&gt; 的读写和实现 &lt;code&gt;node&lt;/code&gt; 包中 &lt;code&gt;StuInterface&lt;/code&gt; 接口的实现。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;writeXls&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//对Excel进读写的专用类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AdminMange&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;StuLinkList&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;StuInterface&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 继承与实现node包里的类，主要是对管理员的操作实现&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;StuMange&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;StuLinkList&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;StuInterface&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// 与AdminMange类似，主要是对学生的操作实现&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;｝&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;控制器Servlet&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;addstuServlet&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpServlet&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;  	处理要添加的学生信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;closeServlet&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpServlet&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;   	实现保存、下载、退出等功能&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;delstuServlet&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpServlet&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;   	处理要删除的学生信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;findoneServlet&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpServlet&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125; 	处理要查找的单个学生信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;findstuServlet&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpServlet&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;  	查找符合条件的学生信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;mainServlet&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpServlet&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;    	处理登录页面&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;uponeServlet&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpServlet&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;  	管理员修改学生信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;upServlet&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpServlet&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;      	学生修改个人信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;upstuServlet&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpServlet&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;    	指定特定ID的学生&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;部分展示&quot;&gt;&lt;a href=&quot;#部分展示&quot; class=&quot;headerlink&quot; title=&quot;部分展示&quot;&gt;&lt;/a&gt;部分展示&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/170126-4.png&quot; alt=&quot;&quot;&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/170126-5.png&quot; alt=&quot;&quot;&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/170126-6.png&quot; alt=&quot;&quot;&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/170126-7.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;本次课程设计，回顾了数据结构的基本知识。还实践了 &lt;code&gt;JSP/Servlet&lt;/code&gt; 知识；成功实现不借助数据库，而是使用单链表数据结构，实现 &lt;code&gt;Excel&lt;/code&gt; 数据存储功能。&lt;/p&gt;
+&lt;h3 id=&quot;界面设计问题&quot;&gt;&lt;a href=&quot;#界面设计问题&quot; class=&quot;headerlink&quot; title=&quot;界面设计问题&quot;&gt;&lt;/a&gt;界面设计问题&lt;/h3&gt;&lt;p&gt;在思考界面的实现方式上，考虑了两种方式：&lt;br&gt;第一个是利用 &lt;code&gt;Swing&lt;/code&gt; 组件实现（&lt;code&gt;Swing&lt;/code&gt; 是一个用于开发 &lt;code&gt;Java&lt;/code&gt; 应用程序用户界面的开发工具包），但 &lt;code&gt;Swing&lt;/code&gt; 组件虽然拥有先进的模式设计，设计模型的确不错，但设计复杂。一个复杂的界面,代码动不动就上千行，全是流水式的代码, 大量重复性的, 根本没有体现出 &lt;code&gt;Java&lt;/code&gt; 应有的面向对象。并且拥有界面难看和速度慢等问题。&lt;br&gt;其二是利用 &lt;code&gt;Jsp/Servlet&lt;/code&gt; 实现，其综合起来有如下优点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于用户界面的更新，其实就是由 &lt;code&gt;Web Server&lt;/code&gt; 进行的，所以给人的感觉更新很快。&lt;/li&gt;
+&lt;li&gt;所有的应用都是基于服务器的，所以它们可以时刻保持最新版本。&lt;/li&gt;
+&lt;li&gt;客户端的接口不是很繁琐，对于各种应用易于部署、维护和修改。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因此最终决定使用 &lt;code&gt;Jsp/Servlet&lt;/code&gt; 技术来实现用户交互界面。&lt;/p&gt;
+&lt;h3 id=&quot;Excel-读写问题&quot;&gt;&lt;a href=&quot;#Excel-读写问题&quot; class=&quot;headerlink&quot; title=&quot;Excel 读写问题&quot;&gt;&lt;/a&gt;Excel 读写问题&lt;/h3&gt;&lt;p&gt;在思考 &lt;code&gt;Excel&lt;/code&gt; 的读写问题上，也考虑了利用两个包的其中一个来实现。其一是 &lt;code&gt;jxl&lt;/code&gt;，其二是 &lt;code&gt;poi&lt;/code&gt;。最后决定使用 &lt;code&gt;poi&lt;/code&gt;，原因有如下几点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;jxl&lt;/code&gt; 只能操作 &lt;code&gt;Excel 95-2000&lt;/code&gt; 的版本，不支持 &lt;code&gt;Excel2007&lt;/code&gt; 以上的版本，但 &lt;code&gt;poi&lt;/code&gt; 可以。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;poi&lt;/code&gt; 可以实现对 &lt;code&gt;Microsoft Office&lt;/code&gt; 格式档案读和写的功能，而 &lt;code&gt;jxl&lt;/code&gt; 只能操作 &lt;code&gt;Excel&lt;/code&gt;，鉴于该系统以后的可拓展性。还是使用功能丰富的 &lt;code&gt;poi&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;poi&lt;/code&gt; 是 &lt;code&gt;Apache&lt;/code&gt; 软件基金会的开放源码函式库，依旧会继续更新，有技术支持。而 &lt;code&gt;jxl&lt;/code&gt; 是韩国人写的一个工具类库，没有继续对它进行升级换代。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;乱码问题&quot;&gt;&lt;a href=&quot;#乱码问题&quot; class=&quot;headerlink&quot; title=&quot;乱码问题&quot;&gt;&lt;/a&gt;乱码问题&lt;/h3&gt;&lt;p&gt;&lt;code&gt;Jsp&lt;/code&gt; 依旧存在乱码问题，因为 &lt;code&gt;ISO-8859-1&lt;/code&gt; 编码的原因。所以一开始就在 &lt;code&gt;Setters&lt;/code&gt; 都加上 &lt;code&gt;getBytes ( &amp;quot;ISO-8859-1&amp;quot; ) , &amp;quot;UTF-8&amp;quot;)&lt;/code&gt; 进行转码，其实不用。因为在 &lt;code&gt;Servlet&lt;/code&gt; 已经声明了编码类型是 &lt;code&gt;UTF-8&lt;/code&gt;。所以这个就是读取 &lt;code&gt;Excel&lt;/code&gt; 乱码问题，所以去掉 &lt;code&gt;getBytes()&lt;/code&gt;就可以解决。&lt;/p&gt;
+&lt;p&gt;具体代码见：&lt;a href=&quot;https://coding.net/u/gcusky/p/stutrans/git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://coding.net/u/gcusky/p/stutrans/git&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;总结了好久以前 &lt;code&gt;2015年4月份&lt;/code&gt; 的数据结构课程设计，重点放在链表的存取实现与 &lt;code&gt;bootstrap&lt;/code&gt; 前端搭建。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="课程设计" scheme="http://www.gcusky.com/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="jsp/servlet" scheme="http://www.gcusky.com/tags/jsp-servlet/"/>
+    
+      <category term="数据结构" scheme="http://www.gcusky.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="链表" scheme="http://www.gcusky.com/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>献血管理系统</title>
     <link href="http://www.gcusky.com/2017/01/16/project-2/"/>
     <id>http://www.gcusky.com/2017/01/16/project-2/</id>
     <published>2017-01-16T14:32:06.000Z</published>
-    <updated>2017-01-16T14:38:13.715Z</updated>
+    <updated>2017-01-26T10:08:28.468Z</updated>
     
     <content type="html">&lt;p&gt;总结了好久以前 &lt;code&gt;2016年6月份&lt;/code&gt; 的软件项目实践，重点放在设计模式的应用过程。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -47,6 +135,8 @@
     
     </summary>
     
+      <category term="课程设计" scheme="http://www.gcusky.com/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+    
     
       <category term="设计模式" scheme="http://www.gcusky.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
@@ -61,7 +151,7 @@
     <link href="http://www.gcusky.com/2017/01/16/project-1/"/>
     <id>http://www.gcusky.com/2017/01/16/project-1/</id>
     <published>2017-01-16T10:20:44.000Z</published>
-    <updated>2017-01-16T10:26:40.946Z</updated>
+    <updated>2017-01-26T10:09:07.730Z</updated>
     
     <content type="html">&lt;p&gt;总结了好久以前 &lt;code&gt;2015年10月份&lt;/code&gt; 的数据库课程设计，重点放在数据库依照范式的建表过程。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -245,6 +335,8 @@
       &lt;p&gt;总结了好久以前 &lt;code&gt;2015年10月份&lt;/code&gt; 的数据库课程设计，重点放在数据库依照范式的建表过程。&lt;/p&gt;
     
     </summary>
+    
+      <category term="课程设计" scheme="http://www.gcusky.com/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     
     
       <category term="php" scheme="http://www.gcusky.com/tags/php/"/>
@@ -432,9 +524,9 @@
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
-    
       <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="矩阵" scheme="http://www.gcusky.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
@@ -1037,9 +1129,9 @@
       <category term="ACM" scheme="http://www.gcusky.com/categories/ACM/"/>
     
     
-      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
-    
       <category term="数学" scheme="http://www.gcusky.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="C++" scheme="http://www.gcusky.com/tags/C/"/>
     
       <category term="矩阵" scheme="http://www.gcusky.com/tags/%E7%9F%A9%E9%98%B5/"/>
     
@@ -2142,73 +2234,6 @@
     
     
       <category term="面向对象设计原则" scheme="http://www.gcusky.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语基本构词法之转换法</title>
-    <link href="http://www.gcusky.com/2016/05/01/english-4/"/>
-    <id>http://www.gcusky.com/2016/05/01/english-4/</id>
-    <published>2016-05-01T09:12:22.000Z</published>
-    <updated>2016-05-01T09:16:10.982Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;code&gt;英语的基本构词法主要包括词缀法、合成法、转换法。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;一个词在没有词形变化的前提下可转换用作其他词类，如一个词既可以作名词，又可以作动词；或一个词既可以用作动词，也可以作名词。这种构词方式就是&lt;strong&gt;转换法&lt;/strong&gt;。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;转化词的构成&quot;&gt;&lt;a href=&quot;#转化词的构成&quot; class=&quot;headerlink&quot; title=&quot;转化词的构成&quot;&gt;&lt;/a&gt;转化词的构成&lt;/h2&gt;&lt;h3 id=&quot;动词转化成名词&quot;&gt;&lt;a href=&quot;#动词转化成名词&quot; class=&quot;headerlink&quot; title=&quot;动词转化成名词&quot;&gt;&lt;/a&gt;动词转化成名词&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;表示动词原来表示的动作或状态&lt;/strong&gt;，eg. attempt 尝试；eats 食物；laugh 大笑；smell 嗅觉；desire 愿望。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;表示动作执行者&lt;/strong&gt;，eg. cheat 骗子；bore 惹人讨厌的人或物；home help 佣工。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;表示结果&lt;/strong&gt;，eg. a find 发现物；a reply 复信；a spit 唾液；a catch 捕获物。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;表示地点&lt;/strong&gt;，eg. a dump 堆垃圾的地方；a pass 关口；a turn 转弯处；a divide 分界线。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;表示工具&lt;/strong&gt;，eg. a cover 盖子；a wrap 包裹物；a catch 门扣。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;名词转化成动词&quot;&gt;&lt;a href=&quot;#名词转化成动词&quot; class=&quot;headerlink&quot; title=&quot;名词转化成动词&quot;&gt;&lt;/a&gt;名词转化成动词&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;to put in/on（放入，装）&lt;/strong&gt;，eg. to cage 装进笼子；to garage 把（汽车）送入车库；to pocket 装进口袋。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;to give，to provide with（给予、提供）&lt;/strong&gt;，eg. to arm 武装；to shelter 掩护；to finance 提供财力。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;to deprive of（去掉）&lt;/strong&gt;，eg. to core 挖去果心；to peel 削皮；to dust 去掉……上的灰尘。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;to……with（用……来做）&lt;/strong&gt;，eg. to brake 刹车；to hand 递交；to ete 注视；to shoulder 肩负。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;to be/act as……with respect to（像……那样……）&lt;/strong&gt;，eg. to ape 模仿；to father 像父亲般对待；to nurse 护理；to wolf 狼吞虎咽。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;to make/change into（把……变为）&lt;/strong&gt;，eg. to cash 兑成现金；to pile 把……剁成堆；to group 把……编成组。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;to send/go by（用……来送，乘……前往）&lt;/strong&gt;，eg. to motor 用汽车运送；to mall 邮寄；to boat 乘船。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;形容词转化成动词&quot;&gt;&lt;a href=&quot;#形容词转化成动词&quot; class=&quot;headerlink&quot; title=&quot;形容词转化成动词&quot;&gt;&lt;/a&gt;形容词转化成动词&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;由形容词转化而来的动词，其意义词意比较简单，&lt;strong&gt;多表示状态的变化&lt;/strong&gt;，可用作及物动词（to make……adjective），也可用作不及物动词（to become adjective）。&lt;ul&gt;
-&lt;li&gt;narrow（a. 狭窄的）→ to narrow = to make……narrow（使……狭窄）= to become narrow（变得狭窄）&lt;/li&gt;
-&lt;li&gt;dry（a. 干的）→ to dry = to make……dry（使……变干）= to become dry（变干）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;有些形容词&lt;strong&gt;只能转化为及物动词&lt;/strong&gt;。&lt;ul&gt;
-&lt;li&gt;bare（赤裸的）→ to bare（暴露）；blind（盲目的）→ to blind（使失明）；free（自由的）→ to free（释放）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;有些形容词转化而来的动词表示&lt;strong&gt;以某种方式、姿态去做某事&lt;/strong&gt;。&lt;ul&gt;
-&lt;li&gt;rough（粗糙的）由 to rough（粗暴地对待）；brave（勇敢的）→ to brave（冒着……；敢于……）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;形容词转化成名词&quot;&gt;&lt;a href=&quot;#形容词转化成名词&quot; class=&quot;headerlink&quot; title=&quot;形容词转化成名词&quot;&gt;&lt;/a&gt;形容词转化成名词&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;完全转化&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;完全转化的名词具有名词所有的特征，即可以变成复数，可以被形容词修饰，可以加 &lt;code&gt;&amp;#39;s&lt;/code&gt; 成为所有格等。&lt;/li&gt;
-&lt;li&gt;crazy（疯子，生性怪僻的人）consumable（消耗品）gay（同性恋）disposable（用后被扔弃的瓶子、罐头等）nasty（讨厌的家伙、使人不愉快的事）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;部分转化&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;与完全转化的名词不同，部分转化的名词不具有名词的所有特点，其前面一般带有定冠词，作为复数表示一个整体。&lt;/li&gt;
-&lt;li&gt;the handicapped（残疾人）the sick（病人）the rich（富人）the poor（穷人）the innocent（无辜者）the incredible（难以置信的人或事）&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;英语的基本构词法主要包括词缀法、合成法、转换法。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;一个词在没有词形变化的前提下可转换用作其他词类，如一个词既可以作名词，又可以作动词；或一个词既可以用作动词，也可以作名词。这种构词方式就是&lt;strong&gt;转换法&lt;/strong&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="英语" scheme="http://www.gcusky.com/categories/%E8%8B%B1%E8%AF%AD/"/>
-    
-    
-      <category term="读书笔记" scheme="http://www.gcusky.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
