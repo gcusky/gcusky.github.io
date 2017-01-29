@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2017-01-26T10:45:05.513Z</updated>
+  <updated>2017-01-29T12:25:39.134Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>推箱子</title>
+    <link href="http://www.gcusky.com/2017/01/29/project-4/"/>
+    <id>http://www.gcusky.com/2017/01/29/project-4/</id>
+    <published>2017-01-29T12:24:00.000Z</published>
+    <updated>2017-01-29T12:25:39.134Z</updated>
+    
+    <content type="html">&lt;p&gt;总结了很久以前 &lt;code&gt;2014年10月份&lt;/code&gt; 的面向对象程序设计大作业，重点实践了 &lt;code&gt;swing&lt;/code&gt; 组件，对 &lt;code&gt;JFrame&lt;/code&gt; 容器有了更高层次的认识,了解了 &lt;code&gt;Java&lt;/code&gt; 事件处理机制。也体现当时的中二哈哈哈。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;游戏介绍&quot;&gt;&lt;a href=&quot;#游戏介绍&quot; class=&quot;headerlink&quot; title=&quot;游戏介绍&quot;&gt;&lt;/a&gt;游戏介绍&lt;/h3&gt;&lt;p&gt;经典的推箱子是一个来自日本的古老游戏，目的是在训练你的逻辑思考能力。在一个狭小的仓库中，要求把木箱放到指定的位置，稍不小心就会出现箱子无法移动或者通道被堵住的情况，所以需要巧妙的利用有限的空间和通道，合理安排移动的次序和位置，才能顺利的完成任务。&lt;br&gt;注：因剧情需要，本游戏将围墙用宝箱来表示、所推的箱子用水晶来表示、目的地为法阵；即玩家被宝箱包围着，必须将所有水晶移动到达法阵才算过关。&lt;/p&gt;
+&lt;h3 id=&quot;游戏背景&quot;&gt;&lt;a href=&quot;#游戏背景&quot; class=&quot;headerlink&quot; title=&quot;游戏背景&quot;&gt;&lt;/a&gt;游戏背景&lt;/h3&gt;&lt;p&gt;游戏的主人公李逍遥之子李剑灵，在其姐姐李忆如被抓后，为了回到过去改变一切，勤加修炼回魂仙梦。不料有一次法术出错，落入幻梦之中。幻梦一共有五十关，每一关他必须将所有水晶置于法阵中才能过关；游戏由此展开。同时，在游戏中伴着不同的背景音乐，忆起陈年往事……&lt;/p&gt;
+&lt;h3 id=&quot;主要功能&quot;&gt;&lt;a href=&quot;#主要功能&quot; class=&quot;headerlink&quot; title=&quot;主要功能&quot;&gt;&lt;/a&gt;主要功能&lt;/h3&gt;&lt;p&gt;游戏中的控制对象是李剑灵 、包围在其周围的是幻梦中的宝箱（但打不开，也隐喻了李剑灵的一生被宿命束缚着，虽珍惜眼前的一切甚至到最后逆天而行，却也无法保护好其身边所珍惜的……）、人可以任意行走的草地、几个可以移动的水晶和水晶放置的法阵。玩家通过按上下左右控制主人公移动水晶，当所有的水晶都移动到法阵后出现过关信息并选择是否进行下一关，否的话退出游戏，是的话显示下一关。直至 50 关全过出现通关信息。 &lt;/p&gt;
+&lt;h2 id=&quot;概要设计&quot;&gt;&lt;a href=&quot;#概要设计&quot; class=&quot;headerlink&quot; title=&quot;概要设计&quot;&gt;&lt;/a&gt;概要设计&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/0129-1.jpg&quot; alt=&quot;类、方法及其功能&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/0129-1.png&quot; alt=&quot;图片资源&quot;&gt;&lt;/p&gt;
+&lt;p&gt;0：宝箱之外的区域；1：将可移动区域包围起来的宝箱；2：可移动区域——草地；&lt;br&gt;3：被移动的水晶；4：目的地——法阵；5：向上的人；6：向左的人；&lt;br&gt;7：向右的人；8：向下的人；9：水晶在法阵上；background：主界面的背景图。&lt;/p&gt;
+&lt;h2 id=&quot;详细设计&quot;&gt;&lt;a href=&quot;#详细设计&quot; class=&quot;headerlink&quot; title=&quot;详细设计&quot;&gt;&lt;/a&gt;详细设计&lt;/h2&gt;&lt;h3 id=&quot;主要界面类（Sokoban-java）&quot;&gt;&lt;a href=&quot;#主要界面类（Sokoban-java）&quot; class=&quot;headerlink&quot; title=&quot;主要界面类（Sokoban.java）&quot;&gt;&lt;/a&gt;主要界面类（Sokoban.java）&lt;/h3&gt;&lt;p&gt;该类主要继承 &lt;code&gt;swing&lt;/code&gt; 包中的 &lt;code&gt;JFrame&lt;/code&gt; 组件并实现 &lt;code&gt;ActionListener&lt;/code&gt;,&lt;code&gt;ItemListener&lt;/code&gt; 接口。其中需要声明并创建各种 &lt;code&gt;JLabel&lt;/code&gt; 标签、&lt;code&gt;JButton&lt;/code&gt; 按钮、&lt;code&gt;JComboBox&lt;/code&gt; 组合框以及 &lt;code&gt;JMenuItem&lt;/code&gt; 菜单栏。同时也兼任把背景、游戏界面和音乐控件加进整个主要界面中。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.awt.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.awt.event.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; javax.swing.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Sokoban&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;JFrame&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ActionListener&lt;/span&gt;,&lt;span class=&quot;title&quot;&gt;ItemListener&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; JLabel ……&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; JButton ……&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	GamePanel panel;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Sound sound;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ImageIcon icon;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Image img;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;JComboBox transed =&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; JComboBox();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;JMenuItem ……&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//Sokoban()是对声明或声明创建后的控件进行布局定位&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Sokoban()&amp;#123;……&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// void actionPerformed(ActionEvent e) 这个方法是对大部分控件进行监听及事件处理&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;actionPerformed&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(ActionEvent e)&lt;/span&gt; &lt;/span&gt;&amp;#123;……｝&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// void itemStateChanged(ItemEvent ie) 是对组合框控件的监听及事件处理&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;itemStateChanged&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(ItemEvent ie)&lt;/span&gt; &lt;/span&gt;&amp;#123;……｝&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;背景图片类（CInstead-java）&quot;&gt;&lt;a href=&quot;#背景图片类（CInstead-java）&quot; class=&quot;headerlink&quot; title=&quot;背景图片类（CInstead.java）&quot;&gt;&lt;/a&gt;背景图片类（CInstead.java）&lt;/h3&gt;&lt;p&gt;该类主要继承 &lt;code&gt;swing&lt;/code&gt; 包中的 &lt;code&gt;JPanel&lt;/code&gt; 组件。读取并绘制背景图片。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.awt.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; javax.swing.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CInstead&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;JPanel&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//此类用于添加背景图片&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ImageIcon icon;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Image img;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CInstead&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//用来读取图片&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        icon=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ImageIcon( Toolkit.getDefaultToolkit().getImage(&lt;span class=&quot;string&quot;&gt;&quot;image\\background.jpg&quot;&lt;/span&gt; ));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        img=icon.getImage();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;paintComponent&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Graphics g)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//绘制图片&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.paintComponent(g);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        g.drawImage(img,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;地图读取类（Readmap-java）&quot;&gt;&lt;a href=&quot;#地图读取类（Readmap-java）&quot; class=&quot;headerlink&quot; title=&quot;地图读取类（Readmap.java）&quot;&gt;&lt;/a&gt;地图读取类（Readmap.java）&lt;/h3&gt;&lt;p&gt;该类用用 &lt;code&gt;FileReader&lt;/code&gt; 具体地读取地图内容，每一张地图都把其对应的矩阵放在一个 &lt;code&gt;txt&lt;/code&gt;  文档中。一个 &lt;code&gt;txt&lt;/code&gt; 代表一张地图，当关卡切换时便读取对应的 &lt;code&gt;txt&lt;/code&gt; 并转化为二维数组，最终将数组给予游戏主程序类对其显示在游戏界面上。&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.io.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Readmap&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; level,mx,my;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[][] mymap=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    FileReader read; BufferedReader nr;String tr=&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] x;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; c=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Readmap(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; k)&amp;#123;&lt;span class=&quot;comment&quot;&gt;//读图主程序&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        level=k; String s;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            File f=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; File(&lt;span class=&quot;string&quot;&gt;&quot;maps\\&quot;&lt;/span&gt;+level+&lt;span class=&quot;string&quot;&gt;&quot;.txt&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//读取本关卡的地图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            read=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; FileReader(f); nr=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BufferedReader(read);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (IOException e)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            System.out.println(e);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; ((s=nr.readLine())!=&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                tr=tr+s;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (IOException g)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            System.out.println(g);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;byte&lt;/span&gt;[] d=tr.getBytes();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; len=tr.length();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] x=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[len];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;tr.length();i++)x[i]=d[i]-&lt;span class=&quot;number&quot;&gt;48&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;j&amp;lt;&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                mymap[i][j]=x[c];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(mymap[i][j]==&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    mx=j;my=i;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                c++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//获取器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[][] getmap()&amp;#123;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mymap;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getmanX&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mx;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getmanY&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; my;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;游戏主程序类（GamePanel-java）&quot;&gt;&lt;a href=&quot;#游戏主程序类（GamePanel-java）&quot; class=&quot;headerlink&quot; title=&quot;游戏主程序类（GamePanel.java）&quot;&gt;&lt;/a&gt;游戏主程序类（GamePanel.java）&lt;/h3&gt;&lt;p&gt;该类为整个程序的主体，包含了对游戏的整个逻辑判断、接收地图读取类的数组将地图显示出来、监听键盘事件改变游戏视图以及提供各种方法给主要界面类的控件进行事件响应。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.awt.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.awt.event.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.util.Stack;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; javax.swing.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;GamePanel&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;JPanel&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;KeyListener&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//最多关卡数为50关&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; max=&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;,manX,manY,boxnum; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[][] map,maptmp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Image[] myImage;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Readmap Levelmap; Readmap Levelmaptmp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; len=&lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; level=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//关卡数为第一关&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Stack mystack=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Stack();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    GamePanel()&amp;#123;&lt;span class=&quot;comment&quot;&gt;//游戏窗口在面板上的定位&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        setBounds(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;600&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;600&lt;/span&gt;); setBackground(Color.white);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        addKeyListener(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        myImage=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Image[&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            myImage[i] = Toolkit.getDefaultToolkit().getImage(&lt;span class=&quot;string&quot;&gt;&quot;image\\&quot;&lt;/span&gt;+i+&lt;span class=&quot;string&quot;&gt;&quot;.gif&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;		&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        setVisible(&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Sokoban&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//变量赋值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Levelmap=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Readmap(i); Levelmaptmp=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Readmap(i);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        map=Levelmap.getmap();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        manX=Levelmap.getmanX();manY=Levelmap.getmanY();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        maptmp=Levelmaptmp.getmap();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        repaint();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;maxlevel&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; max;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;paint&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Graphics g)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//游戏窗口内文字的介绍&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; j&amp;lt;&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;; j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                g.drawImage(myImage[map[j][i]],i*len,j*len,&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;		&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        g.setColor(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Color(&lt;span class=&quot;number&quot;&gt;255&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;255&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;255&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        g.setFont(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Font(&lt;span class=&quot;string&quot;&gt;&quot;宋体&quot;&lt;/span&gt;,Font.BOLD,&lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        g.drawString(&lt;span class=&quot;string&quot;&gt;&quot;现在是第&quot;&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;173&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;40&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        g.drawString(String.valueOf(level),&lt;span class=&quot;number&quot;&gt;333&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;40&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        g.drawString(&lt;span class=&quot;string&quot;&gt;&quot;关&quot;&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;383&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;40&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;keyPressed&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(KeyEvent e)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(e.getKeyCode()==KeyEvent.VK_UP)&amp;#123;moveup();&amp;#125;&lt;span class=&quot;comment&quot;&gt;//键盘监听到向上走&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(e.getKeyCode()==KeyEvent.VK_DOWN)&amp;#123;movedown();&amp;#125;&lt;span class=&quot;comment&quot;&gt;//键盘监听到向下走&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(e.getKeyCode()==KeyEvent.VK_LEFT)&amp;#123;moveleft();&amp;#125;&lt;span class=&quot;comment&quot;&gt;//键盘监听到向左走&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(e.getKeyCode()==KeyEvent.VK_RIGHT)&amp;#123;moveright();&amp;#125;&lt;span class=&quot;comment&quot;&gt;//键盘监听到向右走&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(iswin())&amp;#123;&lt;span class=&quot;comment&quot;&gt;//胜利弹出窗口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(level==max)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                JOptionPane.showMessageDialog(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;恭喜你通过最后一关！！！成功脱离幻梦！！！&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                String msg=&lt;span class=&quot;string&quot;&gt;&quot;恭喜你通过第&quot;&lt;/span&gt;+level+&lt;span class=&quot;string&quot;&gt;&quot;关!!!\n是否要进入下一关？&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; type=JOptionPane.YES_NO_OPTION;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                String title=&lt;span class=&quot;string&quot;&gt;&quot;过关&quot;&lt;/span&gt;;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; choice=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                choice=JOptionPane.showConfirmDialog(&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;,msg,title,type);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(choice==&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)  System.exit(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(choice==&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    level++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    Sokoban(level);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            mystack.removeAllElements();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isMystackEmpty&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mystack.isEmpty();&amp;#125;&lt;span class=&quot;comment&quot;&gt;//指出变量是否已经初始化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (Integer)mystack.pop();&amp;#125;&lt;span class=&quot;comment&quot;&gt;//出栈的操作(后退次数)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;mystack.removeAllElements();&amp;#125;&lt;span class=&quot;comment&quot;&gt;//换关卡或重新开始&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;moveup&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;……&amp;#125;&lt;span class=&quot;comment&quot;&gt;//向上走&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;movedown&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;……&amp;#125;&lt;span class=&quot;comment&quot;&gt;//向下走&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;moveleft&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;&lt;span class=&quot;comment&quot;&gt;//向左走&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;moveright&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;&lt;span class=&quot;comment&quot;&gt;//向右走&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//后退&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;backup&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; t)&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;backdown&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; t)&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;backleft&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; t)&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;backright&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; t)&lt;/span&gt; &lt;/span&gt;&amp;#123;……&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;iswin&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//是否胜利&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; num=&lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        out:&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; j&amp;lt;&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;; j++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(maptmp[i][j]==&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;||maptmp[i][j]==&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(map[i][j]==&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;)num=&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;num=&lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt; out;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; num;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;背景音乐类（Sound-java）&quot;&gt;&lt;a href=&quot;#背景音乐类（Sound-java）&quot; class=&quot;headerlink&quot; title=&quot;背景音乐类（Sound.java）&quot;&gt;&lt;/a&gt;背景音乐类（Sound.java）&lt;/h3&gt;&lt;p&gt;该类用专门的 &lt;code&gt;javax.sound.midi&lt;/code&gt; 包来处理个播放 &lt;code&gt;MIDI&lt;/code&gt; 音乐，其中包括了与 &lt;code&gt;MIDI&lt;/code&gt; 相关的各个类及其方法。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.io.File;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; javax.sound.midi.*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Sound&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    String path=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String(&lt;span class=&quot;string&quot;&gt;&quot;music\\&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    String  file=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String(&lt;span class=&quot;string&quot;&gt;&quot;1.mid&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Sequence seq;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Sequencer midi;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; sign;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;loadSound&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            seq=MidiSystem.getSequence(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; File(path+file));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            midi=MidiSystem.getSequencer();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            midi.open();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            midi.setSequence(seq);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            midi.start();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            midi.setLoopCount(Sequencer.LOOP_CONTINUOUSLY);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (Exception ex) &amp;#123;ex.printStackTrace();&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        sign=&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;mystop&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;midi.stop();midi.close();sign=&lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&amp;#125;&lt;span class=&quot;comment&quot;&gt;//停止播放音乐&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isplay&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; sign;&amp;#125;&lt;span class=&quot;comment&quot;&gt;//是否正在播放&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setMusic&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String e)&lt;/span&gt;&lt;/span&gt;&amp;#123;file=e;&amp;#125;&lt;span class=&quot;comment&quot;&gt;//更换音乐&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;部分展示&quot;&gt;&lt;a href=&quot;#部分展示&quot; class=&quot;headerlink&quot; title=&quot;部分展示&quot;&gt;&lt;/a&gt;部分展示&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/0129-2.png&quot; alt=&quot;&quot;&gt;&lt;img src=&quot;http://cloud.gcusky.com/2017/0129-3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;h3 id=&quot;程序的优点&quot;&gt;&lt;a href=&quot;#程序的优点&quot; class=&quot;headerlink&quot; title=&quot;程序的优点&quot;&gt;&lt;/a&gt;程序的优点&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;除了推箱子这个主体游戏，还加入了游戏的背景以及作品信息，为这个游戏注入灵魂。&lt;/li&gt;
+&lt;li&gt;完善了推箱子这个游戏的各种功能，如【首关】【上一关】【选关】【下一关】【末关】【退一步】【重来】&lt;/li&gt;
+&lt;li&gt;该游戏不仅有背景音乐，还可以对背景音乐进行切换。&lt;/li&gt;
+&lt;li&gt;能够将上述功能完整地揉和在一起，成为一个拥有自己特色的游戏。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;程序的不足&quot;&gt;&lt;a href=&quot;#程序的不足&quot; class=&quot;headerlink&quot; title=&quot;程序的不足&quot;&gt;&lt;/a&gt;程序的不足&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;程序中仍有一些代码不够简洁。&lt;/li&gt;
+&lt;li&gt;程序运行时仍可能有少许BUG存在。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;遇到的困难及解决的问题&quot;&gt;&lt;a href=&quot;#遇到的困难及解决的问题&quot; class=&quot;headerlink&quot; title=&quot;遇到的困难及解决的问题&quot;&gt;&lt;/a&gt;遇到的困难及解决的问题&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;背景音乐只能支持 &lt;code&gt;mid&lt;/code&gt; 格式，虽然成功独立构建支持 &lt;code&gt;wav&lt;/code&gt; 格式音乐类及其附加功能，但因为对 &lt;code&gt;java.applet.AudioClip&lt;/code&gt; 不了解，无法完美地揉和进程序中，最终决定依旧使用支持 &lt;code&gt;mid&lt;/code&gt; 格式的类。&lt;/li&gt;
+&lt;li&gt;一些类或方法如什么是 &lt;code&gt;Container&lt;/code&gt;、&lt;code&gt;clear()&lt;/code&gt;与 &lt;code&gt;removeAllElements()&lt;/code&gt; 的区别、什么时候用 &lt;code&gt;ItemStateChanged&lt;/code&gt; 什么时候用 &lt;code&gt;actionperformed&lt;/code&gt; 等等，因未曾经常使用这些类或方法导致知识的遗忘或缺失。编写本程序可巩固知识，温故而知新。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;收获&quot;&gt;&lt;a href=&quot;#收获&quot; class=&quot;headerlink&quot; title=&quot;收获&quot;&gt;&lt;/a&gt;收获&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;了解了 &lt;code&gt;swing&lt;/code&gt; 组件的使用方法，对 &lt;code&gt;JFrame&lt;/code&gt; 容器有了更高层次的认识。&lt;/li&gt;
+&lt;li&gt;了解了 &lt;code&gt;Java&lt;/code&gt; 事件处理机制以及实现了多个处理过程。&lt;/li&gt;
+&lt;li&gt;使用了抽象思维将推箱子整个游戏用数学方法建立数学模型。游戏地图为二维数组，游戏过程就是数组内数据的改变过程。充分体现了数学的重要性。&lt;/li&gt;
+&lt;li&gt;写代码不仅仅只是为了完成一个大作业，而是要投入感情去完成一个游戏。程序本身便是程序员孕育出来的孩子。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;总结了很久以前 &lt;code&gt;2014年10月份&lt;/code&gt; 的面向对象程序设计大作业，重点实践了 &lt;code&gt;swing&lt;/code&gt; 组件，对 &lt;code&gt;JFrame&lt;/code&gt; 容器有了更高层次的认识,了解了 &lt;code&gt;Java&lt;/code&gt; 事件处理机制。也体现当时的中二哈哈哈。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="课程设计" scheme="http://www.gcusky.com/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="java" scheme="http://www.gcusky.com/tags/java/"/>
+    
+      <category term="swing" scheme="http://www.gcusky.com/tags/swing/"/>
+    
+  </entry>
   
   <entry>
     <title>【外文翻译】Scikit-learn：在Python中进行机器学习</title>
@@ -1616,420 +1678,6 @@
     
     
       <category term="创建型模式" scheme="http://www.gcusky.com/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语的其他构词法</title>
-    <link href="http://www.gcusky.com/2016/05/02/english-5/"/>
-    <id>http://www.gcusky.com/2016/05/02/english-5/</id>
-    <published>2016-05-02T14:01:12.000Z</published>
-    <updated>2016-05-02T14:02:18.444Z</updated>
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;英语除了三种主要的构词法，此外还有几种次要的构词方法，尽管构词量不及前几种，但在英语中也起着重要的作用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;缩略法&quot;&gt;&lt;a href=&quot;#缩略法&quot; class=&quot;headerlink&quot; title=&quot;缩略法&quot;&gt;&lt;/a&gt;缩略法&lt;/h2&gt;&lt;p&gt;缩略法主要有两种构词方式，一种是截短词，即去掉原来完整词中的一部分字母或音节构成新词；另一种是首字母缩略词，即取一个词组中每个词的首字母组成一个词。&lt;/p&gt;
-&lt;h3 id=&quot;截短词&quot;&gt;&lt;a href=&quot;#截短词&quot; class=&quot;headerlink&quot; title=&quot;截短词&quot;&gt;&lt;/a&gt;截短词&lt;/h3&gt;&lt;h4 id=&quot;截掉词尾&quot;&gt;&lt;a href=&quot;#截掉词尾&quot; class=&quot;headerlink&quot; title=&quot;截掉词尾&quot;&gt;&lt;/a&gt;截掉词尾&lt;/h4&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;原词&lt;/th&gt;
-&lt;th&gt;截短词&lt;/th&gt;
-&lt;th&gt;意思&lt;/th&gt;
-&lt;th&gt;原词&lt;/th&gt;
-&lt;th&gt;截短词&lt;/th&gt;
-&lt;th&gt;意思&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;advertisement&lt;/td&gt;
-&lt;td&gt;ad&lt;/td&gt;
-&lt;td&gt;广告&lt;/td&gt;
-&lt;td&gt;gentleman&lt;/td&gt;
-&lt;td&gt;gent&lt;/td&gt;
-&lt;td&gt;绅士、君子&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;automobile&lt;/td&gt;
-&lt;td&gt;auto&lt;/td&gt;
-&lt;td&gt;汽车&lt;/td&gt;
-&lt;td&gt;laboratory&lt;/td&gt;
-&lt;td&gt;lab&lt;/td&gt;
-&lt;td&gt;实验室&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;demonstration&lt;/td&gt;
-&lt;td&gt;demo&lt;/td&gt;
-&lt;td&gt;示威游行&lt;/td&gt;
-&lt;td&gt;luncheon&lt;/td&gt;
-&lt;td&gt;lunch&lt;/td&gt;
-&lt;td&gt;午餐&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;discotheque&lt;/td&gt;
-&lt;td&gt;disco&lt;/td&gt;
-&lt;td&gt;迪斯科&lt;/td&gt;
-&lt;td&gt;gasoline&lt;/td&gt;
-&lt;td&gt;gas&lt;/td&gt;
-&lt;td&gt;汽油&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;dormitory&lt;/td&gt;
-&lt;td&gt;dorm&lt;/td&gt;
-&lt;td&gt;宿舍&lt;/td&gt;
-&lt;td&gt;miniskirt&lt;/td&gt;
-&lt;td&gt;mini&lt;/td&gt;
-&lt;td&gt;超短裙&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;facsimile&lt;/td&gt;
-&lt;td&gt;fax&lt;/td&gt;
-&lt;td&gt;电传&lt;/td&gt;
-&lt;td&gt;professional&lt;/td&gt;
-&lt;td&gt;pro&lt;/td&gt;
-&lt;td&gt;职业的&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;fanatic&lt;/td&gt;
-&lt;td&gt;fan&lt;/td&gt;
-&lt;td&gt;狂热者、入迷者&lt;/td&gt;
-&lt;td&gt;telecommunication&lt;/td&gt;
-&lt;td&gt;telecom&lt;/td&gt;
-&lt;td&gt;电信&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;截掉词头&quot;&gt;&lt;a href=&quot;#截掉词头&quot; class=&quot;headerlink&quot; title=&quot;截掉词头&quot;&gt;&lt;/a&gt;截掉词头&lt;/h4&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;原词&lt;/th&gt;
-&lt;th&gt;截短词&lt;/th&gt;
-&lt;th&gt;意思&lt;/th&gt;
-&lt;th&gt;原词&lt;/th&gt;
-&lt;th&gt;截短词&lt;/th&gt;
-&lt;th&gt;意思&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;omnibus&lt;/td&gt;
-&lt;td&gt;bus&lt;/td&gt;
-&lt;td&gt;公共汽车&lt;/td&gt;
-&lt;td&gt;earthquake&lt;/td&gt;
-&lt;td&gt;quake&lt;/td&gt;
-&lt;td&gt;地震&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;bulldozer&lt;/td&gt;
-&lt;td&gt;dozer&lt;/td&gt;
-&lt;td&gt;推土机&lt;/td&gt;
-&lt;td&gt;periwig&lt;/td&gt;
-&lt;td&gt;wig&lt;/td&gt;
-&lt;td&gt;假发&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;hamburger&lt;/td&gt;
-&lt;td&gt;burger&lt;/td&gt;
-&lt;td&gt;汉堡包&lt;/td&gt;
-&lt;td&gt;parachute&lt;/td&gt;
-&lt;td&gt;chute&lt;/td&gt;
-&lt;td&gt;降落伞&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;helicopter&lt;/td&gt;
-&lt;td&gt;copter&lt;/td&gt;
-&lt;td&gt;直升机&lt;/td&gt;
-&lt;td&gt;telephone&lt;/td&gt;
-&lt;td&gt;phone&lt;/td&gt;
-&lt;td&gt;电话&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;bicycle&lt;/td&gt;
-&lt;td&gt;cycle/bike&lt;/td&gt;
-&lt;td&gt;自行车&lt;/td&gt;
-&lt;td&gt;telescope&lt;/td&gt;
-&lt;td&gt;scope&lt;/td&gt;
-&lt;td&gt;望远镜&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;caravan&lt;/td&gt;
-&lt;td&gt;van&lt;/td&gt;
-&lt;td&gt;大篷车&lt;/td&gt;
-&lt;td&gt;violoncello&lt;/td&gt;
-&lt;td&gt;cello&lt;/td&gt;
-&lt;td&gt;大提琴&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;截掉词头和词尾&quot;&gt;&lt;a href=&quot;#截掉词头和词尾&quot; class=&quot;headerlink&quot; title=&quot;截掉词头和词尾&quot;&gt;&lt;/a&gt;截掉词头和词尾&lt;/h4&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;原词&lt;/th&gt;
-&lt;th&gt;截短词&lt;/th&gt;
-&lt;th&gt;意思&lt;/th&gt;
-&lt;th&gt;原词&lt;/th&gt;
-&lt;th&gt;截短词&lt;/th&gt;
-&lt;th&gt;意思&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;influenze&lt;/td&gt;
-&lt;td&gt;flu&lt;/td&gt;
-&lt;td&gt;流行性感冒&lt;/td&gt;
-&lt;td&gt;refrigerator&lt;/td&gt;
-&lt;td&gt;fridge&lt;/td&gt;
-&lt;td&gt;冰箱&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;detective&lt;/td&gt;
-&lt;td&gt;tec&lt;/td&gt;
-&lt;td&gt;侦探&lt;/td&gt;
-&lt;td&gt;prescription&lt;/td&gt;
-&lt;td&gt;script&lt;/td&gt;
-&lt;td&gt;处方&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;截掉词中&quot;&gt;&lt;a href=&quot;#截掉词中&quot; class=&quot;headerlink&quot; title=&quot;截掉词中&quot;&gt;&lt;/a&gt;截掉词中&lt;/h4&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;原词&lt;/th&gt;
-&lt;th&gt;截短词&lt;/th&gt;
-&lt;th&gt;意思&lt;/th&gt;
-&lt;th&gt;原词&lt;/th&gt;
-&lt;th&gt;截短词&lt;/th&gt;
-&lt;th&gt;意思&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;assistant&lt;/td&gt;
-&lt;td&gt;asst&lt;/td&gt;
-&lt;td&gt;助手&lt;/td&gt;
-&lt;td&gt;mathematics&lt;/td&gt;
-&lt;td&gt;maths&lt;/td&gt;
-&lt;td&gt;数学&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;bicycle&lt;/td&gt;
-&lt;td&gt;bike&lt;/td&gt;
-&lt;td&gt;自行车&lt;/td&gt;
-&lt;td&gt;pacificist&lt;/td&gt;
-&lt;td&gt;pacifist&lt;/td&gt;
-&lt;td&gt;和平主义者&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;department&lt;/td&gt;
-&lt;td&gt;dept&lt;/td&gt;
-&lt;td&gt;系、部&lt;/td&gt;
-&lt;td&gt;spectacles&lt;/td&gt;
-&lt;td&gt;specs&lt;/td&gt;
-&lt;td&gt;眼镜&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;fossilization&lt;/td&gt;
-&lt;td&gt;fossilation&lt;/td&gt;
-&lt;td&gt;化石化&lt;/td&gt;
-&lt;td&gt;symbolology&lt;/td&gt;
-&lt;td&gt;symbology&lt;/td&gt;
-&lt;td&gt;象征学&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;international&lt;/td&gt;
-&lt;td&gt;intl&lt;/td&gt;
-&lt;td&gt;国际的&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&quot;首字母缩写&quot;&gt;&lt;a href=&quot;#首字母缩写&quot; class=&quot;headerlink&quot; title=&quot;首字母缩写&quot;&gt;&lt;/a&gt;首字母缩写&lt;/h3&gt;&lt;p&gt;VOA（美国之音） AD/A.D.（公元） ABS（防锁死刹车系统） AVM（自动售货机） TVM（自动售票机） BBC（英国广播电视台） CAAC（中国民航） F（氟） GDP（国内生产总值） GNP（国民生产总值） GHQ（总司令部） IMF（国际货币基金组织） UN（联合国）&lt;br&gt;AIDS（艾滋病，获得性免疫功能丧失综合症） APEC（亚太经贸合作组织：亚太经合组织） ASHCAN（东南亚国家联盟：东盟） BASIC（初学者通用指令码） DOS（磁盘操作系统） OPEC（欧佩克，石油输出国组织） ROM（只读内存） SAM（地对空导弹，萨姆防空导弹） SIMM（单列直插存储器模块：内存条） TOEFL（托福，英语能力测试） UNESCO（联合国教科文组织）&lt;/p&gt;
-&lt;h2 id=&quot;拼缀法&quot;&gt;&lt;a href=&quot;#拼缀法&quot; class=&quot;headerlink&quot; title=&quot;拼缀法&quot;&gt;&lt;/a&gt;拼缀法&lt;/h2&gt;&lt;p&gt;把两个独立的词进行截取，或取其词首、或取其词尾、或掐头去尾拼合成一个新词，这种方法称为拼缀法。&lt;/p&gt;
-&lt;h3 id=&quot;第一个词的词头与第二个词的词尾相拼&quot;&gt;&lt;a href=&quot;#第一个词的词头与第二个词的词尾相拼&quot; class=&quot;headerlink&quot; title=&quot;第一个词的词头与第二个词的词尾相拼&quot;&gt;&lt;/a&gt;第一个词的词头与第二个词的词尾相拼&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;第一个词&lt;/th&gt;
-&lt;th&gt;第二个词&lt;/th&gt;
-&lt;th&gt;拼缀词&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;binary&lt;/td&gt;
-&lt;td&gt;digit&lt;/td&gt;
-&lt;td&gt;bit 二进制位数字&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;breakfast&lt;/td&gt;
-&lt;td&gt;lunch&lt;/td&gt;
-&lt;td&gt;brunch 早中餐&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;channel&lt;/td&gt;
-&lt;td&gt;tunnel&lt;/td&gt;
-&lt;td&gt;chunnel 海峡隧道&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;motor&lt;/td&gt;
-&lt;td&gt;hotel&lt;/td&gt;
-&lt;td&gt;motel 汽车旅馆&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;smoke&lt;/td&gt;
-&lt;td&gt;fog&lt;/td&gt;
-&lt;td&gt;smog 烟雾&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;television&lt;/td&gt;
-&lt;td&gt;broadcast&lt;/td&gt;
-&lt;td&gt;telecast 电视广播&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&quot;第一个词与第二个词的词尾相拼&quot;&gt;&lt;a href=&quot;#第一个词与第二个词的词尾相拼&quot; class=&quot;headerlink&quot; title=&quot;第一个词与第二个词的词尾相拼&quot;&gt;&lt;/a&gt;第一个词与第二个词的词尾相拼&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;第一个词&lt;/th&gt;
-&lt;th&gt;第二个词&lt;/th&gt;
-&lt;th&gt;拼缀词&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;cable&lt;/td&gt;
-&lt;td&gt;telecast&lt;/td&gt;
-&lt;td&gt;cablecast 有线电视广播&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;profit&lt;/td&gt;
-&lt;td&gt;toward&lt;/td&gt;
-&lt;td&gt;profitward 趋利&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;work&lt;/td&gt;
-&lt;td&gt;welfare&lt;/td&gt;
-&lt;td&gt;workfare 就业福利&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;book&lt;/td&gt;
-&lt;td&gt;mobile&lt;/td&gt;
-&lt;td&gt;bookmobile 流动图书馆&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;lunar&lt;/td&gt;
-&lt;td&gt;astronaut&lt;/td&gt;
-&lt;td&gt;lunarnaut 探月宇航员&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;television&lt;/td&gt;
-&lt;td&gt;broadcast&lt;/td&gt;
-&lt;td&gt;telecast 电视广播&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&quot;第一个词的词头与第二个词相拼&quot;&gt;&lt;a href=&quot;#第一个词的词头与第二个词相拼&quot; class=&quot;headerlink&quot; title=&quot;第一个词的词头与第二个词相拼&quot;&gt;&lt;/a&gt;第一个词的词头与第二个词相拼&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;第一个词&lt;/th&gt;
-&lt;th&gt;第二个词&lt;/th&gt;
-&lt;th&gt;拼缀词&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;European&lt;/td&gt;
-&lt;td&gt;Asia&lt;/td&gt;
-&lt;td&gt;Eurasia 欧亚&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;medical&lt;/td&gt;
-&lt;td&gt;care&lt;/td&gt;
-&lt;td&gt;medicare 医疗&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;medical&lt;/td&gt;
-&lt;td&gt;aid&lt;/td&gt;
-&lt;td&gt;medicaid 医疗补助&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;parachute&lt;/td&gt;
-&lt;td&gt;troops&lt;/td&gt;
-&lt;td&gt;paratroops 空降部队&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&quot;两个词的词头相拼&quot;&gt;&lt;a href=&quot;#两个词的词头相拼&quot; class=&quot;headerlink&quot; title=&quot;两个词的词头相拼&quot;&gt;&lt;/a&gt;两个词的词头相拼&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;第一个词&lt;/th&gt;
-&lt;th&gt;第二个词&lt;/th&gt;
-&lt;th&gt;拼缀词&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;American&lt;/td&gt;
-&lt;td&gt;Indian&lt;/td&gt;
-&lt;td&gt;Amerind 美洲印第安人&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;human&lt;/td&gt;
-&lt;td&gt;intelligence&lt;/td&gt;
-&lt;td&gt;humint 人工情报（指利用间谍搜集情报的业务）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;situation&lt;/td&gt;
-&lt;td&gt;comedy&lt;/td&gt;
-&lt;td&gt;sitcom 情景喜剧&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;international&lt;/td&gt;
-&lt;td&gt;dice&lt;/td&gt;
-&lt;td&gt;interpol 国际警察&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&quot;拟声法&quot;&gt;&lt;a href=&quot;#拟声法&quot; class=&quot;headerlink&quot; title=&quot;拟声法&quot;&gt;&lt;/a&gt;拟声法&lt;/h2&gt;&lt;p&gt;模拟事物的声音而产生词的方法称为拟声法。&lt;/p&gt;
-&lt;h3 id=&quot;基本拟声词&quot;&gt;&lt;a href=&quot;#基本拟声词&quot; class=&quot;headerlink&quot; title=&quot;基本拟声词&quot;&gt;&lt;/a&gt;基本拟声词&lt;/h3&gt;&lt;p&gt;基本拟声词又称“初级拟声词”，是指因与义的相似，能引起音与形之间的联想或联系。基本拟声词大多是机械地模拟人、动物以及自然界中没有生命物体的声音。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;模仿人的声音。eg. babble 婴儿牙牙学语；cough 咳嗽；sob 抽泣；heehaw 傻笑；bellow 怒吼；chuckle 咯咯地笑。&lt;/li&gt;
-&lt;li&gt;模仿动物的鸣叫。eg. pigeons coo 鸽子咕咕叫；flogs croak 青蛙呱呱叫；apes gibber 猿啼；bees buzz 蜜蜂嗡嗡叫。&lt;/li&gt;
-&lt;li&gt;模仿水声。eg. ebb 退潮；bubble 冒泡；lap 拍打；ripple 涟漪；ooze 渗流。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;次要拟声词&quot;&gt;&lt;a href=&quot;#次要拟声词&quot; class=&quot;headerlink&quot; title=&quot;次要拟声词&quot;&gt;&lt;/a&gt;次要拟声词&lt;/h3&gt;&lt;p&gt;次要拟声词是指因某种象征性的意义发生联想的词。从词源上讲，这类词是没有拟声依据的，但它们某些字母的发音能象征某种概念或意境，使人产生联想。简单来说，也就是这些词具有拟声的作用。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;以 &lt;code&gt;gr-&lt;/code&gt; 开头的单词，这类词多表示一种沉闷、不快的声音，往往暗示一种不快或悲惨的事。&lt;br&gt;eg. groan 呻吟；grumble 抱怨；grudge 怨恨；grubby 肮脏；gruesome 可憎的；groggy 不稳的；greed 贪婪的；grumpy 性格暴躁的&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;bl-&lt;/code&gt; 开头的单词，这类词往往含有“充气”的含义。&lt;br&gt;eg. blast 鼓风；bluster 风狂吹；bloat 使膨胀、肿起&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;cl-&lt;/code&gt; 开头的单词，这类词通常表示一种尖脆的声音。&lt;br&gt;eg. clap 拍手声；clang 铿锵有力的撞击声；clunk 哐啷声；clatter 哗啦声；clash 撞击声；clink 叮当声&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;fl-&lt;/code&gt; 开头的单词，这类词往往含有“快速移动或运动”的含义。&lt;br&gt;eg. fly 飞；flap 飘动；flow 流动；flit 掠过&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;sk-&lt;/code&gt; 开头的单词，这类词常指表面的摩擦。&lt;br&gt;eg. skid 打滑；skate 溜冰；scrape 刮；scour 擦亮；skid 刹车&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;sl-&lt;/code&gt; 开头的单词，这类词多表示“滑”或“粘”。&lt;br&gt;eg. slick 滑溜的；sleek 光滑的；slide 滑行；slimy 粘滑的&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;sn-&lt;/code&gt; 开头的单词，这类词往往与鼻子有关。&lt;br&gt;eg. snot 鼻涕；snore 打呼噜；sneeze 打喷嚏；sniffle 抽鼻子；snuffle （吸气时）发出响声；snivel 哭鼻子；sneer 讥笑、冷笑；snicker 暗笑0&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;sp-&lt;/code&gt; 开头的单词，这类词可使人联想到水或其他液体、火药所产生的声响。&lt;br&gt;eg. spurt 喷射出；sputter 喷溅；splatter 飞溅；splash 溅湿；spit 吐唾沫；sprinkle 喷洒；spray 喷雾；spill 溅出&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;qu-&lt;/code&gt; 开头的单词，这类词往往具有“摇动、颤动”的含义。&lt;br&gt;eg. quake 颤抖、震动；quaver 声音等颤抖&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;wh-&lt;/code&gt; 开头的单词，这类词多表示一种气流的移动。&lt;br&gt;eg. whirl 旋转；whistle 吹口哨；whirr 呼呼声；wheeze 喘息；whisk 在空中掠；whizz 飕飕声；whip 用鞭子打&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;-sh&lt;/code&gt; 结尾的单词，这类词常暗示一种粗暴、迅捷的行动或事物；或者形容破裂、粉碎的响声。&lt;br&gt;eg. clash 撞击声；crush 碾碎；bash 猛击；flush 冲洗；smash 打碎&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;-ump&lt;/code&gt; 结尾的单词，这类词多表示“沉重地碰击”。&lt;br&gt;eg. lump 重重地坐下；bump 碰撞；plump 坠落；thump 重打；slump 暴跌&lt;/li&gt;
-&lt;li&gt;以 &lt;code&gt;-are&lt;/code&gt; 结尾的单词，这类词常表示强大或大噪声。&lt;br&gt;eg. flare 火焰闪耀；blare 发嘟嘟声、发出耀眼的光；glare 光闪耀、怒视&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;重叠拟声词&quot;&gt;&lt;a href=&quot;#重叠拟声词&quot; class=&quot;headerlink&quot; title=&quot;重叠拟声词&quot;&gt;&lt;/a&gt;重叠拟声词&lt;/h3&gt;&lt;p&gt;重叠拟声词是次要拟声词中最重要的一种形式，指的是一个拟声词为基词重叠而成的词。例如：hush-hush 嘘嘘；chirp-chirp 唧唧；tom-tom 咚咚；whine-whine 呜呜；tick-tick 滴答滴答等。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;英语除了三种主要的构词法，此外还有几种次要的构词方法，尽管构词量不及前几种，但在英语中也起着重要的作用。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="英语" scheme="http://www.gcusky.com/categories/%E8%8B%B1%E8%AF%AD/"/>
-    
-    
-      <category term="读书笔记" scheme="http://www.gcusky.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
