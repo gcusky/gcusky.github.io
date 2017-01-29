@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gcusky.com/"/>
-  <updated>2017-01-29T12:25:39.134Z</updated>
+  <updated>2017-01-29T12:27:55.555Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.gcusky.com/2017/01/29/project-4/"/>
     <id>http://www.gcusky.com/2017/01/29/project-4/</id>
     <published>2017-01-29T12:24:00.000Z</published>
-    <updated>2017-01-29T12:25:39.134Z</updated>
+    <updated>2017-01-29T12:27:55.555Z</updated>
     
     <content type="html">&lt;p&gt;总结了很久以前 &lt;code&gt;2014年10月份&lt;/code&gt; 的面向对象程序设计大作业，重点实践了 &lt;code&gt;swing&lt;/code&gt; 组件，对 &lt;code&gt;JFrame&lt;/code&gt; 容器有了更高层次的认识,了解了 &lt;code&gt;Java&lt;/code&gt; 事件处理机制。也体现当时的中二哈哈哈。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -57,7 +57,7 @@
 &lt;h3 id=&quot;收获&quot;&gt;&lt;a href=&quot;#收获&quot; class=&quot;headerlink&quot; title=&quot;收获&quot;&gt;&lt;/a&gt;收获&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;了解了 &lt;code&gt;swing&lt;/code&gt; 组件的使用方法，对 &lt;code&gt;JFrame&lt;/code&gt; 容器有了更高层次的认识。&lt;/li&gt;
 &lt;li&gt;了解了 &lt;code&gt;Java&lt;/code&gt; 事件处理机制以及实现了多个处理过程。&lt;/li&gt;
-&lt;li&gt;使用了抽象思维将推箱子整个游戏用数学方法建立数学模型。游戏地图为二维数组，游戏过程就是数组内数据的改变过程。充分体现了数学的重要性。&lt;/li&gt;
+&lt;li&gt;使用了抽象思维将游戏地图抽象为二维数组，游戏过程就是数组内数据的改变过程。&lt;/li&gt;
 &lt;li&gt;写代码不仅仅只是为了完成一个大作业，而是要投入感情去完成一个游戏。程序本身便是程序员孕育出来的孩子。&lt;/li&gt;
 &lt;/ol&gt;
 </content>
