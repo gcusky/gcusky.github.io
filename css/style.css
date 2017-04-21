@@ -118,7 +118,7 @@ button::-moz-focus-inner {
   padding: 0;
 }
 html {
-  font-size: 20px;
+  font-size: 18px;
 }
 body {
   font-family: "Lucida Grande", Verdana, "Helvetica Neue", Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
@@ -232,7 +232,7 @@ a {
 }
 #container .left-col {
   background: rgba(255,255,255,0.85);
-  width: 300px;
+  width: 250px;
   position: fixed;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in;
@@ -263,8 +263,29 @@ a {
   right: 0;
   min-height: 100%;
   background: rgba(255,255,255,0.8);
-  left: 300px;
+  left: 250px;
   width: auto;
+}
+@media screen and (max-width: 1140px) {
+  #container #footer .footer-left {
+    float: initial;
+    margin-bottom: 0.5em;
+  }
+  #container #footer .footer-right {
+    float: initial;
+    margin-bottom: 1em;
+  }
+  #container #footer .visit {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 1040px) {
+  #container .right-wrap {
+    display: none;
+  }
+  #container .body-wrap {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 800px) {
   #container .left-col {
@@ -560,7 +581,7 @@ a {
   text-align: center;
   margin: 13px 0;
   font-family: Times, Georgia, serif;
-  font-size: 34px;
+  font-size: 32px;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
@@ -581,8 +602,8 @@ a {
   border: 5px solid #fff;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  width: 132px;
-  height: 132px;
+  width: 130px;
+  height: 130px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -691,13 +712,13 @@ a {
 }
 #header .header-menu li a {
   font-size: 0.875rem;
-  min-width: 300px;
+  min-width: 250px;
 }
 #header .switch-area {
   position: relative;
   width: 100%;
   overflow: hidden;
-  min-height: 260px;
+  min-height: 240px;
   font-size: 0.875rem;
 }
 #header .switch-area .switch-wrap {
@@ -731,7 +752,7 @@ a {
 #header .switch-part2 {
   left: 100%;
   overflow-y: auto;
-  max-height: 260px;
+  max-height: 230px;
   font-size: 0.75rem;
 }
 #header .switch-part3 {
@@ -762,14 +783,14 @@ a {
   font-family: Arial;
 }
 #header .header-nav .social a {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  margin: 0 2px 6px;
+  margin: 0 1px 6px;
   vertical-align: middle;
-  font-size: 21.12px;
-  line-height: 32px;
+  font-size: 19.8px;
+  line-height: 30px;
   text-align: center;
   color: #fff;
   background: #6f7170;
@@ -1039,7 +1060,7 @@ a {
 }
 .hide-labels {
   position: fixed;
-  left: 378px;
+  left: 328px;
   top: 30px;
   padding: 1px;
   border: none;
@@ -1060,7 +1081,7 @@ a {
   opacity: 1;
 }
 #post-nav-button {
-  left: 300px;
+  left: 250px;
   top: 61.8%;
 }
 #post-nav-button a {
@@ -1231,7 +1252,7 @@ body .ui-tooltip {
   color: #999;
   position: relative;
   margin-right: 10px;
-  font: 20px FontAwesome;
+  font: 18px FontAwesome;
 }
 .archive-article-inner .article-meta .article-category:before {
   float: left;
@@ -1264,7 +1285,32 @@ body .ui-tooltip {
 }
 .body-wrap {
   margin-bottom: 126px;
+  width: 78%;
   overflow: hidden;
+  float: left;
+}
+.right-wrap {
+  width: 20%;
+  height: 100%;
+  margin-top: 30px;
+  overflow: hidden;
+  float: left;
+}
+.right-wrap .other {
+  height: 400px;
+  background: rgba(255,255,255,0.45);
+}
+.right-wrap .qrcode {
+  margin: 30px 0 0 0;
+  padding: 30px 0 30px 0;
+  text-align: center;
+  background: rgba(255,255,255,0.45);
+  width: 100%;
+}
+.right-wrap .qrcode p {
+  color: #696969;
+  font-weight: bold;
+  margin-bottom: 12px;
 }
 .article {
   margin: 30px;
@@ -1704,7 +1750,7 @@ li:hover {
 }
 #tocButton {
   position: fixed;
-  left: 200px;
+  left: 150px;
   top: 385px;
   font-size: 0.9em;
   font-weight: bold;
@@ -1721,12 +1767,12 @@ li:hover {
 }
 .toc-article {
   position: fixed;
-  width: 230px;
+  width: 180px;
   top: 378px;
   bottom: 1em;
   left: 0;
   margin-left: 0;
-  padding: 6px 10px 10px 42px;
+  padding: 6px 10px 10px 46px;
   -webkit-border-radius: 2.8%;
   border-radius: 2.8%;
   overflow: auto;
@@ -2106,7 +2152,7 @@ aside.comment-bar:active {
   color: #999;
   position: relative;
   margin-right: 10px;
-  font: 20px FontAwesome;
+  font: 18px FontAwesome;
 }
 .archive-article-inner .article-meta .article-category:before {
   float: left;
@@ -2895,7 +2941,7 @@ pre .javascript .function {
 .article-category::before {
   float: left;
   color: #999;
-  font: 20px FontAwesome;
+  font: 18px FontAwesome;
   margin-right: 5px;
   margin-top: 0.333333333333333rem;
 }
@@ -2912,7 +2958,7 @@ pre .javascript .function {
 .article-pop-out:before {
   color: #999;
   content: "\f08d";
-  font: 20px FontAwesome;
+  font: 18px FontAwesome;
   float: left;
   margin-right: 5px;
   margin-top: 0.333333333333333rem;

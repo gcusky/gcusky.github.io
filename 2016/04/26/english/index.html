@@ -505,7 +505,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"英语发展历史　| GCUSKY_SPACE　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"英语发展历史　| GCUSKY_SPACE　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -584,6 +584,37 @@
     <script>
         
     </script>
+</div>
+      <div class="right-wrap">
+  <div class="other">
+    <p>test of gcusky</p>
+  </div>
+  <div class="qrcode">
+    <p>本页二维码</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB4ElEQVR42u3aS3KDQAwFQO5/6eQATvCThEOYaVYul2FoL1T6HV9LXAcGBgYGBgYGxr9hHPH1+vvkOT8cH997/jQMDIzdGG9C2wvjt98kr5jAIjwGBsaWjPMgO+Hl9+bvgIGBgZEfk6SPb5I8DAwMjD8JuPkzq38TBgYGRq+AzMvd87L2tlocAwPjgYzqYOATn2+Yb2BgYDyEUV5xyI8JRgK37YxgYGA8itFrk+XfJMlf3oDDwMDAyNcp5qsVeeBu1uIYGBjLMfIjk5RxkiAmoRYDA2M3RnUYMG/o91LJZrsNAwNjIUZ+WBJMq2th1XMxMDAwJqRq6BwlnRgYGNswqotc1VSvt8zR3BnBwMDYhtErPqvrX72yGQMDY09G0jhLxpZ5cZv/HRgYGBiTZn2S3uXpZq/phoGBsQ+jmg5WQ3O19dYcDGBgYCzN6A0sy62xS8taDAyMPRmTQFmlVscGGBgYGNVrQqreVRhhYmBgLM2YLEP0vukNDKJaHAMDY2lGHmSrgfKqQIyBgYGRL0nkKWOSUFYDPQYGBsZkeaIKTpYwRssWGBgY2zOSNDF/fnUVAwMDY2fGJLHLQ3M1EfxIuw0DA+OBjF4xeW3hWm7wYWBgbMN47oWBgYGBgYGBcev1DXOU5Ck9bb4EAAAAAElFTkSuQmCC" height="160" width="160">
+  </div>
+  <script>
+    $(window).scroll(function()
+    { 
+      //qrcode跟随滚动
+      var h = $(window).height();
+      var top = $(window).scrollTop();
+      var right = $('.right-wrap .other');
+      var rightHeight = right.height();
+      var qrcode = $('.qrcode').prev().offset();
+      var fixedTop = qrcode.top;
+      console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+        if(top>=rightHeight+30)
+        {
+          $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});
+        }
+        else
+        {
+            $('.qrcode').css({'position':'static', 'top':0,'width': '100%' });   
+        } 
+       /* return true;*/
+    });
+  </script>
 </div>
       <footer id="footer">
     <div class="outer">
