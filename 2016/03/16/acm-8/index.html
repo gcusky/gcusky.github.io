@@ -25,7 +25,7 @@
 <meta property="og:description" content="时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3
 描述
 现在有很多物品（它们是可以分割的），我们知道它们每个物品的单位重量的价值$v$和重量$w(1&amp;lt;=v,w&amp;lt;=10)$；如果给你一个背包它能容纳的重量为$m(10&amp;lt;=m&amp;lt;=20)$,你所要做的就是把物品装到背包里，使背包里的物品的价值总和最大。">
-<meta property="og:updated_time" content="2016-04-19T11:48:56.003Z">
+<meta property="og:updated_time" content="2016-04-19T11:48:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NYOJ 106-背包问题">
 <meta name="twitter:description" content="时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3
@@ -190,7 +190,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -268,7 +268,7 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -516,6 +516,8 @@
 </div>
       <div class="right-wrap">
   <div class="other">
+
+
     <p>test of gcusky</p>
   </div>
   <div class="qrcode">
@@ -530,9 +532,9 @@
       var top = $(window).scrollTop();
       var right = $('.right-wrap .other');
       var rightHeight = right.height();
-      var qrcode = $('.qrcode').prev().offset();
-      var fixedTop = qrcode.top;
-      console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
         if(top>=rightHeight+30)
         {
           $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});

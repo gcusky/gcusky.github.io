@@ -25,7 +25,7 @@
 <meta property="og:description" content="时间限制：1000 ms  |  内存限制：65535 KB  |  难度：5
 描述
 在漆黑的夜里，$N$位旅行者来到了一座狭窄而且没有护栏的桥边。如果不借助手电筒的话，大家是无论如何也不敢过桥去的。不幸的是，$N$个人一共只带了一只手电筒，而桥窄得只够让两个人同时过。如果各自单独过桥的话，$N$人所需要的时间已知；而如果两人同时过桥，所需要的时间就是走得比较慢的那个人单独行动时所需的时间。问题是">
-<meta property="og:updated_time" content="2016-04-19T11:48:44.861Z">
+<meta property="og:updated_time" content="2016-04-19T11:48:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NYOJ 47-过河问题">
 <meta name="twitter:description" content="时间限制：1000 ms  |  内存限制：65535 KB  |  难度：5
@@ -190,7 +190,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -268,7 +268,7 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -532,6 +532,8 @@
 </div>
       <div class="right-wrap">
   <div class="other">
+
+
     <p>test of gcusky</p>
   </div>
   <div class="qrcode">
@@ -546,9 +548,9 @@
       var top = $(window).scrollTop();
       var right = $('.right-wrap .other');
       var rightHeight = right.height();
-      var qrcode = $('.qrcode').prev().offset();
-      var fixedTop = qrcode.top;
-      console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
         if(top>=rightHeight+30)
         {
           $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});

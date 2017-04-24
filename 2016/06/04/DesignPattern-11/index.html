@@ -24,7 +24,7 @@
 <meta property="og:description" content="模式动机建立一种对象与对象之间的依赖关系，一个对象发生改变时将自动通知其他对象，其他对象将相应做出反应。在此，发生改变的对象称为观察目标，而被通知的对象称为观察者，一个观察目标可以对应多个观察者，而且这些观察者之间没有相互联系，可以根据需要增加和删除观察者，使得系统更易于扩展，这就是观察者模式的模式动机。
 模式定义观察者模式（Observer Pattern）：定义对象间的一种一对多依赖关系，使得">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-7.png">
-<meta property="og:updated_time" content="2016-06-04T08:49:00.412Z">
+<meta property="og:updated_time" content="2016-06-04T08:49:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="观察者模式">
 <meta name="twitter:description" content="模式动机建立一种对象与对象之间的依赖关系，一个对象发生改变时将自动通知其他对象，其他对象将相应做出反应。在此，发生改变的对象称为观察目标，而被通知的对象称为观察者，一个观察目标可以对应多个观察者，而且这些观察者之间没有相互联系，可以根据需要增加和删除观察者，使得系统更易于扩展，这就是观察者模式的模式动机。
@@ -189,7 +189,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -267,7 +267,7 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -506,6 +506,8 @@
 </div>
       <div class="right-wrap">
   <div class="other">
+
+
     <p>test of gcusky</p>
   </div>
   <div class="qrcode">
@@ -520,9 +522,9 @@
       var top = $(window).scrollTop();
       var right = $('.right-wrap .other');
       var rightHeight = right.height();
-      var qrcode = $('.qrcode').prev().offset();
-      var fixedTop = qrcode.top;
-      console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
         if(top>=rightHeight+30)
         {
           $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});

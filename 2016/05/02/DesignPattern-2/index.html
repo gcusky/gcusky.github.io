@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://cloud.gcusky.com/uml/umloo-10.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/umloo-11.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/umloo-12.jpg">
-<meta property="og:updated_time" content="2016-05-02T14:01:56.584Z">
+<meta property="og:updated_time" content="2016-05-02T14:01:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象设计原则">
 <meta name="twitter:description" content="面向对象设计原则是学习设计模式的基础，每一种设计模式都符合某一种或多种面向对象设计原则。通过在软件开发中使用这些原则可以提高软件的可维护性和可复用性，让我们可以设计出更加灵活也更容易扩展的软件系统，实现可维护性复用的目标。">
@@ -197,7 +197,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -275,7 +275,7 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -721,6 +721,8 @@
 </div>
       <div class="right-wrap">
   <div class="other">
+
+
     <p>test of gcusky</p>
   </div>
   <div class="qrcode">
@@ -735,9 +737,9 @@
       var top = $(window).scrollTop();
       var right = $('.right-wrap .other');
       var rightHeight = right.height();
-      var qrcode = $('.qrcode').prev().offset();
-      var fixedTop = qrcode.top;
-      console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
         if(top>=rightHeight+30)
         {
           $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});

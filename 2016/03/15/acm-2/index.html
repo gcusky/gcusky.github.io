@@ -25,7 +25,7 @@
 <meta property="og:description" content="时间限制：3000 ms  |  内存限制：65535 KB  |  难度：1
 描述
 有一个整型偶数$n(2&amp;lt;= n &amp;lt;=10000)$,你要做的是：先把$1$到$n$中的所有奇数从小到大输出，再把所有的偶数从小到大输出。">
-<meta property="og:updated_time" content="2016-04-19T11:48:32.119Z">
+<meta property="og:updated_time" content="2016-04-19T11:48:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NYOJ 11-奇偶数分离">
 <meta name="twitter:description" content="时间限制：3000 ms  |  内存限制：65535 KB  |  难度：1
@@ -190,7 +190,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -268,7 +268,7 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -520,6 +520,8 @@
 </div>
       <div class="right-wrap">
   <div class="other">
+
+
     <p>test of gcusky</p>
   </div>
   <div class="qrcode">
@@ -534,9 +536,9 @@
       var top = $(window).scrollTop();
       var right = $('.right-wrap .other');
       var rightHeight = right.height();
-      var qrcode = $('.qrcode').prev().offset();
-      var fixedTop = qrcode.top;
-      console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
         if(top>=rightHeight+30)
         {
           $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});

@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://www.gcusky.com/2016/06/07/python-1/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
 <meta property="og:description" content="问题在 Python 中实施函数 count_words()，该函数将字符串 s 和数字 n 用作输入，并返回 s 中 n 个出现频率最高的单词。返回值应该是一个元组列表 - 出现频率最高的 n 个单词及其相应的出现次数 [(, ), (, ), ...]，按出现次数的降序排列。您可以假设所有输入都是小写形式，并且不含标点符号或其他字符（只包含字母和单个分隔空格）。如果出现次数相同，则按字母顺序排">
-<meta property="og:updated_time" content="2016-06-07T13:12:27.735Z">
+<meta property="og:updated_time" content="2016-06-07T13:12:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 实现统计字数">
 <meta name="twitter:description" content="问题在 Python 中实施函数 count_words()，该函数将字符串 s 和数字 n 用作输入，并返回 s 中 n 个出现频率最高的单词。返回值应该是一个元组列表 - 出现频率最高的 n 个单词及其相应的出现次数 [(, ), (, ), ...]，按出现次数的降序排列。您可以假设所有输入都是小写形式，并且不含标点符号或其他字符（只包含字母和单个分隔空格）。如果出现次数相同，则按字母顺序排">
@@ -184,7 +184,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -262,7 +262,7 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -489,6 +489,8 @@
 </div>
       <div class="right-wrap">
   <div class="other">
+
+
     <p>test of gcusky</p>
   </div>
   <div class="qrcode">
@@ -503,9 +505,9 @@
       var top = $(window).scrollTop();
       var right = $('.right-wrap .other');
       var rightHeight = right.height();
-      var qrcode = $('.qrcode').prev().offset();
-      var fixedTop = qrcode.top;
-      console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
         if(top>=rightHeight+30)
         {
           $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});

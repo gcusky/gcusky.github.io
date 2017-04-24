@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-4.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-5.jpg">
 <meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-6.jpg">
-<meta property="og:updated_time" content="2016-05-28T11:41:19.541Z">
+<meta property="og:updated_time" content="2016-05-28T11:41:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建型模式与三大工厂模式">
 <meta name="twitter:description" content="创建型模式
@@ -197,7 +197,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -275,7 +275,7 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -583,6 +583,8 @@
 </div>
       <div class="right-wrap">
   <div class="other">
+
+
     <p>test of gcusky</p>
   </div>
   <div class="qrcode">
@@ -597,9 +599,9 @@
       var top = $(window).scrollTop();
       var right = $('.right-wrap .other');
       var rightHeight = right.height();
-      var qrcode = $('.qrcode').prev().offset();
-      var fixedTop = qrcode.top;
-      console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
         if(top>=rightHeight+30)
         {
           $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});

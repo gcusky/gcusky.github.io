@@ -27,7 +27,7 @@ $$\begin{matrix}10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \\9 &amp;amp; 16 &amp;a
 描述
 在$n×n$方阵里填入$1,2,…,n×n$,要求填成蛇形。例如$n=4$时方阵为：
 $$\begin{matrix}10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \\9 &amp;amp; 16 &amp;amp; 13 &amp;amp; 2 \\8 &amp;amp; 15 &amp;amp; 14 &amp;amp; 3 \\7 &amp;amp;">
-<meta property="og:updated_time" content="2016-04-19T11:48:41.066Z">
+<meta property="og:updated_time" content="2016-04-19T11:48:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NYOJ 33-蛇形填数">
 <meta name="twitter:description" content="时间限制：3000 ms  |  内存限制：65535 KB  |  难度：3
@@ -193,7 +193,7 @@ $$\begin{matrix}10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \\9 &amp;amp; 16 &amp;a
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -271,7 +271,7 @@ $$\begin{matrix}10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \\9 &amp;amp; 16 &amp;a
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:gcusky@163.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
                             
@@ -517,6 +517,8 @@ $$\begin{matrix}10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \\9 &amp;amp; 16 &amp;a
 </div>
       <div class="right-wrap">
   <div class="other">
+
+
     <p>test of gcusky</p>
   </div>
   <div class="qrcode">
@@ -531,9 +533,9 @@ $$\begin{matrix}10 &amp;amp; 11 &amp;amp; 12 &amp;amp; 1 \\9 &amp;amp; 16 &amp;a
       var top = $(window).scrollTop();
       var right = $('.right-wrap .other');
       var rightHeight = right.height();
-      var qrcode = $('.qrcode').prev().offset();
-      var fixedTop = qrcode.top;
-      console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
         if(top>=rightHeight+30)
         {
           $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});
