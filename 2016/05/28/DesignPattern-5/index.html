@@ -20,7 +20,7 @@
 单例模式的要点有三个：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。单例模式是一种对象创建型模式。单例模式又名单件模式或单态模式。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例模式">
-<meta property="og:url" content="http://www.gcusky.com/2016/05/28/DesignPattern-5/index.html">
+<meta property="og:url" content="http://blog.gcusky.com/2016/05/28/DesignPattern-5/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
 <meta property="og:description" content="模式定义
 单例模式(Singleton Pattern)：单例模式确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例，这个类称为单例类，它提供全局访问的方法。
@@ -102,7 +102,7 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?5466170a6e5af0cb8af996af9ed0ea67";
+            hm.src = "//hm.baidu.com/hm.js?efa5240456e869b14f74fb48fb6f8b60";
             var s = document.getElementsByTagName("script")[0]; 
             s.parentNode.insertBefore(hm, s);
         })();
@@ -372,8 +372,8 @@
         <p><span>发布时间:</span>2016-05-28, 19:27:09</p>
         <p><span>最后更新:</span>2016-05-28, 19:31:16</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/28/DesignPattern-5/" title="单例模式">http://www.gcusky.com/2016/05/28/DesignPattern-5/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/05/28/DesignPattern-5/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/28/DesignPattern-5/" title="单例模式">http://blog.gcusky.com/2016/05/28/DesignPattern-5/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.gcusky.com/2016/05/28/DesignPattern-5/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -530,7 +530,7 @@
   </div>
   <div class="qrcode">
     <p>本页二维码</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3aQZICMQgFUO9/aecAlj0fSMdovawsS9u8LAICj+dPrwceHh4eHh4eHt5hvEe8Xr/1+vqfH355WvIr5b3h4eHhbeEl27p+/3pz+TPnn8HDw8PbyXt34b77TPU5eZDo7Q0PDw/vfF4SGPIQkgQePDw8vO/lJd+9flrvgPDw8PBO4yV/+PNN5Ff/2oIFHh4e3h5e9Vrf+Xprfw8PDw8v4JVHmgZHcP2c56KFh4eHdzcvv4iTVDgZnMpT9nw/eHh4ePt5eVE1Hy3NCxbJO0nxAg8PD+8cXrUkkSOTo8yLxXh4eHh7ePnYU3Ic1dAyGR0olHHx8PDwbuPlQ069QBIlxK2d4OHh4e3kVVtQ+ecngSFvm+Hh4eGdxuuVXPNLPD++BbUWPDw8vBt4ydW8CjkZTbilv4eHh4cX8/Ji7qS5tXaw4J/EHQ8PD28Lb9K+ut5unhD3Srd4eHh4n+X12leTAaw8lS+k+3h4eHjbedXUtjc4NRkpwMPDwzuBl4eKPPlOyhyrAgweHh7eTl5SXMhT4VUlhmq4wsPDw9vPqxYIJkeQN9t6iTUeHh7eTl4zhY1LDL3hqmTh4eHhfZZXTWEnoSIvfIyKEXh4eHhLedWVlxJWFYXLhV08PDy8m3m9tDVvWVXT96R4URgdwMPDw7uNN2nqTxpgk8Cw4B8DHh4e3pjXu6CTJLtwrbdCFB4eHt538ZKkOW96JSGn2QDDw8PDO4BXbZVVN50n3Hh4eHif4iXFiF6LK0+a8yQbDw8P77O8vASQDw3MGdV2Gh4eHt4e3u8tPDw8PDw8PDy8A9Yf+RD3E28uNjwAAAAASUVORK5CYII=" height="160" width="160">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYUlEQVR42u3aW27cMBAEwL3/pZMDOJG7hxQlG6UvYR8miwbE2eZ8/vzq64OHh4eHh4eHh/cy3ie+rj//9d1/DBx8d2VueHh4eCd53zxqy0lcwxL2bG54eHh453krj+x8+ORvLs0NDw8P72W8/xayl59JFiu5x8PDw/uJvLxELopgPDw8vB/LayeUx77XG8ZsmfDw8PCe5a1M9+77B8738PDw8C55dUtTUObm7QJtKFw3XeHh4eHdwMtL3jyWnX1mFlsMsxY8PDy8Tbw8AljZVIriuGwvwMPDwzvDyyOA9VaD9uhruAR4eHh4R3h72wLyqSTLVJfyeHh4eEd4+QCz4jtflJWtBQ8PD+8kbxak5qV5slj5iN8sOh4eHt5BXn6U1Ua9SawwC0fw8PDwzvPyx277Ss5oG7bw8PDwnuW1gWleKK9MelaO4+Hh4Z3kJcdLbcE9A6wvIh4eHt7dvOR4KTmwX4mA23HrXwx4eHh4W3lngoNicuVxFx4eHt6zvJUNYxbmzvB16wAeHh7eVl4Omx3n59+KmviD5cDDw8O7mzcLEdbbsBJ8/joeHh7eeV7bejUrtZNIdxbs4uHh4Z3k5Y1W+X0S7LZld/EPwMPDw7uZt14Et++2JfKGfQ8PDw9vK+8TX9fD5A/xWYNX0cKFh4eHd4Q3C1uT2KI9bJsdpOHh4eE9xWsbTFeOyvINpi6+8fDw8F7Gywvf9S1nuKB4eHh4r+S1j/JZuNBuCXh4eHjneSstUOstVm2MW28MeHh4eFt5bRAwi3p3YeqNAQ8PD28r7/ddeHh4eHh4eHh4L7j+Ap1LIUxpF/uRAAAAAElFTkSuQmCC" height="160" width="160">
   </div>
   <script>
     $(window).scroll(function()

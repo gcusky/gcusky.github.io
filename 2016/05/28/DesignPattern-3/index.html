@@ -20,7 +20,7 @@
 创建型模式隐藏了类的实例的创建细节，通过隐藏对象如何被创建和组合在一起达到使整个系统独立的目的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建型模式与三大工厂模式">
-<meta property="og:url" content="http://www.gcusky.com/2016/05/28/DesignPattern-3/index.html">
+<meta property="og:url" content="http://blog.gcusky.com/2016/05/28/DesignPattern-3/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
 <meta property="og:description" content="创建型模式
 创建型模式(Creational Pattern)对类的实例化过程进行了抽象，能够将软件模块中对象的创建和对象的使用分离。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符合单一职责原则。
@@ -106,7 +106,7 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?5466170a6e5af0cb8af996af9ed0ea67";
+            hm.src = "//hm.baidu.com/hm.js?efa5240456e869b14f74fb48fb6f8b60";
             var s = document.getElementsByTagName("script")[0]; 
             s.parentNode.insertBefore(hm, s);
         })();
@@ -431,8 +431,8 @@
         <p><span>发布时间:</span>2016-05-28, 16:25:52</p>
         <p><span>最后更新:</span>2016-05-28, 19:41:19</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/28/DesignPattern-3/" title="创建型模式与三大工厂模式">http://www.gcusky.com/2016/05/28/DesignPattern-3/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/05/28/DesignPattern-3/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/28/DesignPattern-3/" title="创建型模式与三大工厂模式">http://blog.gcusky.com/2016/05/28/DesignPattern-3/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.gcusky.com/2016/05/28/DesignPattern-3/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -589,7 +589,7 @@
   </div>
   <div class="qrcode">
     <p>本页二维码</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYklEQVR42u3aQW7DMAwEQP//0+21QJFkSUqyEYxPRevEGh8kdsnr56uvCw8PDw8PDw8P72G8K77+3v//G1592/s7/39qsjY8PDy8k7wPW+3bB7+H5cjkudHa8PDw8A7y8iXmG3r1dczXhoeHh/c0XlLU5sjkfjw8PLzv4/UOj7xwx8PDw3syL3lwb7lJef2IrAUPDw8v5vUaYGd+vq2/h4eHh/eCVx5pKra4esHusqErPDw8vA28tc2n6oaeNMbyQS48PDy8u3jJBp0fBtUXUX3ReHh4eHfx5kMACzb04qderhYPDw/vCC9v+eePrBbNOeDDCvHw8PA286pRQvVh1dA2HzhoptR4eHh4Y96k7VRtYvUCjioSDw8Pbzcv2YLLQWp8nOTjCM0wAg8PD28zbz4+1RtCrYYU5f8Y8PDw8Lbx8rGAanm96qVEATQeHh7eZt4c01tctd1VGHTAw8PDO8KrRg/5GFYv8sijXjw8PLy7eL0SOd+y54VyoS2Hh4eHt5mXHw/l0rYV484PEjw8PLzdvGqDP9/Ec8C8eYaHh4d3klcdFKhGGKs2/VF/Dw8PD+8gL39As/yNI+Pk4MHDw8M7w6tu8XlxnIDzUa1lYQQeHh7emFduL8WwfCxg7XgWHh4e3m7eFV956ZyXxflgQSFuxsPDwzvCm7S+qpFrXnbngTIeHh7eXbzJYZAXxHlrrRpw4OHh4T2T9/7O5K+9A2YURuDh4eE9gNcLJiYvCA8PD++ZvDyMSH7fi3eT32yPcfHw8PA2NMDWDlctjjnw8PDwNvO+78LDw8PDw8PDw3vA9QvmdQdKNk7hawAAAABJRU5ErkJggg==" height="160" width="160">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbElEQVR42u3aQVLDMAwF0Nz/0nAAaPMl2W6m87JioEnzvJDFt66fr74uPDw8PDw8PDy8h/Gu+PrnQX/+mn/+1b3zd8PDw8M7w7sptS++OAG8f2ayHOV3w8PDwzvIS0r2+8/PC/3k3fDw8PCezMs/836BkuXDw8PD+w5ete1uxgp4eHh4j+cl//AnwUQSRvS+a3vWgoeHhxfz8pJ9/uej53t4eHh4Aa9XuKsjAvkAweKhKzw8PLwNvLwQJ+1vD9PbGPDw8PCewJtHCdVNJWcnR2t4eHh4Z3hJpFv9fbJMSTvei3fx8PDwdvPyDWAe7/YC3DwEwcPDwzvD6xXxattd3UJyWNRS4+Hh4S3lVUPbpGT3SnweRtw033h4eHgHeb0XmhT0BFmNJPDw8PDO8KpRaW9L6LXyiycj8PDw8Bbx8ha5Fz1Uh66q2w8eHh7eSV71eKlXuNe27DffhYeHh3eE1zvUnwxOVQ/YFs+U4eHh4Q14kwOqXvDaOwAr3IWHh4d3hDePaCeHYdVFubkXDw8P7wiv1zTnBb26MeTN+rJ9Dw8PD2/Qc+blvholVIerkmUq73t4eHh4G3j5BlAdFEgOzKrLjYeHh/cc3vwwbD5YkD8fDw8P7ySveq0q7slW1At28fDw8HbzrvhKIoMkru0t04KhKzw8PLylvOpBft5SV2OLLRsDHh4e3jZeXqCTBjpvuKsbVTNrwcPDw/sob76R9AYFomYdDw8P78G8ZDggD3N7w1uFMAIPDw9vA29yKFWNdwuvGwcWeHh4eCd5vQgged1qwJFEGzeLi4eHh7eZ930XHh4eHh4eHh7eA65fPs1dycZatq8AAAAASUVORK5CYII=" height="160" width="160">
   </div>
   <script>
     $(window).scroll(function()
