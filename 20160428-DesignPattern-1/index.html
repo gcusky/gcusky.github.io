@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="GCUSKY" />
+
+
+
+<meta name="description" content="设计模式是一套被反复使用、代码设计经验的总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式概述">
+<meta property="og:url" content="http://blog.gcusky.com/20160428-DesignPattern-1/index.html">
+<meta property="og:site_name" content="GCUSKY_SPACE">
+<meta property="og:description" content="设计模式是一套被反复使用、代码设计经验的总结。">
+<meta property="og:updated_time" content="2016-04-30T14:03:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式概述">
+<meta name="twitter:description" content="设计模式是一套被反复使用、代码设计经验的总结。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>设计模式概述 | GCUSKY_SPACE</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?efa5240456e869b14f74fb48fb6f8b60";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/gcusky.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">GCUSKY</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">云山自清，青水自流。</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/2016/03/25/wiki/">WIKI</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JUnit/">JUnit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NYOJ/">NYOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL练习/">STL练习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZOJ/">ZOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp-servlet/">jsp/servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scikit-learn/">scikit-learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swing/">swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weblogic/">weblogic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分法/">二分法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分治法/">分治法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创建型模式/">创建型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/回溯法/">回溯法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搜索/">搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数值法/">数值法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学建模/">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/白盒测试/">白盒测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/矩阵/">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/结构型模式/">结构型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行为型模式/">行为型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语言入门/">语言入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心算法/">贪心算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性方程/">非线性方程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象设计原则/">面向对象设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">GCUSKY</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/gcusky.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">GCUSKY</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">云山自清，青水自流。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/2016/03/25/wiki/">WIKI</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" target="_blank" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-DesignPattern-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/20160428-DesignPattern-1/" class="article-date">
+      <time datetime="2016-04-28T09:18:41.000Z" itemprop="datePublished">2016-04-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      设计模式概述
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>设计模式是一套被反复使用、代码设计经验的总结。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="模式的诞生与定义"><a href="#模式的诞生与定义" class="headerlink" title="模式的诞生与定义"></a>模式的诞生与定义</h2><h3 id="模式的诞生"><a href="#模式的诞生" class="headerlink" title="模式的诞生"></a>模式的诞生</h3><ul>
+<li>模式起源于建筑业而非软件业</li>
+<li>模式(Pattern)之父——美国加利佛尼亚大学环境结构中心研究所所长Christopher Alexander博士<br>《_A Pattern Language: Towns, Buildings, Construction_》—— 253个建筑和城市规划模式</li>
+</ul>
+<h3 id="模式的定义"><a href="#模式的定义" class="headerlink" title="模式的定义"></a>模式的定义</h3><ul>
+<li><strong>Context</strong>（模式可适用的前提条件）</li>
+<li><strong>Theme或Problem</strong>（在特定条件下要解决的目标问题）</li>
+<li><strong>Solution</strong>（对目标问题求解过程中各种物理关系的记述）</li>
+<li>Alexander：每个模式都描述了一个<strong>在我们的环境中不断出现的问题</strong>，然后描述了该问题的<strong>解决方案</strong>的核心，通过这种方式，我们可以无数次地重用那些已有的解决方案，无需再重复相同的工作。 </li>
+<li>A pattern is a <strong>solution</strong> to a <strong>problem</strong> in a <strong>context</strong> —— 模式是在<strong>特定环境</strong>中<strong>解决问题</strong>的一种<strong>方案</strong></li>
+</ul>
+<h3 id="软件模式"><a href="#软件模式" class="headerlink" title="软件模式"></a>软件模式</h3><ul>
+<li>1990年，软件工程界开始关注Christopher Alexander等在这一住宅、公共建筑与城市规划领域的重大突破，最早将该模式的思想引入软件工程方法学的是1991-1992年以“四人组(Gang of Four，GoF，分别是Erich Gamma, Richard Helm, Ralph Johnson和John Vlissides)”自称的四位著名软件工程学者，他们在1994年归纳发表了23种在软件开发中使用频率较高的设计模式，旨在<strong>用模式来统一沟通面向对象方法在分析、设计和实现间的鸿沟</strong>。</li>
+<li>软件模式是将模式的一般概念应用于软件开发领域，即<strong>软件开发的总体指导思路或参照样板</strong>。软件模式并非仅限于设计模式，还包括架构模式、分析模式和过程模式等，实际上，<strong>在软件生存期的每一个阶段都存在着一些被认同的模式</strong>。</li>
+<li>软件模式可以认为是<strong>对软件开发这一特定“问题”的“解法”的某种统一表示</strong>，它和Alexander所描述的模式定义完全相同，即<strong>软件模式等于一定条件下的出现的问题以及解法</strong>。软件模式的基础结构由4个部分构成：<strong>问题描述、前提条件（环境或约束条件）、解法和效果</strong>。 </li>
+</ul>
+<h2 id="设计模式的定义与分类"><a href="#设计模式的定义与分类" class="headerlink" title="设计模式的定义与分类"></a>设计模式的定义与分类</h2><h3 id="设计模式的定义"><a href="#设计模式的定义" class="headerlink" title="设计模式的定义"></a>设计模式的定义</h3><ul>
+<li><strong>设计模式(Design Pattern)</strong>是一套<strong>被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结</strong>，使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。</li>
+</ul>
+<h3 id="设计模式的基本要素"><a href="#设计模式的基本要素" class="headerlink" title="设计模式的基本要素"></a>设计模式的基本要素</h3><ul>
+<li>设计模式一般有如下几个基本要素：模式名称、问题、目的、解决方案、效果、实例代码和相关设计模式，其中的关键元素包括以下四个方面：<ul>
+<li>模式名称 (Pattern name) </li>
+<li>问题 (Problem) </li>
+<li>解决方案 (Solution) </li>
+<li>效果 (Consequences) </li>
+</ul>
+</li>
+</ul>
+<h3 id="设计模式的分类"><a href="#设计模式的分类" class="headerlink" title="设计模式的分类"></a>设计模式的分类</h3><ul>
+<li>根据其<strong>目的</strong>（模式是用来做什么的）可分为<strong>创建型(Creational)</strong>，<strong>结构型(Structural)</strong>和<strong>行为型(Behavioral)</strong>三种：<ul>
+<li>创建型模式主要用于<strong>创建对象</strong>。</li>
+<li>结构型模式主要用于<strong>处理类或对象的组合</strong>。</li>
+<li>行为型模式主要用于<strong>描述对类或对象怎样交互和怎样分配职责</strong>。</li>
+</ul>
+</li>
+<li>根据<strong>范围</strong>，即模式主要是用于处理类之间关系还是处理对象之间的关系，可分为<strong>类模式</strong>和<strong>对象模式</strong>两种：<ul>
+<li>类模式<strong>处理类和子类之间的关系</strong>，这些关系通过继承建立，在编译时刻就被确定下来，是属于<strong>静态</strong>的。 </li>
+<li>对象模式<strong>处理对象间的关系</strong>，这些关系在运行时刻变化，更具<strong>动态</strong>性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="GoF设计模式简介"><a href="#GoF设计模式简介" class="headerlink" title="GoF设计模式简介"></a>GoF设计模式简介</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">范围\目的</th>
+<th style="text-align:center">创建型模式</th>
+<th style="text-align:center">结构型模式</th>
+<th style="text-align:center">行为型模式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>类模式</strong></td>
+<td style="text-align:center">工厂方法模式</td>
+<td style="text-align:center">（类）适配器模式</td>
+<td style="text-align:center">解释器模式<br>模板方法模式</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>对象模式</strong></td>
+<td style="text-align:center">抽象工厂模式<br>建造者模式<br>原型模式<br>单例模式</td>
+<td style="text-align:center">（对象）适配器模式<br>桥接模式<br>组合模式<br>装饰模式<br>外观模式<br>享元模式<br>代理模式</td>
+<td style="text-align:center">职责链模式<br>命令模式<br>迭代器模式<br>中介者模式<br>备忘录模式<br>观察者模式<br>状态模式<br>策略模式<br>访问者模式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="设计模式的优点"><a href="#设计模式的优点" class="headerlink" title="设计模式的优点"></a>设计模式的优点</h2><p>设计模式是从许多优秀的软件系统中总结出的<strong>成功的、能够实现可维护性复用的设计方案</strong>，使用这些方案将避免我们做一些重复性的工作，而且可以设计出高质量的软件系统。</p>
+<p>设计模式的主要优点如下：</p>
+<ul>
+<li>设计模式<strong>融合了众多专家的经验</strong>，并以一种<strong>标准的形式</strong>供广大开发人员所用，它提供了<strong>一套通用的设计词汇和一种通用的语言</strong>以方便开发人员之间沟通和交流，使得设计方案更加通俗易懂。对于使用不同编程语言的开发和设计人员可以通过设计模式来交流系统设计方案，每一个模式都对应一个标准的解决方案，设计模式<strong>可以降低开发人员理解系统的复杂度</strong>。</li>
+<li>设计模式使人们可以更加<strong>简单方便地复用成功的设计和体系结构</strong>，将已证实的技术表述成设计模式也会使新系统开发者更加容易理解其设计思路。设计模式使得重用成功的设计更加容易，并避免那些导致不可重用的设计方案。</li>
+<li>设计模式<strong>使得设计方案更加灵活，且易于修改</strong>。 </li>
+<li>设计模式的使用将<strong>提高软件系统的开发效率和软件质量</strong>，且在一定程度上<strong>节约设计成本</strong>。 </li>
+<li>设计模式<strong>有助于初学者更深入地理解面向对象思想</strong>，一方面可以帮助初学者更加方便地阅读和学习现有类库与其他系统中的源代码，另一方面还可以提高软件的设计水平和代码质量。</li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p> <a href="http://item.jd.com/10854678.html" target="_blank" rel="external">《设计模式》</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/20160428-DesignPattern-1/">设计模式概述</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
+        <p><span>发布时间:</span>2016-04-28, 17:18:41</p>
+        <p><span>最后更新:</span>2016-04-30, 22:03:23</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/20160428-DesignPattern-1/" title="设计模式概述">http://blog.gcusky.com/20160428-DesignPattern-1/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.gcusky.com/20160428-DesignPattern-1/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/20160430-DesignPattern/">
+                    UML 类图
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/20160427-english-2/">
+                    英语基本构词法之词缀法
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模式的诞生与定义"><span class="toc-number">1.</span> <span class="toc-text">模式的诞生与定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模式的诞生"><span class="toc-number">1.1.</span> <span class="toc-text">模式的诞生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式的定义"><span class="toc-number">1.2.</span> <span class="toc-text">模式的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件模式"><span class="toc-number">1.3.</span> <span class="toc-text">软件模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模式的定义与分类"><span class="toc-number">2.</span> <span class="toc-text">设计模式的定义与分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设计模式的定义"><span class="toc-number">2.1.</span> <span class="toc-text">设计模式的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计模式的基本要素"><span class="toc-number">2.2.</span> <span class="toc-text">设计模式的基本要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计模式的分类"><span class="toc-number">2.3.</span> <span class="toc-text">设计模式的分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GoF设计模式简介"><span class="toc-number">3.</span> <span class="toc-text">GoF设计模式简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模式的优点"><span class="toc-number">4.</span> <span class="toc-text">设计模式的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">4.1.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"设计模式概述　| GCUSKY_SPACE　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2130821';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/20160430-DesignPattern/" title="上一篇: UML 类图">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/20160427-english-2/" title="下一篇: 英语基本构词法之词缀法">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/20170217-weblogic/">导入dmp、Weblogic创建域</a></li><li class="post-list-item"><a class="post-list-link" href="/20170129-project-4/">推箱子</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-scikit-learn-translation/">【外文翻译】Scikit-learn：在Python中进行机器学习</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-project-3/">学生信息管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-2/">献血管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-1/">产品销售管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170115-hexo-1/">博客样式更新</a></li><li class="post-list-item"><a class="post-list-link" href="/20170109-life2/">2017伊始-随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-python-1/">Python 实现统计字数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-acm-13/">高斯消元</a></li><li class="post-list-item"><a class="post-list-link" href="/20160605-python/">Python简单入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-11/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-10/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-acm-12/">矩阵的基本变换</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-9/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-8/">外观模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-7/">桥接模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-6/">结构型模式之适配器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-5/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-4/">原形模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-3/">创建型模式与三大工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-english-5/">英语的其他构词法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-DesignPattern-2/">面向对象设计原则</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-4/">英语基本构词法之转换法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-3/">英语基本构词法之合成法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160430-DesignPattern/">UML 类图</a></li><li class="post-list-item"><a class="post-list-link" href="/20160428-DesignPattern-1/">设计模式概述</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-2/">英语基本构词法之词缀法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-1/">英语词汇文化内涵分类</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-junit-2/">JUnit 黑盒测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-english/">英语发展历史</a></li><li class="post-list-item"><a class="post-list-link" href="/20160423-matlab-1/">纵切碎纸片复原的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/20160419-junit-1/">JUnit 参数化测试和打包测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-junit/">JUnit 初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-acm-11/">NYOJ 587-blockhouses | ZOJ 1002-Fire Net</a></li><li class="post-list-item"><a class="post-list-link" href="/20160414-life/">花开不败</a></li><li class="post-list-item"><a class="post-list-link" href="/20160413-acm-10/">ZOJ 入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160325-wiki/">GCUSKY_WIKI</a></li><li class="post-list-item"><a class="post-list-link" href="/20160320-mysql-index/">MySQL数据库索引问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160318-acm-9/">NYOJ 488-素数环</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-8/">NYOJ 106-背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-7/">NYOJ 14-会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-6/">NYOJ 91-阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-5/">NYOJ 47-过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-3/">NYOJ 22-素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-4/">NYOJ 33-蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-2/">NYOJ 11-奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-1/">NYOJ 4-ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/20160314-acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160205-test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/20160202-learn-hexo/">Hexo 基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/20151118-learn-1/">邓小平文选 第三卷 P363 思考：思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150922-learn/">《再思毛泽东：毛泽东思想的探索》思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150823-matlab/">二分法求解非线性方程</a></li><li class="post-list-item"><a class="post-list-link" href="/20150315-hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <div class="right-wrap">
+  <div class="other">
+    <p>20160428-DesignPattern-1/</p>
+    <p>test of gcusky</p>
+  </div>
+  <div class="qrcode">
+    <p>本页二维码</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaElEQVR42u3aQZKjMBAEQP//07MP2MVT1UIyM5uciDDGSg6oXd2vr199vPDw8PDw8PDw8B7Ge8XHP27016dX1yf3zL/1zX3w8PDwjvC+edUG11wt6Oo+V+fra8PDw8M7ybta3Ptrkivb787WhoeHh/dkXnK+Uqbj4eHh/Q+8ZKE/eGPAw8PDW/jD38YNbdCQPz48PDy8z/Ly8vf8+dH+Hh4eHl7Aq0eagqI2L7jzkGI4dIWHh4e3gddGBne1ymbRbfII8PDw8J7Aa8OF5HEkd35/nxtSajw8PLwRbzYOtQPcxruXV+Lh4eEd4SXNreSVnbzo83bacG14eHh4m3n5EMBKjDsbUBheg4eHh3eEN2tcrTT787A4L/3x8PDwTvLymLVd0EqcMWuD4eHh4Z3k5SXvLKRow4VhbIGHh4d3hNe2xFY2lba5VZfdeHh4eJt5s5/5Ko82sFhZAx4eHt5u3srLPVn0SmTcjibg4eHhnee1RXDb4G+3hLbEx8PDwzvDe7+gtrTNt5B2NKFYAx4eHt5m3qyobbeH2SNoNx48PDy8T/Hakjc/z4cP8ki3Hh3Aw8PD28C7q2hOiuO2qRbFFnh4eHgHee0A1gppNlgQFfp4eHh4m3kr41N5MJHHH7OmGh4eHt5J3is+2iW2Uews8igmI/Dw8PBu5eWv8rxczsdVZ48DDw8P7wm82cjUSmOsDSOiR4aHh4f3eN56Y2w2dlCPq+Lh4eF9lJe86Fc2mPe/tb2kxsPDw7s1jIia92U80W4neHh4eE/g5RHAejMsH9hKSmo8PDy887zfd+Dh4eHh4eHh4T3g+APYGRYRwQ9IYQAAAABJRU5ErkJggg==" height="160" width="160">
+  </div>
+  <script>
+    $(window).scroll(function()
+    { 
+      //qrcode跟随滚动
+      var h = $(window).height();
+      var top = $(window).scrollTop();
+      var right = $('.right-wrap .other');
+      var rightHeight = right.height();
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+        if(top>=rightHeight+30)
+        {
+          $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});
+        }
+        else
+        {
+          $('.qrcode').css({'position':'static', 'top':0,'width': '100%' });   
+        } 
+       /* return true;*/
+    });
+  </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 GCUSKY
+                
+                    <a href="http://www.miibeian.gov.cn/">粤ICP备15063973号-2</a>
+                
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE , Improved by <a href="/">GCUSKY</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 7;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65267116-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

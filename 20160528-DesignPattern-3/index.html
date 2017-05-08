@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="GCUSKY" />
+
+
+
+<meta name="description" content="创建型模式
+创建型模式(Creational Pattern)对类的实例化过程进行了抽象，能够将软件模块中对象的创建和对象的使用分离。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符合单一职责原则。
+创建型模式隐藏了类的实例的创建细节，通过隐藏对象如何被创建和组合在一起达到使整个系统独立的目的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建型模式与三大工厂模式">
+<meta property="og:url" content="http://blog.gcusky.com/20160528-DesignPattern-3/index.html">
+<meta property="og:site_name" content="GCUSKY_SPACE">
+<meta property="og:description" content="创建型模式
+创建型模式(Creational Pattern)对类的实例化过程进行了抽象，能够将软件模块中对象的创建和对象的使用分离。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符合单一职责原则。
+创建型模式隐藏了类的实例的创建细节，通过隐藏对象如何被创建和组合在一起达到使整个系统独立的目的。">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-1.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-2.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-3.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-4.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-5.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-6.jpg">
+<meta property="og:updated_time" content="2016-05-28T11:41:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="创建型模式与三大工厂模式">
+<meta name="twitter:description" content="创建型模式
+创建型模式(Creational Pattern)对类的实例化过程进行了抽象，能够将软件模块中对象的创建和对象的使用分离。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符合单一职责原则。
+创建型模式隐藏了类的实例的创建细节，通过隐藏对象如何被创建和组合在一起达到使整个系统独立的目的。">
+<meta name="twitter:image" content="http://cloud.gcusky.com/uml/cjx-1.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>创建型模式与三大工厂模式 | GCUSKY_SPACE</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?efa5240456e869b14f74fb48fb6f8b60";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/gcusky.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">GCUSKY</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">云山自清，青水自流。</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/2016/03/25/wiki/">WIKI</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JUnit/">JUnit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NYOJ/">NYOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL练习/">STL练习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZOJ/">ZOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp-servlet/">jsp/servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scikit-learn/">scikit-learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swing/">swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weblogic/">weblogic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分法/">二分法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分治法/">分治法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创建型模式/">创建型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/回溯法/">回溯法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搜索/">搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数值法/">数值法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学建模/">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/白盒测试/">白盒测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/矩阵/">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/结构型模式/">结构型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行为型模式/">行为型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语言入门/">语言入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心算法/">贪心算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性方程/">非线性方程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象设计原则/">面向对象设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">GCUSKY</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/gcusky.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">GCUSKY</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">云山自清，青水自流。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/2016/03/25/wiki/">WIKI</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" target="_blank" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-DesignPattern-3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/20160528-DesignPattern-3/" class="article-date">
+      <time datetime="2016-05-28T08:25:52.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      创建型模式与三大工厂模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创建型模式/">创建型模式</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h2><ul>
+<li>创建型模式(Creational Pattern)对类的实例化过程进行了抽象，能够<strong>将软件模块中对象的创建和对象的使用分离。</strong>为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计<strong>更加符合单一职责原则</strong>。</li>
+<li>创建型模式<strong>隐藏了类的实例的创建细节，通过隐藏对象如何被创建和组合在一起达到使整个系统独立的目的。</strong> </li>
+</ul>
+<a id="more"></a>
+<h2 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h2><h3 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h3><ul>
+<li>简单工厂模式(Simple Factory Pattern)：又称为静态工厂方法(Static Factory Method)模式，它属于类创建型模式。</li>
+<li>在简单工厂模式中，可以<strong>根据参数的不同返回不同类的实例</strong>。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。 </li>
+</ul>
+<h3 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h3><p><img src="http://cloud.gcusky.com/uml/cjx-1.jpg" alt="简单工厂模式结构"></p>
+<ol>
+<li><code>Factory</code>：工厂角色<br>工厂角色即工厂类，它是简单工厂模式的核心，负责实现创建所有产品实例的内部逻辑；工厂类可以被外界直接调用，创建所需的产品对象；在工厂类中提供了静态的工厂方法 <code>factoryMethod()</code>，它的返回类型为抽象产品类型 <code>Product</code>。</li>
+<li><code>Product</code>：抽象产品角色<br>它是工厂类所创建的所有对象的父类，封装了各种产品对象的公有方法，它的引入将提高系统的灵活性，使得在工厂类中只需定义一个通用的工厂方法，因为所有创建的具体产品对象都是其子类对象。</li>
+<li><code>ConcreteProduct</code>：具体产品角色<br>它是简单工厂模式的创建目标，所有被创建的对象都充当这个角色的某个具体类的实例。每一个具体产品角色都继承了抽象产品角色，需要实现在抽象产品中声明的抽象方法。</li>
+</ol>
+<h3 id="模式实例"><a href="#模式实例" class="headerlink" title="模式实例"></a>模式实例</h3><p><img src="http://cloud.gcusky.com/uml/cjx-2.jpg" alt="简单工厂模式实例"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象产品类 TV（电视机类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TV</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体产品类 HaierTV（海尔电视机类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HaierTV</span> <span class="keyword">implements</span> <span class="title">TV</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"海尔电视机播放中……"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体产品类 HisenseTV（海信电视机类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HisenseTV</span> <span class="keyword">implements</span> <span class="title">TV</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"海尔电视机播放中……"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 工厂类 TVFactory（电视机工厂类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TVFactory</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TV <span class="title">productTV</span><span class="params">(String brand)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(brand.equalsIgnoreCase(<span class="string">"Haier"</span>))&#123;</span><br><span class="line">			System.out.println(<span class="string">"电视机工厂生产海尔电视机！"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> HaierTV();</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(brand.equalsIgnoreCase(<span class="string">"Hisense"</span>))&#123;</span><br><span class="line">			System.out.println(<span class="string">"电视机工厂生产海信电视机！"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> HisenseTV();</span><br><span class="line">		&#125;<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"对不起，暂不能生产该品牌电视机！"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 客户端测试类 Client</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			TV tv;</span><br><span class="line">			String brandName = <span class="string">"Haier"</span>;</span><br><span class="line">			tv = TVFactory.productTV(brandName);</span><br><span class="line">			tv.play();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			System.out.println(e.getMessage());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="模式优缺点"><a href="#模式优缺点" class="headerlink" title="模式优缺点"></a>模式优缺点</h3><h4 id="简单工厂模式的优点"><a href="#简单工厂模式的优点" class="headerlink" title="简单工厂模式的优点"></a>简单工厂模式的优点</h4><ul>
+<li>工厂类含有必要的判断逻辑，可以决定在什么时候创建哪一个产品类的实例，客户端可以免除直接创建产品对象的责任，而仅仅“消费”产品；简单工厂模式通过这种做法<strong>实现了对责任的分割，它提供了专门的工厂类用于创建对象</strong>。</li>
+<li><strong>客户端无须知道所创建的具体产品类的类名，只需要知道具体产品类所对应的参数即可</strong>，对于一些复杂的类名，通过简单工厂模式可以减少使用者的记忆量。</li>
+<li><strong>通过引入配置文件，可以在不修改任何客户端代码的情况下更换和增加新的具体产品类</strong>，在一定程度上提高了系统的灵活性。</li>
+</ul>
+<h4 id="简单工厂模式的缺点"><a href="#简单工厂模式的缺点" class="headerlink" title="简单工厂模式的缺点"></a>简单工厂模式的缺点</h4><ul>
+<li>由于工厂类集中了所有产品创建逻辑，一旦不能正常工作，整个系统都要受到影响。</li>
+<li>使用简单工厂模式将会增加系统中类的个数，在一定程序上增加了系统的复杂度和理解难度。</li>
+<li><strong>系统扩展困难</strong>，一旦添加新产品就不得不修改工厂逻辑，在产品类型较多时，有可能造成工厂逻辑过于复杂，不利于系统的扩展和维护。</li>
+<li>简单工厂模式由于使用了静态工厂方法，造成工厂角色<strong>无法形成基于继承的等级结构</strong>。</li>
+<li>简单工厂模式最大的缺点是当有新产品要加入到系统中时，必须修改工厂类，加入必要的处理逻辑，这<strong>违背了“开闭原则”</strong>。</li>
+</ul>
+<h2 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h2><h3 id="模式定义-1"><a href="#模式定义-1" class="headerlink" title="模式定义"></a>模式定义</h3><ul>
+<li>工厂方法模式(Factory Method Pattern)又称为工厂模式，也叫虚拟构造器(Virtual Constructor)模式或者多态工厂(Polymorphic Factory)模式，它属于类创建型模式。</li>
+<li>在工厂方法模式中，工厂父类负责定义创建产品对象的公共接口，而工厂子类则负责生成具体的产品对象，这样做的目的是将产品类的实例化操作延迟到工厂子类中完成，即通过工厂子类来确定究竟应该实例化哪一个具体产品类。</li>
+</ul>
+<h3 id="模式结构与分析"><a href="#模式结构与分析" class="headerlink" title="模式结构与分析"></a>模式结构与分析</h3><p><img src="http://cloud.gcusky.com/uml/cjx-3.jpg" alt="工厂方法模式结构"></p>
+<ul>
+<li>Product（抽象产品）：它是定义产品的接口，是工厂方法模式所创建对象的超类型，也就是产品对象的公共父类。</li>
+<li>ConcreteProduct（具体产品）：它实现了抽象产品接口，某种类型的具体产品由专门的具体工厂创建，具体工厂和具体产品之间一一对应。</li>
+<li>Factory（抽象工厂）：在抽象工厂类中，声明了工厂方法(Factory Method)，用于返回一个产品。抽象工厂是工厂方法模式的核心，所有创建对象的工厂类都必须实现该接口。</li>
+<li>ConcreteFactory（具体工厂）：它是抽象工厂类的子类，实现了抽象工厂中定义的工厂方法，并可由客户端调用，返回一个具体产品类的实例。</li>
+</ul>
+<p>工厂方法模式是简单工厂模式的进一步抽象和推广。由于使用了面向对象的多态性，工厂方法模式保持了简单工厂模式的优点，而且克服了它的缺点。<strong>在工厂方法模式中，核心的工厂类不再负责所有产品的创建，而是将具体创建工作交给子类去做。</strong>这个核心类仅仅负责给出具体工厂必须实现的接口，而不负责哪一个产品类被实例化这种细节，这使得工厂方法模式可以允许系统在不修改工厂角色的情况下引进新产品。<br>当系统扩展需要添加新的产品对象时，仅仅需要添加一个具体产品对象以及一个具体工厂对象，原有工厂对象不需要进行任何修改，也不需要修改客户端，<strong>很好地符合了“开闭原则”。</strong>而简单工厂模式在添加新产品对象后不得不修改工厂方法，扩展性不好。工厂方法模式退化后可以演变成简单工厂模式。</p>
+<h3 id="模式实例-1"><a href="#模式实例-1" class="headerlink" title="模式实例"></a>模式实例</h3><p><img src="http://cloud.gcusky.com/uml/cjx-4.jpg" alt="工厂方法模式实例"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象产品类 TV（电视机类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TV</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体产品类 HaierTV（海尔电视机类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HaierTV</span> <span class="keyword">implements</span> <span class="title">TV</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"海尔电视机播放中……"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体产品类 HisenseTV（海信电视机类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HisenseTV</span> <span class="keyword">implements</span> <span class="title">TV</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"海尔电视机播放中……"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 抽象工厂类 TVFactory（电视机工厂类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TVFactory</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> TV <span class="title">produceTV</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体工厂类 HaierTVFactory（海尔电视机工厂类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HaierTVFactory</span> <span class="keyword">implements</span> <span class="title">TVFactory</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> TV <span class="title">produceTV</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"海尔电视机工厂生产海尔电视机！"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> HaierTV();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体工厂类 HisenseTVFactory（海信电视机工厂类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HisenseTVFactory</span> <span class="keyword">implements</span> <span class="title">TVFactory</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> TV <span class="title">produceTV</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"海信电视机工厂生产海信电视机！"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> HisenseTV();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 客户端测试类 Client</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			TV tv;</span><br><span class="line">			TVFactory factory;</span><br><span class="line">			factory = <span class="keyword">new</span> HaierTVFactory();</span><br><span class="line">			tv = factory.produceTV();</span><br><span class="line">			tv.play();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			System.out.println(e.getMessage());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="模式优缺点-1"><a href="#模式优缺点-1" class="headerlink" title="模式优缺点"></a>模式优缺点</h3><h4 id="工厂方法模式的优点"><a href="#工厂方法模式的优点" class="headerlink" title="工厂方法模式的优点"></a>工厂方法模式的优点</h4><ul>
+<li>在工厂方法模式中，工厂方法用来创建客户所需要的产品，同时还向客户隐藏了哪种具体产品类将被实例化这一细节，用户只需要关心所需产品对应的工厂，无须关心创建细节，甚至无须知道具体产品类的类名。</li>
+<li>基于工厂角色和产品角色的多态性设计是工厂方法模式的关键。<strong>它能够使工厂可以自主确定创建何种产品对象，而如何创建这个对象的细节则完全封装在具体工厂内部。</strong>工厂方法模式之所以又被称为多态工厂模式，是因为所有的具体工厂类都具有同一抽象父类。</li>
+<li>使用工厂方法模式的另一个优点是<strong>在系统中加入新产品时，无须修改抽象工厂和抽象产品提供的接口，无须修改客户端，也无须修改其他的具体工厂和具体产品，而只要添加一个具体工厂和具体产品就可以了。</strong>这样，系统的可扩展性也就变得非常好，完全符合“开闭原则”。</li>
+</ul>
+<h4 id="工厂方法模式的缺点"><a href="#工厂方法模式的缺点" class="headerlink" title="工厂方法模式的缺点"></a>工厂方法模式的缺点</h4><ul>
+<li>在添加新产品时，需要编写新的具体产品类，而且还要提供与之对应的具体工厂类，系统中类的个数将成对增加，在一定程度上增加了系统的复杂度，有更多的类需要编译和运行，会给系统带来一些额外的开销。</li>
+<li>由于考虑到系统的可扩展性，需要引入抽象层，在客户端代码中均使用抽象层进行定义，<strong>增加了系统的抽象性和理解难度</strong>，且在实现时可能需要用到DOM、反射等技术，增加了系统的实现难度。</li>
+</ul>
+<h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><h3 id="模式定义-2"><a href="#模式定义-2" class="headerlink" title="模式定义"></a>模式定义</h3><p> 抽象工厂模式(Abstract Factory Pattern)：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们具体的类。抽象工厂模式又称为Kit模式，属于<strong>对象创建型模式</strong>。</p>
+<h3 id="模式结构与分析-1"><a href="#模式结构与分析-1" class="headerlink" title="模式结构与分析"></a>模式结构与分析</h3><p><img src="http://cloud.gcusky.com/uml/cjx-5.jpg" alt="抽象工厂模式结构"></p>
+<ul>
+<li>AbstractFactory（抽象工厂）：它声明了一组用于创建一族产品的方法，每一个方法对应一种产品。</li>
+<li>ConcreteFactory（具体工厂）：它实现了在抽象工厂中声明的创建产品的方法，生成一组具体产品，这些产品构成了一个产品族，每一个产品都位于某个产品等级结构中。</li>
+<li>AbstractProduct（抽象产品）：它为每种产品声明接口，在抽象产品中声明了产品所具有的业务方法。</li>
+<li>ConcreteProduct（具体产品）：它定义具体工厂生产的具体产品对象，实现抽象产品接口中声明的业务方法。</li>
+</ul>
+<p>当系统所提供的工厂所需生产的具体产品并不是一个简单的对象，而是<strong>多个位于不同产品等级结构中属于不同类型的具体产品时</strong>需要使用抽象工厂模式。<br>抽象工厂模式是所有形式的工厂模式中最为抽象和最具一般性的一种形态。<br>抽象工厂模式与工厂方法模式最大的区别在于，<strong>工厂方法模式针对的是一个产品等级结构，而抽象工厂模式则需要面对多个产品等级结构</strong>。</p>
+<h3 id="模式实例-2"><a href="#模式实例-2" class="headerlink" title="模式实例"></a>模式实例</h3><p><img src="http://cloud.gcusky.com/uml/cjx-6.jpg" alt="抽象工厂模式实例"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象产品类 Television（电视机类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Television</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体产品类 HaierTelevision（海尔电视机类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HaierTelevision</span> <span class="keyword">implements</span> <span class="title">Television</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"海尔电视机播放中……"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体产品类 TCLTelevision（TCL电视机类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TCLTelevision</span> <span class="keyword">implements</span> <span class="title">Television</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"TCL电视机播放中……"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 抽象产品类 AirConditioner（空调类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AirConditioner</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeTemperature</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体产品类 HaierAirConditioner（海尔空调类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HaierAirConditioner</span> <span class="keyword">implements</span> <span class="title">AirConditioner</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeTemperature</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"海尔空调温度改变中……"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体产品类 TCLAirConditioner（TCL空调类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TCLAirConditioner</span> <span class="keyword">implements</span> <span class="title">AirConditioner</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeTemperature</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"TCL空调温度改变中……"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 抽象工厂类 EFactory（电器工厂类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">EFactory</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Television <span class="title">produceTelevision</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> AirConditioner <span class="title">produceAirConditioner</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体工厂类 HaierFactory（海尔工厂类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HaierFactory</span> <span class="keyword">implements</span> <span class="title">EFactory</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Television <span class="title">produceTelevision</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> HaierTelevision();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> AirConditioner <span class="title">produceAirConditioner</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> HaierAirConditioner();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体工厂类 TCLFactory（TCL工厂类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TCLFactory</span> <span class="keyword">implements</span> <span class="title">EFactory</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Television <span class="title">produceTelevision</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> TCLTelevision();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> AirConditioner <span class="title">produceAirConditioner</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> TCLAirConditioner();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 客户端测试类 Client</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			EFactory factory;</span><br><span class="line">			Television tv;</span><br><span class="line">			AirConditioner ac;</span><br><span class="line">			factory = <span class="keyword">new</span> HaierFactory();</span><br><span class="line">			tv = factory.produceTelevision();</span><br><span class="line">			tv.play();</span><br><span class="line">			ac = factory.produceAirConditioner();</span><br><span class="line">			ac.changeTemperature();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			System.out.println(e.getMessage());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="模式优缺点-2"><a href="#模式优缺点-2" class="headerlink" title="模式优缺点"></a>模式优缺点</h3><h4 id="抽象工厂模式的优点"><a href="#抽象工厂模式的优点" class="headerlink" title="抽象工厂模式的优点"></a>抽象工厂模式的优点</h4><ul>
+<li>抽象工厂模式<strong>隔离了具体类的生成</strong>，使得客户并不需要知道什么被创建。由于这种隔离，更换一个具体工厂就变得相对容易。所有的具体工厂都实现了抽象工厂中定义的那些公共接口，因此<strong>只需改变具体工厂的实例，就可以在某种程度上改变整个软件系统的行为</strong>。另外，应用抽象工厂模式可以实现<strong>高内聚低耦合</strong>的设计目的，因此抽象工厂模式得到了广泛的应用。</li>
+<li>当一个产品族中的多个对象被设计成一起工作时，它<strong>能够保证客户端始终只使用同一个产品族中的对象</strong>。这对一些需要根据当前环境来决定其行为的软件系统来说，是一种非常实用的设计模式。</li>
+<li><strong>增加新的具体工厂和产品族很方便，无须修改已有系统，符合“开闭原则”。</strong></li>
+</ul>
+<h4 id="抽象工厂模式的缺点"><a href="#抽象工厂模式的缺点" class="headerlink" title="抽象工厂模式的缺点"></a>抽象工厂模式的缺点</h4><ul>
+<li>在添加新的产品对象时，<strong>难以扩展抽象工厂来生产新种类的产品</strong>，这是因为在抽象工厂角色中规定了所有可能被创建的产品集合，要支持新种类的产品就意味着要对该接口进行扩展，而这将涉及到对抽象工厂角色及其所有子类的修改，显然会带来较大的不便。</li>
+<li><strong>开闭原则的倾斜性（增加新的工厂和产品族容易，增加新的产品等级结构麻烦）</strong></li>
+</ul>
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><h3 id="“开闭原则”的倾斜性"><a href="#“开闭原则”的倾斜性" class="headerlink" title="“开闭原则”的倾斜性"></a>“开闭原则”的倾斜性</h3><ul>
+<li>“开闭原则”要求系统对扩展开放，对修改封闭，通过扩展达到增强其功能的目的。对于涉及到多个产品族与多个产品等级结构的系统，其功能增强包括两方面：</li>
+</ul>
+<ol>
+<li>增加产品族：对于增加新的产品族，工厂方法模式很好的支持了“开闭原则”，对于新增加的产品族，只需要对应增加一个新的具体工厂即可，对已有代码无须做任何修改。</li>
+<li>增加新的产品等级结构：对于增加新的产品等级结构，需要修改所有的工厂角色，包括抽象工厂类，在所有的工厂类中都需要增加生产新产品的方法，不能很好地支持“开闭原则”。</li>
+</ol>
+<ul>
+<li>抽象工厂模式的这种性质称为“开闭原则”的倾斜性，抽象工厂模式以一种倾斜的方式支持增加新的产品，它为新产品族的增加提供方便，但不能为新的产品等级结构的增加提供这样的方便。</li>
+</ul>
+<h3 id="工厂模式的退化"><a href="#工厂模式的退化" class="headerlink" title="工厂模式的退化"></a>工厂模式的退化</h3><p>当抽象工厂模式中每一个具体工厂类只创建一个产品对象，也就是只存在一个产品等级结构时，抽象工厂模式退化成工厂方法模式；当工厂方法模式中抽象工厂与具体工厂合并，提供一个统一的工厂来创建产品对象，并将创建对象的工厂方法设计为静态方法时，工厂方法模式退化成简单工厂模式。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/20160528-DesignPattern-3/">创建型模式与三大工厂模式</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
+        <p><span>发布时间:</span>2016-05-28, 16:25:52</p>
+        <p><span>最后更新:</span>2016-05-28, 19:41:19</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/20160528-DesignPattern-3/" title="创建型模式与三大工厂模式">http://blog.gcusky.com/20160528-DesignPattern-3/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.gcusky.com/20160528-DesignPattern-3/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/20160528-DesignPattern-4/">
+                    原形模式
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/20160502-english-5/">
+                    英语的其他构词法
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建型模式"><span class="toc-number">1.</span> <span class="toc-text">创建型模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单工厂模式"><span class="toc-number">2.</span> <span class="toc-text">简单工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模式定义"><span class="toc-number">2.1.</span> <span class="toc-text">模式定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式结构"><span class="toc-number">2.2.</span> <span class="toc-text">模式结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式实例"><span class="toc-number">2.3.</span> <span class="toc-text">模式实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式优缺点"><span class="toc-number">2.4.</span> <span class="toc-text">模式优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单工厂模式的优点"><span class="toc-number">2.4.1.</span> <span class="toc-text">简单工厂模式的优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简单工厂模式的缺点"><span class="toc-number">2.4.2.</span> <span class="toc-text">简单工厂模式的缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工厂方法模式"><span class="toc-number">3.</span> <span class="toc-text">工厂方法模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模式定义-1"><span class="toc-number">3.1.</span> <span class="toc-text">模式定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式结构与分析"><span class="toc-number">3.2.</span> <span class="toc-text">模式结构与分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式实例-1"><span class="toc-number">3.3.</span> <span class="toc-text">模式实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式优缺点-1"><span class="toc-number">3.4.</span> <span class="toc-text">模式优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#工厂方法模式的优点"><span class="toc-number">3.4.1.</span> <span class="toc-text">工厂方法模式的优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#工厂方法模式的缺点"><span class="toc-number">3.4.2.</span> <span class="toc-text">工厂方法模式的缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象工厂模式"><span class="toc-number">4.</span> <span class="toc-text">抽象工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模式定义-2"><span class="toc-number">4.1.</span> <span class="toc-text">模式定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式结构与分析-1"><span class="toc-number">4.2.</span> <span class="toc-text">模式结构与分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式实例-2"><span class="toc-number">4.3.</span> <span class="toc-text">模式实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式优缺点-2"><span class="toc-number">4.4.</span> <span class="toc-text">模式优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象工厂模式的优点"><span class="toc-number">4.4.1.</span> <span class="toc-text">抽象工厂模式的优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象工厂模式的缺点"><span class="toc-number">4.4.2.</span> <span class="toc-text">抽象工厂模式的缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拓展"><span class="toc-number">5.</span> <span class="toc-text">拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#“开闭原则”的倾斜性"><span class="toc-number">5.1.</span> <span class="toc-text">“开闭原则”的倾斜性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工厂模式的退化"><span class="toc-number">5.2.</span> <span class="toc-text">工厂模式的退化</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"创建型模式与三大工厂模式　| GCUSKY_SPACE　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2130821';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/20160528-DesignPattern-4/" title="上一篇: 原形模式">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/20160502-english-5/" title="下一篇: 英语的其他构词法">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/20170217-weblogic/">导入dmp、Weblogic创建域</a></li><li class="post-list-item"><a class="post-list-link" href="/20170129-project-4/">推箱子</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-scikit-learn-translation/">【外文翻译】Scikit-learn：在Python中进行机器学习</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-project-3/">学生信息管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-2/">献血管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-1/">产品销售管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170115-hexo-1/">博客样式更新</a></li><li class="post-list-item"><a class="post-list-link" href="/20170109-life2/">2017伊始-随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-python-1/">Python 实现统计字数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-acm-13/">高斯消元</a></li><li class="post-list-item"><a class="post-list-link" href="/20160605-python/">Python简单入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-11/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-10/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-acm-12/">矩阵的基本变换</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-9/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-8/">外观模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-7/">桥接模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-6/">结构型模式之适配器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-5/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-4/">原形模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-3/">创建型模式与三大工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-english-5/">英语的其他构词法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-DesignPattern-2/">面向对象设计原则</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-4/">英语基本构词法之转换法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-3/">英语基本构词法之合成法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160430-DesignPattern/">UML 类图</a></li><li class="post-list-item"><a class="post-list-link" href="/20160428-DesignPattern-1/">设计模式概述</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-2/">英语基本构词法之词缀法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-1/">英语词汇文化内涵分类</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-junit-2/">JUnit 黑盒测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-english/">英语发展历史</a></li><li class="post-list-item"><a class="post-list-link" href="/20160423-matlab-1/">纵切碎纸片复原的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/20160419-junit-1/">JUnit 参数化测试和打包测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-junit/">JUnit 初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-acm-11/">NYOJ 587-blockhouses | ZOJ 1002-Fire Net</a></li><li class="post-list-item"><a class="post-list-link" href="/20160414-life/">花开不败</a></li><li class="post-list-item"><a class="post-list-link" href="/20160413-acm-10/">ZOJ 入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160325-wiki/">GCUSKY_WIKI</a></li><li class="post-list-item"><a class="post-list-link" href="/20160320-mysql-index/">MySQL数据库索引问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160318-acm-9/">NYOJ 488-素数环</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-8/">NYOJ 106-背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-7/">NYOJ 14-会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-6/">NYOJ 91-阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-5/">NYOJ 47-过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-3/">NYOJ 22-素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-4/">NYOJ 33-蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-2/">NYOJ 11-奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-1/">NYOJ 4-ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/20160314-acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160205-test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/20160202-learn-hexo/">Hexo 基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/20151118-learn-1/">邓小平文选 第三卷 P363 思考：思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150922-learn/">《再思毛泽东：毛泽东思想的探索》思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150823-matlab/">二分法求解非线性方程</a></li><li class="post-list-item"><a class="post-list-link" href="/20150315-hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <div class="right-wrap">
+  <div class="other">
+    <p>20160528-DesignPattern-3/</p>
+    <p>test of gcusky</p>
+  </div>
+  <div class="qrcode">
+    <p>本页二维码</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZ0lEQVR42u3aUW7kIBAE0Ln/pZMD7NquAkPQ6PlrFDkMj0jQKfrz89XPBw8PDw8PDw8P7zDeJ37+M9A/P796Pxkz/62HcfDw8PC28B622uCdhJF8np8bHh4e3k5ePq1kQlfjJN8yNjc8PDy883n3yPkyHQ8PD++beHkwkYCPOxjw8PDwXg0jksOgLb7b71qYteDh4eHFvLz83f956/0eHh4eXsCrW5put/v8yGlDisGmKzw8PLwFvDYyyAvoFdFtsgR4eHh4+3ljh0QSyN6/3zawDqbUeHh4eNO8vNhty+sW3Ma7l2/i4eHhbeG111R5KZwX4m14UWQteHh4eIt5efPTfMPBWIPCwzt4eHh4W3jJv/pjoW375GFE3TqAh4eHt4A3Bh4LZPNjpr0Gw8PDw9vDyydUb9MBrI1uX8ha8PDw8CZ47RSTiLadVlusP/xh8PDw8Bbz2i24bcxKxs+bsV67AMPDw8NbzMvL2bFIYmaB8PDw8E7gzW/0bx0JbemPh4eHt4c3FhaMLUEyQh5GRK0DeHh4eMt4+b/6bfyaX30VRfP9EYKHh4f3R7z5Ands4dpINyqp8fDw8Jbx8uaA5CuT4njsKBo8GPDw8PCW8drYNN/Q56PeJIDGw8PDW82bucJfMUIbQODh4eHt533iZ3UUm4wWLRAeHh7eFt7YRVdd7M60UuHh4eEdyWs36HZREvbYEYWHh4d3Pq9tP70fP1mO4qIODw8P70jeWMGdj5M3KywvqfHw8PCmw4iZK//5OBgPDw/vHF4eAeRNWi27Lp2vZoKHh4e3mPd9Dx4eHh4eHh4e3gHPL9yLKyb8Z8s7AAAAAElFTkSuQmCC" height="160" width="160">
+  </div>
+  <script>
+    $(window).scroll(function()
+    { 
+      //qrcode跟随滚动
+      var h = $(window).height();
+      var top = $(window).scrollTop();
+      var right = $('.right-wrap .other');
+      var rightHeight = right.height();
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+        if(top>=rightHeight+30)
+        {
+          $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});
+        }
+        else
+        {
+          $('.qrcode').css({'position':'static', 'top':0,'width': '100%' });   
+        } 
+       /* return true;*/
+    });
+  </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 GCUSKY
+                
+                    <a href="http://www.miibeian.gov.cn/">粤ICP备15063973号-2</a>
+                
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE , Improved by <a href="/">GCUSKY</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 7;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65267116-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

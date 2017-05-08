@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="GCUSKY" />
+
+
+
+<meta name="description" content="模式定义
+原型模式(Prototype Pattern)：原型模式是一种对象创建型模式，用原型实例指定创建对象的种类，并且通过复制这些原型创建新的对象。原型模式允许一个对象再创建另外一个可定制的对象，无须知道任何创建的细节。
+原型模式的基本工作原理是通过将一个原型对象传给那个要发动创建的对象，这个要发动创建的对象通过请求原型对象拷贝原型自己来实现创建过程。
+工作原理：将一个原型对象传给要发动创建的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原形模式">
+<meta property="og:url" content="http://blog.gcusky.com/20160528-DesignPattern-4/index.html">
+<meta property="og:site_name" content="GCUSKY_SPACE">
+<meta property="og:description" content="模式定义
+原型模式(Prototype Pattern)：原型模式是一种对象创建型模式，用原型实例指定创建对象的种类，并且通过复制这些原型创建新的对象。原型模式允许一个对象再创建另外一个可定制的对象，无须知道任何创建的细节。
+原型模式的基本工作原理是通过将一个原型对象传给那个要发动创建的对象，这个要发动创建的对象通过请求原型对象拷贝原型自己来实现创建过程。
+工作原理：将一个原型对象传给要发动创建的">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-7.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-1.png">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-2.png">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-8.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/uml/cjx-9.jpg">
+<meta property="og:updated_time" content="2016-05-28T10:55:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="原形模式">
+<meta name="twitter:description" content="模式定义
+原型模式(Prototype Pattern)：原型模式是一种对象创建型模式，用原型实例指定创建对象的种类，并且通过复制这些原型创建新的对象。原型模式允许一个对象再创建另外一个可定制的对象，无须知道任何创建的细节。
+原型模式的基本工作原理是通过将一个原型对象传给那个要发动创建的对象，这个要发动创建的对象通过请求原型对象拷贝原型自己来实现创建过程。
+工作原理：将一个原型对象传给要发动创建的">
+<meta name="twitter:image" content="http://cloud.gcusky.com/uml/cjx-7.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>原形模式 | GCUSKY_SPACE</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?efa5240456e869b14f74fb48fb6f8b60";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/gcusky.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">GCUSKY</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">云山自清，青水自流。</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/2016/03/25/wiki/">WIKI</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JUnit/">JUnit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NYOJ/">NYOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL练习/">STL练习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZOJ/">ZOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp-servlet/">jsp/servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scikit-learn/">scikit-learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swing/">swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weblogic/">weblogic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分法/">二分法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分治法/">分治法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创建型模式/">创建型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/回溯法/">回溯法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搜索/">搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数值法/">数值法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学建模/">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/白盒测试/">白盒测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/矩阵/">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/结构型模式/">结构型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行为型模式/">行为型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语言入门/">语言入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心算法/">贪心算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性方程/">非线性方程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象设计原则/">面向对象设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">GCUSKY</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/gcusky.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">GCUSKY</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">云山自清，青水自流。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/2016/03/25/wiki/">WIKI</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" target="_blank" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-DesignPattern-4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/20160528-DesignPattern-4/" class="article-date">
+      <time datetime="2016-05-28T10:55:09.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      原形模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创建型模式/">创建型模式</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h3><ul>
+<li>原型模式(Prototype Pattern)：原型模式是一种<strong>对象创建型模式，用原型实例指定创建对象的种类，并且通过复制这些原型创建新的对象。</strong>原型模式允许一个对象再创建另外一个可定制的对象，无须知道任何创建的细节。</li>
+<li>原型模式的基本工作原理是通过将一个原型对象传给那个要发动创建的对象，这个要发动创建的对象通过请求原型对象拷贝原型自己来实现创建过程。</li>
+<li>工作原理：将一个原型对象传给要发动创建的对象（即客户端对象），这个要发动创建的对象通过请求原型对象复制自己来实现创建过程：<br>创建新对象（也称为克隆对象）的工厂就是原型类自身，工厂方法由负责复制原型对象的克隆方法来实现。<br>通过克隆方法所创建的对象是全新的对象，它们在内存中拥有新的地址，每一个克隆对象都是独立的。<br>通过不同的方式对克隆对象进行修改以后，可以得到一系列相似但不完全相同的对象。</li>
+</ul>
+<a id="more"></a>
+<h3 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h3><p><img src="http://cloud.gcusky.com/uml/cjx-7.jpg" alt="原型模式结构"></p>
+<ul>
+<li>Prototype（抽象原型类）：它是声明克隆方法的接口，是所有具体原型类的公共父类，可以是抽象类也可以是接口，甚至还可以是具体实现类。</li>
+<li>ConcretePrototype（具体原型类）：它实现在抽象原型类中声明的克隆方法，在克隆方法中返回自己的一个克隆对象。</li>
+<li>Client（客户类）：让一个原型对象克隆自身从而创建一个新的对象，在客户类中只需要直接实例化或通过工厂方法等方式创建一个原型对象，再通过调用该对象的克隆方法即可得到多个相同的对象。由于客户类针对抽象原型类Prototype编程，因此用户可以根据需要选择具体原型类，系统具有较好的可扩展性，增加或更换具体原型类都很方便。</li>
+</ul>
+<h3 id="模式分类"><a href="#模式分类" class="headerlink" title="模式分类"></a>模式分类</h3><h4 id="浅克隆"><a href="#浅克隆" class="headerlink" title="浅克隆"></a>浅克隆</h4><p>在浅克隆中，被复制对象的所有普通成员变量都具有与原来的对象相同的值，而所有的对其他对象的引用仍然指向原来的对象。换言之，浅克隆仅仅复制所考虑的对象，而不复制它所引用的成员对象，也就是其中的成员对象并不复制。</p>
+<p><img src="http://cloud.gcusky.com/uml/cjx-1.png" alt="浅克隆"></p>
+<h4 id="深克隆"><a href="#深克隆" class="headerlink" title="深克隆"></a>深克隆</h4><p>在深克隆中被复制对象的所有普通成员变量也都含有与原来的对象相同的值，除去那些引用其他对象的变量。哪些引用其他对象的变量将指向被复制过的新对象，而不再是原有的那些被引用的对象。在深克隆中，除了对象本身被复制外，对象包含的引用也被复制，也就是其中的成员对象也将复制。</p>
+<p><img src="http://cloud.gcusky.com/uml/cjx-2.png" alt="深克隆"></p>
+<h3 id="模式实例"><a href="#模式实例" class="headerlink" title="模式实例"></a>模式实例</h3><h4 id="实例一：邮件复制（浅克隆）"><a href="#实例一：邮件复制（浅克隆）" class="headerlink" title="实例一：邮件复制（浅克隆）"></a>实例一：邮件复制（浅克隆）</h4><p>由于邮件对象包含的内容较多（如发送者、接收者、标题、内容、日期、附件等），某系统中现需要提供一个邮件复制功能，对于已经创建好的邮件对象，可以通过复制的方式创建一个新的邮件对象，如果需要改变某部分内容，无须修改原始的邮件对象，只需要修改复制后得到的邮件对象即可。使用原型模式设计该系统。在本实例中使用浅克隆实现邮件复制，即复制邮件(Email)的同时不复制附件(Attachment)。</p>
+<p><img src="http://cloud.gcusky.com/uml/cjx-8.jpg" alt="邮件复制（浅克隆）"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 附件类 Attachment</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Attachment</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">download</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"下载附件"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体原型类 Email（邮件类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Email</span> <span class="keyword">implements</span> <span class="title">Cloneable</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Attachment attachment = <span class="keyword">null</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Email</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.attachment = <span class="keyword">new</span> Attachment();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Email clone = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			clone = (Email)<span class="keyword">super</span>.clone();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (CloneNotSupportedException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"clone failure"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> clone;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Attachment <span class="title">getAttachment</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.attachment;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"查看邮件"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 客户端测试类 Client</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Email email,copyEmail;</span><br><span class="line">		email = <span class="keyword">new</span> Email();</span><br><span class="line">		copyEmail = (Email)email.clone();</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"email == copyEmail?"</span>);</span><br><span class="line">		System.out.println(email == copyEmail);</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"email.getAttachment == copyEmail.getAttachment?"</span>);</span><br><span class="line">		System.out.println(email.getAttachment() == copyEmail.getAttachment());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实例二：邮件复制（深克隆）"><a href="#实例二：邮件复制（深克隆）" class="headerlink" title="实例二：邮件复制（深克隆）"></a>实例二：邮件复制（深克隆）</h4><p>使用深克隆实现邮件复制，即复制邮件的同时复制附件。</p>
+<p><img src="http://cloud.gcusky.com/uml/cjx-9.jpg" alt="邮件复制（深克隆）"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 附件类 Attachment</span></span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Attachment</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">download</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"下载附件"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体原型类 Email（邮件类）</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Email</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Attachment attachment = <span class="keyword">null</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Email</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.attachment = <span class="keyword">new</span> Attachment();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">deepclone</span><span class="params">()</span> <span class="keyword">throws</span> IOException, ClassNotFoundException, OptionalDataException</span>&#123;</span><br><span class="line">		<span class="comment">//将对象写入流中</span></span><br><span class="line">		ByteArrayOutputStream bao = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">		ObjectOutputStream oos = <span class="keyword">new</span> ObjectOutputStream(bao);</span><br><span class="line">		oos.writeObject(<span class="keyword">this</span>);</span><br><span class="line">		<span class="comment">//将对象从流中取出</span></span><br><span class="line">		ByteArrayInputStream bis = <span class="keyword">new</span> ByteArrayInputStream(bao.toByteArray());</span><br><span class="line">		ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(bis);</span><br><span class="line">		<span class="keyword">return</span>(ois.readObject());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Attachment <span class="title">getAttachment</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.attachment;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"查看邮件"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 客户端测试类 Client</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Email email,copyEmail = <span class="keyword">null</span>;</span><br><span class="line">		email = <span class="keyword">new</span> Email();</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			copyEmail = (Email)email.deepclone();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"email == copyEmail?"</span>);</span><br><span class="line">		System.out.println(email == copyEmail);</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"email.getAttachment == copyEmail.getAttachment?"</span>);</span><br><span class="line">		System.out.println(email.getAttachment() == copyEmail.getAttachment());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Email</code> 作为具体原型类，由于实现的是深克隆，无须使用 <code>Object</code> 的 <code>clone()</code> 方法，因此无须实现 <code>Cloneable</code> 接口；可以通过序列化的方式实现深克隆，由于要将 <code>Email</code> 类型的对象写入流中，因此Email类需要实现 <code>Serializable</code> 接口。<br>作为 <code>Email</code> 类的成员对象，在深克隆中，<code>Attachment</code> 类型的对象也将被写入流中，因此 <code>Attachment</code> 类也需要实现 <code>Serializable</code> 接口。</p>
+<h3 id="模式优缺点"><a href="#模式优缺点" class="headerlink" title="模式优缺点"></a>模式优缺点</h3><h4 id="原型模式的优点"><a href="#原型模式的优点" class="headerlink" title="原型模式的优点"></a>原型模式的优点</h4><ul>
+<li>当创建新的对象实例较为复杂时，使用原型模式可以简化对象的创建过程，通过一个已有实例可以提高新实例的创建效率。</li>
+<li>可以动态增加或减少产品类。 </li>
+<li>原型模式提供了简化的创建结构。 </li>
+<li>可以使用深克隆的方式保存对象的状态。</li>
+</ul>
+<h4 id="原型模式的缺点"><a href="#原型模式的缺点" class="headerlink" title="原型模式的缺点"></a>原型模式的缺点</h4><ul>
+<li><strong>需要为每一个类配备一个克隆方法</strong>，而且这个克隆方法需要对类的功能进行通盘考虑，这对全新的类来说不是很难，但对已有的类进行改造时，不一定是件容易的事，必须修改其源代码，违背了“开闭原则”。</li>
+<li>在实现深克隆时需要编写较为<strong>复杂的代码</strong>。</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/20160528-DesignPattern-4/">原形模式</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
+        <p><span>发布时间:</span>2016-05-28, 18:55:09</p>
+        <p><span>最后更新:</span>2016-05-28, 18:55:44</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/20160528-DesignPattern-4/" title="原形模式">http://blog.gcusky.com/20160528-DesignPattern-4/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.gcusky.com/20160528-DesignPattern-4/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/20160528-DesignPattern-5/">
+                    单例模式
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/20160528-DesignPattern-3/">
+                    创建型模式与三大工厂模式
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#模式定义"><span class="toc-number">1.</span> <span class="toc-text">模式定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式结构"><span class="toc-number">2.</span> <span class="toc-text">模式结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式分类"><span class="toc-number">3.</span> <span class="toc-text">模式分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浅克隆"><span class="toc-number">3.1.</span> <span class="toc-text">浅克隆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#深克隆"><span class="toc-number">3.2.</span> <span class="toc-text">深克隆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式实例"><span class="toc-number">4.</span> <span class="toc-text">模式实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实例一：邮件复制（浅克隆）"><span class="toc-number">4.1.</span> <span class="toc-text">实例一：邮件复制（浅克隆）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例二：邮件复制（深克隆）"><span class="toc-number">4.2.</span> <span class="toc-text">实例二：邮件复制（深克隆）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式优缺点"><span class="toc-number">5.</span> <span class="toc-text">模式优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原型模式的优点"><span class="toc-number">5.1.</span> <span class="toc-text">原型模式的优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原型模式的缺点"><span class="toc-number">5.2.</span> <span class="toc-text">原型模式的缺点</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"原形模式　| GCUSKY_SPACE　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2130821';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/20160528-DesignPattern-5/" title="上一篇: 单例模式">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/20160528-DesignPattern-3/" title="下一篇: 创建型模式与三大工厂模式">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/20170217-weblogic/">导入dmp、Weblogic创建域</a></li><li class="post-list-item"><a class="post-list-link" href="/20170129-project-4/">推箱子</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-scikit-learn-translation/">【外文翻译】Scikit-learn：在Python中进行机器学习</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-project-3/">学生信息管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-2/">献血管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-1/">产品销售管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170115-hexo-1/">博客样式更新</a></li><li class="post-list-item"><a class="post-list-link" href="/20170109-life2/">2017伊始-随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-python-1/">Python 实现统计字数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-acm-13/">高斯消元</a></li><li class="post-list-item"><a class="post-list-link" href="/20160605-python/">Python简单入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-11/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-10/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-acm-12/">矩阵的基本变换</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-9/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-8/">外观模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-7/">桥接模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-6/">结构型模式之适配器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-5/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-4/">原形模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-3/">创建型模式与三大工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-english-5/">英语的其他构词法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-DesignPattern-2/">面向对象设计原则</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-4/">英语基本构词法之转换法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-3/">英语基本构词法之合成法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160430-DesignPattern/">UML 类图</a></li><li class="post-list-item"><a class="post-list-link" href="/20160428-DesignPattern-1/">设计模式概述</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-2/">英语基本构词法之词缀法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-1/">英语词汇文化内涵分类</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-junit-2/">JUnit 黑盒测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-english/">英语发展历史</a></li><li class="post-list-item"><a class="post-list-link" href="/20160423-matlab-1/">纵切碎纸片复原的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/20160419-junit-1/">JUnit 参数化测试和打包测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-junit/">JUnit 初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-acm-11/">NYOJ 587-blockhouses | ZOJ 1002-Fire Net</a></li><li class="post-list-item"><a class="post-list-link" href="/20160414-life/">花开不败</a></li><li class="post-list-item"><a class="post-list-link" href="/20160413-acm-10/">ZOJ 入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160325-wiki/">GCUSKY_WIKI</a></li><li class="post-list-item"><a class="post-list-link" href="/20160320-mysql-index/">MySQL数据库索引问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160318-acm-9/">NYOJ 488-素数环</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-8/">NYOJ 106-背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-7/">NYOJ 14-会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-6/">NYOJ 91-阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-5/">NYOJ 47-过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-3/">NYOJ 22-素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-4/">NYOJ 33-蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-2/">NYOJ 11-奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-1/">NYOJ 4-ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/20160314-acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160205-test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/20160202-learn-hexo/">Hexo 基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/20151118-learn-1/">邓小平文选 第三卷 P363 思考：思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150922-learn/">《再思毛泽东：毛泽东思想的探索》思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150823-matlab/">二分法求解非线性方程</a></li><li class="post-list-item"><a class="post-list-link" href="/20150315-hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <div class="right-wrap">
+  <div class="other">
+    <p>20160528-DesignPattern-4/</p>
+    <p>test of gcusky</p>
+  </div>
+  <div class="qrcode">
+    <p>本页二维码</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaUlEQVR42u3aS5LjIBAEUN//0jMnsCaz+Iy647FyOLDEYwE4qc+fX90+eHh4eHh4eHh4L+N94vbtV+33z302jA0PDw/vCu8fS20wlISRfN4wNjw8PLyLvHxYyeL+7TnJW2Zjw8PDw3szb7Y9PE9N8i48PDy8n87LD8QJ8nUbAx4eHt6mMOK5//ORejYpV7MWPDw8vJiXH3/vf756v4eHh4cX8OqSpsflPt9y2pBiWHSFh4eHd4DXRgbJ5VZy3TWLbpMpwMPDwzvNWwkd2kD2uX9bwBqFEXh4eHjHeO2CvrLctxdadUCMh4eHd5g3+/OfxLvtQbzdiup/DHh4eHiHee3Q9xYBrBQW4OHh4Z3m7Xr0Z1PLw4iidAAPDw/vAC8PJtZ7toUI7TUYHh4e3h3e+jL93GcWLgxjCzw8PLzDvNl1V3uhNWPMthw8PDy807wktG0PwbPShKQYa2nfw8PDw9vEW7ngT0KE9l3tBOHh4eH9L95soU/YeSHs7IINDw8P7z4vjxLawoJ86CvbUhFG4OHh4W3iFRdLQRSbh7bJFAzLv/Dw8PCu8NrQoS01aEOHpS0KDw8P7wW8WVCbHI7bKCSaejw8PLzrvJWjdk6aFRZEU4yHh4d3mNe29mVtnzaAwMPDw7vP+8QtGdBsQZ+VIHwdDx4eHt4VXr6UtwfiJLyYTQceHh7eG3jrC/SuX+Vb1ObSATw8PLxjvFlxahvmPscfRbkqHh4e3gt4szAif04+lQeP1Hh4eHibwoiVcCHpvxIN4+Hh4d3k5RHAM3VWopoctZONBA8PD+8O7/c1PDw8PDw8PDy8F7S/vs3tOaSno6sAAAAASUVORK5CYII=" height="160" width="160">
+  </div>
+  <script>
+    $(window).scroll(function()
+    { 
+      //qrcode跟随滚动
+      var h = $(window).height();
+      var top = $(window).scrollTop();
+      var right = $('.right-wrap .other');
+      var rightHeight = right.height();
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+        if(top>=rightHeight+30)
+        {
+          $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});
+        }
+        else
+        {
+          $('.qrcode').css({'position':'static', 'top':0,'width': '100%' });   
+        } 
+       /* return true;*/
+    });
+  </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 GCUSKY
+                
+                    <a href="http://www.miibeian.gov.cn/">粤ICP备15063973号-2</a>
+                
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE , Improved by <a href="/">GCUSKY</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 7;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65267116-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

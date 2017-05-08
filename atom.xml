@@ -17,8 +17,8 @@
   
   <entry>
     <title>导入dmp、Weblogic创建域</title>
-    <link href="http://blog.gcusky.com/2017/02/17/weblogic/"/>
-    <id>http://blog.gcusky.com/2017/02/17/weblogic/</id>
+    <link href="http://blog.gcusky.com/20170217-weblogic/"/>
+    <id>http://blog.gcusky.com/20170217-weblogic/</id>
     <published>2017-02-17T02:31:41.000Z</published>
     <updated>2017-04-11T02:45:42.694Z</updated>
     
@@ -84,8 +84,8 @@
   
   <entry>
     <title>推箱子</title>
-    <link href="http://blog.gcusky.com/2017/01/29/project-4/"/>
-    <id>http://blog.gcusky.com/2017/01/29/project-4/</id>
+    <link href="http://blog.gcusky.com/20170129-project-4/"/>
+    <id>http://blog.gcusky.com/20170129-project-4/</id>
     <published>2017-01-29T12:24:00.000Z</published>
     <updated>2017-01-29T13:24:43.000Z</updated>
     
@@ -147,8 +147,8 @@
   
   <entry>
     <title>【外文翻译】Scikit-learn：在Python中进行机器学习</title>
-    <link href="http://blog.gcusky.com/2017/01/26/scikit-learn-translation/"/>
-    <id>http://blog.gcusky.com/2017/01/26/scikit-learn-translation/</id>
+    <link href="http://blog.gcusky.com/20170126-scikit-learn-translation/"/>
+    <id>http://blog.gcusky.com/20170126-scikit-learn-translation/</id>
     <published>2017-01-26T10:44:08.000Z</published>
     <updated>2017-04-12T08:42:37.662Z</updated>
     
@@ -186,8 +186,8 @@
   
   <entry>
     <title>学生信息管理系统</title>
-    <link href="http://blog.gcusky.com/2017/01/26/project-3/"/>
-    <id>http://blog.gcusky.com/2017/01/26/project-3/</id>
+    <link href="http://blog.gcusky.com/20170126-project-3/"/>
+    <id>http://blog.gcusky.com/20170126-project-3/</id>
     <published>2017-01-26T10:07:56.000Z</published>
     <updated>2017-01-26T10:09:58.000Z</updated>
     
@@ -274,8 +274,8 @@
   
   <entry>
     <title>献血管理系统</title>
-    <link href="http://blog.gcusky.com/2017/01/16/project-2/"/>
-    <id>http://blog.gcusky.com/2017/01/16/project-2/</id>
+    <link href="http://blog.gcusky.com/20170116-project-2/"/>
+    <id>http://blog.gcusky.com/20170116-project-2/</id>
     <published>2017-01-16T14:32:06.000Z</published>
     <updated>2017-04-24T08:23:04.606Z</updated>
     
@@ -317,8 +317,8 @@
   
   <entry>
     <title>产品销售管理系统</title>
-    <link href="http://blog.gcusky.com/2017/01/16/project-1/"/>
-    <id>http://blog.gcusky.com/2017/01/16/project-1/</id>
+    <link href="http://blog.gcusky.com/20170116-project-1/"/>
+    <id>http://blog.gcusky.com/20170116-project-1/</id>
     <published>2017-01-16T10:20:44.000Z</published>
     <updated>2017-01-26T10:09:07.000Z</updated>
     
@@ -516,8 +516,8 @@
   
   <entry>
     <title>博客样式更新</title>
-    <link href="http://blog.gcusky.com/2017/01/15/hexo-1/"/>
-    <id>http://blog.gcusky.com/2017/01/15/hexo-1/</id>
+    <link href="http://blog.gcusky.com/20170115-hexo-1/"/>
+    <id>http://blog.gcusky.com/20170115-hexo-1/</id>
     <published>2017-01-15T15:49:10.000Z</published>
     <updated>2017-01-15T15:59:59.000Z</updated>
     
@@ -573,8 +573,8 @@
   
   <entry>
     <title>2017伊始-随笔</title>
-    <link href="http://blog.gcusky.com/2017/01/09/life2/"/>
-    <id>http://blog.gcusky.com/2017/01/09/life2/</id>
+    <link href="http://blog.gcusky.com/20170109-life2/"/>
+    <id>http://blog.gcusky.com/20170109-life2/</id>
     <published>2017-01-09T08:35:18.000Z</published>
     <updated>2017-01-16T07:20:17.000Z</updated>
     
@@ -629,8 +629,8 @@
   
   <entry>
     <title>Python 实现统计字数</title>
-    <link href="http://blog.gcusky.com/2016/06/07/python-1/"/>
-    <id>http://blog.gcusky.com/2016/06/07/python-1/</id>
+    <link href="http://blog.gcusky.com/20160607-python-1/"/>
+    <id>http://blog.gcusky.com/20160607-python-1/</id>
     <published>2016-06-07T13:11:24.000Z</published>
     <updated>2016-06-07T13:12:27.000Z</updated>
     
@@ -655,8 +655,8 @@
   
   <entry>
     <title>高斯消元</title>
-    <link href="http://blog.gcusky.com/2016/06/07/acm-13/"/>
-    <id>http://blog.gcusky.com/2016/06/07/acm-13/</id>
+    <link href="http://blog.gcusky.com/20160607-acm-13/"/>
+    <id>http://blog.gcusky.com/20160607-acm-13/</id>
     <published>2016-06-07T12:12:41.000Z</published>
     <updated>2017-01-09T09:45:33.000Z</updated>
     
@@ -703,8 +703,8 @@
   
   <entry>
     <title>Python简单入门</title>
-    <link href="http://blog.gcusky.com/2016/06/05/python/"/>
-    <id>http://blog.gcusky.com/2016/06/05/python/</id>
+    <link href="http://blog.gcusky.com/20160605-python/"/>
+    <id>http://blog.gcusky.com/20160605-python/</id>
     <published>2016-06-05T02:49:29.000Z</published>
     <updated>2016-06-05T03:00:57.000Z</updated>
     
@@ -1179,8 +1179,8 @@
   
   <entry>
     <title>观察者模式</title>
-    <link href="http://blog.gcusky.com/2016/06/04/DesignPattern-11/"/>
-    <id>http://blog.gcusky.com/2016/06/04/DesignPattern-11/</id>
+    <link href="http://blog.gcusky.com/20160604-DesignPattern-11/"/>
+    <id>http://blog.gcusky.com/20160604-DesignPattern-11/</id>
     <published>2016-06-04T08:48:29.000Z</published>
     <updated>2016-06-04T08:49:00.000Z</updated>
     
@@ -1216,8 +1216,8 @@
   
   <entry>
     <title>代理模式</title>
-    <link href="http://blog.gcusky.com/2016/06/04/DesignPattern-10/"/>
-    <id>http://blog.gcusky.com/2016/06/04/DesignPattern-10/</id>
+    <link href="http://blog.gcusky.com/20160604-DesignPattern-10/"/>
+    <id>http://blog.gcusky.com/20160604-DesignPattern-10/</id>
     <published>2016-06-04T08:48:22.000Z</published>
     <updated>2016-06-04T08:49:48.000Z</updated>
     
@@ -1258,8 +1258,8 @@
   
   <entry>
     <title>矩阵的基本变换</title>
-    <link href="http://blog.gcusky.com/2016/06/04/acm-12/"/>
-    <id>http://blog.gcusky.com/2016/06/04/acm-12/</id>
+    <link href="http://blog.gcusky.com/20160604-acm-12/"/>
+    <id>http://blog.gcusky.com/20160604-acm-12/</id>
     <published>2016-06-04T08:03:50.000Z</published>
     <updated>2016-06-04T08:04:55.000Z</updated>
     
@@ -1308,8 +1308,8 @@
   
   <entry>
     <title>代理模式</title>
-    <link href="http://blog.gcusky.com/2016/06/01/DesignPattern-9/"/>
-    <id>http://blog.gcusky.com/2016/06/01/DesignPattern-9/</id>
+    <link href="http://blog.gcusky.com/20160601-DesignPattern-9/"/>
+    <id>http://blog.gcusky.com/20160601-DesignPattern-9/</id>
     <published>2016-06-01T03:00:24.000Z</published>
     <updated>2016-06-01T03:00:50.000Z</updated>
     
@@ -1349,8 +1349,8 @@
   
   <entry>
     <title>外观模式</title>
-    <link href="http://blog.gcusky.com/2016/06/01/DesignPattern-8/"/>
-    <id>http://blog.gcusky.com/2016/06/01/DesignPattern-8/</id>
+    <link href="http://blog.gcusky.com/20160601-DesignPattern-8/"/>
+    <id>http://blog.gcusky.com/20160601-DesignPattern-8/</id>
     <published>2016-06-01T02:28:33.000Z</published>
     <updated>2016-06-01T02:29:02.000Z</updated>
     
@@ -1408,8 +1408,8 @@
   
   <entry>
     <title>桥接模式</title>
-    <link href="http://blog.gcusky.com/2016/05/28/DesignPattern-7/"/>
-    <id>http://blog.gcusky.com/2016/05/28/DesignPattern-7/</id>
+    <link href="http://blog.gcusky.com/20160528-DesignPattern-7/"/>
+    <id>http://blog.gcusky.com/20160528-DesignPattern-7/</id>
     <published>2016-05-28T14:01:48.000Z</published>
     <updated>2016-06-02T02:17:03.000Z</updated>
     
@@ -1459,8 +1459,8 @@
   
   <entry>
     <title>结构型模式之适配器模式</title>
-    <link href="http://blog.gcusky.com/2016/05/28/DesignPattern-6/"/>
-    <id>http://blog.gcusky.com/2016/05/28/DesignPattern-6/</id>
+    <link href="http://blog.gcusky.com/20160528-DesignPattern-6/"/>
+    <id>http://blog.gcusky.com/20160528-DesignPattern-6/</id>
     <published>2016-05-28T12:22:36.000Z</published>
     <updated>2016-06-02T01:54:57.000Z</updated>
     
@@ -1531,8 +1531,8 @@
   
   <entry>
     <title>单例模式</title>
-    <link href="http://blog.gcusky.com/2016/05/28/DesignPattern-5/"/>
-    <id>http://blog.gcusky.com/2016/05/28/DesignPattern-5/</id>
+    <link href="http://blog.gcusky.com/20160528-DesignPattern-5/"/>
+    <id>http://blog.gcusky.com/20160528-DesignPattern-5/</id>
     <published>2016-05-28T11:27:09.000Z</published>
     <updated>2016-05-28T11:31:16.000Z</updated>
     
@@ -1584,8 +1584,8 @@
   
   <entry>
     <title>原形模式</title>
-    <link href="http://blog.gcusky.com/2016/05/28/DesignPattern-4/"/>
-    <id>http://blog.gcusky.com/2016/05/28/DesignPattern-4/</id>
+    <link href="http://blog.gcusky.com/20160528-DesignPattern-4/"/>
+    <id>http://blog.gcusky.com/20160528-DesignPattern-4/</id>
     <published>2016-05-28T10:55:09.000Z</published>
     <updated>2016-05-28T10:55:44.000Z</updated>
     

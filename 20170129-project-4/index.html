@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="GCUSKY" />
+
+
+
+<meta name="description" content="总结了很久以前 2014年10月份 的面向对象程序设计大作业，重点实践了 swing 组件，对 JFrame 容器有了更高层次的认识，了解了 Java 事件处理机制。也体现当时的中二哈哈哈。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="推箱子">
+<meta property="og:url" content="http://blog.gcusky.com/20170129-project-4/index.html">
+<meta property="og:site_name" content="GCUSKY_SPACE">
+<meta property="og:description" content="总结了很久以前 2014年10月份 的面向对象程序设计大作业，重点实践了 swing 组件，对 JFrame 容器有了更高层次的认识，了解了 Java 事件处理机制。也体现当时的中二哈哈哈。">
+<meta property="og:image" content="http://cloud.gcusky.com/2017/0129-1.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/2017/0129-1.png">
+<meta property="og:image" content="http://cloud.gcusky.com/2017/0129-2.png">
+<meta property="og:image" content="http://cloud.gcusky.com/2017/0129-3.png">
+<meta property="og:updated_time" content="2017-01-29T13:24:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="推箱子">
+<meta name="twitter:description" content="总结了很久以前 2014年10月份 的面向对象程序设计大作业，重点实践了 swing 组件，对 JFrame 容器有了更高层次的认识，了解了 Java 事件处理机制。也体现当时的中二哈哈哈。">
+<meta name="twitter:image" content="http://cloud.gcusky.com/2017/0129-1.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>推箱子 | GCUSKY_SPACE</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?efa5240456e869b14f74fb48fb6f8b60";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/gcusky.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">GCUSKY</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">云山自清，青水自流。</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/2016/03/25/wiki/">WIKI</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JUnit/">JUnit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NYOJ/">NYOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL练习/">STL练习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZOJ/">ZOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp-servlet/">jsp/servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scikit-learn/">scikit-learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swing/">swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weblogic/">weblogic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分法/">二分法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分治法/">分治法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创建型模式/">创建型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/回溯法/">回溯法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搜索/">搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数值法/">数值法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学建模/">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/白盒测试/">白盒测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/矩阵/">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/结构型模式/">结构型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行为型模式/">行为型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语言入门/">语言入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心算法/">贪心算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性方程/">非线性方程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象设计原则/">面向对象设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">GCUSKY</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/gcusky.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">GCUSKY</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">云山自清，青水自流。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/2016/03/25/wiki/">WIKI</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" target="_blank" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-project-4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/20170129-project-4/" class="article-date">
+      <time datetime="2017-01-29T12:24:00.000Z" itemprop="datePublished">2017-01-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      推箱子
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/课程设计/">课程设计</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swing/">swing</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>总结了很久以前 <code>2014年10月份</code> 的面向对象程序设计大作业，重点实践了 <code>swing</code> 组件，对 <code>JFrame</code> 容器有了更高层次的认识，了解了 <code>Java</code> 事件处理机制。也体现当时的中二哈哈哈。</p>
+<a id="more"></a>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="游戏介绍"><a href="#游戏介绍" class="headerlink" title="游戏介绍"></a>游戏介绍</h3><p>经典的推箱子是一个来自日本的古老游戏，目的是在训练你的逻辑思考能力。在一个狭小的仓库中，要求把木箱放到指定的位置，稍不小心就会出现箱子无法移动或者通道被堵住的情况，所以需要巧妙的利用有限的空间和通道，合理安排移动的次序和位置，才能顺利的完成任务。<br>注：因剧情需要，本游戏将围墙用宝箱来表示、所推的箱子用水晶来表示、目的地为法阵；即玩家被宝箱包围着，必须将所有水晶移动到达法阵才算过关。</p>
+<h3 id="游戏背景"><a href="#游戏背景" class="headerlink" title="游戏背景"></a>游戏背景</h3><p>游戏的主人公李逍遥之子李剑灵，在其姐姐李忆如被抓后，为了回到过去改变一切，勤加修炼回魂仙梦。不料有一次法术出错，落入幻梦之中。幻梦一共有五十关，每一关他必须将所有水晶置于法阵中才能过关；游戏由此展开。同时，在游戏中伴着不同的背景音乐，忆起陈年往事……</p>
+<h3 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h3><p>游戏中的控制对象是李剑灵 、包围在其周围的是幻梦中的宝箱（但打不开，也隐喻了李剑灵的一生被宿命束缚着，虽珍惜眼前的一切甚至到最后逆天而行，却也无法保护好其身边所珍惜的……）、人可以任意行走的草地、几个可以移动的水晶和水晶放置的法阵。玩家通过按上下左右控制主人公移动水晶，当所有的水晶都移动到法阵后出现过关信息并选择是否进行下一关，否的话退出游戏，是的话显示下一关。直至 50 关全过出现通关信息。 </p>
+<h2 id="概要设计"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计</h2><p><img src="http://cloud.gcusky.com/2017/0129-1.jpg" alt="类、方法及其功能"></p>
+<p><img src="http://cloud.gcusky.com/2017/0129-1.png" alt="图片资源"></p>
+<p>0：宝箱之外的区域；1：将可移动区域包围起来的宝箱；2：可移动区域——草地；<br>3：被移动的水晶；4：目的地——法阵；5：向上的人；6：向左的人；<br>7：向右的人；8：向下的人；9：水晶在法阵上；background：主界面的背景图。</p>
+<h2 id="详细设计"><a href="#详细设计" class="headerlink" title="详细设计"></a>详细设计</h2><h3 id="主要界面类（Sokoban-java）"><a href="#主要界面类（Sokoban-java）" class="headerlink" title="主要界面类（Sokoban.java）"></a>主要界面类（Sokoban.java）</h3><p>该类主要继承 <code>swing</code> 包中的 <code>JFrame</code> 组件并实现 <code>ActionListener</code>,<code>ItemListener</code> 接口。其中需要声明并创建各种 <code>JLabel</code> 标签、<code>JButton</code> 按钮、<code>JComboBox</code> 组合框以及 <code>JMenuItem</code> 菜单栏。同时也兼任把背景、游戏界面和音乐控件加进整个主要界面中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.awt.*;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.*;</span><br><span class="line"><span class="keyword">import</span> javax.swing.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sokoban</span> <span class="keyword">extends</span> <span class="title">JFrame</span> <span class="keyword">implements</span> <span class="title">ActionListener</span>,<span class="title">ItemListener</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> JLabel ……</span><br><span class="line">	<span class="keyword">public</span> JButton ……</span><br><span class="line">	GamePanel panel;</span><br><span class="line">    Sound sound;</span><br><span class="line">    ImageIcon icon;  </span><br><span class="line">    Image img;  </span><br><span class="line">JComboBox transed =<span class="keyword">new</span> JComboBox();</span><br><span class="line">JMenuItem ……</span><br><span class="line"><span class="comment">//Sokoban()是对声明或声明创建后的控件进行布局定位</span></span><br><span class="line">Sokoban()&#123;……&#125;</span><br><span class="line"><span class="comment">// void actionPerformed(ActionEvent e) 这个方法是对大部分控件进行监听及事件处理</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;……｝</span><br><span class="line"><span class="comment">// void itemStateChanged(ItemEvent ie) 是对组合框控件的监听及事件处理</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">itemStateChanged</span><span class="params">(ItemEvent ie)</span> </span>&#123;……｝</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="背景图片类（CInstead-java）"><a href="#背景图片类（CInstead-java）" class="headerlink" title="背景图片类（CInstead.java）"></a>背景图片类（CInstead.java）</h3><p>该类主要继承 <code>swing</code> 包中的 <code>JPanel</code> 组件。读取并绘制背景图片。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.awt.*;</span><br><span class="line"><span class="keyword">import</span> javax.swing.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CInstead</span> <span class="keyword">extends</span> <span class="title">JPanel</span> </span>&#123;<span class="comment">//此类用于添加背景图片</span></span><br><span class="line">    ImageIcon icon;</span><br><span class="line">    Image img;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CInstead</span><span class="params">()</span> </span>&#123;<span class="comment">//用来读取图片</span></span><br><span class="line">        icon=<span class="keyword">new</span> ImageIcon( Toolkit.getDefaultToolkit().getImage(<span class="string">"image\\background.jpg"</span> ));</span><br><span class="line">        img=icon.getImage();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paintComponent</span><span class="params">(Graphics g)</span> </span>&#123;<span class="comment">//绘制图片</span></span><br><span class="line">        <span class="keyword">super</span>.paintComponent(g);</span><br><span class="line">        g.drawImage(img,<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">null</span> );</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="地图读取类（Readmap-java）"><a href="#地图读取类（Readmap-java）" class="headerlink" title="地图读取类（Readmap.java）"></a>地图读取类（Readmap.java）</h3><p>该类用用 <code>FileReader</code> 具体地读取地图内容，每一张地图都把其对应的矩阵放在一个 <code>txt</code>  文档中。一个 <code>txt</code> 代表一张地图，当关卡切换时便读取对应的 <code>txt</code> 并转化为二维数组，最终将数组给予游戏主程序类对其显示在游戏界面上。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Readmap</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> level,mx,my;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[][] mymap=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20</span>][<span class="number">20</span>];</span><br><span class="line">    FileReader read; BufferedReader nr;String tr=<span class="string">""</span>;</span><br><span class="line">    <span class="keyword">int</span>[] x;<span class="keyword">int</span> c=<span class="number">0</span>;</span><br><span class="line">    Readmap(<span class="keyword">int</span> k)&#123;</span><br><span class="line">        <span class="comment">//读图主程序</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获取器</span></span><br><span class="line">    <span class="keyword">int</span>[][] getmap()&#123;<span class="keyword">return</span> mymap;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getmanX</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> mx;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getmanY</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> my;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="游戏主程序类（GamePanel-java）"><a href="#游戏主程序类（GamePanel-java）" class="headerlink" title="游戏主程序类（GamePanel.java）"></a>游戏主程序类（GamePanel.java）</h3><p>该类为整个程序的主体，包含了对游戏的整个逻辑判断、接收地图读取类的数组将地图显示出来、监听键盘事件改变游戏视图以及提供各种方法给主要界面类的控件进行事件响应。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.awt.*;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"><span class="keyword">import</span> javax.swing.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GamePanel</span> <span class="keyword">extends</span> <span class="title">JPanel</span> <span class="keyword">implements</span> <span class="title">KeyListener</span> </span>&#123;</span><br><span class="line">    <span class="comment">//最多关卡数为50关</span></span><br><span class="line">    <span class="keyword">int</span> max=<span class="number">50</span>,manX,manY,boxnum; <span class="keyword">int</span>[][] map,maptmp;</span><br><span class="line">    Image[] myImage;</span><br><span class="line">    Readmap Levelmap; Readmap Levelmaptmp;</span><br><span class="line">    <span class="keyword">int</span> len=<span class="number">30</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> level=<span class="number">1</span>;<span class="comment">//关卡数为第一关</span></span><br><span class="line">    Stack mystack=<span class="keyword">new</span> Stack();</span><br><span class="line">    GamePanel()&#123;</span><br><span class="line">        <span class="comment">//游戏窗口在面板上的定位</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Sokoban</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">        <span class="comment">//变量赋值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxlevel</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> max;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paint</span><span class="params">(Graphics g)</span></span>&#123;</span><br><span class="line">        <span class="comment">//游戏窗口内文字的介绍</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">keyPressed</span><span class="params">(KeyEvent e)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(e.getKeyCode()==KeyEvent.VK_UP)&#123;moveup();&#125;<span class="comment">//键盘监听到向上走</span></span><br><span class="line">        <span class="keyword">if</span>(e.getKeyCode()==KeyEvent.VK_DOWN)&#123;movedown();&#125;<span class="comment">//键盘监听到向下走</span></span><br><span class="line">        <span class="keyword">if</span>(e.getKeyCode()==KeyEvent.VK_LEFT)&#123;moveleft();&#125;<span class="comment">//键盘监听到向左走</span></span><br><span class="line">        <span class="keyword">if</span>(e.getKeyCode()==KeyEvent.VK_RIGHT)&#123;moveright();&#125;<span class="comment">//键盘监听到向右走</span></span><br><span class="line">        <span class="keyword">if</span>(iswin())&#123;</span><br><span class="line">            <span class="comment">//胜利弹出窗口</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isMystackEmpty</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> mystack.isEmpty();&#125;<span class="comment">//指出变量是否已经初始化</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">back</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> (Integer)mystack.pop();&#125;<span class="comment">//出栈的操作(后退次数)</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>&#123;mystack.removeAllElements();&#125;<span class="comment">//换关卡或重新开始</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">moveup</span><span class="params">()</span></span>&#123;……&#125;<span class="comment">//向上走</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">movedown</span><span class="params">()</span></span>&#123;……&#125;<span class="comment">//向下走</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">moveleft</span><span class="params">()</span> </span>&#123;……&#125;<span class="comment">//向左走</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">moveright</span><span class="params">()</span> </span>&#123;……&#125;<span class="comment">//向右走</span></span><br><span class="line">    <span class="comment">//后退</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">backup</span><span class="params">(<span class="keyword">int</span> t)</span> </span>&#123;……&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">backdown</span><span class="params">(<span class="keyword">int</span> t)</span> </span>&#123;……&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">backleft</span><span class="params">(<span class="keyword">int</span> t)</span> </span>&#123;……&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">backright</span><span class="params">(<span class="keyword">int</span> t)</span> </span>&#123;……&#125;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">iswin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//是否胜利</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="背景音乐类（Sound-java）"><a href="#背景音乐类（Sound-java）" class="headerlink" title="背景音乐类（Sound.java）"></a>背景音乐类（Sound.java）</h3><p>该类用专门的 <code>javax.sound.midi</code> 包来处理个播放 <code>MIDI</code> 音乐，其中包括了与 <code>MIDI</code> 相关的各个类及其方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> javax.sound.midi.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sound</span> </span>&#123;</span><br><span class="line">    String path=<span class="keyword">new</span> String(<span class="string">"music\\"</span>);</span><br><span class="line">    String  file=<span class="keyword">new</span> String(<span class="string">"1.mid"</span>);</span><br><span class="line">    Sequence seq;</span><br><span class="line">    Sequencer midi;</span><br><span class="line">    <span class="keyword">boolean</span> sign;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">loadSound</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            seq=MidiSystem.getSequence(<span class="keyword">new</span> File(path+file));</span><br><span class="line">            midi=MidiSystem.getSequencer();</span><br><span class="line">            midi.open();</span><br><span class="line">            midi.setSequence(seq);</span><br><span class="line">            midi.start();</span><br><span class="line">            midi.setLoopCount(Sequencer.LOOP_CONTINUOUSLY);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception ex) &#123;ex.printStackTrace();&#125;</span><br><span class="line">        sign=<span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">mystop</span><span class="params">()</span></span>&#123;midi.stop();midi.close();sign=<span class="keyword">false</span>;&#125;<span class="comment">//停止播放音乐</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isplay</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> sign;&#125;<span class="comment">//是否正在播放</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setMusic</span><span class="params">(String e)</span></span>&#123;file=e;&#125;<span class="comment">//更换音乐</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="部分展示"><a href="#部分展示" class="headerlink" title="部分展示"></a>部分展示</h2><p><img src="http://cloud.gcusky.com/2017/0129-2.png" alt=""><img src="http://cloud.gcusky.com/2017/0129-3.png" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="程序的优点"><a href="#程序的优点" class="headerlink" title="程序的优点"></a>程序的优点</h3><ol>
+<li>除了推箱子这个主体游戏，还加入了游戏的背景以及作品信息，为这个游戏注入灵魂。</li>
+<li>完善了推箱子这个游戏的各种功能，如【首关】【上一关】【选关】【下一关】【末关】【退一步】【重来】</li>
+<li>该游戏不仅有背景音乐，还可以对背景音乐进行切换。</li>
+<li>能够将上述功能完整地揉和在一起，成为一个拥有自己特色的游戏。</li>
+</ol>
+<h3 id="程序的不足"><a href="#程序的不足" class="headerlink" title="程序的不足"></a>程序的不足</h3><ol>
+<li>程序中仍有一些代码不够简洁。</li>
+<li>程序运行时仍可能有少许BUG存在。</li>
+</ol>
+<h3 id="遇到的困难及解决的问题"><a href="#遇到的困难及解决的问题" class="headerlink" title="遇到的困难及解决的问题"></a>遇到的困难及解决的问题</h3><ol>
+<li>背景音乐只能支持 <code>mid</code> 格式，虽然成功独立构建支持 <code>wav</code> 格式音乐类及其附加功能，但因为对 <code>java.applet.AudioClip</code> 不了解，无法完美地揉和进程序中，最终决定依旧使用支持 <code>mid</code> 格式的类。</li>
+<li>一些类或方法如什么是 <code>Container</code>、<code>clear()</code>与 <code>removeAllElements()</code> 的区别、什么时候用 <code>ItemStateChanged</code> 什么时候用 <code>actionperformed</code> 等等，因未曾经常使用这些类或方法导致知识的遗忘或缺失。编写本程序可巩固知识，温故而知新。</li>
+</ol>
+<h3 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h3><ol>
+<li>了解了 <code>swing</code> 组件的使用方法，对 <code>JFrame</code> 容器有了更高层次的认识。</li>
+<li>了解了 <code>Java</code> 事件处理机制以及实现了多个处理过程。</li>
+<li>使用了抽象思维将游戏地图抽象为二维数组，游戏过程就是数组内数据的改变过程。</li>
+<li>写代码不仅仅只是为了完成一个大作业，而是要投入感情去完成一个游戏。程序本身便是程序员孕育出来的孩子。</li>
+</ol>
+<p>具体代码见：<a href="https://coding.net/u/gcusky/p/Sokoban/git" target="_blank" rel="external">https://coding.net/u/gcusky/p/Sokoban/git</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/20170129-project-4/">推箱子</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
+        <p><span>发布时间:</span>2017-01-29, 20:24:00</p>
+        <p><span>最后更新:</span>2017-01-29, 21:24:43</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/20170129-project-4/" title="推箱子">http://blog.gcusky.com/20170129-project-4/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.gcusky.com/20170129-project-4/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/20170217-weblogic/">
+                    导入dmp、Weblogic创建域
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/20170126-scikit-learn-translation/">
+                    【外文翻译】Scikit-learn：在Python中进行机器学习
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#游戏介绍"><span class="toc-number">1.1.</span> <span class="toc-text">游戏介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#游戏背景"><span class="toc-number">1.2.</span> <span class="toc-text">游戏背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要功能"><span class="toc-number">1.3.</span> <span class="toc-text">主要功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#概要设计"><span class="toc-number">2.</span> <span class="toc-text">概要设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#详细设计"><span class="toc-number">3.</span> <span class="toc-text">详细设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主要界面类（Sokoban-java）"><span class="toc-number">3.1.</span> <span class="toc-text">主要界面类（Sokoban.java）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#背景图片类（CInstead-java）"><span class="toc-number">3.2.</span> <span class="toc-text">背景图片类（CInstead.java）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#地图读取类（Readmap-java）"><span class="toc-number">3.3.</span> <span class="toc-text">地图读取类（Readmap.java）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#游戏主程序类（GamePanel-java）"><span class="toc-number">3.4.</span> <span class="toc-text">游戏主程序类（GamePanel.java）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#背景音乐类（Sound-java）"><span class="toc-number">3.5.</span> <span class="toc-text">背景音乐类（Sound.java）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部分展示"><span class="toc-number">4.</span> <span class="toc-text">部分展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程序的优点"><span class="toc-number">5.1.</span> <span class="toc-text">程序的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序的不足"><span class="toc-number">5.2.</span> <span class="toc-text">程序的不足</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的困难及解决的问题"><span class="toc-number">5.3.</span> <span class="toc-text">遇到的困难及解决的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#收获"><span class="toc-number">5.4.</span> <span class="toc-text">收获</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"推箱子　| GCUSKY_SPACE　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2130821';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/20170217-weblogic/" title="上一篇: 导入dmp、Weblogic创建域">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/20170126-scikit-learn-translation/" title="下一篇: 【外文翻译】Scikit-learn：在Python中进行机器学习">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/20170217-weblogic/">导入dmp、Weblogic创建域</a></li><li class="post-list-item"><a class="post-list-link" href="/20170129-project-4/">推箱子</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-scikit-learn-translation/">【外文翻译】Scikit-learn：在Python中进行机器学习</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-project-3/">学生信息管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-2/">献血管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-1/">产品销售管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170115-hexo-1/">博客样式更新</a></li><li class="post-list-item"><a class="post-list-link" href="/20170109-life2/">2017伊始-随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-python-1/">Python 实现统计字数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-acm-13/">高斯消元</a></li><li class="post-list-item"><a class="post-list-link" href="/20160605-python/">Python简单入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-11/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-10/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-acm-12/">矩阵的基本变换</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-9/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-8/">外观模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-7/">桥接模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-6/">结构型模式之适配器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-5/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-4/">原形模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-3/">创建型模式与三大工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-english-5/">英语的其他构词法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-DesignPattern-2/">面向对象设计原则</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-4/">英语基本构词法之转换法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-3/">英语基本构词法之合成法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160430-DesignPattern/">UML 类图</a></li><li class="post-list-item"><a class="post-list-link" href="/20160428-DesignPattern-1/">设计模式概述</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-2/">英语基本构词法之词缀法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-1/">英语词汇文化内涵分类</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-junit-2/">JUnit 黑盒测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-english/">英语发展历史</a></li><li class="post-list-item"><a class="post-list-link" href="/20160423-matlab-1/">纵切碎纸片复原的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/20160419-junit-1/">JUnit 参数化测试和打包测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-junit/">JUnit 初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-acm-11/">NYOJ 587-blockhouses | ZOJ 1002-Fire Net</a></li><li class="post-list-item"><a class="post-list-link" href="/20160414-life/">花开不败</a></li><li class="post-list-item"><a class="post-list-link" href="/20160413-acm-10/">ZOJ 入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160325-wiki/">GCUSKY_WIKI</a></li><li class="post-list-item"><a class="post-list-link" href="/20160320-mysql-index/">MySQL数据库索引问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160318-acm-9/">NYOJ 488-素数环</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-8/">NYOJ 106-背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-7/">NYOJ 14-会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-6/">NYOJ 91-阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-5/">NYOJ 47-过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-3/">NYOJ 22-素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-4/">NYOJ 33-蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-2/">NYOJ 11-奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-1/">NYOJ 4-ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/20160314-acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160205-test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/20160202-learn-hexo/">Hexo 基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/20151118-learn-1/">邓小平文选 第三卷 P363 思考：思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150922-learn/">《再思毛泽东：毛泽东思想的探索》思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150823-matlab/">二分法求解非线性方程</a></li><li class="post-list-item"><a class="post-list-link" href="/20150315-hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <div class="right-wrap">
+  <div class="other">
+    <p>20170129-project-4/</p>
+    <p>test of gcusky</p>
+  </div>
+  <div class="qrcode">
+    <p>本页二维码</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3aSXIbMRAEQP7/09IDJMJV2DRm5JwcFglO4oBGVPfr66OfFx4eHh4eHh4e3sN4r/j5ZaEf///u88nK7bfe/hYeHh7eFd4/jtrgh3PGeIUN74aHh4d3kZcc2Qks+VZeGPJ3w8PDw/u/ePmhnzDw8PDwPo+XX7uTkOJxhQEPDw9vaxiRh6rj4pH/1tWsBQ8PDy/mtS99899X+3t4eHh4Aa8eaYoLwPhYzwcUrs6U4eHh4QW8XY3/E2ME7RAYHh4e3n3e+mU3iXpbdltO8PDw8O7zVgKCuZbYXKvs7Zvj4eHhHeaNg4a87ZSv045w1Z/Ew8PDO8xbb4DNFYb21Yutx8PDwzvMG7e18mggjwxWLuXRtuLh4eFd4a2EBfmFeO6KXJcZPDw8vMO8NkitG/nl4b5hK/Hw8PD+lDd3cLer5VfwqGDg4eHhHeatNPvnIt38u3Nbj4eHh3eTtxIl5C209sKdbBAeHh7efV7e3GrjiZWhhPzajYeHh3eflwNWhgbGxaBtlW24UuPh4eFN8cbH8dzleyWuTbavTqnx8PDwjvGSUKDltY20nFcMXeHh4eEd4yVxwErMumtAoR66wsPDw7vOayPdOnidaqFtKwx4eHh4JW9ljGDlcG//WhQwPDw8vMO8XYdyPn666/PFlRoPDw/vAK8tBuuRQXtxnxxXxcPDwzvMWz+g25HT/JpelCg8PDy8x/Pm2mD51tTr4OHh4T2YtyuiTQpJETTj4eHhXeStNKXmgowT41l4eHh4d3h5BJAMTuXr79oCPDw8vJu8z3vw8PDw8PDw8PAe8HwDn8Q1AH98Ff8AAAAASUVORK5CYII=" height="160" width="160">
+  </div>
+  <script>
+    $(window).scroll(function()
+    { 
+      //qrcode跟随滚动
+      var h = $(window).height();
+      var top = $(window).scrollTop();
+      var right = $('.right-wrap .other');
+      var rightHeight = right.height();
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+        if(top>=rightHeight+30)
+        {
+          $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});
+        }
+        else
+        {
+          $('.qrcode').css({'position':'static', 'top':0,'width': '100%' });   
+        } 
+       /* return true;*/
+    });
+  </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 GCUSKY
+                
+                    <a href="http://www.miibeian.gov.cn/">粤ICP备15063973号-2</a>
+                
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE , Improved by <a href="/">GCUSKY</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 7;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65267116-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="GCUSKY" />
+
+
+
+<meta name="description" content="Hexo全局基础配置
+用文本编辑器修改 _config.yml 这个文件，大致如下，只需要自动修改几个其他保持默认即可。通常需要修改站点名称/URL 格式/归档设置/Disqus 评论用户名/部署配置，这几项就可以了，注意冒号后面都要添加一个半角空格，之后才是设置参数。自定义域名设置在 source 文件夹下面新建 CNAME 文件，里面写入你的自定义域名，并设置你的 dns 配置 cname 方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 基本配置">
+<meta property="og:url" content="http://blog.gcusky.com/20160202-learn-hexo/index.html">
+<meta property="og:site_name" content="GCUSKY_SPACE">
+<meta property="og:description" content="Hexo全局基础配置
+用文本编辑器修改 _config.yml 这个文件，大致如下，只需要自动修改几个其他保持默认即可。通常需要修改站点名称/URL 格式/归档设置/Disqus 评论用户名/部署配置，这几项就可以了，注意冒号后面都要添加一个半角空格，之后才是设置参数。自定义域名设置在 source 文件夹下面新建 CNAME 文件，里面写入你的自定义域名，并设置你的 dns 配置 cname 方">
+<meta property="og:image" content="http://cloud.gcusky.com/hexo/domain.png">
+<meta property="og:updated_time" content="2016-04-13T13:37:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo 基本配置">
+<meta name="twitter:description" content="Hexo全局基础配置
+用文本编辑器修改 _config.yml 这个文件，大致如下，只需要自动修改几个其他保持默认即可。通常需要修改站点名称/URL 格式/归档设置/Disqus 评论用户名/部署配置，这几项就可以了，注意冒号后面都要添加一个半角空格，之后才是设置参数。自定义域名设置在 source 文件夹下面新建 CNAME 文件，里面写入你的自定义域名，并设置你的 dns 配置 cname 方">
+<meta name="twitter:image" content="http://cloud.gcusky.com/hexo/domain.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Hexo 基本配置 | GCUSKY_SPACE</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?efa5240456e869b14f74fb48fb6f8b60";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/gcusky.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">GCUSKY</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">云山自清，青水自流。</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/2016/03/25/wiki/">WIKI</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JUnit/">JUnit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NYOJ/">NYOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL练习/">STL练习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZOJ/">ZOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp-servlet/">jsp/servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scikit-learn/">scikit-learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swing/">swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weblogic/">weblogic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分法/">二分法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分治法/">分治法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创建型模式/">创建型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/回溯法/">回溯法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搜索/">搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数值法/">数值法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学建模/">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/白盒测试/">白盒测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/矩阵/">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/结构型模式/">结构型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行为型模式/">行为型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语言入门/">语言入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心算法/">贪心算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性方程/">非线性方程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象设计原则/">面向对象设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">GCUSKY</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/gcusky.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">GCUSKY</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">云山自清，青水自流。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/2016/03/25/wiki/">WIKI</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" target="_blank" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-learn-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/20160202-learn-hexo/" class="article-date">
+      <time datetime="2016-02-02T14:10:24.000Z" itemprop="datePublished">2016-02-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo 基本配置
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Hexo全局基础配置"><a href="#Hexo全局基础配置" class="headerlink" title="Hexo全局基础配置"></a>Hexo全局基础配置</h2><blockquote>
+<p>用文本编辑器修改 _config.yml 这个文件，大致如下，只需要自动修改几个其他保持默认即可。<br>通常需要修改站点名称/URL 格式/归档设置/Disqus 评论用户名/部署配置，这几项就可以了，注意冒号后面都要添加一个半角空格，之后才是设置参数。<br>自定义域名设置在 source 文件夹下面新建 CNAME 文件，里面写入你的自定义域名，并设置你的 dns 配置 cname 方式到服务器供应商给出的地址即可。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="网站-Site"><a href="#网站-Site" class="headerlink" title="网站 Site"></a>网站 Site</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>网站标题</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td>网站副标题</td>
+</tr>
+<tr>
+<td>description</td>
+<td>网站描述</td>
+</tr>
+<tr>
+<td>author</td>
+<td>你的名字</td>
+</tr>
+<tr>
+<td>language</td>
+<td>网站使用的语言</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>网站时区，Hexo 预设使用你电脑的时区，时区列表。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="网址-URL"><a href="#网址-URL" class="headerlink" title="网址 URL"></a>网址 URL</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>网址</td>
+<td><a href="http://yoursite.com/" target="_blank" rel="external">http://yoursite.com/</a></td>
+</tr>
+<tr>
+<td>root</td>
+<td>网站根目录</td>
+<td>/</td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>文章的永久链接格式</td>
+<td>：year/:month/:day/:title/</td>
+</tr>
+<tr>
+<td>permalink_default</td>
+<td>永久连接中各部分的默认值</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>网站存放在子目录</strong><br>如果你的网站存放在子目录中，例如 <a href="http://yoursite.com/blog" target="_blank" rel="external">http://yoursite.com/blog</a> ，则请将 url 设为 <a href="http://yoursite/blog" target="_blank" rel="external">http://yoursite/blog</a> 并把 root 设为 /blog/。</p>
+</blockquote>
+<h3 id="目录-Directory"><a href="#目录-Directory" class="headerlink" title="目录 Directory"></a>目录 Directory</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source_dir</td>
+<td>资源文件夹，这个文件夹用来存放内容</td>
+<td>source</td>
+</tr>
+<tr>
+<td>public_dir</td>
+<td>公共文件夹，这个文件夹用于存放生成的站点文件</td>
+<td>public</td>
+</tr>
+<tr>
+<td>tag_dir</td>
+<td>标签文件夹</td>
+<td>tags</td>
+</tr>
+<tr>
+<td>archive_dir</td>
+<td>归档文件夹</td>
+<td>archives</td>
+</tr>
+<tr>
+<td>category_dir</td>
+<td>分类文件夹</td>
+<td>categories</td>
+</tr>
+<tr>
+<td>code_dir</td>
+<td>Incloud code 文件夹</td>
+<td>downloads/code</td>
+</tr>
+<tr>
+<td>i18n_dir</td>
+<td>国际化（i18n）文件夹</td>
+<td>lang</td>
+</tr>
+<tr>
+<td>skip_render</td>
+<td>跳过制定文件的渲染，你可以使用 glob 来配置路径。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文章-Writing"><a href="#文章-Writing" class="headerlink" title="文章 Writing"></a>文章 Writing</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>new_post_name</td>
+<td>新文章的文件名称为</td>
+<td>title.md</td>
+</tr>
+<tr>
+<td>default_layout</td>
+<td>预设布局</td>
+<td>post</td>
+</tr>
+<tr>
+<td>auto_spacing</td>
+<td>在中文和英文之间加入空格</td>
+<td>false</td>
+</tr>
+<tr>
+<td>titlecase</td>
+<td>把标题转化为 title case</td>
+<td>false</td>
+</tr>
+<tr>
+<td>external_link</td>
+<td>在新建标签中打开链接</td>
+<td>true</td>
+</tr>
+<tr>
+<td>filename_case</td>
+<td>把文件名称转换为（1）小写或（2）大写</td>
+<td>0</td>
+</tr>
+<tr>
+<td>render_drafts</td>
+<td>显示草稿</td>
+<td>false</td>
+</tr>
+<tr>
+<td>post_asset_folder</td>
+<td>启动 Asset 文件夹</td>
+<td>false</td>
+</tr>
+<tr>
+<td>relative_link</td>
+<td>把链接改为与根目录相对的位置</td>
+<td>false</td>
+</tr>
+<tr>
+<td>future</td>
+<td>显示未来的文章标题</td>
+<td>ture</td>
+</tr>
+<tr>
+<td>highlight</td>
+<td>代码块的设置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="分类-amp-标签-Category-amp-Tag"><a href="#分类-amp-标签-Category-amp-Tag" class="headerlink" title="分类&amp;标签 Category &amp; Tag"></a>分类&amp;标签 Category &amp; Tag</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default_category</td>
+<td>默认分类</td>
+<td>uncategoried</td>
+</tr>
+<tr>
+<td>category_map</td>
+<td>分类别名</td>
+<td></td>
+</tr>
+<tr>
+<td>tap_map</td>
+<td>标签名称</td>
+</tr>
+</tbody>
+</table>
+<h3 id="日期-时间格式-Date-Time-format"><a href="#日期-时间格式-Date-Time-format" class="headerlink" title="日期/时间格式 Date / Time format"></a>日期/时间格式 Date / Time format</h3><p>Hexo 使用 Moment.js 来解析和显示时间。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date_format</td>
+<td>日期格式</td>
+<td>MMM D YYYY</td>
+</tr>
+<tr>
+<td>time_format</td>
+<td>时间格式</td>
+<td>H:mm:ss</td>
+</tr>
+</tbody>
+</table>
+<h3 id="分页-Pagination"><a href="#分页-Pagination" class="headerlink" title="分页 Pagination"></a>分页 Pagination</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>per_page</td>
+<td>每页显示的文章量（0=关闭分页功能）</td>
+<td>10</td>
+</tr>
+<tr>
+<td>pagination_dir</td>
+<td>分页目录</td>
+<td>page</td>
+</tr>
+</tbody>
+</table>
+<h3 id="扩展与部署-Extensions-Deployment"><a href="#扩展与部署-Extensions-Deployment" class="headerlink" title="扩展与部署 Extensions / Deployment"></a>扩展与部署 Extensions / Deployment</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>theme</td>
+<td>当前主标题名称</td>
+</tr>
+<tr>
+<td>deploy</td>
+<td>部署</td>
+</tr>
+</tbody>
+</table>
+<h2 id="github和gitcafe多部署"><a href="#github和gitcafe多部署" class="headerlink" title="github和gitcafe多部署"></a>github和gitcafe多部署</h2><h3 id="修改-config-yml的deploy"><a href="#修改-config-yml的deploy" class="headerlink" title="修改_config.yml的deploy"></a>修改_config.yml的deploy</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  message: update  ##git message 建议默认字段 update 可以自定义</span><br><span class="line">  repo: </span><br><span class="line">  gitcafe: &lt;repository url&gt;,[branch] ##gitcafe 仓库地址和分支</span><br><span class="line">  github: &lt;repository url&gt;,[branch] ##github 仓库地址和分支</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>repository url 都使用SSH链接可免密码操作</p>
+</blockquote>
+<h3 id="分别在-github-和-gitcafe-创建项目"><a href="#分别在-github-和-gitcafe-创建项目" class="headerlink" title="分别在 github 和 gitcafe 创建项目"></a>分别在 github 和 gitcafe 创建项目</h3><p>生成.ssh，添加到</p>
+<blockquote>
+<p>GitHub -&gt; settings -&gt; SSH keys<br>GitCafe -&gt; 账户设置 -&gt; SSH公匙管理</p>
+</blockquote>
+<p>创建一个与用户名(如果是组织，就是组织名)相同名称的项目<br>【github 项目名要加上 <code>.github.io</code>】</p>
+<blockquote>
+<p>GitHub Pages 服务分支在 master<br>GitCafe Pages 服务分支在 gitcafe-pages</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>【2016/04/13更新】gitcafe整体被coding收购，按照下面两篇文章来在coding上搭建hexo，感觉比gitcafe稳定</p>
+<ol>
+<li><a href="https://segmentfault.com/a/1190000002900848" target="_blank" rel="external">在 Coding 上搭建 Hexo 个人博客！</a></li>
+<li><a href="http://tengj.top/2016/03/06/hexo%E5%B9%B2%E8%B4%A7%E7%B3%BB%E5%88%97%EF%BC%9A%EF%BC%88%E5%9B%9B%EF%BC%89%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%97%B6%E6%89%98%E7%AE%A1%E5%88%B0github%E5%92%8Ccoding/" target="_blank" rel="external">hexo干货系列：（四）将hexo博客同时托管到github和coding</a></li>
+</ol>
+</blockquote>
+<h3 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h3><ol>
+<li>在source文件夹里创建CNAME文件，里面添加你的域名信息：yoursite.com（注意前面不添加http://）</li>
+<li>域名解析网站，添加域名，添加记录【国内解析到 GitCafe ，默认解析到 GitHub 】<br><img src="http://cloud.gcusky.com/hexo/domain.png" alt="domain"></li>
+</ol>
+<blockquote>
+<p>GitHub 解析到 <code>项目名.github.io</code><br>GitCafe 解析到 <code>gitcafe.io</code>【GitCafe还要根据 <code>相关链接2</code> 设置自定义域名】</p>
+</blockquote>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ul>
+<li><code>hexo d</code> 部署提示找不到git，<code>hexo s</code> 执行hexo server提示找不到该指令 </li>
+<li>在Hexo 3.0版本后 <code>deploy git</code>、 <code>hexo server</code> 被分开，需先进行安装：<code>npm install hexo-deployer-git --save</code> <code>npm install hexo-server --save</code></li>
+</ul>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ol>
+<li>Git教程 - 廖雪峰的官方网站 <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></li>
+<li>gitcafe Pages 相关帮助 <a href="https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9" target="_blank" rel="external">https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9</a></li>
+<li>Hexo 3.0 静态博客使用指南  <a href="https://help.gitcafe.com/practices/hexo" target="_blank" rel="external">https://help.gitcafe.com/practices/hexo</a></li>
+<li>zipperar的hexo相关教程 <a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">http://zipperary.com/categories/hexo/</a></li>
+<li>Hexo 搭建博客-基础配置篇 <a href="http://www.jianshu.com/p/df3edc4286d2" target="_blank" rel="external">http://www.jianshu.com/p/df3edc4286d2</a></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/20160202-learn-hexo/">Hexo 基本配置</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
+        <p><span>发布时间:</span>2016-02-02, 22:10:24</p>
+        <p><span>最后更新:</span>2016-04-13, 21:37:29</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/20160202-learn-hexo/" title="Hexo 基本配置">http://blog.gcusky.com/20160202-learn-hexo/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.gcusky.com/20160202-learn-hexo/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/20160205-test-of-latex/">
+                    test-of-latex【机器学习week1-2】
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/20151118-learn-1/">
+                    邓小平文选 第三卷 P363 思考：思维导图
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo全局基础配置"><span class="toc-number">1.</span> <span class="toc-text">Hexo全局基础配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网站-Site"><span class="toc-number">1.1.</span> <span class="toc-text">网站 Site</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网址-URL"><span class="toc-number">1.2.</span> <span class="toc-text">网址 URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录-Directory"><span class="toc-number">1.3.</span> <span class="toc-text">目录 Directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文章-Writing"><span class="toc-number">1.4.</span> <span class="toc-text">文章 Writing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类-amp-标签-Category-amp-Tag"><span class="toc-number">1.5.</span> <span class="toc-text">分类&标签 Category & Tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期-时间格式-Date-Time-format"><span class="toc-number">1.6.</span> <span class="toc-text">日期/时间格式 Date / Time format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分页-Pagination"><span class="toc-number">1.7.</span> <span class="toc-text">分页 Pagination</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展与部署-Extensions-Deployment"><span class="toc-number">1.8.</span> <span class="toc-text">扩展与部署 Extensions / Deployment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github和gitcafe多部署"><span class="toc-number">2.</span> <span class="toc-text">github和gitcafe多部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-config-yml的deploy"><span class="toc-number">2.1.</span> <span class="toc-text">修改_config.yml的deploy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分别在-github-和-gitcafe-创建项目"><span class="toc-number">2.2.</span> <span class="toc-text">分别在 github 和 gitcafe 创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名绑定"><span class="toc-number">2.3.</span> <span class="toc-text">域名绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解决"><span class="toc-number">3.</span> <span class="toc-text">问题解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关链接"><span class="toc-number">4.</span> <span class="toc-text">相关链接</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Hexo 基本配置　| GCUSKY_SPACE　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2130821';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/20160205-test-of-latex/" title="上一篇: test-of-latex【机器学习week1-2】">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/20151118-learn-1/" title="下一篇: 邓小平文选 第三卷 P363 思考：思维导图">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/20170217-weblogic/">导入dmp、Weblogic创建域</a></li><li class="post-list-item"><a class="post-list-link" href="/20170129-project-4/">推箱子</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-scikit-learn-translation/">【外文翻译】Scikit-learn：在Python中进行机器学习</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-project-3/">学生信息管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-2/">献血管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-1/">产品销售管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170115-hexo-1/">博客样式更新</a></li><li class="post-list-item"><a class="post-list-link" href="/20170109-life2/">2017伊始-随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-python-1/">Python 实现统计字数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-acm-13/">高斯消元</a></li><li class="post-list-item"><a class="post-list-link" href="/20160605-python/">Python简单入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-11/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-10/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-acm-12/">矩阵的基本变换</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-9/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-8/">外观模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-7/">桥接模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-6/">结构型模式之适配器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-5/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-4/">原形模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-3/">创建型模式与三大工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-english-5/">英语的其他构词法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-DesignPattern-2/">面向对象设计原则</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-4/">英语基本构词法之转换法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-3/">英语基本构词法之合成法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160430-DesignPattern/">UML 类图</a></li><li class="post-list-item"><a class="post-list-link" href="/20160428-DesignPattern-1/">设计模式概述</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-2/">英语基本构词法之词缀法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-1/">英语词汇文化内涵分类</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-junit-2/">JUnit 黑盒测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-english/">英语发展历史</a></li><li class="post-list-item"><a class="post-list-link" href="/20160423-matlab-1/">纵切碎纸片复原的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/20160419-junit-1/">JUnit 参数化测试和打包测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-junit/">JUnit 初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-acm-11/">NYOJ 587-blockhouses | ZOJ 1002-Fire Net</a></li><li class="post-list-item"><a class="post-list-link" href="/20160414-life/">花开不败</a></li><li class="post-list-item"><a class="post-list-link" href="/20160413-acm-10/">ZOJ 入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160325-wiki/">GCUSKY_WIKI</a></li><li class="post-list-item"><a class="post-list-link" href="/20160320-mysql-index/">MySQL数据库索引问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160318-acm-9/">NYOJ 488-素数环</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-8/">NYOJ 106-背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-7/">NYOJ 14-会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-6/">NYOJ 91-阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-5/">NYOJ 47-过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-3/">NYOJ 22-素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-4/">NYOJ 33-蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-2/">NYOJ 11-奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-1/">NYOJ 4-ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/20160314-acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160205-test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/20160202-learn-hexo/">Hexo 基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/20151118-learn-1/">邓小平文选 第三卷 P363 思考：思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150922-learn/">《再思毛泽东：毛泽东思想的探索》思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150823-matlab/">二分法求解非线性方程</a></li><li class="post-list-item"><a class="post-list-link" href="/20150315-hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <div class="right-wrap">
+  <div class="other">
+    <p>20160202-learn-hexo/</p>
+    <p>test of gcusky</p>
+  </div>
+  <div class="qrcode">
+    <p>本页二维码</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbElEQVR42u3aQXYjMQgFQN//0jPbbCx/QJI7edUrP7uTVnkBGHj9+9PXCw8PDw8PDw8P72G8V3yt7//56bvXP99Z3987Gx4eHt5N3odQGxxr/cjkb5PnRmfDw8PDu8hLwv27Y+UpYZ5aPpwNDw8P72G8dZJYF8TJ/Ru+ejw8PLxH8qr4aqmNh4eH91t4efsgSQNJAqiCj/da8PDw8GJedQB28/UX5nt4eHh4S155pSkeXyVt3zxJNJeu8PDw8A7w8sK32lboLW+V00DvFwMeHh7emFcFVAdjSXtiskCAh4eHd5OXHHce3KuDtPwrw8PDw3sOrzqgStoNPeS2XgseHh7e1j5nHoLztYD1O/NEgoeHh/ctXrWZm9y/JvUK+sL/wcPDwzvMmwz1k6BfbS5MUg4eHh7eHV4y/s+L76R07pXyG3oteHh4eJt4PUBeak/WqqrjMTw8PLybvGiZ6VhYr55hw04ZHh4e3mFe/n55tXR8Px4eHt59Xq90zg+UFNbVURkeHh7ed3m95f55WM9TS5mNh4eH91VeXlhPWhJ5gomWDPDw8PAO8/LAnaeEOa+XZvDw8PDu83rhOG9GVNsfm3steHh4eJt4SSifN2rX66q9lay3p8XDw8M7zOulhyTc72ptVFu6eHh4eKd584Ce43cN2MoDMDw8PLxjs/Xqz/5JEzZPIeXxGx4eHt5F3jxY7zpuNUXh4eHhPZmXrAtUVxOqn35INnh4eHi/hNdr+OaJp1Cm4+Hh4V3k9QJ63p5IvsRe6xYPDw/vPq/aAsiH+snArPfcQhsXDw8Pbyvv7114eHh4eHh4eHgPuP4DJfkmOfmgVvwAAAAASUVORK5CYII=" height="160" width="160">
+  </div>
+  <script>
+    $(window).scroll(function()
+    { 
+      //qrcode跟随滚动
+      var h = $(window).height();
+      var top = $(window).scrollTop();
+      var right = $('.right-wrap .other');
+      var rightHeight = right.height();
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+        if(top>=rightHeight+30)
+        {
+          $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});
+        }
+        else
+        {
+          $('.qrcode').css({'position':'static', 'top':0,'width': '100%' });   
+        } 
+       /* return true;*/
+    });
+  </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 GCUSKY
+                
+                    <a href="http://www.miibeian.gov.cn/">粤ICP备15063973号-2</a>
+                
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE , Improved by <a href="/">GCUSKY</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 7;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65267116-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
