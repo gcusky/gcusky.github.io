@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="GCUSKY" />
+
+
+
+<meta name="description" content="接手统一用户统一认证相关的工作，先总结下重要的相关理念，方便实际开发时的理解。
+
+[TOC]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统一身份认证方式">
+<meta property="og:url" content="http://blog.gcusky.com/20170424-UnifiedAuth/index.html">
+<meta property="og:site_name" content="GCUSKY_SPACE">
+<meta property="og:description" content="接手统一用户统一认证相关的工作，先总结下重要的相关理念，方便实际开发时的理解。
+
+[TOC]">
+<meta property="og:image" content="http://cloud.gcusky.com/2017/0222-1.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/2017/0222-2.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/2017/0222-3.jpg">
+<meta property="og:image" content="http://cloud.gcusky.com/2017/0222-4.jpg">
+<meta property="og:updated_time" content="2017-06-15T09:33:35.533Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="统一身份认证方式">
+<meta name="twitter:description" content="接手统一用户统一认证相关的工作，先总结下重要的相关理念，方便实际开发时的理解。
+
+[TOC]">
+<meta name="twitter:image" content="http://cloud.gcusky.com/2017/0222-1.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>统一身份认证方式 | GCUSKY_SPACE</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?efa5240456e869b14f74fb48fb6f8b60";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/gcusky.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">GCUSKY</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">云山自清，青水自流。</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/20160325-wiki/">WIKI</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JUnit/">JUnit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NYOJ/">NYOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL练习/">STL练习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZOJ/">ZOJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp-servlet/">jsp/servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scikit-learn/">scikit-learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swing/">swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weblogic/">weblogic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zTree/">zTree</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分法/">二分法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分治法/">分治法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创建型模式/">创建型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/回溯法/">回溯法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维导图/">思维导图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搜索/">搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数值法/">数值法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学建模/">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/白盒测试/">白盒测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/矩阵/">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/结构型模式/">结构型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/统一认证/">统一认证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻译/">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/行为型模式/">行为型模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语言入门/">语言入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心算法/">贪心算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件测试/">软件测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性方程/">非线性方程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象设计原则/">面向对象设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">GCUSKY</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/gcusky.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">GCUSKY</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">云山自清，青水自流。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/20160325-wiki/">WIKI</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:lizhy@gcusky.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa SegmentFault" target="_blank" href="https://segmentfault.com/u/gcusky" title="SegmentFault"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/gcusky" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-UnifiedAuth" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/20170424-UnifiedAuth/" class="article-date">
+      <time datetime="2017-04-24T09:30:53.000Z" itemprop="datePublished">2017-04-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      统一身份认证方式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/统一认证/">统一认证</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>接手统一用户统一认证相关的工作，先总结下重要的相关理念，方便实际开发时的理解。</p>
+</blockquote>
+<p>[TOC]</p>
+<a id="more"></a>
+<h2 id="基础原理知识"><a href="#基础原理知识" class="headerlink" title="基础原理知识"></a>基础原理知识</h2><h3 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h3><p>所谓对称加密又称对称密钥体制，就是加密和解密使用同一个密钥的密码技术。通信双方必须交换彼此密钥，发送信息时，发送方用自己的密钥对传输信息进加密，接收方收到信息后，用发送方所给的密钥进行解密。用公式表示如下：<br>加密过程：$E_k(M)=C$<br>解密过程：$D_k(C)=M$<br>其中 M、C、k、E 和 D 分别为明文、密文、密钥、加密算法和解密算法。 </p>
+<ul>
+<li>优点<ul>
+<li>算法公开、计算量小、加密速度快、加密效率高。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>交易双方都使用同样钥匙，安全性得不到保证；</li>
+<li>每对用户每次使用对称加密算法时，都需要使用其他人不知道的唯一秘钥，这会使得收、发双方所拥有的钥匙数量巨大，密钥管理成为双方的负担；</li>
+<li>能提供机密性，但是不能提供验证和不可否认性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h3><p>所谓非对称加密即非对称密钥体制，就是加密和解密使用不同的密钥的密码技术，又称为公开密钥体制。每个用户都有一对选定的密钥，一个是公开密钥(可以让所有欲通信的人知道)用于加密：另一个由用户安全拥有，是私人密钥(一个专门为自己使用的密钥)，用于解密。公钥和私钥不能由一个推出另一个，但是公钥加密的信息只能由私钥解密，反之亦然。用公式表示如下：<br>加密过程：$E_{k1}(M)=C$<br>解密过程：$E_{k2}(C)=M$<br>其中，kl 和 k2 分别为加密密钥和解密密钥。</p>
+<ul>
+<li>优点：非对称加密与对称加密相比，其安全性更好；</li>
+<li>缺点：加密和解密花费时间长、速度慢，只适合对少量数据进行加密。</li>
+</ul>
+<h3 id="单点登录"><a href="#单点登录" class="headerlink" title="单点登录"></a>单点登录</h3><p>单点登录（Single Sign On），简称为 SSO，是目前比较流行的企业业务整合的解决方案之一。SSO的定义是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。</p>
+<p><img src="http://cloud.gcusky.com/2017/0222-1.jpg" alt=""></p>
+<p>要实现SSO，需要以下主要的功能：<br><strong>所有应用系统共享一个身份认证系统</strong><br>　　统一的认证系统是SSO的前提之一。认证系统的主要功能是将用户的登录信息和用户信息库相比较，对用户进行登录认证；认证成功后，认证系统应该生成统一的认证标志（ticket），返还给用户。另外，认证系统还应该对ticket进行效验，判断其有效性。<br><strong>所有应用系统能够识别和提取ticket信息</strong><br>　　要实现SSO的功能，让用户只登录一次，就必须让应用系统能够识别已经登录过的用户。应用系统应该能对ticket进行识别和提取，通过与认证系统的通讯，能自动判断当前用户是否登录过，从而完成单点登录的功能。</p>
+<h3 id="CA数字证书"><a href="#CA数字证书" class="headerlink" title="CA数字证书"></a>CA数字证书</h3><p>CA是证书的签发机构，它是PKI的核心。CA是负责签发证书、认证证书、管理已颁发证书的机关。它要制定政策和具体步骤来验证、识别用户身份，并对用户证书进行签名，以确保证书持有者的身份和公钥的拥有权，CA是可以信任的第三方。</p>
+<ul>
+<li>CA 中心是国家认可的权威、可信、公正的第三方机构，专门负责发放并管理所有参与网上业务的实体所需的数字证书。</li>
+<li>数字证书是网络世界中的身份证。可以在网络世界中为互不见面的用户建立安全可靠的信任关系，这种信任关系的建立则源于PKI/CA认证中心，构建安全的PKI/CA认证中心是至关重要的。</li>
+<li>CA 拥有一个证书（内含公钥）和私钥。网上的公众用户通过验证 CA  的签字从而信任 CA，任何人都可以得到 CA 的证书（含公钥），用以验证它所签发的证书。</li>
+</ul>
+<h3 id="HTTPS与SSL"><a href="#HTTPS与SSL" class="headerlink" title="HTTPS与SSL"></a>HTTPS与SSL</h3><p>HTTPS是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</p>
+<p><strong>HTTPS和HTTP的区别</strong></p>
+<ol>
+<li>https协议需要到ca申请证书，一般免费证书很少，需要交费。</li>
+<li>http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。</li>
+<li>http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</li>
+<li>http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</li>
+</ol>
+<p><strong>SSL协议提供的服务</strong></p>
+<ol>
+<li>认证用户和服务器，确保数据发送到正确的客户机和服务器</li>
+<li>加密数据以防止数据中途被窃取</li>
+<li>维护数据的完整性，确保数据在传输过程中不被改变。</li>
+</ol>
+<blockquote>
+<p>优秀文章：<a href="http://mp.weixin.qq.com/s/V62VYS8KFNKxJxfzMYefrw" target="_blank" rel="external">腾讯HTTPS性能优化实践</a><br>本文根据罗成在2016ArchSummit全球架构师（北京）峰会上的演讲整理而成。主要内容分以下三部分：计算性能的分析和优化；无密钥加载；证书优化。</p>
+</blockquote>
+<h3 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h3><p>微服务是一个新兴的软件架构，就是把一个大型的单个应用程序和服务拆分为数十个的支持微服务。一个微服务的策略可以让工作变得更为简便，它可扩展单个组件而不是整个的应用程序堆栈，从而满足服务等级协议。</p>
+<p>微服务应用的一个最大的优点是，它们往往比传统的应用程序更有效地利用计算资源。这是因为它们通过扩展组件来处理功能瓶颈问题。这样一来，开发人员只需要为额外的组件部署计算资源，而不需要部署一个完整的应用程序的全新迭代。最终的结果是有更多的资源可以提供给其它任务。</p>
+<p>微服务应用程序的另一个好处是，它们更快且更容易更新。当开发者对一个传统的单体应用程序进行变更时，他们必须做详细的QA测试，以确保变更不会影响其他特性或功能。但有了微服务，开发者可以更新应用程序的单个组件，而不会影响其他的部分。测试微服务应用程序仍然是必需的，但它更容易识别和隔离问题，从而加快开发速度并支持DevOps和持续应用程序开发。</p>
+<p>第三个好处是，微服务架构有助于新兴的云服务，如事件驱动计算。类似AWS Lambda这样的功能让开发人员能够编写代码处于休眠状态，直到应用程序事件触发。事件处理时才需要使用计算资源，而企业只需要为每次事件，而不是固定数目的计算实例支付。</p>
+<h2 id="常用的登陆认证方式"><a href="#常用的登陆认证方式" class="headerlink" title="常用的登陆认证方式"></a>常用的登陆认证方式</h2><h3 id="基于静态口令认证技术"><a href="#基于静态口令认证技术" class="headerlink" title="基于静态口令认证技术"></a>基于静态口令认证技术</h3><p>口令由用户自己设定，登录系统时，只要用户输入的口令正确，就被认为是合法用户。但用户为了记忆方便一般都设置成生日、电话号码等，容易造成口令的泄漏，是一种不安全的身份认证方式。</p>
+<h3 id="基于动态口令认证技术"><a href="#基于动态口令认证技术" class="headerlink" title="基于动态口令认证技术"></a>基于动态口令认证技术</h3><p>动态口令技术分为两种，即异步口令技术（挑战/应答方式）和同步口令技术。异步口令技术是指通信双方掌握相同的用户身份信息和口令生成方法，当用户登录系统时，认证方随机地给用户发送一条动态数据，用户使用该数据和自己的身份信息构造口令，发送给服务器方进行认证，完成一次登录。同步口令技术是是基于时间同步方式的，可分为时间同步口令技术和事件同步口令技术。</p>
+<h3 id="基于智能卡（U盾）身份认证技术"><a href="#基于智能卡（U盾）身份认证技术" class="headerlink" title="基于智能卡（U盾）身份认证技术"></a>基于智能卡（U盾）身份认证技术</h3><p>智能卡是一种内置集成电路的芯片，用来存储与用户相关的数据。登录系统时必须利用读卡器从用户持有的智能卡中读取信息，或者使用U盾确认，来认证用户身份。该方式是利用芯片的不可复制性来确保用户身份不会被仿冒，但是硬件投入大，加之从智能卡中读取的数据是静态的，存在截取用户身份认证信息的安全隐患。</p>
+<h3 id="基于生物识别的身份认证技术"><a href="#基于生物识别的身份认证技术" class="headerlink" title="基于生物识别的身份认证技术"></a>基于生物识别的身份认证技术</h3><p>是利用用户所特有的、可测量的生理和行为特征进行身份认证的一种技术。生理特征包括指纹、视网膜、虹膜、面貌等；行为特征包括签名、语音等。但这种方法的造价高，适用于对保密性要求高的地方。</p>
+<h3 id="基于数字证书的身份认证技术"><a href="#基于数字证书的身份认证技术" class="headerlink" title="基于数字证书的身份认证技术"></a>基于数字证书的身份认证技术</h3><p>数字证书与我们日常生活中的个人身份证和驾驶执照相类似，是用来标志用户身份的数字信息档。数字证书是由第三方机构 CA 机构（证书授权中心）签发。基于数字证书的身份认证技术使用密码技术来保证传输信息的安全性和完整性，通过数字签名功能实现用户身份的认证，大大地提高了身份认证的强度。</p>
+<h2 id="常用的认证技术编程实现"><a href="#常用的认证技术编程实现" class="headerlink" title="常用的认证技术编程实现"></a>常用的认证技术编程实现</h2><h3 id="RESTful-Api-身份认证"><a href="#RESTful-Api-身份认证" class="headerlink" title="RESTful Api 身份认证"></a>RESTful Api 身份认证</h3><p>REST 是一种软件架构风格。RESTful Api 是基于 HTTP 协议的 Api，是无状态传输。它的核心是将所有的 Api 都理解为一个网络资源。将所有的客户端和服务器的状态转移（动作）封装到 HTTP 请求的 Method  之中。</p>
+<h3 id="静态口令-数字证书双重登录认证"><a href="#静态口令-数字证书双重登录认证" class="headerlink" title="静态口令+数字证书双重登录认证"></a>静态口令+数字证书双重登录认证</h3><p>用户忘记密码、丢失密码、设置弱口令密码等个人因素，及密码库遭“撞库”攻击造成泄露等客观因素，都使得密码认证登录方式的安全性脆弱不堪。客户端证书由权威CA机构认证用户的身份证信息后签发，相当于在线身份证，可弥补密码认证登录的缺陷，实现强身份认证登录。通过数字证书+密码双重登录认证方式，可以确保用户身份真实可信，保护用户账号安全，建立基于数字证书的统一、安全、可信的互联网身份认证体系。</p>
+<h3 id="AFNetworking-双向认证"><a href="#AFNetworking-双向认证" class="headerlink" title="AFNetworking 双向认证"></a>AFNetworking 双向认证</h3><p>AFNetworking是一个讨人喜欢的网络库，适用于iOS以及Mac OS X。它构建于在NSURLConnection，NSOperation，以及其他熟悉的Foundation技术之上。它拥有良好的架构，丰富的api，以及模块化构建方式，使得使用起来非常轻松。<br>AFNetworking是允许内嵌证书的，通过内嵌证书，AFNetworking通过比对服务器端证书、内嵌的证书、站点域名是否一致来验证连接的服务器是否正确。在完成以上两条的情况下，会自动扫描bundle中.cer的文件，并引入，这样就可以通过自签证书来验证服务器唯一性了。</p>
+<h3 id="结合微信的扫码认证-推送认证"><a href="#结合微信的扫码认证-推送认证" class="headerlink" title="结合微信的扫码认证/推送认证"></a>结合微信的扫码认证/推送认证</h3><p>得益于微信和支付宝对扫码技术的大力推广，如今扫码支付已经成为网络支付的主流手段之一，但其实二维码技术在身份认证上也有许多应用，比如扫码登录。无论是在网页版微信、QQ或是淘宝，都在主动地推广扫码登录这种更安全的方式。当我们打开淘宝的登录页面，出现的不再是账号密码输入框，而是一个登录二维码，甚至在网页版微信中，仅仅允许扫码登录，并且这种方式正在被越来越多的网站和应用效仿。</p>
+<p><img src="http://cloud.gcusky.com/2017/0222-2.jpg" alt=""></p>
+<p>和扫码相比，推送认证也是如今非常有用的方式之一。所谓推送认证，就是向用户手机推送一条认证请求，用户点击确认或进行相应操作后完成认证，这种方式不仅安全，而且能最大限度降低用户的操作成本。企业员工在登录日常办公系统或连接WiFi、VPN时，手机会自动收到一条推送请求，只有点击确认后才能成功登录，这样即使密码不慎泄露也不必担心账号安全，并且员工只需要额外点击一下手机。</p>
+<p><img src="http://cloud.gcusky.com/2017/0222-3.jpg" alt=""></p>
+<h3 id="声纹识别-人脸识别认证"><a href="#声纹识别-人脸识别认证" class="headerlink" title="声纹识别/人脸识别认证"></a>声纹识别/人脸识别认证</h3><p>此外，基于手机软件的扫码或推送之所以流行，还在于可以和异常登录行为分析、生物识别等认证技术进行深度结合。微信和支付宝都有做类似的安全防护措施，比如当一个微信在一台陌生的设备上，或者异常的地点登录时，必须两个微信好友发送验证码协助确认操作者的身份才能正常登录。在洋葱提供的企业员工认证中，企业员工登录重要等业务系统时，收到的认证请求也不再是简单的“确认取消”，而是人脸识别、声纹识别等方式，由此来验证操作者是否是员工本人，这样就可以最大限度地防止盗号情况的发生。</p>
+<p><img src="http://cloud.gcusky.com/2017/0222-4.jpg" alt=""></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li>百度百科</li>
+<li>李冰. 用户统一身份认证系统的设计与实现[D].哈尔滨理工大学,2005.</li>
+<li>张苗苗. 单点登录和统一身份认证的研究与实现[D].太原科技大学,2013.</li>
+<li><a href="http://www.jianshu.com/p/56fc18937d09" target="_blank" rel="external">HTTPS接口加密和身份认证</a></li>
+<li><a href="http://www.jianshu.com/p/000c0b8628b9" target="_blank" rel="external">RESTful Api 身份认证中的安全性设计探讨</a></li>
+<li><a href="http://www.jianshu.com/p/05ffe31d4ab1" target="_blank" rel="external">PKI技术如何应用于“互联网+政务服务”技术体系建设</a></li>
+<li><a href="http://www.jianshu.com/p/5201533a0f5d" target="_blank" rel="external">短信认证被宣布不安全，将被何种方式取代？</a></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/20170424-UnifiedAuth/">统一身份认证方式</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">GCUSKY</a></p>
+        <p><span>发布时间:</span>2017-04-24, 17:30:53</p>
+        <p><span>最后更新:</span>2017-06-15, 17:33:35</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/20170424-UnifiedAuth/" title="统一身份认证方式">http://blog.gcusky.com/20170424-UnifiedAuth/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.gcusky.com/20170424-UnifiedAuth/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/20170315-ztree/">
+                    zTree 异步加载回调数据
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础原理知识"><span class="toc-number">1.</span> <span class="toc-text">基础原理知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对称加密"><span class="toc-number">1.1.</span> <span class="toc-text">对称加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非对称加密"><span class="toc-number">1.2.</span> <span class="toc-text">非对称加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单点登录"><span class="toc-number">1.3.</span> <span class="toc-text">单点登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CA数字证书"><span class="toc-number">1.4.</span> <span class="toc-text">CA数字证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTPS与SSL"><span class="toc-number">1.5.</span> <span class="toc-text">HTTPS与SSL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#微服务"><span class="toc-number">1.6.</span> <span class="toc-text">微服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的登陆认证方式"><span class="toc-number">2.</span> <span class="toc-text">常用的登陆认证方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于静态口令认证技术"><span class="toc-number">2.1.</span> <span class="toc-text">基于静态口令认证技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于动态口令认证技术"><span class="toc-number">2.2.</span> <span class="toc-text">基于动态口令认证技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于智能卡（U盾）身份认证技术"><span class="toc-number">2.3.</span> <span class="toc-text">基于智能卡（U盾）身份认证技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于生物识别的身份认证技术"><span class="toc-number">2.4.</span> <span class="toc-text">基于生物识别的身份认证技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于数字证书的身份认证技术"><span class="toc-number">2.5.</span> <span class="toc-text">基于数字证书的身份认证技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的认证技术编程实现"><span class="toc-number">3.</span> <span class="toc-text">常用的认证技术编程实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RESTful-Api-身份认证"><span class="toc-number">3.1.</span> <span class="toc-text">RESTful Api 身份认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态口令-数字证书双重登录认证"><span class="toc-number">3.2.</span> <span class="toc-text">静态口令+数字证书双重登录认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AFNetworking-双向认证"><span class="toc-number">3.3.</span> <span class="toc-text">AFNetworking 双向认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结合微信的扫码认证-推送认证"><span class="toc-number">3.4.</span> <span class="toc-text">结合微信的扫码认证/推送认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#声纹识别-人脸识别认证"><span class="toc-number">3.5.</span> <span class="toc-text">声纹识别/人脸识别认证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"统一身份认证方式　| GCUSKY_SPACE　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2130821';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/20170315-ztree/" title="下一篇: zTree 异步加载回调数据">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/20170424-UnifiedAuth/">统一身份认证方式</a></li><li class="post-list-item"><a class="post-list-link" href="/20170315-ztree/">zTree 异步加载回调数据</a></li><li class="post-list-item"><a class="post-list-link" href="/20170217-weblogic/">导入dmp、Weblogic创建域</a></li><li class="post-list-item"><a class="post-list-link" href="/20170129-project-4/">推箱子</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-scikit-learn-translation/">【外文翻译】Scikit-learn：在Python中进行机器学习</a></li><li class="post-list-item"><a class="post-list-link" href="/20170126-project-3/">学生信息管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-2/">献血管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170116-project-1/">产品销售管理系统</a></li><li class="post-list-item"><a class="post-list-link" href="/20170115-hexo-1/">博客样式更新</a></li><li class="post-list-item"><a class="post-list-link" href="/20170109-life2/">2017伊始-随笔</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-python-1/">Python 实现统计字数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160607-acm-13/">高斯消元</a></li><li class="post-list-item"><a class="post-list-link" href="/20160605-python/">Python简单入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-11/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-DesignPattern-10/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160604-acm-12/">矩阵的基本变换</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-9/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160601-DesignPattern-8/">外观模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-7/">桥接模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-6/">结构型模式之适配器模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-5/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-4/">原形模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160528-DesignPattern-3/">创建型模式与三大工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-english-5/">英语的其他构词法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160502-DesignPattern-2/">面向对象设计原则</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-4/">英语基本构词法之转换法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160501-english-3/">英语基本构词法之合成法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160430-DesignPattern/">UML 类图</a></li><li class="post-list-item"><a class="post-list-link" href="/20160428-DesignPattern-1/">设计模式概述</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-2/">英语基本构词法之词缀法</a></li><li class="post-list-item"><a class="post-list-link" href="/20160427-english-1/">英语词汇文化内涵分类</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-junit-2/">JUnit 黑盒测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160426-english/">英语发展历史</a></li><li class="post-list-item"><a class="post-list-link" href="/20160423-matlab-1/">纵切碎纸片复原的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/20160419-junit-1/">JUnit 参数化测试和打包测试</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-junit/">JUnit 初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/20160418-acm-11/">NYOJ 587-blockhouses | ZOJ 1002-Fire Net</a></li><li class="post-list-item"><a class="post-list-link" href="/20160414-life/">花开不败</a></li><li class="post-list-item"><a class="post-list-link" href="/20160413-acm-10/">ZOJ 入门</a></li><li class="post-list-item"><a class="post-list-link" href="/20160325-wiki/">GCUSKY_WIKI</a></li><li class="post-list-item"><a class="post-list-link" href="/20160320-mysql-index/">MySQL数据库索引问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160318-acm-9/">NYOJ 488-素数环</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-8/">NYOJ 106-背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-7/">NYOJ 14-会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160316-acm-6/">NYOJ 91-阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-5/">NYOJ 47-过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-3/">NYOJ 22-素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-4/">NYOJ 33-蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-2/">NYOJ 11-奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/20160315-acm-1/">NYOJ 4-ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/20160314-acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/20160205-test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/20160202-learn-hexo/">Hexo 基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/20151118-learn-1/">邓小平文选 第三卷 P363 思考：思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150922-learn/">《再思毛泽东：毛泽东思想的探索》思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/20150823-matlab/">二分法求解非线性方程</a></li><li class="post-list-item"><a class="post-list-link" href="/20150315-hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <div class="right-wrap">
+  <div class="other">
+    <p>20170424-UnifiedAuth/</p>
+    <p>test of gcusky</p>
+  </div>
+  <div class="qrcode">
+    <p>本页二维码</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3awVLEIBAE0P3/n9arB2W7IRmj9XKydrOEh1VAenh9/OvrhYeHh4eHh4eH9zDeK76+aejL5+v7kzbzX71pBw8PD2+E92aqXT543aF1m8k9dd/w8PDwBnk/dW59z/pX7XR/0jc8PDy8J/OS+4sOHT8LDw8P72/x8k6fs/Hw8PCexkte+NsFIGn/QVkLHh4eXsxrI4bJv0fre3h4eHgB73yyTg4WrAtg50sIHh4e3iSvjQyS4lYLaOPgNwOHh4eHN8JLJvecmh8XyAereBYeHh7eOG9veci32nkA0Q40Hh4e3iQvL97nsHZavyq8wMPDw/st3noiPtkQnxxBSIYDDw8P725e3kT+bXslG+ViWPHw8PBGeHn8mm/H8+MFeTtRm3h4eHg38+rCfFwwayOGPBzZPDqAh4eHdxEvL4PtBbh7hbSi3NW+MeDh4eFdxGtf/tvtdRtbtIOOh4eHN8lL4oB8o5wf2Mq3yHmAi4eHhzfPu/ZAwN4y0LaDh4eHN89rg4mrood80q//AXh4eHg38/aWhL2Ju10Y2q02Hh4e3iTvJHJtg4l8WWoPgeHh4eE9h5dHq0nLJ8e8otAZDw8Pb5yXI/PCf3vsYC/UwMPDw5vhtVcyNbeHAE6Gu06p8fDw8I55e3HDXhTbLgA5CQ8PD2+edz6VXxXanmzx8fDw8OZ5J9N9u5yclNw2sxY8PDy8h/Ha8n8ecNTbfTw8PLzH89af59v3vTZvXxjw8PDwjsOIZEIvilXlgEaDiIeHhzfCuyACiEtleZyRRxh4eHh4k7z/d+Hh4eHh4eHh4T3g+gQK/x/rqX9tdQAAAABJRU5ErkJggg==" height="160" width="160">
+  </div>
+  <script>
+    $(window).scroll(function()
+    { 
+      //qrcode跟随滚动
+      var h = $(window).height();
+      var top = $(window).scrollTop();
+      var right = $('.right-wrap .other');
+      var rightHeight = right.height();
+      //var qrcode = $('.qrcode').prev().offset();
+      //var fixedTop = qrcode.top;
+      //console.log(h+" "+top+" "+fixedTop+" "+rightHeight);
+        if(top>=rightHeight+30)
+        {
+          $('.qrcode').css({'position':'fixed','top': 0,'width': right.width()+'px'});
+        }
+        else
+        {
+          $('.qrcode').css({'position':'static', 'top':0,'width': '100%' });   
+        } 
+       /* return true;*/
+    });
+  </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 GCUSKY
+                
+                    <a href="http://www.miibeian.gov.cn/">粤ICP备15063973号-2</a>
+                
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE , Improved by <a href="/">GCUSKY</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 7;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65267116-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
