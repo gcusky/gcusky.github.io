@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.gcusky.com/20170221-log4j/</loc>
+    
+    <lastmod>2017-06-15T09:51:39.931Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.gcusky.com/20170424-UnifiedAuth/</loc>
     
     <lastmod>2017-06-15T09:37:39.307Z</lastmod>
