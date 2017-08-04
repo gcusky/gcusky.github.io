@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.gcusky.com/"/>
-  <updated>2017-06-15T09:37:39.307Z</updated>
+  <updated>2017-06-15T09:37:39.000Z</updated>
   <id>http://blog.gcusky.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.gcusky.com/20170424-UnifiedAuth/"/>
     <id>http://blog.gcusky.com/20170424-UnifiedAuth/</id>
     <published>2017-04-24T09:30:53.000Z</published>
-    <updated>2017-06-15T09:37:39.307Z</updated>
+    <updated>2017-06-15T09:37:39.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;接手统一用户统一认证相关的工作，先总结下重要的相关理念，方便实际开发时的理解。&lt;/p&gt;
@@ -121,7 +121,7 @@
     <link href="http://blog.gcusky.com/20170315-ztree/"/>
     <id>http://blog.gcusky.com/20170315-ztree/</id>
     <published>2017-03-15T09:26:05.000Z</published>
-    <updated>2017-06-15T09:27:34.744Z</updated>
+    <updated>2017-06-15T09:27:34.000Z</updated>
     
     <content type="html">&lt;p&gt;最近在做用户组权限分配功能，一开始因为公司有列表设计器，很快完成表单数据查询功能，然后是控制层，模型层。最后重新卡在了视图层 zTree 数据回调操作上。&lt;/p&gt;
 &lt;p&gt;zTree 的官网demo上表示：&lt;strong&gt;如果父节点数量很大，请注意利用延时进行控制，避免异步进程过多。&lt;/strong&gt;因此需要用延迟加载的方式控制。&lt;/p&gt;
@@ -172,7 +172,7 @@
     <link href="http://blog.gcusky.com/20170221-log4j/"/>
     <id>http://blog.gcusky.com/20170221-log4j/</id>
     <published>2017-02-21T09:50:44.000Z</published>
-    <updated>2017-06-15T09:51:39.931Z</updated>
+    <updated>2017-06-15T09:51:39.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;什么是-Log4j&quot;&gt;&lt;a href=&quot;#什么是-Log4j&quot; class=&quot;headerlink&quot; title=&quot;什么是 Log4j&quot;&gt;&lt;/a&gt;什么是 Log4j&lt;/h2&gt;&lt;p&gt;Log4j 是 Apache 的一个开源项目，通过使用 Log4j，我们可以控制日志信息输送的目的地是控制台、文件、GUI组件，甚至是套接口服务器、NT的事件记录器、UNIX Syslog守护进程等；我们也可以控制每一条日志的输出格式；通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -221,7 +221,7 @@
     <link href="http://blog.gcusky.com/20170217-weblogic/"/>
     <id>http://blog.gcusky.com/20170217-weblogic/</id>
     <published>2017-02-17T02:31:41.000Z</published>
-    <updated>2017-04-11T02:45:42.694Z</updated>
+    <updated>2017-04-11T02:45:42.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;软件安装&quot;&gt;&lt;a href=&quot;#软件安装&quot; class=&quot;headerlink&quot; title=&quot;软件安装&quot;&gt;&lt;/a&gt;软件安装&lt;/h2&gt;&lt;p&gt;安装所需软件：&lt;/p&gt;
 &lt;ul&gt;
@@ -351,7 +351,7 @@
     <link href="http://blog.gcusky.com/20170126-scikit-learn-translation/"/>
     <id>http://blog.gcusky.com/20170126-scikit-learn-translation/</id>
     <published>2017-01-26T10:44:08.000Z</published>
-    <updated>2017-04-12T08:42:37.662Z</updated>
+    <updated>2017-04-12T08:42:37.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;外文原文版出处： Pedregosa F, Varoquaux G, Gramfort A, et al. Scikit-learn: Machine learning in Python[J]. Journal of Machine Learning Research, 2011, 12(Oct): 2825-2830.&lt;/p&gt;
@@ -478,7 +478,7 @@
     <link href="http://blog.gcusky.com/20170116-project-2/"/>
     <id>http://blog.gcusky.com/20170116-project-2/</id>
     <published>2017-01-16T14:32:06.000Z</published>
-    <updated>2017-05-08T03:06:26.571Z</updated>
+    <updated>2017-05-08T03:06:26.000Z</updated>
     
     <content type="html">&lt;p&gt;总结了好久以前 &lt;code&gt;2016年6月份&lt;/code&gt; 的软件项目实践，重点放在设计模式的应用过程。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
