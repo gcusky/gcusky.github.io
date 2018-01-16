@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.gcusky.com/20160528-DesignPattern-6/</loc>
+    
+    <lastmod>2017-08-07T08:31:54.669Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gcusky.com/20160528-DesignPattern-3/</loc>
+    
+    <lastmod>2017-08-07T08:31:44.783Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.gcusky.com/20170221-log4j/</loc>
     
     <lastmod>2017-06-15T09:51:39.000Z</lastmod>
@@ -163,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://blog.gcusky.com/20160528-DesignPattern-6/</loc>
-    
-    <lastmod>2016-06-02T01:54:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.gcusky.com/20160601-DesignPattern-9/</loc>
     
     <lastmod>2016-06-01T03:00:50.000Z</lastmod>
@@ -180,13 +187,6 @@
     <loc>http://blog.gcusky.com/20160601-DesignPattern-8/</loc>
     
     <lastmod>2016-06-01T02:29:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gcusky.com/20160528-DesignPattern-3/</loc>
-    
-    <lastmod>2016-05-28T11:41:19.000Z</lastmod>
     
   </url>
   
